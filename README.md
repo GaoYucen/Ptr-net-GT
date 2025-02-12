@@ -16,4 +16,7 @@ code:
 - PointerNet: model
 - train: train the model
 - valid: test the model
+- PointerNet_R: model with reinforcement learning
+- REINFORCE: train the model with reinforcement learning
+- valid_R: test the model with reinforcement learning
 
