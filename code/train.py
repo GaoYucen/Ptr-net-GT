@@ -97,7 +97,7 @@ if __name__ == '__main__':
     else:
         print('Train mode!')
         #%% 读取training dataset
-        train_dataset = np.load('data/test.npy', allow_pickle=True)
+        train_dataset = np.load('data/train.npy', allow_pickle=True)
 
         dataloader = DataLoader(train_dataset,
                                 batch_size=params.batch_size,
@@ -123,19 +123,12 @@ if __name__ == '__main__':
         for epoch in range(params.nof_epoch):
             batch_loss = []
             iterator = tqdm(dataloader, unit='Batch')
+
             for i_batch, sample_batched in enumerate(iterator):
                 iterator.set_description('Epoch %i/%i' % (epoch+1, params.nof_epoch))
 
-                train_batch = Variable(sample_batched['Points'].float())
-                target_batch = Variable(sample_batched['Solutions'])
-
-                # 放置data到device
-                if USE_CUDA:
-                    train_batch = train_batch.cuda()
-                    target_batch = target_batch.cuda()
-                else:
-                    train_batch = train_batch.to(device)
-                    target_batch = target_batch.to(device)
+                train_batch = sample_batched['Points'].float().to(device)  # [batch_size, seq_len, 2]
+                target_batch = sample_batched['Solutions'].to(device)
 
                 optimizer.zero_grad()
 
@@ -146,7 +139,6 @@ if __name__ == '__main__':
 
                 losses.append(loss.data.item())
                 batch_loss.append(loss.data.item())
-
 
                 loss.backward()
                 optimizer.step()

@@ -20,3 +20,6 @@ code:
 - REINFORCE: train the model with reinforcement learning
 - valid_R: test the model with reinforcement learning
 
+Performance:
+- valid: 7.31%
+- valid_R: 14.91%

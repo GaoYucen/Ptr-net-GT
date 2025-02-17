@@ -43,35 +43,21 @@ model = PointerNet(params.embedding_size,
                    params.dropout,
                    params.bidir)
 
-# #%%
-# params.test_flag = True
-#
-# #%% test mode
-# if params.test_flag == True:
-
-#%%
+#%% 加载训练好的模型参数
 print('Test Mode!')
-model.load_state_dict(torch.load('param/param_'+str(params.nof_points)+'_'+str(params.nof_epoch)+'.pkl', weights_only=True))
+model.load_state_dict(torch.load('param/param_' + str(params.nof_points) + '_' + str(params.nof_epoch) + '.pkl', weights_only=True))
 print('load success')
 
-#%%
+#%% 定义计算路径长度的函数
 def get_length(point, solution):
+    """
+    计算路径长度
+    """
     length = 0
     end = len(solution) - 1
     for i in range(end):
-        length += math.sqrt((point[solution[i + 1], 0] - point[solution[i], 0]) ** 2
-                            + (point[solution[i + 1], 1] - point[solution[i], 1]) ** 2)
-    # return point[0]
-    length += math.sqrt((point[solution[end], 0] - point[solution[0], 0]) ** 2 + (point[solution[end], 1] -
-                                                                                  point[solution[0], 1]) ** 2)
-    return length
-
-def get_length_2(point, solution):
-    length = 0
-    end = len(solution)
-    for i in range(end):
-        length += math.sqrt((point[solution[i], 0] - point[i, 0]) ** 2
-                            + (point[solution[i], 1] - point[i, 1]) ** 2)
+        length += np.linalg.norm(point[solution[i + 1]] - point[solution[i]])
+    length += np.linalg.norm(point[solution[end]] - point[solution[0]])
     return length
 
 #%%
@@ -93,7 +79,7 @@ if USE_CUDA:
 else:
     model.to(device)
 
-#%% 定义CrossEntropyLoss()和Adam优化器，并初始化losses
+#%% 定义CrossEntropyLoss()，并初始化losses
 CCE = torch.nn.CrossEntropyLoss()
 losses = []
 batch_loss = []
@@ -102,10 +88,11 @@ iterator = tqdm(test_dataloader, unit='Batch')
 length_list = []
 length_opt_list = []
 error_sum = 0
+total_samples = 0
+
 for i_batch, sample_batched in enumerate(iterator):
     test_batch = Variable(sample_batched['Points'])
     target_batch = Variable(sample_batched['Solutions'])
-    # print(test_batch)
 
     if USE_CUDA:
         test_batch = test_batch.cuda()
@@ -117,35 +104,27 @@ for i_batch, sample_batched in enumerate(iterator):
     o, p = model(test_batch)
 
     solutions = np.array(p)
-    # print(solutions)
-    points = np.array(test_batch)
-    solutions_opt = np.array(target_batch)
+    points = np.array(test_batch.cpu())
+    solutions_opt = np.array(target_batch.cpu())
 
-    error = 0
+    batch_error = 0
 
     for i in range(len(solutions)):
         length = get_length(points[i], solutions[i])
-        # length = get_length_2(points[i], solutions[i])
         length_opt = get_length(points[i], solutions_opt[i])
         length_list.append(length)
         length_opt_list.append(length_opt)
         error_opt = (length - length_opt) / length_opt * 100
-        error += error_opt
+        batch_error += error_opt
 
-    error = error / len(solutions)
-    error_sum += error
-    error_print = error_sum / (i_batch + 1)
-    print('current error: %.2f%%' % error)
-    print('average error: %.2f%%' % error_print)
-    print('current length: %.2f' % (sum(length_list)/len(length_list)))
-    print('current length_opt: %.2f' % (sum(length_opt_list)/len(length_opt_list)))
+        # 输出当前路径长度和当前最优路径长度
+        print(f"Batch {i_batch + 1}, Sample {i + 1}: Current Length = {length:.4f}, Current Optimal Length = {length_opt:.4f}")
 
-    # Bug fix: Add the dim parameter
-    o = o.contiguous().view(-1, o.size()[-1])
-    target_batch = target_batch.view(-1)
+    batch_error = batch_error / len(solutions)
+    error_sum += batch_error * len(solutions)
+    total_samples += len(solutions)
 
-    loss = CCE(o, target_batch)
-    losses.append(loss.data.item())
+    average_error = error_sum / total_samples
+    iterator.set_postfix(average_error=f"{average_error:.2f}%")
 
-iterator.set_postfix(loss=np.average(losses))
-print(np.average(losses))
+print(f"最终平均误差: {average_error:.2f}%")

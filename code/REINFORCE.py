@@ -10,7 +10,7 @@ import numpy as np
 # 添加路径
 import sys
 sys.path.append('code')
-from PointerNet_R import PointerNet
+from RouteModel import RouteGenerator
 from Data_Generator import TSPDataset
 from config import get_config
 from tqdm import tqdm
@@ -49,16 +49,18 @@ if __name__ == '__main__':
         print('Using CPU')
 
     #%% 确定model参数
-    model = PointerNet(params.embedding_size,
-                       params.hiddens,
-                       params.nof_lstms,
-                       params.dropout,
-                       params.bidir)
+    model = RouteGenerator(
+        node_dim=2,
+        embed_dim=params.embedding_size,
+        hidden_dim=params.hiddens,
+        n_layers=params.nof_lstms,
+        dropout=params.dropout
+    )
 
     #%% train mode
     print('Train mode!')
     #%% 读取training dataset
-    train_dataset = np.load('data/test.npy', allow_pickle=True)
+    train_dataset = np.load('data/train.npy', allow_pickle=True)
 
     dataloader = DataLoader(train_dataset,
                             batch_size=params.batch_size,
@@ -78,62 +80,73 @@ if __name__ == '__main__':
                                   model.parameters()),
                            lr=params.lr)
 
+    # 初始化最佳损失值为无穷大
+    best_loss = float('inf')
+
     #%% Training process
     for epoch in range(params.nof_epoch):
         batch_loss = []
         iterator = tqdm(dataloader, unit='Batch')
+
         for i_batch, sample_batched in enumerate(iterator):
             iterator.set_description('Epoch %i/%i' % (epoch + 1, params.nof_epoch))
 
-            train_batch = Variable(sample_batched['Points'].float())
-            target_batch = Variable(sample_batched['Solutions'])
-
-            # 放置data到device
-            if USE_CUDA:
-                train_batch = train_batch.cuda()
-                target_batch = target_batch.cuda()
-            else:
-                train_batch = train_batch.to(device)
-                target_batch = target_batch.to(device)
+            train_batch = sample_batched['Points'].float().to(device)  # [batch_size, seq_len, 2]
+            target_batch = sample_batched['Solutions'].to(device)
 
             optimizer.zero_grad()
 
-            batch_rewards = []
-            batch_log_probs = []
+            # 批量生成路径
+            batch_size = train_batch.size(0)
+            seq_len = params.nof_points
 
-            for i in range(train_batch.size(0)):  # 遍历每个样本
-                point = train_batch[i].cpu().numpy()
-                solution = []
-                log_probs = []
-                mask = np.zeros(params.nof_points)  # 用于记录已经访问过的节点
-                current_node = 0  # 从节点 0 开始
-                solution.append(current_node)
-                mask[current_node] = 1
+            # 初始化mask和log_probs
+            mask = torch.zeros(batch_size, seq_len, device=device)
+            log_probs = torch.zeros(batch_size, seq_len - 1, device=device)
+            solutions = torch.zeros(batch_size, seq_len, dtype=torch.long, device=device)
+            hidden = model.init_hidden(batch_size)  # 新增隐藏状态初始化
 
-                for step in range(params.nof_points - 1):
-                    input_tensor = torch.tensor(point).unsqueeze(0).float().to(device)
-                    output = model(input_tensor, torch.tensor(mask).unsqueeze(0).float().to(device))
-                    # 假设 output[0] 是动作概率分布的张量
-                    action_probs_tensor = output[0]
-                    probs = torch.softmax(action_probs_tensor[0, step], dim=-1)
-                    # probs = torch.softmax(output[0, step], dim=-1)
-                    action = torch.multinomial(probs, 1).item()  # 根据概率分布采样下一个节点
-                    log_prob = torch.log(probs[action])
-                    log_probs.append(log_prob)
-                    solution.append(action)
-                    mask[action] = 1
+            # 起始节点设为0
+            solutions[:, 0] = 0
+            mask[torch.arange(batch_size), 0] = 1
 
-                # 计算奖励
-                reward = -get_length(point, solution)  # 负的路径长度作为奖励
-                batch_rewards.append(reward)
-                batch_log_probs.append(torch.stack(log_probs).sum())
+            # 向量化路径生成
+            for step in range(seq_len - 1):
+                # 前向传播获取概率矩阵
+                prob_matrix, hidden = model(
+                    train_batch,
+                    mask,
+                    hidden=hidden
+                )  # [B, L]
+
+                # 采样动作
+                actions = torch.multinomial(prob_matrix, 1).squeeze(-1)
+                log_probs[:, step] = torch.log(torch.gather(prob_matrix, 1, actions.unsqueeze(-1)).squeeze())
+
+                # 更新mask（最后一步不更新，保持路径闭合）
+                if step < seq_len - 1:
+                    mask = mask.scatter(1, actions.unsqueeze(1), 1)
+                    solutions[:, step + 1] = actions
+
+            # 计算奖励（向量化实现）
+            # 计算闭合路径总长度
+            points = train_batch
+            sol_exp = solutions.unsqueeze(-1).expand(-1, -1, 2)
+            seq_coords = torch.gather(points, 1, sol_exp)
+
+            # 计算相邻节点距离
+            diff = seq_coords[:, 1:] - seq_coords[:, :-1]
+            dists = torch.norm(diff, dim=-1).sum(dim=1)
+
+            # 闭合路径最后一步
+            diff_last = seq_coords[:, 0] - seq_coords[:, -1]
+            dists += torch.norm(diff_last, dim=-1)
+
+            rewards = -dists  # 负路径长度作为奖励
 
             # 计算损失
-            # 将 batch_rewards 转换为 float32 类型的张量
-            # batch_rewards = torch.tensor(batch_rewards, dtype=torch.float32).to(device)
-            batch_rewards = torch.tensor(batch_rewards).to(device)
-            batch_log_probs = torch.stack(batch_log_probs)
-            loss = -(batch_log_probs * batch_rewards).mean()
+            log_probs_sum = log_probs.sum(dim=1)
+            loss = (log_probs_sum * rewards).mean()
 
             batch_loss.append(loss.data.item())
 
@@ -143,8 +156,17 @@ if __name__ == '__main__':
             # 更新进度条
             iterator.set_postfix(loss='{}'.format(loss.data.item()))
 
+            # 如果当前损失值小于最佳损失值，保存模型
+            if loss.data.item() < best_loss:
+                best_loss = loss.data.item()
+                torch.save(model.state_dict(), 'param/best_loss_reinforce_param_' + str(params.nof_points) + '_' + str(
+                    params.nof_epoch) + '.pkl')
+
         # 更新进度条
         iterator.set_postfix(loss=sum(batch_loss) / len(batch_loss))
+
+        # torch.save(model.state_dict(),
+        #            'param/reinforce_param_' + str(params.nof_points) + '_' + str(params.nof_epoch) + '.pkl')
 
     #%% 存储模型
     torch.save(model.state_dict(), 'param/reinforce_param_' + str(params.nof_points) + '_' + str(params.nof_epoch) + '.pkl')

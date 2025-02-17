@@ -10,12 +10,12 @@ parser = argparse.ArgumentParser(description="Pytorch implementation of Pointer-
 parser.add_argument('--sys', default='mac', type=str, help='System')
 # Data
 parser.add_argument('--train_size', default=1000, type=int, help='Training data size')
-parser.add_argument('--val_size', default=10000, type=int, help='Validation data size')
+parser.add_argument('--val_size', default=100, type=int, help='Validation data size')
 parser.add_argument('--test_size', default=100, type=int, help='Test data size')
 parser.add_argument('--batch_size', default=256, type=int, help='Batch size')
 # Train
-parser.add_argument('--nof_epoch', default=1000, type=int, help='Number of epochs')
-parser.add_argument('--lr', type=float, default=0.0001, help='Learning rate')
+parser.add_argument('--nof_epoch', default=100, type=int, help='Number of epochs')
+parser.add_argument('--lr', type=float, default=0.001, help='Learning rate')
 # GPU
 parser.add_argument('--gpu', default=False, action='store_true', help='Enable gpu')
 # TSP
