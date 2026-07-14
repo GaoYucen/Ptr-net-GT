@@ -4,6 +4,7 @@ logs/
 results/
 __pycache__/
 .idea
+.vscode/
 */.ipynb_checkpoints
 *.tc.*
 *.tc_backward.*
@@ -13,3 +14,12 @@ __pycache__/
 error.txt
 log.txt
 .DS_Store
+checkpoints/*
+!checkpoints/.gitkeep
+outputs/*
+!outputs/.gitkeep
+runs/*
+*.pt
+*.pth
+*.ckpt
+参考材料/
