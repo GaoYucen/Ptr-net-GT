@@ -18,6 +18,7 @@ from torch.utils.data import DataLoader
 from ptrnet_gt.config import apply_overrides, load_config
 from ptrnet_gt.models.factory import build_model
 from ptrnet_gt.problems import TSP
+from ptrnet_gt.utils import evaluate_tour_batch
 
 
 def main():
@@ -44,16 +45,26 @@ def main():
     dataloader = DataLoader(dataset, batch_size=config.get("evaluation", {}).get("batch_size", 128))
 
     costs = []
+    feasible = []
+    cost_errors = []
     with torch.no_grad():
         for batch in dataloader:
             batch = batch.to(device)
-            cost, _ = model(batch)
+            cost, _, pi = model(batch, return_pi=True)
+            metrics = evaluate_tour_batch(batch, pi, model_cost=cost)
             costs.append(cost.cpu())
+            feasible.append(metrics["feasible"].cpu())
+            cost_errors.append(metrics["cost_error"].cpu())
 
     costs = torch.cat(costs, dim=0)
+    feasible = torch.cat(feasible, dim=0)
+    cost_errors = torch.cat(cost_errors, dim=0)
     result = {
         "avg_cost": float(costs.mean().item()),
         "std_cost": float(costs.std().item()),
+        "feasible_tour_rate": float(feasible.float().mean().item()),
+        "mean_cost_consistency_error": float(cost_errors.mean().item()),
+        "max_cost_consistency_error": float(cost_errors.max().item()),
         "num_instances": int(costs.numel()),
         "checkpoint": args.checkpoint,
     }
