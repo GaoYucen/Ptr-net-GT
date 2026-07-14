@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from ptrnet_gt.baselines import AttentionModel, PointerNetwork
 from ptrnet_gt.models import ComponentMergeDecoder
 
 
@@ -26,8 +25,4 @@ def build_model(config: dict, problem):
             n_heads=model_cfg.get("n_heads", 8),
             **common_kwargs,
         )
-    if model_name == "attention":
-        return AttentionModel(mask_inner=True, mask_logits=True, **common_kwargs)
-    if model_name == "pointer":
-        return PointerNetwork(**common_kwargs)
-    raise ValueError(f"Unknown model: {model_name}")
+    raise ValueError(f"Unsupported model for current TSP-only codebase: {model_name}")

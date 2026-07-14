@@ -7,8 +7,7 @@ from torch.nn import DataParallel
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 
-from utils.log_utils import log_values
-from utils import move_to
+from ptrnet_gt.utils import log_values, move_to
 
 
 def get_inner_model(model):

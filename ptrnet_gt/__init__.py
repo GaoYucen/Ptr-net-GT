@@ -6,6 +6,5 @@ __all__ = [
     "group_theory",
     "problems",
     "training",
-    "baselines",
     "utils",
 ]

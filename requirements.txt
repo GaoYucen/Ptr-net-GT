@@ -1,0 +1,7 @@
+numpy
+PyYAML
+scipy
+tensorboard_logger
+torch
+torchvision
+tqdm

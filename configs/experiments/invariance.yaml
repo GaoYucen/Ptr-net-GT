@@ -1,6 +1,0 @@
-experiment:
-  name: invariance
-  checkpoint: checkpoints/debug.pt
-
-problem:
-  name: tsp
