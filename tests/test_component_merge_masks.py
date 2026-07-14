@@ -2,7 +2,7 @@ import unittest
 
 import torch
 
-from states.component_merge_state import ComponentMergeState
+from ptrnet_gt.states import ComponentMergeState
 
 
 class TestComponentMergeMasks(unittest.TestCase):

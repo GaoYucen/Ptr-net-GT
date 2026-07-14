@@ -1,117 +1,242 @@
-> Note: I am currently not able to actively maintain this repository. Please also checkout more recent implementations, e.g. https://github.com/ai4co/rl4co and https://github.com/cpwan/RLOR.
+# Ptr-net-GT
 
-# Attention, Learn to Solve Routing Problems!
+本项目研究 **基于连通分量合并状态（Component Merge State）与置换群对称性（Permutation Group Symmetry）的 TSP 双端神经构造方法**，并保留标准 **Attention Model** 与 **Pointer Network** 作为对比基线。
 
-Attention based model for learning to solve the Travelling Salesman Problem (TSP) and the Vehicle Routing Problem (VRP), Orienteering Problem (OP) and (Stochastic) Prize Collecting TSP (PCTSP). Training with REINFORCE with greedy rollout baseline.
+当前仓库已从历史的多问题、多脚本实验集合，**收缩为 TSP-only 的研究代码库**，主线聚焦于 `ComponentMergeState + ComponentMergeDecoder`。
 
-![TSP100](images/tsp.gif)
+---
 
-## Paper
-For more details, please see our paper [Attention, Learn to Solve Routing Problems!](https://openreview.net/forum?id=ByxBFsRqYm) which has been accepted at [ICLR 2019](https://iclr.cc/Conferences/2019). If this code is useful for your work, please cite our paper:
+## 研究主线
 
+建议将当前 `dev-3` / 清理分支的核心研究流程理解为：
+
+```text
+TSP 实例
+  ↓
+图节点编码
+  ↓
+ComponentMergeState 初始化
+  ↓
+双端边选择与连通分量合并
+  ↓
+可行性掩码与防止提前成环
+  ↓
+完整 Hamilton 回路
+  ↓
+训练 / 评估 / 对称性分析
 ```
-@inproceedings{
-    kool2018attention,
-    title={Attention, Learn to Solve Routing Problems!},
-    author={Wouter Kool and Herke van Hoof and Max Welling},
-    booktitle={International Conference on Learning Representations},
-    year={2019},
-    url={https://openreview.net/forum?id=ByxBFsRqYm},
-}
-``` 
 
-## Dependencies
+核心研究关注点包括：
 
-* Python>=3.8
-* NumPy
-* SciPy
-* [PyTorch](http://pytorch.org/)>=1.7
-* tqdm
-* [tensorboard_logger](https://github.com/TeamHG-Memex/tensorboard_logger)
-* Matplotlib (optional, only for plotting)
+- 图编码器
+- 连通分量合并状态
+- 双端解码模型
+- 可行性掩码
+- 节点重标号下的不变性 / 等变性
+- 轨道、稳定子与规范化等群论模块
+- 与标准 Attention / Pointer 基线的对比
 
-## Quick start
+---
 
-For training TSP instances with 20 nodes and using rollout as REINFORCE baseline:
+## 当前目录结构
+
+```text
+Ptr-net-GT/
+├── ptrnet_gt/                 # 正式 Python 包（整理中）
+├── scripts/                   # 统一命令行入口（整理中）
+├── configs/                   # 训练/实验配置（整理中）
+├── experiments/               # 实验分析脚本、可视化、notebook
+├── tests/                     # 单元测试与集成测试
+├── nets/                      # 历史基线模型实现
+├── problems/tsp/              # TSP 问题定义
+├── checkpoints/               # 本地权重存放目录
+├── outputs/                   # 运行输出目录
+├── assets/figures/            # 可视化图像资源
+└── data/                      # 数据说明与样例目录
+```
+
+---
+
+## 已整理的内容
+
+当前已完成的第一阶段整理包括：
+
+- 建立 `ptrnet_gt/` 包结构；
+- 新建 `group_theory/` 占位模块；
+- 建立 **TSP-only** 的统一训练/评估入口；
+- 新建 `configs/component_merge/tsp20.yaml`；
+- 将评估脚本迁移到 `experiments/evaluation/`；
+- 将可视化脚本迁移到 `experiments/visualization/`；
+- 将 notebook 迁移到 `experiments/notebooks/`；
+- 将 GIF 资源迁移到 `assets/figures/`；
+- 删除旧双端模型、旧状态和非 TSP 问题代码；
+- 清理非 TSP pretrained，仅保留 TSP 历史权重；
+- 将历史参数与命令文件归档；
+- 更新 `.gitignore`，避免继续提交训练产物。
+
+---
+
+## 核心代码位置
+
+### 当前核心状态
+
+- `ptrnet_gt/states/component_merge.py`
+
+### 当前测试
+
+- `tests/test_component_merge_state.py`
+- `tests/test_component_merge_masks.py`
+
+### 当前核心/基线模型
+
+- `ptrnet_gt/models/component_merge_decoder.py`
+- `nets/graph_encoder.py`
+- `nets/attention_model.py`
+- `nets/pointer_network.py`
+- `nets/critic_network.py`
+
+### 新包入口（阶段性兼容）
+
+- `ptrnet_gt/models/graph_encoder.py`
+- `ptrnet_gt/problems/tsp.py`
+- `ptrnet_gt/training/`
+- `ptrnet_gt/group_theory/`
+
+---
+
+## 环境安装
+
+建议优先使用已有环境文件：
+
 ```bash
-python run.py --graph_size 20 --baseline rollout --run_name 'tsp20_rollout'
+conda env create -f environment.yml
+conda activate ptr-net-gt
 ```
 
-## Usage
+如果环境名与文件中定义不一致，请按 `environment.yml` 实际内容为准。
 
-### Generating data
+### OpenMP 说明（当前 macOS 环境必读）
 
-Training data is generated on the fly. To generate validation and test data (same as used in the paper) for all problems:
+当前环境下 `torch` 导入会触发 `libomp.dylib already initialized`。临时运行方式是：
+
 ```bash
-python generate_data.py --problem all --name validation --seed 4321
-python generate_data.py --problem all --name test --seed 1234
+export KMP_DUPLICATE_LIB_OK=TRUE
 ```
 
-### Training
+新的 `scripts/train.py` 和 `scripts/evaluate.py` 已默认设置该环境变量，但如果你直接运行测试或手动导入 `torch`，建议先执行上面的命令。
 
-For training TSP instances with 20 nodes and using rollout as REINFORCE baseline and using the generated validation set:
+---
+
+## 训练
+
+### 统一训练入口
+
+当前推荐使用新的配置驱动入口：
+
 ```bash
-python run.py --graph_size 20 --baseline rollout --run_name 'tsp20_rollout' --val_dataset data/tsp/tsp20_validation_seed4321.pkl
+python scripts/train.py --config configs/component_merge/tsp20.yaml
 ```
 
-#### Multiple GPUs
-By default, training will happen *on all available GPUs*. To disable CUDA at all, add the flag `--no_cuda`. 
-Set the environment variable `CUDA_VISIBLE_DEVICES` to only use specific GPUs:
+调试时可以覆盖配置：
+
 ```bash
-CUDA_VISIBLE_DEVICES=2,3 python run.py 
+python scripts/train.py \
+  --config configs/component_merge/tsp20.yaml \
+  --override training.epochs=1 \
+  --override training.epoch_size=32 \
+  --override training.batch_size=8 \
+  --override training.val_size=16
 ```
-Note that using multiple GPUs has limited efficiency for small problem sizes (up to 50 nodes).
 
-#### Warm start
-You can initialize a run using a pretrained model by using the `--load_path` option:
+---
+
+## 评估
+
+### 统一评估入口
+
 ```bash
-python run.py --graph_size 100 --load_path pretrained/tsp_100/epoch-99.pt
+python scripts/evaluate.py \
+  --config configs/component_merge/tsp20.yaml \
+  --checkpoint outputs/component_merge_tsp20/model.pt
 ```
 
-The `--load_path` option can also be used to load an earlier run, in which case also the optimizer state will be loaded:
+调试示例：
+
 ```bash
-python run.py --graph_size 20 --load_path 'outputs/tsp_20/tsp20_rollout_{datetime}/epoch-0.pt'
+python scripts/evaluate.py \
+  --config configs/component_merge/tsp20.yaml \
+  --checkpoint outputs/debug_train/component_merge_tsp20/model.pt \
+  --override evaluation.num_instances=16 \
+  --override evaluation.batch_size=8
 ```
 
-The `--resume` option can be used instead of the `--load_path` option, which will try to resume the run, e.g. load additionally the baseline state, set the current epoch/step counter and set the random number generator state.
+---
 
-### Evaluation
-To evaluate a model, you can add the `--eval-only` flag to `run.py`, or use `eval.py`, which will additionally measure timing and save the results:
+## 数据生成
+
 ```bash
-python eval.py data/tsp/tsp20_test_seed1234.pkl --model pretrained/tsp_20 --decode_strategy greedy
+python scripts/generate_data.py --problem tsp --name validation --seed 4321
+python scripts/generate_data.py --problem tsp --name test --seed 1234
 ```
-If the epoch is not specified, by default the last one in the folder will be used.
 
-#### Sampling
-To report the best of 1280 sampled solutions, use
+---
+
+## 测试
+
+当前最关键的是状态、模型和对称性测试：
+
 ```bash
-python eval.py data/tsp/tsp20_test_seed1234.pkl --model pretrained/tsp_20 --decode_strategy sample --width 1280 --eval_batch_size 1
-```
-Beam Search (not in the paper) is also recently added and can be used using `--decode_strategy bs --width {beam_size}`.
-
-#### To run baselines
-Baselines for different problems are within the corresponding folders and can be ran (on multiple datasets at once) as follows
-```bash
-python -m problems.tsp.tsp_baseline farthest_insertion data/tsp/tsp20_test_seed1234.pkl data/tsp/tsp50_test_seed1234.pkl data/tsp/tsp100_test_seed1234.pkl
-```
-To run baselines, you need to install [Compass](https://github.com/bcamath-ds/compass) by running the `install_compass.sh` script from within the `problems/op` directory and [Concorde](http://www.math.uwaterloo.ca/tsp/concorde.html) using the `install_concorde.sh` script from within `problems/tsp`. [LKH3](http://akira.ruc.dk/~keld/research/LKH-3/) should be automatically downloaded and installed when required. To use [Gurobi](http://www.gurobi.com), obtain a ([free academic](http://www.gurobi.com/registration/academic-license-reg)) license and follow the [installation instructions](https://www.gurobi.com/documentation/8.1/quickstart_windows/installing_the_anaconda_py.html).
-
-### Other options and help
-```bash
-python run.py -h
-python eval.py -h
+KMP_DUPLICATE_LIB_OK=TRUE python -m pytest tests/test_component_merge_state.py tests/test_component_merge_masks.py tests/test_component_merge_decoder.py -q
+KMP_DUPLICATE_LIB_OK=TRUE python -m pytest tests/test_group_action.py tests/test_state_equivariance.py tests/test_transition_equivariance.py tests/test_cost_invariance.py -q
 ```
 
-### Example CVRP solution
-See `plot_vrp.ipynb` for an example of loading a pretrained model and plotting the result for Capacitated VRP with 100 nodes.
+---
 
-![CVRP100](images/cvrp_0.png)
+## 计算群论模块
 
-## Acknowledgements
-Thanks to [pemami4911/neural-combinatorial-rl-pytorch](https://github.com/pemami4911/neural-combinatorial-rl-pytorch) for getting me started with the code for the Pointer Network.
+目前已建立以下占位模块，后续会逐步实现并接入测试：
 
-This repository includes adaptions of the following repositories as baselines:
-* https://github.com/MichelDeudon/encode-attend-navigate
-* https://github.com/mc-ride/orienteering
-* https://github.com/jordanamecler/PCTSP
-* https://github.com/rafael2reis/salesman
+```text
+ptrnet_gt/group_theory/
+├── permutation.py
+├── group_action.py
+├── orbit.py
+├── stabilizer.py
+└── canonicalization.py
+```
+
+当前已具备最基础的接口：
+
+- 逆置换
+- 置换复合
+- 节点 / tour / edge 置换
+- 实例、状态、mask、logits 的群作用接口雏形
+
+---
+
+## 下一阶段计划
+
+接下来建议按以下顺序继续推进：
+
+1. 继续把训练/评估细节从旧 `train.py` / `reinforce_baselines.py` 迁入 `ptrnet_gt/training/`；
+2. 将 `ptrnet_gt/problems/tsp.py` 和 `ptrnet_gt/problems/tsp/problem.py` 去桥接化；
+3. 继续加强群作用、轨道、稳定子、规范化与等变性测试；
+4. 持续清理剩余历史根目录入口代码。
+
+---
+
+## 说明
+
+当前仓库处于“**结构整理优先**”阶段：
+
+- 第一阶段目标是让项目结构更清晰；
+- 尽量不立即破坏历史训练流程；
+- 新包与历史代码暂时并行存在；
+- 后续再逐步完成核心逻辑迁移和清理删除。
+
+如果你要继续推进到下一阶段，建议优先处理：
+
+1. `dual_state_2.py` 迁移；
+2. 双端模型合并；
+3. 单一训练/评估入口落地；
+4. 群论模块与等变性测试接入。

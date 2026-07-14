@@ -1,0 +1,43 @@
+# Ptr-net-GT 项目运行规则
+
+## 1. 当前研究范围
+
+- 当前仓库按 **TSP-only** 维护。
+- 新功能、修复和重构应优先围绕：
+  - `ptrnet_gt/states/component_merge.py`
+  - `ptrnet_gt/models/component_merge_decoder.py`
+  - `scripts/train.py`
+  - `scripts/evaluate.py`
+
+## 2. 运行环境约束
+
+当前 macOS + PyTorch 环境存在 OpenMP 冲突；直接导入 `torch` 或运行测试时，可能触发：
+
+```text
+OMP: Error #15: Initializing libomp.dylib, but found libomp.dylib already initialized.
+```
+
+因此，**所有需要导入 `torch` 的命令**，默认都应带上：
+
+```bash
+KMP_DUPLICATE_LIB_OK=TRUE
+```
+
+例如：
+
+```bash
+KMP_DUPLICATE_LIB_OK=TRUE python scripts/train.py --config configs/component_merge/tsp20.yaml
+KMP_DUPLICATE_LIB_OK=TRUE python scripts/evaluate.py --config configs/component_merge/tsp20.yaml --checkpoint outputs/component_merge_tsp20/model.pt
+KMP_DUPLICATE_LIB_OK=TRUE python -m pytest tests/test_component_merge_state.py -q
+```
+
+## 3. 命令执行约定
+
+- 若命令会触发 `torch` 导入，优先显式写出 `KMP_DUPLICATE_LIB_OK=TRUE`。
+- 即使脚本内部已设置该环境变量，外部命令也建议保留此前缀，确保行为一致。
+
+## 4. 清理与重构方向
+
+- 不再恢复旧双端模型、旧状态和非 TSP 问题代码。
+- 优先继续把旧根目录训练/评估逻辑迁入 `ptrnet_gt/` 包。
+- 新增文档、脚本和测试时，应遵循当前 TSP-only 主线。

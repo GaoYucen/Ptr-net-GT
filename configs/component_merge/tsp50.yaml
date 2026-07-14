@@ -1,0 +1,22 @@
+experiment:
+  name: component_merge_tsp50
+  seed: 1234
+
+problem:
+  name: tsp
+  size: 50
+
+model:
+  name: component_merge
+  embedding_dim: 128
+  hidden_dim: 128
+  context_mode: cross_step
+
+training:
+  batch_size: 512
+  epochs: 100
+  learning_rate: 0.0001
+  baseline: rollout
+
+output:
+  root: outputs

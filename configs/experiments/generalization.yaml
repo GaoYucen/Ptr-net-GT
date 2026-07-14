@@ -1,0 +1,6 @@
+experiment:
+  name: generalization
+  checkpoint: checkpoints/debug.pt
+
+problem:
+  name: tsp

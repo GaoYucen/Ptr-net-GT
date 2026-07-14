@@ -3,14 +3,23 @@ import numpy as np
 import os
 import time
 from datetime import timedelta
+import shutil
 from scipy.spatial import distance_matrix
 from utils import run_all_in_pool
 from utils.data_utils import check_extension, load_dataset, save_dataset
 from subprocess import check_call, check_output, CalledProcessError
-from problems.vrp.vrp_baseline import get_lkh_executable
 import torch
 from tqdm import tqdm
 import re
+
+
+def get_lkh_executable(executable_name="LKH"):
+    executable = os.environ.get("LKH_EXECUTABLE") or shutil.which(executable_name)
+    if executable is None:
+        raise FileNotFoundError(
+            "Could not locate LKH executable. Set LKH_EXECUTABLE or ensure 'LKH' is on PATH."
+        )
+    return executable
 
 
 def solve_gurobi(directory, name, loc, disable_cache=False, timeout=None, gap=None):

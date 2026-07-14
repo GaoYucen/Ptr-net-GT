@@ -1,1 +1,0 @@
-python run_warmUp.py --graph_size 20 --baseline rollout --run_name 'tsp20_dual_warmup' --batch_size 1024 --n_epochs 100 --model attention_dual --lr_model 1e-4 --lr_scheduler cosine --warmup_epochs 5 --enable_curriculum --curriculum_start_size 10 --curriculum_epochs 10

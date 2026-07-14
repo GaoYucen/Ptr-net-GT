@@ -1,0 +1,6 @@
+experiment:
+  name: tsplib
+  checkpoint: checkpoints/debug.pt
+
+problem:
+  name: tsp
