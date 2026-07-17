@@ -1,5 +1,5 @@
 experiment:
-  name: component_merge_tsp20
+  name: attention_model_tsp20
   seed: 1234
 
 problem:
@@ -7,10 +7,11 @@ problem:
   size: 20
 
 model:
-  name: component_merge
+  name: attention_model
   embedding_dim: 128
   hidden_dim: 128
-  context_mode: cross_step
+  n_encode_layers: 2
+  n_heads: 8
 
 training:
   batch_size: 512

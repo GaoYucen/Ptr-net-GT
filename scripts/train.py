@@ -21,6 +21,7 @@ from ptrnet_gt.config import apply_overrides, load_config
 from ptrnet_gt.models.factory import build_model
 from ptrnet_gt.problems import TSP
 from ptrnet_gt.training import ExponentialBaseline, NoBaseline, RolloutBaseline, WarmupBaseline, train_epoch, validate
+from ptrnet_gt.utils.data import training_budget_from_config
 
 
 def _set_seed(seed: int):
@@ -54,9 +55,10 @@ def _make_opts(config: dict, run_dir: Path) -> AttrDict:
         data_distribution=problem_cfg.get("distribution"),
         device=torch.device("cuda:0" if use_cuda else "cpu"),
         use_cuda=use_cuda,
-        no_progress_bar=train_cfg.get("no_progress_bar", False),
+        no_progress_bar=train_cfg.get("no_progress_bar", True),
         no_tensorboard=True,
-        log_step=train_cfg.get("log_step", 50),
+        log_step=train_cfg.get("log_step", 0),
+        progress_bar_mininterval=train_cfg.get("progress_bar_mininterval", 30.0),
         max_grad_norm=train_cfg.get("max_grad_norm", 1.0),
         run_name=experiment_cfg.get("name", "component_merge"),
         save_dir=str(run_dir),
@@ -64,6 +66,8 @@ def _make_opts(config: dict, run_dir: Path) -> AttrDict:
         bl_warmup_epochs=train_cfg.get("warmup_epochs", 0),
         exp_beta=train_cfg.get("exp_beta", 0.8),
         baseline=train_cfg.get("baseline", "rollout"),
+        early_stop_patience=train_cfg.get("early_stop_patience"),
+        early_stop_min_delta=train_cfg.get("early_stop_min_delta", 0.0),
     )
 
 
@@ -101,15 +105,71 @@ def main():
 
     optimizer = optim.Adam(model.parameters(), lr=config.get("training", {}).get("learning_rate", 1e-4))
     lr_scheduler = optim.lr_scheduler.LambdaLR(optimizer, lambda epoch: config.get("training", {}).get("lr_decay", 1.0) ** epoch)
-    val_dataset = problem.make_dataset(size=opts.graph_size, num_samples=config.get("training", {}).get("val_size", 256), distribution=opts.data_distribution)
+    val_dataset_path = config.get("data", {}).get("val_dataset") or config.get("evaluation", {}).get("dataset")
+    if val_dataset_path:
+        val_dataset = problem.make_dataset(filename=val_dataset_path, num_samples=config.get("training", {}).get("val_size", 256))
+    else:
+        val_dataset = problem.make_dataset(size=opts.graph_size, num_samples=config.get("training", {}).get("val_size", 256), distribution=opts.data_distribution)
+
+    best_val_cost = None
+    best_epoch = None
+    best_checkpoint_path = run_dir / "best_model.pt"
+    epochs_without_improvement = 0
 
     for epoch in range(opts.epoch_start, opts.epoch_start + opts.n_epochs):
-        train_epoch(model, optimizer, baseline, lr_scheduler, epoch, val_dataset, problem, None, opts)
+        epoch_result = train_epoch(model, optimizer, baseline, lr_scheduler, epoch, val_dataset, problem, None, opts)
+
+        improved = (
+            best_val_cost is None
+            or epoch_result.avg_cost < (best_val_cost - float(opts.early_stop_min_delta))
+        )
+        if improved:
+            best_val_cost = epoch_result.avg_cost
+            best_epoch = epoch
+            epochs_without_improvement = 0
+            torch.save({
+                "model": model.state_dict(),
+                "config": config,
+                "metrics": {
+                    "avg_cost": epoch_result.avg_cost,
+                    "std_cost": epoch_result.std_cost,
+                    "epoch": epoch,
+                    "epoch_duration": epoch_result.epoch_duration,
+                },
+                "budget": training_budget_from_config(config),
+                "parameter_count": sum(p.numel() for p in model.parameters() if p.requires_grad),
+            }, best_checkpoint_path)
+            print(
+                f"New best validation cost at epoch {epoch}: "
+                f"{epoch_result.avg_cost:.6f} ± {epoch_result.std_cost:.6f}"
+            )
+        else:
+            epochs_without_improvement += 1
+            print(
+                f"No validation improvement for {epochs_without_improvement} epoch(s); "
+                f"best remains epoch {best_epoch} with avg_cost={best_val_cost:.6f}"
+            )
+
+        patience = opts.early_stop_patience
+        if patience is not None and epochs_without_improvement >= int(patience):
+            print(
+                f"Early stopping triggered at epoch {epoch}. "
+                f"Best epoch: {best_epoch}, best avg_cost: {best_val_cost:.6f}"
+            )
+            break
 
     avg_cost, std_cost = validate(model, val_dataset, opts)
     checkpoint_path = run_dir / "model.pt"
-    torch.save({"model": model.state_dict(), "config": config, "metrics": {"avg_cost": avg_cost, "std_cost": std_cost}}, checkpoint_path)
+    torch.save({
+        "model": model.state_dict(),
+        "config": config,
+        "metrics": {"avg_cost": avg_cost, "std_cost": std_cost},
+        "budget": training_budget_from_config(config),
+        "parameter_count": sum(p.numel() for p in model.parameters() if p.requires_grad),
+    }, checkpoint_path)
     print(f"Saved checkpoint to {checkpoint_path}")
+    if best_epoch is not None:
+        print(f"Best checkpoint saved to {best_checkpoint_path} (epoch={best_epoch}, avg_cost={best_val_cost:.6f})")
 
 
 if __name__ == "__main__":

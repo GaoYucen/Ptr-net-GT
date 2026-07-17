@@ -1,6 +1,7 @@
 import math
 import os
 import time
+from dataclasses import dataclass
 
 import torch
 from torch.nn import DataParallel
@@ -8,6 +9,14 @@ from torch.utils.data import DataLoader
 from tqdm import tqdm
 
 from ptrnet_gt.utils import log_values, move_to
+
+
+@dataclass
+class EpochResult:
+    epoch: int
+    avg_cost: float
+    std_cost: float
+    epoch_duration: float
 
 
 def get_inner_model(model):
@@ -31,10 +40,13 @@ def rollout(model, dataset, opts):
             cost, _ = model(move_to(bat, opts.device))
         return cost.data.cpu()
 
-    return torch.cat([
-        eval_model_bat(bat)
-        for bat in tqdm(DataLoader(dataset, batch_size=opts.eval_batch_size), disable=opts.no_progress_bar)
-    ], 0)
+    dataloader = DataLoader(dataset, batch_size=opts.eval_batch_size)
+    if getattr(opts, "progress_bar_mininterval", None) is not None:
+        iterator = tqdm(dataloader, disable=opts.no_progress_bar, mininterval=opts.progress_bar_mininterval)
+    else:
+        iterator = tqdm(dataloader, disable=opts.no_progress_bar)
+
+    return torch.cat([eval_model_bat(bat) for bat in iterator], 0)
 
 
 def clip_grad_norms(param_groups, max_norm=math.inf):
@@ -75,7 +87,12 @@ def train_epoch(model, optimizer, baseline, lr_scheduler, epoch, val_dataset, pr
     model.train()
     get_inner_model(model).set_decode_type("sampling")
 
-    for batch_id, batch in enumerate(tqdm(training_dataloader, disable=opts.no_progress_bar)):
+    if getattr(opts, "progress_bar_mininterval", None) is not None:
+        iterator = tqdm(training_dataloader, disable=opts.no_progress_bar, mininterval=opts.progress_bar_mininterval)
+    else:
+        iterator = tqdm(training_dataloader, disable=opts.no_progress_bar)
+
+    for batch_id, batch in enumerate(iterator):
         train_batch(model, optimizer, baseline, epoch, batch_id, step, batch, tb_logger, opts)
         step += 1
 
@@ -89,6 +106,13 @@ def train_epoch(model, optimizer, baseline, lr_scheduler, epoch, val_dataset, pr
 
     baseline.epoch_callback(model, epoch)
     lr_scheduler.step()
+
+    return EpochResult(
+        epoch=epoch,
+        avg_cost=avg_cost,
+        std_cost=std_cost,
+        epoch_duration=epoch_duration,
+    )
 
 
 def train_batch(model, optimizer, baseline, epoch, batch_id, step, batch, tb_logger, opts):
@@ -104,12 +128,14 @@ def train_batch(model, optimizer, baseline, epoch, batch_id, step, batch, tb_log
     grad_norms = clip_grad_norms(optimizer.param_groups, opts.max_grad_norm)
     optimizer.step()
 
-    if step % int(opts.log_step) == 0:
+    log_step = int(getattr(opts, "log_step", 0))
+    if log_step > 0 and step % log_step == 0:
         log_values(cost, grad_norms, epoch, batch_id, step,
                    log_likelihood, reinforce_loss, bl_loss, tb_logger, opts)
 
 
 __all__ = [
+    "EpochResult",
     "get_inner_model",
     "rollout",
     "validate",

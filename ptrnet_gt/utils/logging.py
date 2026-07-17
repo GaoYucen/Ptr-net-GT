@@ -3,6 +3,9 @@ def log_values(cost, grad_norms, epoch, batch_id, step,
     avg_cost = cost.mean().item()
     grad_norms, grad_norms_clipped = grad_norms
 
+    if int(getattr(opts, "log_step", 0)) <= 0:
+        return
+
     print('epoch: {}, train_batch_id: {}, avg_cost: {}'.format(epoch, batch_id, avg_cost))
     print('grad_norm: {}, clipped: {}'.format(grad_norms[0], grad_norms_clipped[0]))
 

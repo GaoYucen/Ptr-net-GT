@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from ptrnet_gt.models import ComponentMergeDecoder
+from ptrnet_gt.models import AttentionModelDecoder, ComponentMergeDecoder, PointerNetworkDecoder
 
 
 def build_model(config: dict, problem):
@@ -22,6 +22,16 @@ def build_model(config: dict, problem):
             context_mode=model_cfg.get("context_mode", "cross_step"),
             mask_inner=model_cfg.get("mask_inner", True),
             mask_logits=model_cfg.get("mask_logits", True),
+            n_heads=model_cfg.get("n_heads", 8),
+            **common_kwargs,
+        )
+    if model_name == "pointer_network":
+        return PointerNetworkDecoder(
+            n_heads=model_cfg.get("n_heads", 8),
+            **common_kwargs,
+        )
+    if model_name == "attention_model":
+        return AttentionModelDecoder(
             n_heads=model_cfg.get("n_heads", 8),
             **common_kwargs,
         )
