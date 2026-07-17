@@ -1,0 +1,95 @@
+{
+  "component_merge": {
+    "best_avg_cost": 4.256426811218262,
+    "best_epoch": 9,
+    "checkpoints": {
+      "1": {
+        "avg_cost": 4.838443279266357,
+        "gap_to_best_abs": 0.5820164680480957,
+        "gap_to_best_pct": 13.6738276930812
+      },
+      "3": {
+        "avg_cost": 4.5831170082092285,
+        "gap_to_best_abs": 0.3266901969909668,
+        "gap_to_best_pct": 7.675221764178826
+      },
+      "5": {
+        "avg_cost": 4.3654985427856445,
+        "gap_to_best_abs": 0.10907173156738281,
+        "gap_to_best_pct": 2.5625186665940727
+      },
+      "8": {
+        "avg_cost": 4.353867053985596,
+        "gap_to_best_abs": 0.09744024276733398,
+        "gap_to_best_pct": 2.289249811849694
+      },
+      "10": {
+        "avg_cost": 4.256426811218262,
+        "gap_to_best_abs": 0.0,
+        "gap_to_best_pct": 0.0
+      }
+    }
+  },
+  "attention_model": {
+    "best_avg_cost": 3.9769530296325684,
+    "best_epoch": 8,
+    "checkpoints": {
+      "1": {
+        "avg_cost": 4.518181800842285,
+        "gap_to_best_abs": 0.5412287712097168,
+        "gap_to_best_pct": 13.609131593382712
+      },
+      "3": {
+        "avg_cost": 4.098518371582031,
+        "gap_to_best_abs": 0.12156534194946289,
+        "gap_to_best_pct": 3.0567457308062385
+      },
+      "5": {
+        "avg_cost": 4.05973482131958,
+        "gap_to_best_abs": 0.08278179168701172,
+        "gap_to_best_pct": 2.081538078780376
+      },
+      "8": {
+        "avg_cost": 3.9924635887145996,
+        "gap_to_best_abs": 0.01551055908203125,
+        "gap_to_best_pct": 0.3900111207364265
+      },
+      "10": {
+        "avg_cost": 3.980607509613037,
+        "gap_to_best_abs": 0.00365447998046875,
+        "gap_to_best_pct": 0.09189145441846941
+      }
+    }
+  },
+  "pointer_network": {
+    "best_avg_cost": 4.08622932434082,
+    "best_epoch": 9,
+    "checkpoints": {
+      "1": {
+        "avg_cost": 4.390823841094971,
+        "gap_to_best_abs": 0.3045945167541504,
+        "gap_to_best_pct": 7.454170889033174
+      },
+      "3": {
+        "avg_cost": 4.318689346313477,
+        "gap_to_best_abs": 0.23246002197265625,
+        "gap_to_best_pct": 5.688863828271706
+      },
+      "5": {
+        "avg_cost": 4.263082027435303,
+        "gap_to_best_abs": 0.17685270309448242,
+        "gap_to_best_pct": 4.328017080221307
+      },
+      "8": {
+        "avg_cost": 4.14597225189209,
+        "gap_to_best_abs": 0.05974292755126953,
+        "gap_to_best_pct": 1.4620551811762816
+      },
+      "10": {
+        "avg_cost": 4.08622932434082,
+        "gap_to_best_abs": 0.0,
+        "gap_to_best_pct": 0.0
+      }
+    }
+  }
+}
