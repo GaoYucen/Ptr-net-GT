@@ -49,6 +49,8 @@ class ComponentMergeDecoder(nn.Module):
         checkpoint_encoder=False,
         shrink_size=None,
         context_mode="cross_step",
+        action_mode="tail_head",
+        use_dynamic_role_features=False,
     ):
         super().__init__()
         self.embedding_dim = embedding_dim
@@ -64,6 +66,8 @@ class ComponentMergeDecoder(nn.Module):
         self.mask_inner = mask_inner
         self.mask_logits = mask_logits
         self.context_mode = context_mode
+        self.action_mode = action_mode
+        self.use_dynamic_role_features = use_dynamic_role_features
 
         self.init_embed = nn.Linear(2, embedding_dim)
         self.embedder = GraphAttentionEncoder(
@@ -82,6 +86,13 @@ class ComponentMergeDecoder(nn.Module):
         self.project_out_head = nn.Linear(embedding_dim, embedding_dim, bias=False)
         self.W_placeholder_tail = nn.Parameter(torch.Tensor(embedding_dim))
         self.W_placeholder_tail.data.uniform_(-1, 1)
+        self.role_feature_dim = 8 if use_dynamic_role_features else 0
+        edge_feature_dim = 4 * embedding_dim + 2 * self.role_feature_dim + 1
+        self.edge_score = nn.Sequential(
+            nn.Linear(edge_feature_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, 1),
+        )
 
     def set_decode_type(self, decode_type, temp=None):
         self.decode_type = decode_type
@@ -89,14 +100,11 @@ class ComponentMergeDecoder(nn.Module):
             self.temp = temp
 
     def forward(self, input, return_pi=False):
-        if self.checkpoint_encoder and self.training:
-            embeddings, _ = checkpoint(self.embedder, self._init_embed(input))
-        else:
-            embeddings, _ = self.embedder(self._init_embed(input))
+        embeddings = self.encode(input)
 
         log_p, pi = self._inner(input, embeddings)
         cost = self._calc_cost(input, pi)
-        ll = self._calc_log_likelihood(log_p, pi, None)
+        ll = self._calc_log_likelihood(log_p, pi, None, input.size(1))
         if return_pi:
             return cost, ll, pi
         return cost, ll
@@ -104,7 +112,22 @@ class ComponentMergeDecoder(nn.Module):
     def _init_embed(self, input):
         return self.init_embed(input)
 
+    def encode(self, input):
+        if self.checkpoint_encoder and self.training:
+            embeddings, _ = checkpoint(self.embedder, self._init_embed(input))
+        else:
+            embeddings, _ = self.embedder(self._init_embed(input))
+        return embeddings
+
     def _inner(self, input, embeddings):
+        if self.action_mode == "joint_edge":
+            return self._inner_joint_edge(input, embeddings)
+        if self.action_mode != "tail_head":
+            raise ValueError(f"Unknown component merge action_mode: {self.action_mode}")
+
+        return self._inner_tail_head(input, embeddings)
+
+    def _inner_tail_head(self, input, embeddings):
         state = ComponentMergeState.initialize(input)
         outputs = []
         sequences = []
@@ -140,6 +163,53 @@ class ComponentMergeDecoder(nn.Module):
             sequences.extend([selected_tail, selected_head])
 
         return torch.stack(outputs, 1), torch.stack(sequences, 1)
+
+    def _inner_joint_edge(self, input, embeddings):
+        state = ComponentMergeState.initialize(input)
+        outputs = []
+        sequences = []
+        batch_size, n_nodes, _ = input.size()
+
+        while not state.all_finished():
+            edge_mask = state.get_edge_mask()
+            log_p_edge = self._get_log_p_edge(state, embeddings, edge_mask)
+            selected_edge = self._select_node(log_p_edge.exp(), edge_mask.view(batch_size, -1))
+            tail_idx = torch.div(selected_edge, n_nodes, rounding_mode='floor')
+            head_idx = selected_edge % n_nodes
+
+            state = state.update(tail_idx, head_idx)
+            outputs.append(log_p_edge)
+            sequences.extend([tail_idx, head_idx])
+
+        return torch.stack(outputs, 1), torch.stack(sequences, 1)
+
+    def _get_log_p_edge(self, state, embeddings, edge_mask):
+        edge_logits = self._compute_edge_logits(state, embeddings)
+        flat_logits = edge_logits.view(edge_logits.size(0), -1)
+        flat_mask = edge_mask.view(edge_mask.size(0), -1)
+        if self.mask_logits:
+            flat_logits[flat_mask] = -math.inf
+        return torch.log_softmax(flat_logits / self.temp, dim=-1)
+
+    def get_joint_edge_log_p(self, state, embeddings):
+        return self._get_log_p_edge(state, embeddings, state.get_edge_mask())
+
+    def _compute_edge_logits(self, state, embeddings):
+        node_i = embeddings[:, :, None, :].expand(-1, -1, state.n_nodes, -1)
+        node_j = embeddings[:, None, :, :].expand(-1, state.n_nodes, -1, -1)
+        dist = state.dist[:, :, :, None]
+        parts = [node_i, node_j, node_i * node_j, torch.abs(node_i - node_j)]
+        if self.use_dynamic_role_features:
+            role_features = state.get_node_role_features()
+            role_i = role_features[:, :, None, :].expand(-1, -1, state.n_nodes, -1)
+            role_j = role_features[:, None, :, :].expand(-1, state.n_nodes, -1, -1)
+            parts.extend([role_i, role_j])
+        parts.append(dist)
+        edge_features = torch.cat(parts, dim=-1)
+        logits = self.edge_score(edge_features).squeeze(-1)
+        if self.tanh_clipping > 0:
+            logits = torch.tanh(logits) * self.tanh_clipping
+        return logits
 
     def _get_log_p(self, fixed, query, mask, project_out_layer):
         log_p, _ = self._one_to_many_logits(
@@ -199,7 +269,13 @@ class ComponentMergeDecoder(nn.Module):
             .permute(3, 0, 1, 2, 4)
         )
 
-    def _calc_log_likelihood(self, log_p, a, mask):
+    def _calc_log_likelihood(self, log_p, a, mask, n_nodes=None):
+        if self.action_mode == "joint_edge":
+            tails = a[:, 0::2]
+            heads = a[:, 1::2]
+            edge_count = n_nodes if n_nodes is not None else int(math.sqrt(log_p.size(-1)))
+            edge_idx = tails * edge_count + heads
+            return log_p.gather(2, edge_idx.unsqueeze(-1)).squeeze(-1).sum(1)
         return log_p.gather(2, a.unsqueeze(-1)).squeeze(-1).sum(1)
 
     def _calc_cost(self, input, pi):

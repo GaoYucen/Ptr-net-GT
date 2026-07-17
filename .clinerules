@@ -17,6 +17,17 @@
 OMP: Error #15: Initializing libomp.dylib, but found libomp.dylib already initialized.
 ```
 
+### 2.1 服务器环境 Python 解释器约定
+
+- 若当前处于**服务器/Linux 环境**，优先使用 `py11` Conda 环境运行所有需要 Python / PyTorch 的命令。
+- 在当前服务器上，优先显式使用：
+
+```bash
+/opt/conda/envs/py11/bin/python
+```
+
+- 不要默认使用工作区自带的 `multi_agent_demo_py310` 环境来跑训练、评估或测试；若命令涉及 `torch`，优先切到 `py11` 对应解释器执行。
+
 因此，**所有需要导入 `torch` 的命令**，默认都应带上：
 
 ```bash

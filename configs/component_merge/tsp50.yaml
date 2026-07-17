@@ -11,6 +11,7 @@ model:
   embedding_dim: 128
   hidden_dim: 128
   context_mode: cross_step
+  action_mode: joint_edge
 
 training:
   batch_size: 512

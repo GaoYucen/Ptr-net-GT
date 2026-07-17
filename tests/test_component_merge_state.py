@@ -64,6 +64,25 @@ class TestComponentMergeState(unittest.TestCase):
         self.assertFalse(state.get_edge_mask()[0, 1, 2].item())
         self.assertFalse(state.get_edge_mask()[1, 2, 3].item())
 
+    def test_node_role_features_initialize(self):
+        state = ComponentMergeState.initialize(self.coords)
+        roles = state.get_node_role_features()
+        self.assertEqual(roles.shape, (1, 4, 8))
+        self.assertTrue(torch.allclose(roles[0, :, 0], torch.ones(4)))
+        self.assertTrue(torch.allclose(roles[0, :, 1], torch.zeros(4)))
+        self.assertTrue(torch.allclose(roles[0, :, 2], torch.zeros(4)))
+        self.assertTrue(torch.allclose(roles[0, :, 3], torch.zeros(4)))
+
+    def test_node_role_features_after_merge(self):
+        state = ComponentMergeState.initialize(self.coords)
+        state = state.update(torch.tensor([0]), torch.tensor([1]))
+        roles = state.get_node_role_features()
+        self.assertEqual(roles.shape, (1, 4, 8))
+        self.assertEqual(roles[0, 0, 1].item(), 1.0)
+        self.assertEqual(roles[0, 1, 2].item(), 1.0)
+        self.assertEqual(roles[0, 2, 0].item(), 1.0)
+        self.assertEqual(roles[0, 3, 0].item(), 1.0)
+
 
 if __name__ == '__main__':
     unittest.main()

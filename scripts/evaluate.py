@@ -20,6 +20,8 @@ from ptrnet_gt.models.factory import build_model
 from ptrnet_gt.problems import TSP
 from ptrnet_gt.utils import evaluate_tour_batch
 from ptrnet_gt.utils.data import load_dataset_payload, training_budget_from_config
+from ptrnet_gt.group_theory.permutation import inverse_permutation, permute_nodes
+from ptrnet_gt.utils.tour_metrics import build_successor, edges_from_pi
 
 
 def _parameter_count(model) -> int:
@@ -48,6 +50,26 @@ def _evaluate_pi_for_model(model_name: str, batch: torch.Tensor, pi: torch.Tenso
         "feasible": feasible,
         "cost_error": cost_error,
     }
+
+
+def _permutation_consistency(model, batch: torch.Tensor) -> float:
+    n = batch.size(1)
+    perms = torch.stack([torch.randperm(n, device=batch.device) for _ in range(batch.size(0))], dim=0)
+    with torch.no_grad():
+        _, _, pi = model(batch, return_pi=True)
+        permuted = torch.stack([permute_nodes(batch[i], perms[i]) for i in range(batch.size(0))], dim=0)
+        _, _, pi_perm = model(permuted, return_pi=True)
+    tails, heads = edges_from_pi(pi)
+    ptails, pheads = edges_from_pi(pi_perm)
+    exact = []
+    for i in range(batch.size(0)):
+        inv = inverse_permutation(perms[i])
+        mapped_t = inv[ptails[i]]
+        mapped_h = inv[pheads[i]]
+        s1 = build_successor(tails[i:i+1], heads[i:i+1])[0]
+        s2 = build_successor(mapped_t.unsqueeze(0), mapped_h.unsqueeze(0))[0]
+        exact.append((s1 == s2).all())
+    return float(torch.stack(exact).float().mean().item())
 
 
 def main():
@@ -136,7 +158,11 @@ def main():
         "dataset": dataset_path,
         "dataset_metadata": dataset_metadata,
         "checkpoint": args.checkpoint,
+        "permutation_consistency": None,
     }
+    # small consistency probe on first batch
+    probe_batch = next(iter(dataloader)).to(device)
+    result["permutation_consistency"] = _permutation_consistency(model, probe_batch)
     print(json.dumps(result, indent=2, ensure_ascii=False))
 
     output_root = Path(config.get("output", {}).get("root", "outputs"))

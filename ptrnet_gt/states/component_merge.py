@@ -90,6 +90,39 @@ class ComponentMergeState(NamedTuple):
         active.scatter_(1, self.component_id, True)
         return active.sum(dim=1)
 
+    def get_node_role_features(self):
+        device = self.coords.device
+        batch_size, n_nodes = self.batch_size, self.n_nodes
+        batch_idx = torch.arange(batch_size, device=device)[:, None]
+        node_idx = torch.arange(n_nodes, device=device)[None, :].expand(batch_size, n_nodes)
+
+        component_sizes = self.component_size[batch_idx, self.component_id]
+        component_starts = self.component_start[batch_idx, self.component_id]
+        component_ends = self.component_end[batch_idx, self.component_id]
+
+        is_isolated = (component_sizes == 1).float()
+        is_start = ((node_idx == component_starts) & (component_sizes > 1)).float()
+        is_end = ((node_idx == component_ends) & (component_sizes > 1)).float()
+        is_internal = (1.0 - is_isolated - is_start - is_end).clamp(min=0.0)
+        normalized_component_size = component_sizes.float() / float(n_nodes)
+        step_ratio = torch.full((batch_size, n_nodes), float(self.step.item()) / float(n_nodes), device=device)
+        in_degree = self.in_degree.float()
+        out_degree = self.out_degree.float()
+
+        return torch.stack(
+            (
+                is_isolated,
+                is_start,
+                is_end,
+                is_internal,
+                normalized_component_size,
+                step_ratio,
+                in_degree,
+                out_degree,
+            ),
+            dim=-1,
+        )
+
     def update_edge(self, edge_idx: torch.Tensor):
         n_nodes = self.n_nodes
         tail_idx = torch.div(edge_idx, n_nodes, rounding_mode='floor')

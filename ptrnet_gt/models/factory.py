@@ -20,6 +20,8 @@ def build_model(config: dict, problem):
     if model_name == "component_merge":
         return ComponentMergeDecoder(
             context_mode=model_cfg.get("context_mode", "cross_step"),
+            action_mode=model_cfg.get("action_mode", "tail_head"),
+            use_dynamic_role_features=model_cfg.get("use_dynamic_role_features", False),
             mask_inner=model_cfg.get("mask_inner", True),
             mask_logits=model_cfg.get("mask_logits", True),
             n_heads=model_cfg.get("n_heads", 8),

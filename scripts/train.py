@@ -20,7 +20,7 @@ import torch.optim as optim
 from ptrnet_gt.config import apply_overrides, load_config
 from ptrnet_gt.models.factory import build_model
 from ptrnet_gt.problems import TSP
-from ptrnet_gt.training import ExponentialBaseline, NoBaseline, RolloutBaseline, WarmupBaseline, train_epoch, validate
+from ptrnet_gt.training import ExponentialBaseline, NoBaseline, RolloutBaseline, WarmupBaseline, train_epoch, validate, train_supervised_epoch
 from ptrnet_gt.utils.data import training_budget_from_config
 
 
@@ -68,6 +68,7 @@ def _make_opts(config: dict, run_dir: Path) -> AttrDict:
         baseline=train_cfg.get("baseline", "rollout"),
         early_stop_patience=train_cfg.get("early_stop_patience"),
         early_stop_min_delta=train_cfg.get("early_stop_min_delta", 0.0),
+        consistency_weight=train_cfg.get("consistency_weight", 0.0),
     )
 
 
@@ -92,6 +93,7 @@ def main():
     opts = _make_opts(config, run_dir)
 
     baseline_name = config.get("training", {}).get("baseline", "rollout")
+    objective = config.get("training", {}).get("objective", "reinforce")
     if baseline_name == "rollout":
         baseline = RolloutBaseline(model, problem, opts)
     elif baseline_name == "exponential":
@@ -117,7 +119,18 @@ def main():
     epochs_without_improvement = 0
 
     for epoch in range(opts.epoch_start, opts.epoch_start + opts.n_epochs):
-        epoch_result = train_epoch(model, optimizer, baseline, lr_scheduler, epoch, val_dataset, problem, None, opts)
+        if objective == "reinforce":
+            epoch_result = train_epoch(model, optimizer, baseline, lr_scheduler, epoch, val_dataset, problem, None, opts)
+        else:
+            sup_result = train_supervised_epoch(model, optimizer, epoch, problem, opts, objective=objective)
+            lr_scheduler.step()
+            avg_cost, std_cost = validate(model, val_dataset, opts)
+            class _R: pass
+            epoch_result = _R()
+            epoch_result.avg_cost = avg_cost
+            epoch_result.std_cost = std_cost
+            epoch_result.epoch_duration = 0.0
+            print(f"Supervised epoch {epoch}: loss={sup_result.avg_loss:.6f}, rollout_cost={sup_result.avg_cost:.6f}")
 
         improved = (
             best_val_cost is None
