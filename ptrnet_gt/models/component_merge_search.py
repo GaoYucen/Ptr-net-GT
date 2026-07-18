@@ -24,6 +24,8 @@ def _beam_search_single_encoded(model, coords: torch.Tensor, embeddings: torch.T
     batch = coords.unsqueeze(0)
     initial = BeamCandidate(state=ComponentMergeState.initialize(batch), log_prob=0.0, sequence=[])
     beams = [initial]
+    expanded_counts = []
+    kept_counts = []
     duplicate_edge_counts = []
     duplicate_component_counts = []
     unique_edge_states_per_step = []
@@ -64,6 +66,8 @@ def _beam_search_single_encoded(model, coords: torch.Tensor, embeddings: torch.T
         if not expanded:
             raise RuntimeError("Beam search produced no valid expansions")
 
+        expanded_counts.append(len(expanded))
+
         edge_seen = {}
         component_seen = {}
         for cand in expanded:
@@ -89,6 +93,7 @@ def _beam_search_single_encoded(model, coords: torch.Tensor, embeddings: torch.T
 
         expanded.sort(key=lambda cand: cand.log_prob, reverse=True)
         beams = expanded[:beam_size]
+        kept_counts.append(len(beams))
 
     best = beams[0]
     pi = torch.tensor(best.sequence, device=device, dtype=torch.long).unsqueeze(0)
@@ -96,6 +101,11 @@ def _beam_search_single_encoded(model, coords: torch.Tensor, embeddings: torch.T
     return {
         "cost": cost,
         "pi": pi,
+        "expanded_candidates_per_step": expanded_counts,
+        "kept_candidates_per_step": kept_counts,
+        "mean_expanded_candidates_per_step": float(sum(expanded_counts) / max(len(expanded_counts), 1)),
+        "mean_kept_candidates_per_step": float(sum(kept_counts) / max(len(kept_counts), 1)),
+        "dedup_retention_rate": float(sum(kept_counts) / max(sum(expanded_counts), 1)),
         "duplicate_edge_state_rate": float(sum(duplicate_edge_counts) / max(sum(unique_edge_states_per_step) + sum(duplicate_edge_counts), 1)),
         "duplicate_component_state_rate": float(sum(duplicate_component_counts) / max(sum(unique_component_states_per_step) + sum(duplicate_component_counts), 1)),
         "unique_edge_states_per_step": unique_edge_states_per_step,
@@ -118,6 +128,9 @@ def component_merge_beam_search_batched(model, coords_batch: torch.Tensor, beam_
     batch_pis = []
     duplicate_edge_state_rates = []
     duplicate_component_state_rates = []
+    dedup_retention_rates = []
+    mean_expanded_candidates = []
+    mean_kept_candidates = []
     unique_edge_states = []
     unique_component_states = []
 
@@ -133,6 +146,9 @@ def component_merge_beam_search_batched(model, coords_batch: torch.Tensor, beam_
         batch_pis.append(result["pi"])
         duplicate_edge_state_rates.append(result["duplicate_edge_state_rate"])
         duplicate_component_state_rates.append(result["duplicate_component_state_rate"])
+        dedup_retention_rates.append(result["dedup_retention_rate"])
+        mean_expanded_candidates.append(result["mean_expanded_candidates_per_step"])
+        mean_kept_candidates.append(result["mean_kept_candidates_per_step"])
         unique_edge_states.extend(result["unique_edge_states_per_step"])
         unique_component_states.extend(result["unique_component_states_per_step"])
 
@@ -141,6 +157,9 @@ def component_merge_beam_search_batched(model, coords_batch: torch.Tensor, beam_
         "pi": torch.cat(batch_pis, dim=0),
         "duplicate_edge_state_rates": duplicate_edge_state_rates,
         "duplicate_component_state_rates": duplicate_component_state_rates,
+        "dedup_retention_rates": dedup_retention_rates,
+        "mean_expanded_candidates_per_instance": mean_expanded_candidates,
+        "mean_kept_candidates_per_instance": mean_kept_candidates,
         "unique_edge_states_per_step": unique_edge_states,
         "unique_component_states_per_step": unique_component_states,
     }

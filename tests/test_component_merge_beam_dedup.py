@@ -58,9 +58,16 @@ class TestCanonicalizationAndBeamDedup(unittest.TestCase):
         self.assertEqual(result["pi"].shape, (1, 8))
         self.assertEqual(result["cost"].shape, (1,))
         self.assertIn("duplicate_edge_state_rate", result)
+        self.assertIn("dedup_retention_rate", result)
+        self.assertIn("expanded_candidates_per_step", result)
+        self.assertIn("kept_candidates_per_step", result)
         self.assertIn("unique_edge_states_per_step", result)
         self.assertGreaterEqual(result["duplicate_edge_state_rate"], 0.0)
+        self.assertGreaterEqual(result["dedup_retention_rate"], 0.0)
+        self.assertLessEqual(result["dedup_retention_rate"], 1.0)
         self.assertEqual(len(result["unique_edge_states_per_step"]), 4)
+        self.assertEqual(len(result["expanded_candidates_per_step"]), 4)
+        self.assertEqual(len(result["kept_candidates_per_step"]), 4)
 
 
 if __name__ == "__main__":

@@ -150,6 +150,20 @@ def _permutation_metrics(model, batch: torch.Tensor) -> dict:
     return metrics
 
 
+def _maybe_compute_permutation_metrics(model, dataloader, device: torch.device, enabled: bool) -> dict:
+    if not enabled:
+        return {
+            "permutation_exact_successor_consistency": None,
+            "permutation_edge_jaccard": None,
+            "permutation_edge_recall": None,
+            "permutation_relative_length_diff": None,
+            "permutation_action_prob_equiv_error": None,
+            "permutation_consistency": None,
+        }
+    probe_batch = next(iter(dataloader)).to(device)
+    return _permutation_metrics(model, probe_batch)
+
+
 def main():
     parser = argparse.ArgumentParser(description="Ptr-net-GT unified evaluation entry")
     parser.add_argument("--config", required=True, help="Path to config file")
@@ -160,6 +174,7 @@ def main():
     parser.add_argument("--decode", choices=["greedy", "beam"], default="greedy", help="Decode strategy")
     parser.add_argument("--beam-size", type=int, default=4, help="Beam width when --decode beam")
     parser.add_argument("--beam-dedup", action="store_true", help="Deduplicate equivalent selected-edge states during beam expansion")
+    parser.add_argument("--skip-permutation-probe", action="store_true", help="Skip permutation consistency probe on the first evaluation batch")
     args = parser.parse_args()
 
     config = apply_overrides(load_config(args.config), args.override)
@@ -193,6 +208,9 @@ def main():
     duplicate_component_state_rates = []
     unique_edge_states = []
     unique_component_states = []
+    dedup_retention_rates = []
+    mean_expanded_candidates = []
+    mean_kept_candidates = []
     start = torch.cuda.Event(enable_timing=True) if device.type == "cuda" else None
     end = torch.cuda.Event(enable_timing=True) if device.type == "cuda" else None
     import time
@@ -215,6 +233,9 @@ def main():
                 pi = beam_result["pi"]
                 duplicate_edge_state_rates.extend(beam_result["duplicate_edge_state_rates"])
                 duplicate_component_state_rates.extend(beam_result["duplicate_component_state_rates"])
+                dedup_retention_rates.extend(beam_result["dedup_retention_rates"])
+                mean_expanded_candidates.extend(beam_result["mean_expanded_candidates_per_instance"])
+                mean_kept_candidates.extend(beam_result["mean_kept_candidates_per_instance"])
                 unique_edge_states.extend(beam_result["unique_edge_states_per_step"])
                 unique_component_states.extend(beam_result["unique_component_states_per_step"])
             else:
@@ -264,13 +285,21 @@ def main():
         "beam_dedup": bool(args.beam_dedup) if args.decode == "beam" else None,
         "duplicate_edge_state_rate": float(sum(duplicate_edge_state_rates) / max(len(duplicate_edge_state_rates), 1)) if duplicate_edge_state_rates else None,
         "duplicate_component_state_rate": float(sum(duplicate_component_state_rates) / max(len(duplicate_component_state_rates), 1)) if duplicate_component_state_rates else None,
+        "beam_dedup_retention_rate": float(sum(dedup_retention_rates) / max(len(dedup_retention_rates), 1)) if dedup_retention_rates else None,
+        "mean_expanded_candidates_per_step": float(sum(mean_expanded_candidates) / max(len(mean_expanded_candidates), 1)) if mean_expanded_candidates else None,
+        "mean_kept_candidates_per_step": float(sum(mean_kept_candidates) / max(len(mean_kept_candidates), 1)) if mean_kept_candidates else None,
         "mean_unique_edge_states_per_step": float(sum(unique_edge_states) / max(len(unique_edge_states), 1)) if unique_edge_states else None,
         "mean_unique_component_states_per_step": float(sum(unique_component_states) / max(len(unique_component_states), 1)) if unique_component_states else None,
         "permutation_consistency": None,
     }
-    # small consistency probe on first batch
-    probe_batch = next(iter(dataloader)).to(device)
-    result.update(_permutation_metrics(model, probe_batch))
+    result.update(
+        _maybe_compute_permutation_metrics(
+            model,
+            dataloader,
+            device,
+            enabled=not args.skip_permutation_probe,
+        )
+    )
     print(json.dumps(result, indent=2, ensure_ascii=False))
 
     output_root = Path(config.get("output", {}).get("root", "outputs"))
