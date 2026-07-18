@@ -51,6 +51,10 @@ class ComponentMergeDecoder(nn.Module):
         context_mode="cross_step",
         action_mode="tail_head",
         use_dynamic_role_features=False,
+        use_role_feature_projection=False,
+        role_embedding_dim=None,
+        use_distance_projection=False,
+        distance_embedding_dim=None,
     ):
         super().__init__()
         self.embedding_dim = embedding_dim
@@ -68,6 +72,11 @@ class ComponentMergeDecoder(nn.Module):
         self.context_mode = context_mode
         self.action_mode = action_mode
         self.use_dynamic_role_features = use_dynamic_role_features
+        self.use_role_feature_projection = use_role_feature_projection and use_dynamic_role_features
+        self.role_feature_dim = 8 if use_dynamic_role_features else 0
+        self.role_embedding_dim = role_embedding_dim or embedding_dim
+        self.use_distance_projection = use_distance_projection
+        self.distance_embedding_dim = distance_embedding_dim or embedding_dim
 
         self.init_embed = nn.Linear(2, embedding_dim)
         self.embedder = GraphAttentionEncoder(
@@ -86,8 +95,29 @@ class ComponentMergeDecoder(nn.Module):
         self.project_out_head = nn.Linear(embedding_dim, embedding_dim, bias=False)
         self.W_placeholder_tail = nn.Parameter(torch.Tensor(embedding_dim))
         self.W_placeholder_tail.data.uniform_(-1, 1)
-        self.role_feature_dim = 8 if use_dynamic_role_features else 0
-        edge_feature_dim = 4 * embedding_dim + 2 * self.role_feature_dim + 1
+        if self.use_role_feature_projection:
+            self.role_mlp = nn.Sequential(
+                nn.Linear(self.role_feature_dim, self.role_embedding_dim),
+                nn.ReLU(),
+                nn.Linear(self.role_embedding_dim, self.role_embedding_dim),
+            )
+            role_edge_dim = 2 * self.role_embedding_dim
+        else:
+            self.role_mlp = None
+            role_edge_dim = 2 * self.role_feature_dim
+
+        if self.use_distance_projection:
+            self.distance_mlp = nn.Sequential(
+                nn.Linear(1, self.distance_embedding_dim),
+                nn.ReLU(),
+                nn.Linear(self.distance_embedding_dim, self.distance_embedding_dim),
+            )
+            distance_edge_dim = self.distance_embedding_dim
+        else:
+            self.distance_mlp = None
+            distance_edge_dim = 1
+
+        edge_feature_dim = 4 * embedding_dim + role_edge_dim + distance_edge_dim
         self.edge_score = nn.Sequential(
             nn.Linear(edge_feature_dim, hidden_dim),
             nn.ReLU(),
@@ -201,9 +231,13 @@ class ComponentMergeDecoder(nn.Module):
         parts = [node_i, node_j, node_i * node_j, torch.abs(node_i - node_j)]
         if self.use_dynamic_role_features:
             role_features = state.get_node_role_features()
+            if self.use_role_feature_projection:
+                role_features = self.role_mlp(role_features)
             role_i = role_features[:, :, None, :].expand(-1, -1, state.n_nodes, -1)
             role_j = role_features[:, None, :, :].expand(-1, state.n_nodes, -1, -1)
             parts.extend([role_i, role_j])
+        if self.use_distance_projection:
+            dist = self.distance_mlp(dist)
         parts.append(dist)
         edge_features = torch.cat(parts, dim=-1)
         logits = self.edge_score(edge_features).squeeze(-1)

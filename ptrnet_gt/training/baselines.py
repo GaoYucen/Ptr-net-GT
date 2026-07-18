@@ -139,8 +139,15 @@ class RolloutBaseline(Baseline):
                 dataset = None
 
         if dataset is None:
-            self.dataset = self.problem.make_dataset(
-                size=self.opts.graph_size, num_samples=self.opts.val_size, distribution=self.opts.data_distribution)
+            baseline_dataset_path = getattr(self.opts, "baseline_dataset", None)
+            if baseline_dataset_path:
+                self.dataset = self.problem.make_dataset(
+                    filename=baseline_dataset_path,
+                    num_samples=self.opts.val_size,
+                )
+            else:
+                self.dataset = self.problem.make_dataset(
+                    size=self.opts.graph_size, num_samples=self.opts.val_size, distribution=self.opts.data_distribution)
         else:
             self.dataset = dataset
         print("Evaluating baseline model on evaluation dataset")

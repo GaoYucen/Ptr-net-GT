@@ -43,6 +43,7 @@ def _make_opts(config: dict, run_dir: Path) -> AttrDict:
     train_cfg = config.get("training", {})
     experiment_cfg = config.get("experiment", {})
     output_cfg = config.get("output", {})
+    data_cfg = config.get("data", {})
     use_cuda = torch.cuda.is_available() and train_cfg.get("use_cuda", True)
     return AttrDict(
         graph_size=problem_cfg.get("size", 20),
@@ -69,6 +70,9 @@ def _make_opts(config: dict, run_dir: Path) -> AttrDict:
         early_stop_patience=train_cfg.get("early_stop_patience"),
         early_stop_min_delta=train_cfg.get("early_stop_min_delta", 0.0),
         consistency_weight=train_cfg.get("consistency_weight", 0.0),
+        train_dataset=data_cfg.get("train_dataset"),
+        val_dataset=data_cfg.get("val_dataset") or config.get("evaluation", {}).get("dataset"),
+        baseline_dataset=data_cfg.get("baseline_dataset") or data_cfg.get("val_dataset") or config.get("evaluation", {}).get("dataset"),
     )
 
 
@@ -94,6 +98,10 @@ def main():
 
     baseline_name = config.get("training", {}).get("baseline", "rollout")
     objective = config.get("training", {}).get("objective", "reinforce")
+    if objective == "orbit_sum":
+        print("Using supervised orbit-sum objective (grouped equivalent-action probability mass).")
+    elif objective == "equiv_set":
+        print("Using supervised equiv_set objective (legacy alias of orbit_sum).")
     if baseline_name == "rollout":
         baseline = RolloutBaseline(model, problem, opts)
     elif baseline_name == "exponential":
@@ -107,7 +115,7 @@ def main():
 
     optimizer = optim.Adam(model.parameters(), lr=config.get("training", {}).get("learning_rate", 1e-4))
     lr_scheduler = optim.lr_scheduler.LambdaLR(optimizer, lambda epoch: config.get("training", {}).get("lr_decay", 1.0) ** epoch)
-    val_dataset_path = config.get("data", {}).get("val_dataset") or config.get("evaluation", {}).get("dataset")
+    val_dataset_path = opts.val_dataset
     if val_dataset_path:
         val_dataset = problem.make_dataset(filename=val_dataset_path, num_samples=config.get("training", {}).get("val_size", 256))
     else:

@@ -80,8 +80,18 @@ def train_epoch(model, optimizer, baseline, lr_scheduler, epoch, val_dataset, pr
     if not opts.no_tensorboard and tb_logger is not None:
         tb_logger.log_value('learnrate_pg0', optimizer.param_groups[0]['lr'], step)
 
-    training_dataset = baseline.wrap_dataset(problem.make_dataset(
-        size=opts.graph_size, num_samples=opts.epoch_size, distribution=opts.data_distribution))
+    if getattr(opts, "train_dataset", None):
+        raw_training_dataset = problem.make_dataset(
+            filename=opts.train_dataset,
+            num_samples=opts.epoch_size,
+        )
+    else:
+        raw_training_dataset = problem.make_dataset(
+            size=opts.graph_size,
+            num_samples=opts.epoch_size,
+            distribution=opts.data_distribution,
+        )
+    training_dataset = baseline.wrap_dataset(raw_training_dataset)
     training_dataloader = DataLoader(training_dataset, batch_size=opts.batch_size, num_workers=0)
 
     model.train()

@@ -50,10 +50,24 @@ def _masked_prob_mse(log_p: torch.Tensor, perm_log_p: torch.Tensor, permutation:
     return torch.zeros((), device=log_p.device)
 
 
+def orbit_logsumexp_loss(log_p: torch.Tensor, orbit_mask: torch.Tensor) -> torch.Tensor:
+    if orbit_mask.dtype != torch.bool:
+        orbit_mask = orbit_mask.bool()
+    has_target = orbit_mask.any(dim=1)
+    if not has_target.all():
+        missing = (~has_target).nonzero(as_tuple=False).view(-1).tolist()
+        raise ValueError(f"Orbit supervision mask is empty for batch indices: {missing}")
+    masked = log_p.masked_fill(~orbit_mask, float("-inf"))
+    return -torch.logsumexp(masked, dim=1).mean()
+
+
 def train_supervised_epoch(model, optimizer, epoch, problem, opts, objective="fixed_order"):
     model.train()
     model.set_decode_type("greedy")
-    dataset = problem.make_dataset(size=opts.graph_size, num_samples=opts.epoch_size, distribution=opts.data_distribution)
+    if getattr(opts, "train_dataset", None):
+        dataset = problem.make_dataset(filename=opts.train_dataset, num_samples=opts.epoch_size)
+    else:
+        dataset = problem.make_dataset(size=opts.graph_size, num_samples=opts.epoch_size, distribution=opts.data_distribution)
     loader = DataLoader(dataset, batch_size=opts.batch_size, num_workers=0)
     losses = []
     costs = []
@@ -92,10 +106,9 @@ def train_supervised_epoch(model, optimizer, epoch, problem, opts, objective="fi
                         for i in range(x.size(0))
                     ]).mean())
                     perm_state = perm_state.update(perm_tails, perm_heads)
-            elif objective == "equiv_set":
+            elif objective in {"equiv_set", "orbit_sum"}:
                 legal_target = (target_edges & (~state.selected_edges) & (~state.get_edge_mask())).view(x.size(0), -1)
-                masked = log_p.masked_fill(~legal_target, float("-inf"))
-                step_losses.append(-torch.logsumexp(masked, dim=1).mean())
+                step_losses.append(orbit_logsumexp_loss(log_p, legal_target))
                 next_idx = legal_target.float().argmax(dim=1)
                 state = state.update_edge(next_idx)
                 if consistency_weight > 0:
@@ -122,3 +135,6 @@ def train_supervised_epoch(model, optimizer, epoch, problem, opts, objective="fi
         losses.append(loss.detach())
         costs.append(state.get_final_cost().detach().mean())
     return SupervisedEpochResult(avg_loss=torch.stack(losses).mean().item(), avg_cost=torch.stack(costs).mean().item())
+
+
+__all__ = ["SupervisedEpochResult", "orbit_logsumexp_loss", "train_supervised_epoch"]

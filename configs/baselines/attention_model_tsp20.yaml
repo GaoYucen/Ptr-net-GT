@@ -30,6 +30,12 @@ budget:
   decode_type: greedy
   seeds: [1234, 1235, 1236]
 
+data:
+  train_dataset: data/tsp_uniform/tsp20_train_65536.pt
+  val_dataset: data/tsp_uniform/tsp20_val_10000.pt
+  test_dataset: data/tsp_uniform/tsp20_test_10000.pt
+  baseline_dataset: data/tsp_uniform/tsp20_val_10000.pt
+
 evaluation:
   batch_size: 512
   dataset: data/tsp_uniform/tsp20_test_10000.pt
