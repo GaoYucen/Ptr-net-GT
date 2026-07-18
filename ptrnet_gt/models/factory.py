@@ -26,6 +26,7 @@ def build_model(config: dict, problem):
             role_embedding_dim=model_cfg.get("role_embedding_dim"),
             use_distance_projection=model_cfg.get("use_distance_projection", False),
             distance_embedding_dim=model_cfg.get("distance_embedding_dim"),
+            encoder_type=model_cfg.get("encoder_type", "graph_attention"),
             mask_inner=model_cfg.get("mask_inner", True),
             mask_logits=model_cfg.get("mask_logits", True),
             n_heads=model_cfg.get("n_heads", 8),

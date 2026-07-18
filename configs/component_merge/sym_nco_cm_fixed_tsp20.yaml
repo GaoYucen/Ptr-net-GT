@@ -1,0 +1,50 @@
+experiment:
+  name: sym_nco_cm_fixed_tsp20
+  seed: 1234
+
+problem:
+  name: tsp
+  size: 20
+
+model:
+  name: component_merge
+  encoder_type: sym_nco
+  embedding_dim: 128
+  hidden_dim: 128
+  n_encode_layers: 6
+  n_heads: 8
+  context_mode: cross_step
+  action_mode: joint_edge
+
+training:
+  objective: fixed_order
+  symmetry_weight: 1.0
+  symmetry_aug_factor: 2
+  batch_size: 512
+  epoch_size: 65536
+  epochs: 10
+  learning_rate: 0.0001
+  baseline: rollout
+  no_progress_bar: true
+  log_step: 0
+  progress_bar_mininterval: 30.0
+  early_stop_patience: 3
+  early_stop_min_delta: 0.001
+
+budget:
+  protocol: same_training_budget_v1
+  decode_type: greedy
+  seeds: [1234, 1235, 1236]
+
+data:
+  train_dataset: data/tsp_uniform/tsp20_train_65536.pt
+  val_dataset: data/tsp_uniform/tsp20_val_1000.pt
+  test_dataset: data/tsp_uniform/tsp20_test_1000.pt
+  baseline_dataset: data/tsp_uniform/tsp20_val_1000.pt
+
+evaluation:
+  batch_size: 512
+  dataset: data/tsp_uniform/tsp20_test_1000.pt
+
+output:
+  root: outputs

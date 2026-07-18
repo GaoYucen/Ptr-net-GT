@@ -155,6 +155,53 @@ KMP_DUPLICATE_LIB_OK=TRUE python scripts/evaluate.py \
 
 ---
 
+## Orbit-sum 快速单 seed 验证
+
+如果你只想快速检查 `fixed_order` 与 `orbit_sum` 在**小预算**下是否已经出现方向性差异，可以直接运行：
+
+```bash
+KMP_DUPLICATE_LIB_OK=TRUE /opt/conda/envs/py11/bin/python scripts/run_orbit_sum_quick_curve.py \
+  --config configs/component_merge/tsp20.yaml \
+  --samples 2048 4096 8192 16384 \
+  --batch-size 64 \
+  --val-size 128 \
+  --seed 1234 \
+  --skip-permutation-probe
+```
+
+这个脚本会：
+
+1. 对每个预算点分别训练 `fixed_order` 与 `orbit_sum`；
+2. 默认只跑 **1 epoch / 1 seed**，用于快速 smoke 验证；
+3. 自动调用 `scripts/evaluate.py` 做 greedy 评估；
+4. 将汇总结果写入：
+
+```text
+outputs/orbit_sum_quick_curve/results.json
+```
+
+建议优先关注每条记录中的：
+
+- `objective`
+- `train_samples_budget`
+- `mean_tour_length`
+- `training_samples`
+- `training_updates`
+
+如果你只想先做更短的试跑，可以把预算进一步缩小，例如：
+
+```bash
+KMP_DUPLICATE_LIB_OK=TRUE /opt/conda/envs/py11/bin/python scripts/run_orbit_sum_quick_curve.py \
+  --config configs/component_merge/tsp20.yaml \
+  --samples 1024 2048 \
+  --batch-size 64 \
+  --val-size 64 \
+  --seed 1234 \
+  --skip-permutation-probe
+```
+
+---
+
 ## Baseline 与 Reference 工作流
 
 当前仓库已支持一条统一的 baseline / reference 对比链路：

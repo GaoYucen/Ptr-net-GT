@@ -6,6 +6,7 @@ import torch
 from torch.utils.data import DataLoader
 
 from ptrnet_gt.baselines.nearest_neighbor import nearest_neighbor_multistart_tour
+from ptrnet_gt.group_theory.geometric_augmentation import augment_xy_data_by_n_fold
 from ptrnet_gt.group_theory.permutation import inverse_permutation, permute_nodes
 from ptrnet_gt.states import ComponentMergeState
 from ptrnet_gt.utils import move_to
@@ -61,6 +62,16 @@ def orbit_logsumexp_loss(log_p: torch.Tensor, orbit_mask: torch.Tensor) -> torch
     return -torch.logsumexp(masked, dim=1).mean()
 
 
+def symmetry_representation_loss(embeddings: torch.Tensor, batch_size: int, aug_factor: int) -> torch.Tensor:
+    graph_repr = embeddings.mean(dim=1).view(aug_factor, batch_size, -1)
+    if aug_factor <= 1:
+        return torch.zeros((), device=embeddings.device)
+    anchor = torch.nn.functional.normalize(graph_repr[0], dim=-1)
+    others = torch.nn.functional.normalize(graph_repr[1:], dim=-1)
+    positive = (anchor.unsqueeze(0) * others).sum(dim=-1)
+    return (1.0 - positive).mean()
+
+
 def train_supervised_epoch(model, optimizer, epoch, problem, opts, objective="fixed_order"):
     model.train()
     model.set_decode_type("greedy")
@@ -72,12 +83,19 @@ def train_supervised_epoch(model, optimizer, epoch, problem, opts, objective="fi
     losses = []
     costs = []
     consistency_weight = float(getattr(opts, "consistency_weight", 0.0))
+    symmetry_weight = float(getattr(opts, "symmetry_weight", 0.0))
+    symmetry_aug_factor = int(getattr(opts, "symmetry_aug_factor", 1))
     for batch in loader:
         x = move_to(batch, opts.device)
         tour = nearest_neighbor_multistart_tour(x)
         tails, heads = _tour_to_edge_pairs(tour)
         target_edges = _target_edge_matrix(tails, heads, x.size(1))
         embeddings = model.encode(x)
+        symmetry_loss = torch.zeros((), device=x.device)
+        if symmetry_weight > 0 and symmetry_aug_factor > 1:
+            sym_x = augment_xy_data_by_n_fold(x, symmetry_aug_factor)
+            sym_embeddings = model.encode(sym_x)
+            symmetry_loss = symmetry_representation_loss(sym_embeddings, x.size(0), symmetry_aug_factor)
         state = ComponentMergeState.initialize(x)
         step_losses = []
         consistency_losses = []
@@ -129,6 +147,8 @@ def train_supervised_epoch(model, optimizer, epoch, problem, opts, objective="fi
         loss = torch.stack(step_losses).mean()
         if consistency_losses:
             loss = loss + consistency_weight * torch.stack(consistency_losses).mean()
+        if symmetry_weight > 0:
+            loss = loss + symmetry_weight * symmetry_loss
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()

@@ -7,6 +7,7 @@ from torch.nn import DataParallel
 from torch.utils.checkpoint import checkpoint
 
 from ptrnet_gt.models.graph_encoder import GraphAttentionEncoder
+from ptrnet_gt.models.sym_nco_encoder import SymNCOGraphEncoder
 from ptrnet_gt.states import ComponentMergeState
 
 
@@ -55,6 +56,7 @@ class ComponentMergeDecoder(nn.Module):
         role_embedding_dim=None,
         use_distance_projection=False,
         distance_embedding_dim=None,
+        encoder_type="graph_attention",
     ):
         super().__init__()
         self.embedding_dim = embedding_dim
@@ -77,14 +79,23 @@ class ComponentMergeDecoder(nn.Module):
         self.role_embedding_dim = role_embedding_dim or embedding_dim
         self.use_distance_projection = use_distance_projection
         self.distance_embedding_dim = distance_embedding_dim or embedding_dim
+        self.encoder_type = encoder_type
 
         self.init_embed = nn.Linear(2, embedding_dim)
-        self.embedder = GraphAttentionEncoder(
-            n_heads=n_heads,
-            embed_dim=embedding_dim,
-            n_layers=self.n_encode_layers,
-            normalization=normalization,
-        )
+        if encoder_type == "sym_nco":
+            self.embedder = SymNCOGraphEncoder(
+                n_heads=n_heads,
+                embedding_dim=embedding_dim,
+                n_layers=self.n_encode_layers,
+            )
+            self.init_embed = None
+        else:
+            self.embedder = GraphAttentionEncoder(
+                n_heads=n_heads,
+                embed_dim=embedding_dim,
+                n_layers=self.n_encode_layers,
+                normalization=normalization,
+            )
         self.project_node_embeddings = nn.Linear(embedding_dim, 3 * embedding_dim, bias=False)
         self.project_fixed_context = nn.Linear(embedding_dim, embedding_dim, bias=False)
 
@@ -140,6 +151,8 @@ class ComponentMergeDecoder(nn.Module):
         return cost, ll
 
     def _init_embed(self, input):
+        if self.init_embed is None:
+            return input
         return self.init_embed(input)
 
     def encode(self, input):

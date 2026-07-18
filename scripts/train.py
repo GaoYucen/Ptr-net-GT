@@ -70,6 +70,8 @@ def _make_opts(config: dict, run_dir: Path) -> AttrDict:
         early_stop_patience=train_cfg.get("early_stop_patience"),
         early_stop_min_delta=train_cfg.get("early_stop_min_delta", 0.0),
         consistency_weight=train_cfg.get("consistency_weight", 0.0),
+        symmetry_weight=train_cfg.get("symmetry_weight", 0.0),
+        symmetry_aug_factor=train_cfg.get("symmetry_aug_factor", 1),
         train_dataset=data_cfg.get("train_dataset"),
         val_dataset=data_cfg.get("val_dataset") or config.get("evaluation", {}).get("dataset"),
         baseline_dataset=data_cfg.get("baseline_dataset") or data_cfg.get("val_dataset") or config.get("evaluation", {}).get("dataset"),
