@@ -22,13 +22,13 @@ training:
 
 data:
   train_dataset: data/tsp_uniform/tsp50_train_65536.pt
-  val_dataset: data/tsp_uniform/tsp50_val_10000.pt
-  test_dataset: data/tsp_uniform/tsp50_test_10000.pt
-  baseline_dataset: data/tsp_uniform/tsp50_val_10000.pt
+  val_dataset: data/tsp_uniform/tsp50_val_1000.pt
+  test_dataset: data/tsp_uniform/tsp50_test_1000.pt
+  baseline_dataset: data/tsp_uniform/tsp50_val_1000.pt
 
 evaluation:
   batch_size: 512
-  dataset: data/tsp_uniform/tsp50_test_10000.pt
+  dataset: data/tsp_uniform/tsp50_test_1000.pt
 
 output:
   root: outputs

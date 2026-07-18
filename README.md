@@ -27,7 +27,14 @@ Ptr-net-GT/
 ├── scripts/
 │   ├── train.py               # 训练入口
 │   ├── evaluate.py            # 评估入口
+│   ├── evaluate_baselines.py  # 传统 / 仓库内 baseline 评估
+│   ├── solve_reference.py     # Concorde / LKH reference 统一入口
 │   └── inspect_checkpoint.py  # checkpoint 结构查看
+├── external_baselines/        # 外部 baseline 适配脚本
+│   ├── concorde/
+│   ├── lkh/
+│   ├── rl4co/
+│   └── sym_nco/
 ├── tests/                     # 单元测试与等变性测试
 ├── checkpoints/               # 本地权重目录
 ├── outputs/                   # 训练与评估输出
@@ -145,6 +152,119 @@ KMP_DUPLICATE_LIB_OK=TRUE python scripts/evaluate.py \
 - cost 标准差
 - 可行 tour 比例
 - cost 一致性误差
+
+---
+
+## Baseline 与 Reference 工作流
+
+当前仓库已支持一条统一的 baseline / reference 对比链路：
+
+1. 生成固定测试集；
+2. 用 Concorde 或 LKH-3 生成参考 `costs`；
+3. 用 `scripts/evaluate_baselines.py` 评估传统方法、仓库内神经方法；
+4. 用 `scripts/aggregate_results.py` 汇总结果。
+
+### 1. 生成固定测试集
+
+```bash
+KMP_DUPLICATE_LIB_OK=TRUE /opt/conda/envs/py11/bin/python scripts/generate_tsp_dataset.py \
+  --size 20 \
+  --num-instances 10000 \
+  --seed 1234 \
+  --output data/tsp_uniform/tsp20_test_10000.pt
+```
+
+### 2. 生成 reference 解
+
+#### 小规模：Concorde（默认只建议 `TSP50 以下`）
+
+```bash
+KMP_DUPLICATE_LIB_OK=TRUE /opt/conda/envs/py11/bin/python scripts/solve_reference.py \
+  --solver concorde \
+  --dataset data/tsp_uniform/tsp20_test_10000.pt \
+  --output data/tsp_uniform/reference/tsp20_concorde.pt
+```
+
+> `Concorde` 默认只用于小规模；当 `size >= 50` 时，脚本会默认拒绝运行，避免把高耗时设置误当成常规 baseline。
+
+#### 中大规模：LKH-3
+
+```bash
+KMP_DUPLICATE_LIB_OK=TRUE /opt/conda/envs/py11/bin/python scripts/solve_reference.py \
+  --solver lkh \
+  --dataset data/tsp_uniform/tsp100_test_10000.pt \
+  --lkh-executable /path/to/LKH \
+  --output data/tsp_uniform/reference/tsp100_lkh.pt \
+  --runs 1 \
+  --max-trials 1000 \
+  --seed 1234
+```
+
+推荐协议：
+
+- `TSP20`: Concorde 或 LKH-3
+- `TSP50`: 优先 LKH-3；Concorde 仅在你明确接受耗时时才手动放开
+- `TSP100+`: 使用 LKH-3，不默认使用 Concorde
+
+### 3. 评估 baseline
+
+传统 baseline：
+
+```bash
+KMP_DUPLICATE_LIB_OK=TRUE /opt/conda/envs/py11/bin/python scripts/evaluate_baselines.py \
+  --dataset data/tsp_uniform/tsp20_test_10000.pt \
+  --reference data/tsp_uniform/reference/tsp20_concorde.pt \
+  --methods random,nearest_neighbor,nearest_neighbor_multistart,nn_two_opt \
+  --output outputs/baseline_comparison/tsp20_traditional.json
+```
+
+加入仓库内模型（如 Component Merge / Pointer Network / Attention Model）时，可继续传对应 config 和 checkpoint 参数。
+
+### 4. 外部 baseline
+
+#### RL4CO
+
+`external_baselines/rl4co/` 中已包含：
+
+- `train_am.py`
+- `train_pomo.py`
+- `evaluate.py`
+
+用于快速复现 AM / POMO，并导出统一 JSON 结果。
+
+#### Sym-NCO
+
+`external_baselines/sym_nco/evaluate.py` 采用“外部命令适配”模式，不强依赖官方仓库内部 API。你需要提供：
+
+- `--symnco-root`
+- `--checkpoint`
+- `--dataset`
+- `--command`
+
+例如：
+
+```bash
+KMP_DUPLICATE_LIB_OK=TRUE /opt/conda/envs/py11/bin/python external_baselines/sym_nco/evaluate.py \
+  --symnco-root /path/to/Sym-NCO \
+  --checkpoint /path/to/checkpoint.pt \
+  --dataset data/tsp_uniform/tsp20_test_10000.pt \
+  --command 'python eval.py --checkpoint {checkpoint} --dataset {dataset} --output {raw_output}' \
+  --output outputs/baseline_comparison/symnco_tsp20.json
+```
+
+### 5. 汇总结果
+
+```bash
+KMP_DUPLICATE_LIB_OK=TRUE /opt/conda/envs/py11/bin/python scripts/aggregate_results.py \
+  outputs/baseline_comparison/tsp20_traditional.json \
+  outputs/baseline_comparison/symnco_tsp20.json \
+  --output-dir outputs/baseline_comparison
+```
+
+`scripts/aggregate_results.py` 可直接消费：
+
+- `scripts/evaluate_baselines.py` 输出的 `results` 列表
+- 外部 baseline 输出的单条 JSON 记录
 
 ---
 
