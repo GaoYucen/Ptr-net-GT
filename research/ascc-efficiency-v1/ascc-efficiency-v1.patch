@@ -1,0 +1,232 @@
+diff --git a/src/groupopt/models/am.py b/src/groupopt/models/am.py
+index 8420a7c..2f2552c 100644
+--- a/src/groupopt/models/am.py
++++ b/src/groupopt/models/am.py
+@@ -290,96 +290,159 @@ class AttentionModel(nn.Module):
+         use_last_head: bool = True,
+         random_tail: bool = False,
+     ) -> AttentionModelOutput:
+-        """用 AM 风格实现完整的 Forest-aware head/tail 接口。"""
++        """Memory-efficient Forest-aware decoding with unchanged policy semantics.
++
++        The all-tail head distributions are only used through stop-gradient summaries
++        by the tail policy. During training we therefore compute those proposals without
++        autograd, select a tail, and re-score only the selected tail with gradients for
++        the head-policy REINFORCE term. During no-grad inference the already computed
++        selected row is reused. Static head queries are projected once per instance.
++        """
+         process = self.construction_process
++        state = process.initial_state(coordinates)
+         graph_context = self.project_graph(graph_embedding)
+         key, value, logit_key = self.project_nodes(node_embeddings).chunk(3, dim=-1)
+         key = self._split_heads(key)
+         value = self._split_heads(value)
+         distances = torch.cdist(coordinates[..., :2], coordinates[..., :2])
++        expanded_graph = graph_context.unsqueeze(1).expand(
++            state.batch_size, state.n, self.embedding_dim
++        )
++        head_queries = self.project_head_context(
++            torch.cat((expanded_graph, node_embeddings), dim=-1)
++        )
+         last_head_embedding = self.first_step_context.unsqueeze(0).expand(
+-            coordinates.size(0), self.embedding_dim
++            state.batch_size, self.embedding_dim
+         )
++        batch_index = torch.arange(state.batch_size, device=coordinates.device)
++
++        tails: list[Tensor] = []
++        heads: list[Tensor] = []
++        selected_log_probabilities: list[Tensor] = []
++        tail_entropies: list[Tensor] = []
++        action_entropies: list[Tensor] = []
++
++        while not process.is_terminal(state):
++            pair_mask = process.action_mask(state)
++            tail_mask = process.base_mask(state)
++
++            # The tail policy consumes head-distribution summaries through an explicit
++            # stop-gradient channel. Avoid retaining the O(B*N*N) proposal graph.
++            with torch.no_grad():
++                all_head_logits = self._attention_logits(
++                    head_queries.detach(),
++                    key.detach(),
++                    value.detach(),
++                    logit_key.detach(),
++                    pair_mask,
++                    self.project_head_glimpse,
++                )
++                all_head_log_p = masked_conditional_log_probabilities(
++                    all_head_logits, pair_mask, temperature
++                )
++                head_summary = native_head_summary(all_head_log_p, distances)
+ 
+-        def score_heads(state: BatchedTSPState, pair_mask: Tensor) -> ForestHeadProposal:
+-            expanded_graph = graph_context.unsqueeze(1).expand(
+-                state.batch_size, state.n, self.embedding_dim
+-            )
+-            head_queries = self.project_head_context(
+-                torch.cat((expanded_graph, node_embeddings), dim=-1)
+-            )
+-            head_logits = self._attention_logits(
+-                head_queries,
+-                key,
+-                value,
+-                logit_key,
+-                pair_mask,
+-                self.project_head_glimpse,
+-            )
+-            head_log_p = masked_conditional_log_probabilities(head_logits, pair_mask, temperature)
+-            summary = native_head_summary(head_log_p, distances).detach()
+-            return ForestHeadProposal(head_log_p, summary)
+-
+-        def score_tails(
+-            state: BatchedTSPState,
+-            proposal: ForestHeadProposal,
+-            tail_mask: Tensor,
+-        ) -> Tensor:
+             if random_tail:
+-                return _random_forest_tail_log_probabilities(
++                tail_log_p = _random_forest_tail_log_probabilities(
+                     tail_mask, node_embeddings.dtype, generator
+                 )
+-            if fixed_tail:
+-                return _deterministic_forest_tail_log_probabilities(
++            elif fixed_tail:
++                tail_log_p = _deterministic_forest_tail_log_probabilities(
+                     state, tail_mask, node_embeddings.dtype
+                 )
+-            state_tail_nodes = node_embeddings
+-            if use_path_state:
+-                state_tail_nodes = state_tail_nodes + self.project_tail_state(
+-                    state.path_state_features(node_embeddings)
++            else:
++                state_tail_nodes = node_embeddings
++                if use_path_state:
++                    state_tail_nodes = state_tail_nodes + self.project_tail_state(
++                        state.path_state_features(node_embeddings)
++                    )
++                if use_head_summary:
++                    state_tail_nodes = state_tail_nodes + self.project_native_head_summary(
++                        head_summary
++                    )
++                tail_key, tail_value, tail_logit_key = self.project_state_tail_nodes(
++                    state_tail_nodes
++                ).chunk(3, dim=-1)
++                tail_context = (
++                    last_head_embedding if use_last_head else torch.zeros_like(last_head_embedding)
+                 )
+-            if use_head_summary:
+-                state_tail_nodes = state_tail_nodes + self.project_native_head_summary(
+-                    proposal.features
++                tail_query = self.project_tail_context(
++                    torch.cat((graph_context, tail_context), dim=-1)
+                 )
+-            tail_key, tail_value, tail_logit_key = self.project_state_tail_nodes(
+-                state_tail_nodes
+-            ).chunk(3, dim=-1)
+-            tail_context = (
+-                last_head_embedding if use_last_head else torch.zeros_like(last_head_embedding)
+-            )
+-            tail_query = self.project_tail_context(
+-                torch.cat((graph_context, tail_context), dim=-1)
+-            )
+-            tail_logits = self._attention_logits(
+-                tail_query,
+-                self._split_heads(tail_key),
+-                self._split_heads(tail_value),
+-                tail_logit_key,
+-                tail_mask,
+-                self.project_tail_glimpse,
++                tail_logits = self._attention_logits(
++                    tail_query,
++                    self._split_heads(tail_key),
++                    self._split_heads(tail_value),
++                    tail_logit_key,
++                    tail_mask,
++                    self.project_tail_glimpse,
++                )
++                tail_log_p = torch.log_softmax(tail_logits / temperature, dim=-1)
++
++            selected_tail = _select(tail_log_p, decode_type, generator)
++
++            if torch.is_grad_enabled():
++                selected_query = head_queries.gather(
++                    1,
++                    selected_tail[:, None, None].expand(
++                        state.batch_size, 1, self.embedding_dim
++                    ),
++                ).squeeze(1)
++                selected_mask = process.representative_mask(state, selected_tail)
++                selected_head_logits = self._attention_logits(
++                    selected_query,
++                    key,
++                    value,
++                    logit_key,
++                    selected_mask,
++                    self.project_head_glimpse,
++                )
++                selected_head_log_p = torch.log_softmax(
++                    selected_head_logits / temperature, dim=-1
++                )
++            else:
++                selected_head_log_p = all_head_log_p[batch_index, selected_tail]
++
++            selected_head = _select(selected_head_log_p, decode_type, generator)
++            if pair_mask[batch_index, selected_tail, selected_head].any():
++                raise RuntimeError("Forest-aware decoder selected an illegal edge")
++
++            selected_log_probabilities.append(
++                tail_log_p.gather(1, selected_tail[:, None]).squeeze(1)
++                + selected_head_log_p.gather(1, selected_head[:, None]).squeeze(1)
+             )
+-            return torch.log_softmax(tail_logits / temperature, dim=-1)
++            with torch.no_grad():
++                tail_entropy = categorical_entropy(tail_log_p.detach())
++                tail_probabilities = torch.where(
++                    torch.isfinite(tail_log_p.detach()),
++                    tail_log_p.detach().exp(),
++                    torch.zeros_like(tail_log_p.detach()),
++                )
++                head_entropy = categorical_entropy(all_head_log_p)
++                action_entropy = tail_entropy + (tail_probabilities * head_entropy).sum(dim=-1)
++                tail_entropies.append(tail_entropy)
++                action_entropies.append(action_entropy)
+ 
+-        def update_context(selected_tail: Tensor, selected_head: Tensor) -> None:
+-            del selected_tail
+-            nonlocal last_head_embedding
++            tails.append(selected_tail)
++            heads.append(selected_head)
++            state = process.transition(state, selected_tail, selected_head)
+             last_head_embedding = node_embeddings.gather(
+                 1,
+-                selected_head[:, None, None].expand(coordinates.size(0), 1, self.embedding_dim),
++                selected_head[:, None, None].expand(
++                    state.batch_size, 1, self.embedding_dim
++                ),
+             ).squeeze(1)
+ 
+-        decoder = CallableForestAwareDecoder[BatchedTSPState](
+-            head_scorer=score_heads,
+-            tail_scorer=score_tails,
+-            context_updater=update_context,
+-        )
+-        return decode_forest_edges(
+-            coordinates,
+-            process,
+-            decoder,
+-            decode_type,
+-            generator,
++        tail_tensor = torch.stack(tails, dim=1)
++        head_tensor = torch.stack(heads, dim=1)
++        return AttentionModelOutput(
++            cost=process.objective(state, tail_tensor, head_tensor),
++            log_likelihood=torch.stack(selected_log_probabilities, dim=1).sum(dim=1),
++            tails=tail_tensor,
++            heads=head_tensor,
++            successor=process.solution(state),
++            tail_entropy=torch.stack(tail_entropies, dim=1).mean(dim=1),
++            action_entropy=torch.stack(action_entropies, dim=1).mean(dim=1),
+         )
+ 
+     def _decode_native_capacity_single_chain(

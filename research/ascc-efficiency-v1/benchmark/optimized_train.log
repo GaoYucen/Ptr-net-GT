@@ -1,0 +1,2 @@
+step=000000 val_greedy_cost=14.573584
+step=000300 train_cost=7.180382 loss=-2.136832 val_greedy_cost=6.481985 best=6.481985 tail_entropy=0.6018 action_entropy=1.1230 peak_gb=8.831
