@@ -1,0 +1,35 @@
+{
+  "protocol": "# Secondary decoder-plus-residual adaptation, registered before primary test\n\nMotivation: a frozen pretrained decoder may impose a separate adaptation\nconstraint even when the residual receives additional component information.\nThis study updates the native decoder as well as the residual while retaining\nthe frozen encoder and cached node embeddings. It does not train a learned\nsource policy, and is not fully optimized ASCC.\n\nThis plan was fixed using implementation throughput and primary development\ncurves only, before any primary final-test dataset was generated or inspected.\nICAM is required. AM is also prespecified if the same complete 12-arm suite\nfits before 16:45 local time; do not launch partial AM arms based on test results.\nIf AM is omitted for time, record it as unexecuted, not a negative result.\n\nFour arms: route/blind, route/aware, random/blind, random/aware; independent\nseeds 12031, 12037, 12041. Each gets 12000 updates, batch 64; residual Adam LR\n3e-4, decoder LR 1e-5; global trainable-gradient clip 1.0. ICAM trains every\nparameter under native `net.decoder`. AM trains every native host parameter\noutside `init_embed` and `embedder`; actual parameter names/counts are logged.\nEncoder parameters stay frozen. The host wrapper recomputes decoder key/value\nand query projections in every logits call, so no stale decoder-weight cache\nis reused. Only the frozen encoder representations are cached.\n\nCoordinate training/development seeds and native-plus-2-opt teacher recipe are\nidentical to the frozen study for direct adaptation comparisons. Every residual\nand decoder begins independently from the pretrained checkpoint/paired random\ninitialization, never from a primary study fitted model. Development selection\nis again full-tour normalized cost every 1000 updates, separately for each arm.\n\nFinal-test seeds are new: 73019211 through 73019214 for uniform100 (256),\ncluster100 (128), uniform200 (128), cluster200 (128), respectively. Test is\ncreated only after all 12 checkpoints for this host are frozen. No primary or\nsecondary test result changes architecture, optimizer, arm inclusion, steps,\nor model selection. Report all four arms and all three seeds, regardless of\noutcome. Shared architecture does not imply identical effective capacity.\n",
+  "sources": {
+    "run_secondary.py": "1ba308c82358bf860183d0dce6e1324233436ad4b56e8abb0e82ecd577e58681",
+    "component_adapter.py": "f1e353d6d409323d960570d7ef73aec1029abe121bdad8f1119de564179f0b8c",
+    "run_pilot.py": "d75fb5fb9c19de27b9bd428e219aaa196131f0f927dc9d8006d3d80b29c3dbd8",
+    "posthoc_diagnostics.py": "dbcd2cb4ada8cd4d81ea84419c54761814a69e2ad0abb556c43012dee59aa52b",
+    "strong_adapter.py": "40b5ad73e44e82ad72b57d952ad1580bff0f5ce4648a2f2fdc0a6c8f87c26377",
+    "verify_strong.py": "d2f86b01ad2e220eb4f58beaaa3a10da4ca59a54d2293b39190371a0e75db010",
+    "secondary_component.py": "c81eebf85a4ca534719e8a8f82b17a466f1f43d3a34388f83d26e5d5c9b6660e",
+    "summarize_pilot.py": "d0277e63d2298e6f52701f737479a77cb948fb895978b72872f9448d8dd3901d",
+    "run_strong.py": "f665079715bcca2d34ab53066d1cc79e1654b2351056375b53d2fbe084c66acc"
+  },
+  "checkpoint_sha": "eefdf5496cc1a15e1b95b0a3025e1bcf703279d22aebc19b5b57c80ca8e3200a",
+  "torch_version": "2.6.0+cu124",
+  "device": "NVIDIA GeForce RTX 4090",
+  "residual_parameters": 58306,
+  "train_seeds": [
+    73019101,
+    73019102
+  ],
+  "development_seeds": [
+    73019103,
+    73019104
+  ],
+  "final_test_seeds": [
+    73019211,
+    73019212,
+    73019213,
+    73019214
+  ],
+  "steps": 12000,
+  "batch": 64,
+  "host": "am"
+}

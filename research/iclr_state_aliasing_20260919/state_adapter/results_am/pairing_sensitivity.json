@@ -1,0 +1,110 @@
+[
+  {
+    "seed": 12031,
+    "dataset": "uniform100",
+    "correct_nll": 1.6796596297823723,
+    "shuffled_tail_nll": 2.174029878692948,
+    "nll_increase": 0.49437024891057574,
+    "argmax_change_fraction": 0.15625,
+    "interpretation": "Post-selection test-time sensitivity; other component features remain correct."
+  },
+  {
+    "seed": 12031,
+    "dataset": "cluster100",
+    "correct_nll": 1.7432323392395717,
+    "shuffled_tail_nll": 2.2022799646311637,
+    "nll_increase": 0.4590476253915919,
+    "argmax_change_fraction": 0.2864583432674408,
+    "interpretation": "Post-selection test-time sensitivity; other component features remain correct."
+  },
+  {
+    "seed": 12031,
+    "dataset": "uniform200",
+    "correct_nll": 1.5804312902920585,
+    "shuffled_tail_nll": 1.9773003502280115,
+    "nll_increase": 0.3968690599359528,
+    "argmax_change_fraction": 0.2317708283662796,
+    "interpretation": "Post-selection test-time sensitivity; other component features remain correct."
+  },
+  {
+    "seed": 12031,
+    "dataset": "cluster200",
+    "correct_nll": 1.7727219009254032,
+    "shuffled_tail_nll": 2.2120213562683215,
+    "nll_increase": 0.4392994553429183,
+    "argmax_change_fraction": 0.3307291567325592,
+    "interpretation": "Post-selection test-time sensitivity; other component features remain correct."
+  },
+  {
+    "seed": 12037,
+    "dataset": "uniform100",
+    "correct_nll": 1.7157459446470416,
+    "shuffled_tail_nll": 2.19252202234363,
+    "nll_increase": 0.4767760776965882,
+    "argmax_change_fraction": 0.1848958283662796,
+    "interpretation": "Post-selection test-time sensitivity; other component features remain correct."
+  },
+  {
+    "seed": 12037,
+    "dataset": "cluster100",
+    "correct_nll": 1.6720610770781512,
+    "shuffled_tail_nll": 2.1245000967774144,
+    "nll_increase": 0.45243901969926353,
+    "argmax_change_fraction": 0.2890625,
+    "interpretation": "Post-selection test-time sensitivity; other component features remain correct."
+  },
+  {
+    "seed": 12037,
+    "dataset": "uniform200",
+    "correct_nll": 1.5997340409080867,
+    "shuffled_tail_nll": 2.134188265213106,
+    "nll_increase": 0.5344542243050191,
+    "argmax_change_fraction": 0.2213541716337204,
+    "interpretation": "Post-selection test-time sensitivity; other component features remain correct."
+  },
+  {
+    "seed": 12037,
+    "dataset": "cluster200",
+    "correct_nll": 1.7801037066722316,
+    "shuffled_tail_nll": 2.0839999427583566,
+    "nll_increase": 0.3038962360861248,
+    "argmax_change_fraction": 0.2890625,
+    "interpretation": "Post-selection test-time sensitivity; other component features remain correct."
+  },
+  {
+    "seed": 12041,
+    "dataset": "uniform100",
+    "correct_nll": 1.7019318299028676,
+    "shuffled_tail_nll": 2.25253642227849,
+    "nll_increase": 0.5506045923756223,
+    "argmax_change_fraction": 0.2213541716337204,
+    "interpretation": "Post-selection test-time sensitivity; other component features remain correct."
+  },
+  {
+    "seed": 12041,
+    "dataset": "cluster100",
+    "correct_nll": 1.7952577435910817,
+    "shuffled_tail_nll": 2.321963932840984,
+    "nll_increase": 0.5267061892499022,
+    "argmax_change_fraction": 0.3515625,
+    "interpretation": "Post-selection test-time sensitivity; other component features remain correct."
+  },
+  {
+    "seed": 12041,
+    "dataset": "uniform200",
+    "correct_nll": 1.5595326846723676,
+    "shuffled_tail_nll": 1.9396218550983804,
+    "nll_increase": 0.38008917042601276,
+    "argmax_change_fraction": 0.2630208432674408,
+    "interpretation": "Post-selection test-time sensitivity; other component features remain correct."
+  },
+  {
+    "seed": 12041,
+    "dataset": "cluster200",
+    "correct_nll": 1.8507463769463859,
+    "shuffled_tail_nll": 2.382020363266306,
+    "nll_increase": 0.5312739863199205,
+    "argmax_change_fraction": 0.3359375,
+    "interpretation": "Post-selection test-time sensitivity; other component features remain correct."
+  }
+]

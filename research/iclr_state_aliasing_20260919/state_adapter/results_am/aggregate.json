@@ -1,0 +1,511 @@
+{
+  "summary": {
+    "uniform100": {
+      "random-aware": {
+        "mean": 11.26823529228568,
+        "seed_sd": 0.03085212712780671,
+        "seeds": 3,
+        "instances": 256,
+        "conditional_nll": 1.656281394475192,
+        "conditional_accuracy": 0.6801215211550394,
+        "selected_steps": [
+          11000,
+          12000,
+          10000
+        ]
+      },
+      "random-blind": {
+        "mean": 11.671177133917809,
+        "seed_sd": 0.09452689794642986,
+        "seeds": 3,
+        "instances": 256,
+        "conditional_nll": 1.7820813273354148,
+        "conditional_accuracy": 0.6618923743565878,
+        "selected_steps": [
+          6000,
+          12000,
+          7000
+        ]
+      },
+      "route-aware": {
+        "mean": 8.147843517983953,
+        "seed_sd": 0.015326552281853348,
+        "seeds": 3,
+        "instances": 256,
+        "conditional_nll": 0.23898641345528324,
+        "conditional_accuracy": 0.9301215211550394,
+        "selected_steps": [
+          10000,
+          10000,
+          11000
+        ]
+      },
+      "route-blind": {
+        "mean": 8.155487784494957,
+        "seed_sd": 0.025073585398509374,
+        "seeds": 3,
+        "instances": 256,
+        "conditional_nll": 0.24083584360921553,
+        "conditional_accuracy": 0.9309895833333334,
+        "selected_steps": [
+          11000,
+          10000,
+          12000
+        ]
+      }
+    },
+    "cluster100": {
+      "random-aware": {
+        "mean": 5.125077245756984,
+        "seed_sd": 0.05586438008191633,
+        "seeds": 3,
+        "instances": 128,
+        "conditional_nll": 1.5385709340810088,
+        "conditional_accuracy": 0.5876736044883728,
+        "selected_steps": [
+          11000,
+          12000,
+          10000
+        ]
+      },
+      "random-blind": {
+        "mean": 5.331048669293523,
+        "seed_sd": 0.15730584555680985,
+        "seeds": 3,
+        "instances": 128,
+        "conditional_nll": 1.5873100056191134,
+        "conditional_accuracy": 0.5642361044883728,
+        "selected_steps": [
+          6000,
+          12000,
+          7000
+        ]
+      },
+      "route-aware": {
+        "mean": 3.7907951350013414,
+        "seed_sd": 0.02737110891324784,
+        "seeds": 3,
+        "instances": 128,
+        "conditional_nll": 0.7317060413914415,
+        "conditional_accuracy": 0.7951388955116272,
+        "selected_steps": [
+          10000,
+          10000,
+          11000
+        ]
+      },
+      "route-blind": {
+        "mean": 3.7820548756668964,
+        "seed_sd": 0.013768528238441578,
+        "seeds": 3,
+        "instances": 128,
+        "conditional_nll": 0.7808222274094359,
+        "conditional_accuracy": 0.78125,
+        "selected_steps": [
+          11000,
+          10000,
+          12000
+        ]
+      }
+    },
+    "uniform200": {
+      "random-aware": {
+        "mean": 16.87742463250955,
+        "seed_sd": 0.07273014863146207,
+        "seeds": 3,
+        "instances": 128,
+        "conditional_nll": 1.638409694635112,
+        "conditional_accuracy": 0.6085069378217062,
+        "selected_steps": [
+          11000,
+          12000,
+          10000
+        ]
+      },
+      "random-blind": {
+        "mean": 17.32301887621482,
+        "seed_sd": 0.3523748873987927,
+        "seeds": 3,
+        "instances": 128,
+        "conditional_nll": 1.7306197482380086,
+        "conditional_accuracy": 0.5980902711550394,
+        "selected_steps": [
+          6000,
+          12000,
+          7000
+        ]
+      },
+      "route-aware": {
+        "mean": 11.562947936356068,
+        "seed_sd": 0.02016170021590755,
+        "seeds": 3,
+        "instances": 128,
+        "conditional_nll": 0.3516725828936846,
+        "conditional_accuracy": 0.890625019868215,
+        "selected_steps": [
+          10000,
+          10000,
+          11000
+        ]
+      },
+      "route-blind": {
+        "mean": 11.599900623162588,
+        "seed_sd": 0.020394755811888144,
+        "seeds": 3,
+        "instances": 128,
+        "conditional_nll": 0.3655539534456403,
+        "conditional_accuracy": 0.890625,
+        "selected_steps": [
+          11000,
+          10000,
+          12000
+        ]
+      }
+    },
+    "cluster200": {
+      "random-aware": {
+        "mean": 7.781216574211915,
+        "seed_sd": 0.12050981189794131,
+        "seeds": 3,
+        "instances": 128,
+        "conditional_nll": 1.6179980972465102,
+        "conditional_accuracy": 0.5112847288449606,
+        "selected_steps": [
+          11000,
+          12000,
+          10000
+        ]
+      },
+      "random-blind": {
+        "mean": 8.15251333018144,
+        "seed_sd": 0.2884709107593329,
+        "seeds": 3,
+        "instances": 128,
+        "conditional_nll": 1.7026699051855567,
+        "conditional_accuracy": 0.4895833333333333,
+        "selected_steps": [
+          6000,
+          12000,
+          7000
+        ]
+      },
+      "route-aware": {
+        "mean": 4.989571999758482,
+        "seed_sd": 0.007308626965070315,
+        "seeds": 3,
+        "instances": 128,
+        "conditional_nll": 0.8192833203459261,
+        "conditional_accuracy": 0.7890625,
+        "selected_steps": [
+          10000,
+          10000,
+          11000
+        ]
+      },
+      "route-blind": {
+        "mean": 5.010792242363095,
+        "seed_sd": 0.010243049832260908,
+        "seeds": 3,
+        "instances": 128,
+        "conditional_nll": 0.8391916140308663,
+        "conditional_accuracy": 0.7890625,
+        "selected_steps": [
+          11000,
+          10000,
+          12000
+        ]
+      }
+    }
+  },
+  "comparisons": {
+    "uniform100": {
+      "random-aware vs random-blind": {
+        "improvement_percent": 3.04776905000394,
+        "paired_instance_ci95": [
+          2.443761927163766,
+          3.6694712307492634
+        ],
+        "win_fraction": 0.7265625,
+        "per_seed_improvement_percent": [
+          2.2396041749185254,
+          4.040326171874956,
+          2.863376803218337
+        ],
+        "caveat": "Instance bootstrap conditional on these three seeds; not a seed-population confidence interval."
+      },
+      "random-aware vs route-aware": {
+        "improvement_percent": -38.4314679385022,
+        "paired_instance_ci95": [
+          -39.372114339299955,
+          -37.53987182879452
+        ],
+        "win_fraction": 0.0,
+        "per_seed_improvement_percent": [
+          -38.90662755222672,
+          -38.28555320777889,
+          -38.102223055500986
+        ],
+        "caveat": "Instance bootstrap conditional on these three seeds; not a seed-population confidence interval."
+      },
+      "route-aware vs route-blind": {
+        "improvement_percent": 0.04424869659867267,
+        "paired_instance_ci95": [
+          -0.16874731125338266,
+          0.2568807770062558
+        ],
+        "win_fraction": 0.5234375,
+        "per_seed_improvement_percent": [
+          0.1819093521384197,
+          -0.11691102665341097,
+          0.06774776431100928
+        ],
+        "caveat": "Instance bootstrap conditional on these three seeds; not a seed-population confidence interval."
+      },
+      "random-aware vs native": {
+        "improvement_percent": -39.361877614249025,
+        "paired_instance_ci95": [
+          -40.27826478244619,
+          -38.508891062176225
+        ],
+        "win_fraction": 0.0,
+        "per_seed_improvement_percent": [
+          -39.778865019116424,
+          -39.025459255708206,
+          -39.28130856792244
+        ],
+        "caveat": "Instance bootstrap conditional on these three seeds; not a seed-population confidence interval."
+      },
+      "route-aware vs native": {
+        "improvement_percent": -0.7341293250952533,
+        "paired_instance_ci95": [
+          -0.9953297019464383,
+          -0.48867325206400375
+        ],
+        "win_fraction": 0.34765625,
+        "per_seed_improvement_percent": [
+          -0.6873065952116164,
+          -0.575720113991997,
+          -0.9393612660821468
+        ],
+        "caveat": "Instance bootstrap conditional on these three seeds; not a seed-population confidence interval."
+      }
+    },
+    "cluster100": {
+      "random-aware vs random-blind": {
+        "improvement_percent": 2.919578806785397,
+        "paired_instance_ci95": [
+          1.612702762246018,
+          4.1648310496514895
+        ],
+        "win_fraction": 0.7421875,
+        "per_seed_improvement_percent": [
+          0.7318711072679934,
+          5.070223420983789,
+          2.9566418921044093
+        ],
+        "caveat": "Instance bootstrap conditional on these three seeds; not a seed-population confidence interval."
+      },
+      "random-aware vs route-aware": {
+        "improvement_percent": -35.62977170490813,
+        "paired_instance_ci95": [
+          -37.933749824138445,
+          -33.3295083015803
+        ],
+        "win_fraction": 0.0,
+        "per_seed_improvement_percent": [
+          -35.887123993314226,
+          -37.01651725683146,
+          -33.98567386457869
+        ],
+        "caveat": "Instance bootstrap conditional on these three seeds; not a seed-population confidence interval."
+      },
+      "route-aware vs route-blind": {
+        "improvement_percent": -0.36476214845553884,
+        "paired_instance_ci95": [
+          -1.0629722289941457,
+          0.31209836316914397
+        ],
+        "win_fraction": 0.515625,
+        "per_seed_improvement_percent": [
+          -0.8993441996453786,
+          -0.08612269318806343,
+          -0.10881955253317466
+        ],
+        "caveat": "Instance bootstrap conditional on these three seeds; not a seed-population confidence interval."
+      },
+      "random-aware vs native": {
+        "improvement_percent": -15.751471326183562,
+        "paired_instance_ci95": [
+          -20.351964338718307,
+          -11.004912382278992
+        ],
+        "win_fraction": 0.234375,
+        "per_seed_improvement_percent": [
+          -16.56092572339208,
+          -16.401398002945847,
+          -14.292090252212745
+        ],
+        "caveat": "Instance bootstrap conditional on these three seeds; not a seed-population confidence interval."
+      },
+      "route-aware vs native": {
+        "improvement_percent": 14.671212499823607,
+        "paired_instance_ci95": [
+          11.713025022382544,
+          17.83220265876733
+        ],
+        "win_fraction": 0.8828125,
+        "per_seed_improvement_percent": [
+          14.02630071815831,
+          15.280590495796403,
+          14.706746285516111
+        ],
+        "caveat": "Instance bootstrap conditional on these three seeds; not a seed-population confidence interval."
+      }
+    },
+    "uniform200": {
+      "random-aware vs random-blind": {
+        "improvement_percent": 2.30785040357024,
+        "paired_instance_ci95": [
+          1.665806630978975,
+          2.9531050105913983
+        ],
+        "win_fraction": 0.7734375,
+        "per_seed_improvement_percent": [
+          0.6348366998153675,
+          4.4771286233598095,
+          1.8115858875355426
+        ],
+        "caveat": "Instance bootstrap conditional on these three seeds; not a seed-population confidence interval."
+      },
+      "random-aware vs route-aware": {
+        "improvement_percent": -46.05337432854006,
+        "paired_instance_ci95": [
+          -47.06365477852517,
+          -45.06961325565863
+        ],
+        "win_fraction": 0.0,
+        "per_seed_improvement_percent": [
+          -46.78409252420431,
+          -45.74572238272047,
+          -45.63030807869539
+        ],
+        "caveat": "Instance bootstrap conditional on these three seeds; not a seed-population confidence interval."
+      },
+      "route-aware vs route-blind": {
+        "improvement_percent": 0.25561783796987136,
+        "paired_instance_ci95": [
+          -0.05656757081524099,
+          0.5818299329944874
+        ],
+        "win_fraction": 0.5625,
+        "per_seed_improvement_percent": [
+          0.4179388493684741,
+          -0.12478413873476615,
+          0.4736988032759059
+        ],
+        "caveat": "Instance bootstrap conditional on these three seeds; not a seed-population confidence interval."
+      },
+      "random-aware vs native": {
+        "improvement_percent": -45.26727945229034,
+        "paired_instance_ci95": [
+          -46.20663504349571,
+          -44.30637504911817
+        ],
+        "win_fraction": 0.0,
+        "per_seed_improvement_percent": [
+          -45.89569259653274,
+          -45.252105695599425,
+          -44.65404006473885
+        ],
+        "caveat": "Instance bootstrap conditional on these three seeds; not a seed-population confidence interval."
+      },
+      "route-aware vs native": {
+        "improvement_percent": 0.488130848055979,
+        "paired_instance_ci95": [
+          0.17890820672257465,
+          0.7831230953136686
+        ],
+        "win_fraction": 0.671875,
+        "per_seed_improvement_percent": [
+          0.5682034954811765,
+          0.2838160475548191,
+          0.6123730011319412
+        ],
+        "caveat": "Instance bootstrap conditional on these three seeds; not a seed-population confidence interval."
+      }
+    },
+    "cluster200": {
+      "random-aware vs random-blind": {
+        "improvement_percent": 3.589755709624066,
+        "paired_instance_ci95": [
+          2.5309227200039643,
+          4.697815514834897
+        ],
+        "win_fraction": 0.78125,
+        "per_seed_improvement_percent": [
+          2.5461357812748124,
+          5.495264682258234,
+          2.7278666653391523
+        ],
+        "caveat": "Instance bootstrap conditional on these three seeds; not a seed-population confidence interval."
+      },
+      "random-aware vs route-aware": {
+        "improvement_percent": -56.258612914114536,
+        "paired_instance_ci95": [
+          -59.195625747635674,
+          -53.44607070578294
+        ],
+        "win_fraction": 0.0,
+        "per_seed_improvement_percent": [
+          -55.76253451593411,
+          -58.8155451394055,
+          -54.19775908700401
+        ],
+        "caveat": "Instance bootstrap conditional on these three seeds; not a seed-population confidence interval."
+      },
+      "route-aware vs route-blind": {
+        "improvement_percent": 0.3090477904018726,
+        "paired_instance_ci95": [
+          -0.11823807237850217,
+          0.7484267399449165
+        ],
+        "win_fraction": 0.5390625,
+        "per_seed_improvement_percent": [
+          0.5067890190461914,
+          0.48117639467793766,
+          -0.06082204251851192
+        ],
+        "caveat": "Instance bootstrap conditional on these three seeds; not a seed-population confidence interval."
+      },
+      "random-aware vs native": {
+        "improvement_percent": -26.152431131406246,
+        "paired_instance_ci95": [
+          -31.823108445964344,
+          -20.420913824132427
+        ],
+        "win_fraction": 0.1953125,
+        "per_seed_improvement_percent": [
+          -25.754130538972042,
+          -28.15165712410738,
+          -24.551505731139315
+        ],
+        "caveat": "Instance bootstrap conditional on these three seeds; not a seed-population confidence interval."
+      },
+      "route-aware vs native": {
+        "improvement_percent": 19.388264077664275,
+        "paired_instance_ci95": [
+          16.432373507885227,
+          22.613895825665768
+        ],
+        "win_fraction": 0.9609375,
+        "per_seed_improvement_percent": [
+          19.492095952158294,
+          19.433278870775602,
+          19.23941741005892
+        ],
+        "caveat": "Instance bootstrap conditional on these three seeds; not a seed-population confidence interval."
+      }
+    }
+  },
+  "interpretation": "Positive improvement means lower cost; references are native greedy or 2-opt teachers, never OPT."
+}

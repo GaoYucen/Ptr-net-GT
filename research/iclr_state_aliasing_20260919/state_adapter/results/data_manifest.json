@@ -1,0 +1,14 @@
+{
+  "hashes": {
+    "train_x": "20961a4ad5acee8c8b98d98d2a6e4f07cc57d1bec71d624a42c2a5dc8aa85d45",
+    "train_enc": "4cca0c418ce8ea0b509cfe47c4dbbf901a64467f4c31645378061d29dfeaee11",
+    "train_pi": "8ae056472c4a95f5de35b54f1776cdb09b464047b7526b054d6c0372a85fa0b5",
+    "val_x": "7ca998b997256b60a95a98ad2730df8f195c909d9f7bcd903c8789fd2650629d",
+    "val_enc": "6fb453fb0939bd71d313cecf3c7e17ccca3532402925cba8fa98f527d9014a9a",
+    "val_pi": "cc9014a35d79cdf0b16c9a36223c2d2993a0aa581d31e23fd22816d7ca737375",
+    "val_native": "44e5dddc82e2c8f56fbd1a8dc8fdd21dcf1460360cdb07bc063eb0fdbd17e86c"
+  },
+  "native_mean": 5.915249824523926,
+  "teacher_mean": 5.5945210456848145,
+  "seconds": 10.095998628996313
+}

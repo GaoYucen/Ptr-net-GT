@@ -1,0 +1,156 @@
+{
+  "status": "pass",
+  "geometry_disjoint_by_split": true,
+  "unique_geometry_by_split": {
+    "test": 22500,
+    "train": 40000,
+    "validation": 3000
+  },
+  "independent_held_karp_forests_checked": 170,
+  "max_absolute_label_error": 8.881784197001252e-16,
+  "source_context_and_mask_equal": true,
+  "blind_features_identical": true,
+  "files": [
+    {
+      "file": "ood_n7_s190919301.npz",
+      "n_geometry": 1500,
+      "endpoint_mask_checked": 20,
+      "dp_forests_checked": 10
+    },
+    {
+      "file": "ood_n7_s190919302.npz",
+      "n_geometry": 1500,
+      "endpoint_mask_checked": 20,
+      "dp_forests_checked": 10
+    },
+    {
+      "file": "train.npz",
+      "n_geometry": 40000,
+      "endpoint_mask_checked": 20,
+      "dp_forests_checked": 10
+    },
+    {
+      "file": "ood_n7_s190919303.npz",
+      "n_geometry": 1500,
+      "endpoint_mask_checked": 20,
+      "dp_forests_checked": 10
+    },
+    {
+      "file": "iid_n9_s190919301.npz",
+      "n_geometry": 1500,
+      "endpoint_mask_checked": 20,
+      "dp_forests_checked": 10
+    },
+    {
+      "file": "iid_n9_s190919303.npz",
+      "n_geometry": 1500,
+      "endpoint_mask_checked": 20,
+      "dp_forests_checked": 10
+    },
+    {
+      "file": "iid_n9_s190919302.npz",
+      "n_geometry": 1500,
+      "endpoint_mask_checked": 20,
+      "dp_forests_checked": 10
+    },
+    {
+      "file": "cluster_n9_s190919303.npz",
+      "n_geometry": 1500,
+      "endpoint_mask_checked": 20,
+      "dp_forests_checked": 10
+    },
+    {
+      "file": "cluster_n9_s190919302.npz",
+      "n_geometry": 1500,
+      "endpoint_mask_checked": 20,
+      "dp_forests_checked": 10
+    },
+    {
+      "file": "cluster_n9_s190919301.npz",
+      "n_geometry": 1500,
+      "endpoint_mask_checked": 20,
+      "dp_forests_checked": 10
+    },
+    {
+      "file": "ood_n11_s190919302.npz",
+      "n_geometry": 1500,
+      "endpoint_mask_checked": 20,
+      "dp_forests_checked": 10
+    },
+    {
+      "file": "ood_n11_s190919303.npz",
+      "n_geometry": 1500,
+      "endpoint_mask_checked": 20,
+      "dp_forests_checked": 10
+    },
+    {
+      "file": "ood_n11_s190919301.npz",
+      "n_geometry": 1500,
+      "endpoint_mask_checked": 20,
+      "dp_forests_checked": 10
+    },
+    {
+      "file": "ood_n13_s190919301.npz",
+      "n_geometry": 1500,
+      "endpoint_mask_checked": 20,
+      "dp_forests_checked": 10
+    },
+    {
+      "file": "validation.npz",
+      "n_geometry": 3000,
+      "endpoint_mask_checked": 20,
+      "dp_forests_checked": 10
+    },
+    {
+      "file": "ood_n13_s190919302.npz",
+      "n_geometry": 1500,
+      "endpoint_mask_checked": 20,
+      "dp_forests_checked": 10
+    },
+    {
+      "file": "ood_n13_s190919303.npz",
+      "n_geometry": 1500,
+      "endpoint_mask_checked": 20,
+      "dp_forests_checked": 10
+    }
+  ],
+  "checkpoint_cpu_replays": [
+    {
+      "checkpoint": "aware_s19091941.pt",
+      "cpu_replay_prediction_max_abs_error": 0.00029271841049194336,
+      "selected_action_mismatches": 0,
+      "n_forests": 32
+    },
+    {
+      "checkpoint": "aware_s19091942.pt",
+      "cpu_replay_prediction_max_abs_error": 0.0002548694610595703,
+      "selected_action_mismatches": 0,
+      "n_forests": 32
+    },
+    {
+      "checkpoint": "aware_s19091943.pt",
+      "cpu_replay_prediction_max_abs_error": 0.00022214651107788086,
+      "selected_action_mismatches": 0,
+      "n_forests": 32
+    },
+    {
+      "checkpoint": "blind_s19091941.pt",
+      "cpu_replay_prediction_max_abs_error": 0.00039649009704589844,
+      "selected_action_mismatches": 0,
+      "n_forests": 32
+    },
+    {
+      "checkpoint": "blind_s19091942.pt",
+      "cpu_replay_prediction_max_abs_error": 0.00018511712551116943,
+      "selected_action_mismatches": 0,
+      "n_forests": 32
+    },
+    {
+      "checkpoint": "blind_s19091943.pt",
+      "cpu_replay_prediction_max_abs_error": 0.00016105175018310547,
+      "selected_action_mismatches": 0,
+      "n_forests": 32
+    }
+  ],
+  "cross_runtime_note": "CPU replay uses local PyTorch 2.12.1; stored inference uses CUDA PyTorch 2.4.0. Logits can differ numerically; action agreement, not bitwise cross-platform equality, is checked."
+}

@@ -1,0 +1,17 @@
+{
+  "seed": 12041,
+  "mode": "random",
+  "aware": true,
+  "best_step": 9000,
+  "training_seconds": 152.3499775538221,
+  "wall_seconds": 168.96904655406252,
+  "steps": 12000,
+  "parameters": 173250,
+  "decoder_parameter_names": [
+    "net.W_placeholder",
+    "net.project_node_embeddings.weight",
+    "net.project_fixed_context.weight",
+    "net.project_step_context.weight",
+    "net.project_out.weight"
+  ]
+}

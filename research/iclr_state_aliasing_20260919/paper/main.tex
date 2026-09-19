@@ -1,0 +1,339 @@
+\documentclass{article}
+\usepackage{iclr2027_conference,times}
+\usepackage{amsmath,amssymb,amsthm,booktabs,graphicx,microtype,url}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\R}{\mathbb{R}}
+\title{Measuring State Aliasing in Neural Multi-Fragment Routing}
+\author{Anonymous Authors}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Flexible construction order changes the information a neural routing decoder
+needs. We study a specific interface mismatch: a route decoder reused to join
+directed path fragments can observe the same static embeddings, selected-source
+context, and feasibility mask in states requiring different optimal endpoints.
+We quantify this ambiguity using exact conditional completion costs and the
+minimum regret of a policy constrained to share its action across indistinguishable
+states. A seven-vertex witness admits a numerically certified positive regret;
+controlled paired forests derived from 1,536 larger Euclidean instances exhibit
+conflicting optimal decisions in 20.7--29.7\% of pairs across six size/distribution
+conditions. We distinguish this constructed stress test from actual policy
+occupancy and separate representational limits from optimization failure.
+Controlled neural prediction and official-backbone adaptation experiments test
+whether making component connectivity observable improves decisions and complete
+tours. The study treats paired-endpoint representations and state-abstraction
+principles as existing ideas, and evaluates their role in a concrete decoder
+transfer failure. Conditional information gains do not, by themselves, establish
+an advantage for learned construction order or a stronger routing solver.
+\end{abstract}
+
+\section{Introduction}
+
+Neural routing models commonly construct one path by repeatedly selecting its
+next vertex. More flexible construction can instead maintain several disjoint
+paths and choose which tail to extend. This appears to be a small change to the
+action space: select a source, call a pretrained endpoint decoder, and mask
+illegal merges. However, a mask answers which actions are feasible, whereas
+the value of an action also depends on what those actions leave for the future.
+In a path forest, entering a target head commits the solution to traversing
+its entire component and leaving through its tail. Two forests can expose the
+same legal heads while connecting those heads to different exits.
+
+This paper investigates that discrepancy in adapters around the Attention
+Model (AM; \citealt{kool2019attention}) and ICAM
+\citep{zhou2026icam}. The claim concerns the observation supplied by our
+forest adapters, not the correctness of either native solver. In an archived
+limited-budget adaptation study, learned source selection improves on trained
+random selection but remains worse than route continuation. That negative
+result does not identify its cause: insufficient training, incompatible
+representations, and an unhelpful action factorization remain distinct
+explanations. We therefore ask a narrower, testable question: \emph{does the
+endpoint interface merge states that require different optimal decisions?}
+
+We answer the representational question through exact completion, rather than
+teacher likelihood or a heuristic proxy. For an observation class, we compare
+the best state-specific actions with the best action shared across its members.
+Their difference is a standard conditional Bayes-risk gap. Its use here makes
+the missing information measurable and exposes a subtlety in evaluating
+counterexamples: the best shared action may be neither state's best action.
+We then test information restoration with equal-architecture neural predictors
+and controlled residual adapters. Conditional prediction and complete-tour
+evaluation are reported separately.
+
+Our contribution is an empirical and implementation-level audit: an exact
+diagnostic and certified witness, reproducible observation-matched state
+families, and controlled tests of the proposed explanation. Neither paired
+endpoint encoding nor path contraction is introduced as a new representation;
+DRHG already uses both endpoint coordinates for retained fragments
+\citep{li2025drhg}. The resulting evidence must also be interpreted locally.
+A source selector can avoid ambiguous states or communicate information through
+its source choice. A lower bound for a fixed-source endpoint policy therefore
+does not bound the best jointly learned solver.
+
+\section{Directed forests and endpoint observations}
+\label{sec:setup}
+
+Let $X=(x_1,\ldots,x_n)$ be Euclidean coordinates with distance $d(u,v)$.
+A partial solution $F$ consists of $m$ vertex-disjoint directed paths, including
+singletons. Its components have heads $h_i$ and tails $t_i$. Existing directed
+edges are fixed: no path reversal, splitting, or reassignment is allowed. With
+$m>1$, the action $(i,j)$ joins $t_i$ to $h_j$ for $i\ne j$; the last component
+is closed into a tour. We assume a complete graph without capacity, time windows,
+or other side constraints.
+
+Given a selected source component $s$, define $Q_F(s,a)$ as the minimum final
+tour cost among completions of $F$ containing $t_s\to a$. The one-decision
+regret is
+\begin{equation}
+ r_F(s,a)=Q_F(s,a)-\min_b Q_F(s,b).
+\end{equation}
+This uses optimal continuation after one decision, not the rollout of an
+imperfect downstream model. Fixed internal path costs cancel from regret.
+
+The audited endpoint observation is
+\begin{equation}
+ z=\phi(X,F,s)=\bigl(E(X),h_s,t_s,M_{F,s}\bigr),
+\end{equation}
+where $E(X)$ is a static node encoding and $M_{F,s}$ masks illegal heads.
+The decoder does not receive all head--tail correspondences, a recurrent
+construction history, or the source selector's hidden state. Even an arbitrarily
+powerful static encoder cannot recover a dynamic correspondence absent from its
+input. This statement would not apply to an encoder recomputed from the forest.
+The restriction to the selected source's mask row matters: the full matrix
+over all open tails and heads identifies each tail's own component head as
+its unique forbidden open head, and therefore reveals their pairing.
+
+\begin{proposition}[Conditional observation regret]
+\label{prop:risk}
+For a fixed observation $z$, let $\mu_z$ be a distribution over forests with
+this observation and common finite action set $A_z$. The smallest expected
+regret among policies depending only on $z$ and independent private randomness is
+\begin{equation}
+ \Delta(z)=\min_{a\in A_z}\E_{\mu_z}Q_F(s,a)
+              -\E_{\mu_z}\min_{b\in A_z}Q_F(s,b)
+           =\min_{a\in A_z}\E_{\mu_z}r_F(s,a).
+ \label{eq:risk}
+\end{equation}
+For finite support with positive probability on each state, $\Delta(z)=0$
+exactly when all statewise optimal-action sets have a common member.
+\end{proposition}
+
+\begin{proof}
+The expected regret of a randomized policy $p(a\mid z)$ is the convex
+combination $\sum_a p(a\mid z)\E_{\mu_z}r_F(s,a)$. Minimizing it selects a
+smallest coefficient. Every coefficient is nonnegative, and a coefficient
+vanishes exactly when its action has zero regret in every positive-mass state.
+\end{proof}
+
+Equation~\eqref{eq:risk} is a finite-action value-of-information identity,
+not a new general state-abstraction theorem \citep{li2006abstraction}.
+It becomes an operational diagnostic when $Q$ can be computed exactly.
+A two-state statistic with access to a sampled pair's identity can be an
+optimistic lower bound for a less-informed decoder, rather than its full
+distributional Bayes risk. We distinguish these cases in our experiments.
+
+\begin{proposition}[Sufficient component state]
+\label{prop:contraction}
+For the directed-forest problem above, all future actions, transition costs,
+and optimal continuation values are determined by the set of paired endpoints
+$\{(h_i,t_i)\}_{i=1}^m$ and the distance function. The remaining optimization
+is a directed TSP over components with cost $W_{ij}=d(t_i,h_j)$.
+\end{proposition}
+
+Every completion traverses each fixed path contiguously and orders the paths
+cyclically. Conversely, every such order is feasible in a complete graph.
+Merging $(i,j)$ replaces their pairs by $(h_i,t_j)$ and incurs $d(t_i,h_j)$,
+which proves the transition claim. The fixed internal cost is needed only to
+recover the total objective. This standard contraction explains the repair;
+it does not prove that a particular neural pooling operation preserves all
+information. The contracted matrix is generally asymmetric even for symmetric
+Euclidean distances. Component means and sizes can aid approximation but are
+not necessary for the exact unconstrained continuation problem.
+
+For $m\geq2$, there are $(m-1)!$ directed completion orders and $(m-2)!$ completions after
+any legal merge. Every source has $m-1$ legal heads. Source choice alone
+therefore does not prune the reachable tour set or select a smaller legal
+domain. It may still change learning difficulty and the quality obtained by
+an imperfect endpoint policy. A partial-permutation or stabilizer-coset
+description does not alter these counts or confer an additional search guarantee.
+
+\section{Exact diagnostics and controlled learning}
+\label{sec:experiments}
+
+\subsection{A certified witness}
+\label{sec:witness}
+Figure~\ref{fig:witness} compares $F_A=\{1\to3,2\to4\}$ with
+$F_B=\{1\to4,2\to3\}$ on the same seven vertices and source $0$.
+Both forests expose heads $\{1,2,5,6\}$ and the same source context.
+The audited AM and ICAM endpoint vectors are exactly identical across the
+pair. The optimal heads are $2$ and $5$, respectively. However, the best
+\emph{shared} action is head $6$: the regrets are $0.06336798$ and
+$0.05438468$, giving $\Delta=0.05887633055$. Using only the two
+statewise optimal actions would overestimate the bound.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/witness.pdf}
+\caption{The selected source (green, vertex 0), legal heads, and static
+coordinates are identical. Fixed directed edges (left) change the optimal
+conditional completion costs (right). Head 6 is the best compromise for a
+decoder unable to distinguish the forests.}
+\label{fig:witness}
+\end{figure}
+
+An independent enumeration of all $6!=720$ anchored tours reproduces the
+24 legal completions of each forest. Interval arithmetic on the recorded
+decimal coordinates certifies
+$0.058876330550917\leq\Delta\leq0.058876330550931$.
+The certificate concerns that specified decimal instance; it makes no
+distributional or full-policy claim.
+
+\subsection{Paired fragments from larger instances}
+\label{sec:stress}
+Before execution, we specified a constructed stress test on 256 fresh geometries in each
+of six cells: $n\in\{50,100,200\}$, uniform or clustered sampling. On each
+geometry, nearest-neighbor construction followed by at most 100 deterministic
+2-opt moves provides a feasible tour. We cut it into six directed paths and
+exchange suffixes of two non-source paths. The source path, all component
+heads, and the set of tails remain fixed, while two head--tail associations
+change. Singleton paths are allowed; only the two swapped paths must have
+an internal cut. We enumerate all $5!=120$ cyclic component orders in each
+forest and compute Equation~\eqref{eq:risk} under equal pair weights.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/stress.pdf}
+\caption{Constructed counterfactual pairs on larger instances, with six
+components per forest. Intervals bootstrap 256 independent geometries per
+cell, retaining both states within each unit. The rates describe this generator,
+not the occupancy of a deployed neural policy.}
+\label{fig:stress}
+\end{figure}
+
+\begin{table}[t]
+\centering\small
+\input{stress_table.tex}
+\caption{Exact conditional observation regret on the larger-instance stress
+test. Costs use original Euclidean coordinates. Uniform and clustered instances
+have different distance scales, so absolute regrets are not a scale-invariant
+comparison. An unchanged-pair control has zero regret in all 1,536 cases.}
+\label{tab:stress}
+\end{table}
+
+Conflicting optimal actions occur in 20.7--29.7\% of pairs
+(Table~\ref{tab:stress}). Positive mean regret is not limited to the selected
+witness. The construction also exposes a limitation: swapping suffixes can
+produce a poor counterfactual forest and does not preserve a policy's visitation
+distribution. These figures establish the reach of the interface ambiguity
+within a precisely specified family, not its prevalence during ordinary solving.
+
+\subsection{Learning with and without connectivity}
+\label{sec:conditional}
+\input{conditional_results.tex}
+
+\section{From conditional decisions to complete tours}
+\label{sec:hosts}
+
+\subsection{Archived adaptation evidence}
+We separately audit an existing official-host experiment comprising AM and
+ICAM, route continuation, trained random-source forests, and learned-source
+forests, with three joint-training seeds per arm. Models receive 2,500
+endpoint-supervision updates followed by 300 reinforcement-learning updates;
+the three seeds share the relevant warmup. The dataset, trajectory count,
+and updates are matched, but training and inference wall times are not.
+This is a limited adaptation screen, not evidence of convergence. We recompute
+its tables from archived per-instance costs and retain its negative outcomes.
+
+\begin{table}[t]
+\centering\small
+\input{historical_table.tex}
+\caption{Archived adaptation screen, kept separate from new interventions.
+U200/C200/U500 denote uniform TSP200, clustered TSP200, and uniform TSP500.
+Entries average three joint seeds sharing warmup; lower is better.
+Learned excess is relative to adapted route. No inference-time equivalence
+or state-repair conclusion follows from this table.}
+\label{tab:historical}
+\end{table}
+
+Learned source selection beats trained random selection on uniform TSP200,
+yet costs remain 23.50\% above route for AM and 6.26\% above route for ICAM
+(Table~\ref{tab:historical}). All three predefined size/distribution settings
+favor route in mean cost. This motivates diagnosis
+but does not show that aliasing caused the entire loss. Nor do 300 updates
+establish an upper limit on a method trained to convergence.
+
+Native deployment budget is a separate issue. In an additional archived
+evaluation, ICAM with all $n$ starts and eight geometric transformations has
+gaps to a feasible LKH reference of 0.27\% on U200, 0.76\% on U500, and
+10.62\% on C200. These are not certified optimality gaps. They also cannot
+be compared as equal-compute results to a single forest rollout. A weak
+single-start baseline can exaggerate practical headroom.
+
+\subsection{Controlled component-state intervention}
+\label{sec:repair}
+\input{adapter_results.tex}
+
+\section{Related work}
+State abstractions preserve different levels of decision information
+\citep{li2006abstraction}. BQ-NCO applies bisimulation quotienting to obtain
+reduced constructive problems with optimal-solution guarantees
+\citep{drakulic2023bqnco}. Our use of conditional Bayes regret examines an
+information-losing adapter in the opposite direction: enlarging construction
+freedom while retaining an interface designed for a narrower state family.
+It is a diagnostic application of established principles.
+
+Multi-fragment construction is an established routing heuristic
+\citep{mamano2019multifragment}, and path contraction is also standard.
+DRHG explicitly represents a retained segment using both endpoint coordinates
+and learns reconnection \citep{li2025drhg}; this is a direct precedent for our
+connectivity intervention. L2C-Insert learns insertion positions
+\citep{luo2025insert}, and Learning to Segment identifies stable segments to
+reduce repeated search \citep{ouyang2026segment}. We do not claim that flexible
+construction, paired endpoints, or compression is novel, and do not present
+our limited adapters as stronger solvers than these systems.
+
+Variable-order learning is also established in constraint satisfaction
+\citep{song2019ordering}. Order-invariant reinforcement learning randomizes
+variable order in black-box optimization \citep{goudet2026order}, while MACSIM
+uses multi-action assignments and set-based learning
+\citep{luttmann2026macsim}. Such training can address ordering and equivalent
+trajectories, but it does not automatically reveal omitted connectivity.
+Conversely, adding connectivity does not prove that a learned order is useful.
+These are separate hypotheses requiring separate controls.
+
+\section{Discussion and limitations}
+The evidence supports testing observation sufficiency before attributing
+forest-decoder failures to the optimizer or the usefulness of flexible order.
+It does not establish a new group algorithm or a general superiority of
+multi-fragment routing. The central remaining question is whether measured
+conditional information loss predicts gains on the states a solver actually
+visits. Exact small-state supervision, constructed larger-state pairs, and
+limited pretrained-host adaptation each answer part of that question.
+They are not interchangeable measurements. Strong solver claims require
+direct modern baselines, trained ordering controls, independent end-to-end
+seeds, and matched inference-time frontiers.
+
+\subsection*{AI use statement}
+Generative AI tools assisted with the formulation and proof drafts, experimental
+design, code implementation and checking, literature review, result interpretation,
+and manuscript and figure preparation. The released artifacts distinguish
+executed experiments from analysis and preserve their outputs. This statement
+does not assert that independent human verification has already been completed.
+
+\subsection*{Reproducibility statement}
+The supplementary code provides deterministic data generators, exact-completion
+checks, numerical interval verification, training and evaluation scripts,
+per-instance outputs, configurations, and file hashes. Protocols distinguish
+archived evidence from new experiments and record budget amendments. Appendix
+sections give the assumptions, data generation, and statistical units needed
+to interpret these artifacts.
+
+\bibliography{../references}
+\bibliographystyle{iclr2027_conference}
+\appendix
+\input{appendix.tex}
+\end{document}

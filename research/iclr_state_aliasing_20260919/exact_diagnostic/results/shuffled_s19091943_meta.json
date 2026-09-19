@@ -1,0 +1,8 @@
+{
+  "name": "shuffled_s19091943",
+  "seed": 19091943,
+  "best_step": 4000,
+  "validation_regret": 0.03354801645731897,
+  "parameters": 415489,
+  "training_seconds": 107.38803148269653
+}

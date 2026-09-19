@@ -1,0 +1,111 @@
+{
+  "protocol": "Post-pilot stronger heuristic. For each legal source endpoint, condition that edge and solve the minimum directed cycle cover using Hungarian assignment (self-loops forbidden; other subtours allowed). Choose smallest relaxation value; evaluate exact optimal-completion regret of that first action. CPU latency is informational for these tiny states only, not a neural speed claim.",
+  "scipy_version": "1.17.1",
+  "datasets": {
+    "iid_n9": {
+      "regret": {
+        "mean": 0.03629155992120396,
+        "ci95": [
+          0.0339990564721906,
+          0.03850214435754249
+        ],
+        "n_geometry": 4500
+      },
+      "accuracy": {
+        "mean": 0.7304444444444445,
+        "ci95": [
+          0.7199972222222222,
+          0.7408888888888889
+        ],
+        "n_geometry": 4500
+      },
+      "cpu_seconds": 0.34982991707511246,
+      "seconds_per_forest": 3.8869990786123606e-05,
+      "n_geometry": 4500
+    },
+    "cluster_n9": {
+      "regret": {
+        "mean": 0.016674076128012225,
+        "ci95": [
+          0.01525612943027583,
+          0.018151864393955087
+        ],
+        "n_geometry": 4500
+      },
+      "accuracy": {
+        "mean": 0.7507777777777778,
+        "ci95": [
+          0.7412222222222222,
+          0.7605611111111111
+        ],
+        "n_geometry": 4500
+      },
+      "cpu_seconds": 0.3460512920282781,
+      "seconds_per_forest": 3.845014355869757e-05,
+      "n_geometry": 4500
+    },
+    "ood_n7": {
+      "regret": {
+        "mean": 0.0415356829268434,
+        "ci95": [
+          0.03925621067752539,
+          0.044056929084735415
+        ],
+        "n_geometry": 4500
+      },
+      "accuracy": {
+        "mean": 0.7197777777777777,
+        "ci95": [
+          0.7103305555555556,
+          0.7301166666666667
+        ],
+        "n_geometry": 4500
+      },
+      "cpu_seconds": 0.2734927089186385,
+      "seconds_per_forest": 3.0388078768737614e-05,
+      "n_geometry": 4500
+    },
+    "ood_n11": {
+      "regret": {
+        "mean": 0.030450137286118877,
+        "ci95": [
+          0.028313885965434687,
+          0.032484014526795175
+        ],
+        "n_geometry": 4500
+      },
+      "accuracy": {
+        "mean": 0.7436666666666667,
+        "ci95": [
+          0.7333305555555555,
+          0.7536694444444445
+        ],
+        "n_geometry": 4500
+      },
+      "cpu_seconds": 0.4367279160069302,
+      "seconds_per_forest": 4.852532400077002e-05,
+      "n_geometry": 4500
+    },
+    "ood_n13": {
+      "regret": {
+        "mean": 0.026255649616249266,
+        "ci95": [
+          0.02433326719481299,
+          0.027981501812327208
+        ],
+        "n_geometry": 4500
+      },
+      "accuracy": {
+        "mean": 0.7477777777777778,
+        "ci95": [
+          0.7373333333333333,
+          0.7587777777777778
+        ],
+        "n_geometry": 4500
+      },
+      "cpu_seconds": 0.5108354589901865,
+      "seconds_per_forest": 5.675949544335405e-05,
+      "n_geometry": 4500
+    }
+  }
+}

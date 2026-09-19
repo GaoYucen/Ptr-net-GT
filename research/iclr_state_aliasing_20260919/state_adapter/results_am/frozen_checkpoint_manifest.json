@@ -1,0 +1,17 @@
+{
+  "checkpoints": {
+    "route-blind-seed12031": "0ac92083cb56f44db6f31f14e976003aaa0afcb40f385857c920ced8a3ccdc7b",
+    "route-blind-seed12037": "2c665df43018849b1c5fe546d9856d85a89891aa3048bf9ff7c7cc8d46d41780",
+    "route-blind-seed12041": "db61cf7fe3ebb029ff8f13ad1d1879a24a1aec676165ec5b3b99615fa8e91954",
+    "route-aware-seed12031": "30ed57771ef4bf85d8e839011ff55977d4e1be23bf1b7165f772fbb73c8d466a",
+    "route-aware-seed12037": "f646e4b3e82cfc52d5067b9c089a35d7c903db8be41f7beae04e52248cded3c6",
+    "route-aware-seed12041": "e8c22efa1d557a2da568b54ecf5a0fba1afbca463a7b46ce429f4b13a403878f",
+    "random-blind-seed12031": "9463fee64b3d377757b94c6add872836cd85d556ca7ff3b9dd0395b02bbd0337",
+    "random-blind-seed12037": "d8aaf7e3656c9e726f44d2bba10cc840c3b4dc5538cc7d7b013d1564321f9b29",
+    "random-blind-seed12041": "b7ba046f45bf944a0f9e512d23424c6b61902724aee01c3e7e3b0650b80a6b3f",
+    "random-aware-seed12031": "34a164c981ae13aec93dac93beaa4f0b4dddc13b647f3c2d6008f97f46e8cfae",
+    "random-aware-seed12037": "2513c21f81e4d8848f08499921cdce3f021c797a63ede402fd542ba3e45ca64e",
+    "random-aware-seed12041": "f869fc3fa0cf8f3fe51dc3a375801d6ec0034782f6b9ed7d8ca3dd431f67cd87"
+  },
+  "frozen_unix_time": 1789803609.2912774
+}

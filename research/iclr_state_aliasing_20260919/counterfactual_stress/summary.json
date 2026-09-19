@@ -1,0 +1,188 @@
+{
+  "kind": "constructed paired-forest counterfactual stress test",
+  "not_on_policy": true,
+  "fixed_source": true,
+  "equal_state_prior": true,
+  "protocol": "iclr_20260919/PROTOCOL.md",
+  "cells": [
+    {
+      "distribution": "uniform",
+      "n": 50,
+      "m": 6,
+      "instances": 256,
+      "seed": 91972500,
+      "coordinates_sha256": "f74a01913deb6e106dd00f65a3b810a8ffdbe432e9fc025e425210b3e7b94d8f",
+      "mean_bayes_regret": 0.019921202370435535,
+      "bayes_regret_ci": [
+        0.013556666183163495,
+        0.02687483727790634
+      ],
+      "conflict_fraction": 0.20703125,
+      "conflict_fraction_ci": [
+        0.15625,
+        0.2578125
+      ],
+      "nearest_mean_regret": 0.039621172805934135,
+      "max_bayes_regret": 0.33664793061646847,
+      "mean_original_tour_cost": 5.913575872100141,
+      "unchanged_pair_control_max": 0.0
+    },
+    {
+      "distribution": "uniform",
+      "n": 100,
+      "m": 6,
+      "instances": 256,
+      "seed": 91973000,
+      "coordinates_sha256": "2fbce44cd153f99fd374e7d7a669570a1444532f27ed1305cade81df3ac72144",
+      "mean_bayes_regret": 0.02778352725789013,
+      "bayes_regret_ci": [
+        0.019462936138219502,
+        0.0363942187093956
+      ],
+      "conflict_fraction": 0.23046875,
+      "conflict_fraction_ci": [
+        0.1796875,
+        0.28515625
+      ],
+      "nearest_mean_regret": 0.0315531865851011,
+      "max_bayes_regret": 0.42177305265570775,
+      "mean_original_tour_cost": 8.111253679591808,
+      "unchanged_pair_control_max": 0.0
+    },
+    {
+      "distribution": "uniform",
+      "n": 200,
+      "m": 6,
+      "instances": 256,
+      "seed": 91974000,
+      "coordinates_sha256": "d275721867287866b5d078823fabafcdefd8e9868e40d9ac97aa28e7dbe00657",
+      "mean_bayes_regret": 0.023036873504619384,
+      "bayes_regret_ci": [
+        0.016023493297112792,
+        0.031097796487882808
+      ],
+      "conflict_fraction": 0.2109375,
+      "conflict_fraction_ci": [
+        0.16015625,
+        0.26171875
+      ],
+      "nearest_mean_regret": 0.03446103494049503,
+      "max_bayes_regret": 0.36976780001244425,
+      "mean_original_tour_cost": 11.250919451565451,
+      "unchanged_pair_control_max": 0.0
+    },
+    {
+      "distribution": "clustered",
+      "n": 50,
+      "m": 6,
+      "instances": 256,
+      "seed": 91972501,
+      "coordinates_sha256": "2e8ea43c26540d9c2050ea19d903f935dbb50223889468958952ee36cae176cc",
+      "mean_bayes_regret": 0.011944140559736924,
+      "bayes_regret_ci": [
+        0.008397301357782988,
+        0.015916459314790347
+      ],
+      "conflict_fraction": 0.23828125,
+      "conflict_fraction_ci": [
+        0.1875,
+        0.29296875
+      ],
+      "nearest_mean_regret": 0.030618405853729158,
+      "max_bayes_regret": 0.22059618470789832,
+      "mean_original_tour_cost": 2.4079404043582993,
+      "unchanged_pair_control_max": 0.0
+    },
+    {
+      "distribution": "clustered",
+      "n": 100,
+      "m": 6,
+      "instances": 256,
+      "seed": 91973001,
+      "coordinates_sha256": "9d72c9bcf6b5b498c9e4af03b8e4d90c7d08c8dfd228551c1a381140cf782dc4",
+      "mean_bayes_regret": 0.017208806531499345,
+      "bayes_regret_ci": [
+        0.010985987640016869,
+        0.02465707440602665
+      ],
+      "conflict_fraction": 0.21875,
+      "conflict_fraction_ci": [
+        0.16796875,
+        0.26953125
+      ],
+      "nearest_mean_regret": 0.0306997846673443,
+      "max_bayes_regret": 0.4234234105132302,
+      "mean_original_tour_cost": 3.1864340368552155,
+      "unchanged_pair_control_max": 0.0
+    },
+    {
+      "distribution": "clustered",
+      "n": 200,
+      "m": 6,
+      "instances": 256,
+      "seed": 91974001,
+      "coordinates_sha256": "9ad0f1566eb0dff044630eeb562ac93e3edd42b410eb3c7b8359e8cc7e137437",
+      "mean_bayes_regret": 0.013091102295475561,
+      "bayes_regret_ci": [
+        0.008589707423784355,
+        0.018053416255887862
+      ],
+      "conflict_fraction": 0.296875,
+      "conflict_fraction_ci": [
+        0.2421875,
+        0.3515625
+      ],
+      "nearest_mean_regret": 0.02252297312634208,
+      "max_bayes_regret": 0.3001816951198304,
+      "mean_original_tour_cost": 4.213554482518971,
+      "unchanged_pair_control_max": 0.0
+    }
+  ],
+  "old_witness": {
+    "source_file": "strong_hosts_20260919/evidence/endpoint-aliasing.json",
+    "verified_all_720_tours": true,
+    "valid_completions_per_forest": 24,
+    "legal_heads": [
+      1,
+      2,
+      5,
+      6
+    ],
+    "completion_q": [
+      [
+        3.5061822392049575,
+        3.123100723285477,
+        3.2789470441675896,
+        3.186468699578353
+      ],
+      [
+        3.3707718681291774,
+        3.2212140192131526,
+        3.06225256495853,
+        3.1166372497675034
+      ]
+    ],
+    "regrets": [
+      [
+        0.3830815159194807,
+        0.0,
+        0.1558463208821128,
+        0.06336797629287627
+      ],
+      [
+        0.30851930317064724,
+        0.1589614542546225,
+        0.0,
+        0.054384684808973294
+      ]
+    ],
+    "optimal_heads": [
+      2,
+      5
+    ],
+    "blind_best_shared_head": 6,
+    "exact_equal_prior_bayes_regret": 0.05887633055092478
+  },
+  "seconds": 16.411995165981352,
+  "script_sha256": "f6bf6e5a0cb81e816f96b9fc382477065f5690659cc822385a32ad38c6ae79a4"
+}

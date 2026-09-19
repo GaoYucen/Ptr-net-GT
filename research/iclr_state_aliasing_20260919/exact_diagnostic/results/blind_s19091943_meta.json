@@ -1,0 +1,9 @@
+{
+  "name": "blind_s19091943",
+  "aware": false,
+  "seed": 19091943,
+  "best_step": 4000,
+  "validation_regret": 0.033504883010944196,
+  "parameters": 415489,
+  "training_seconds": 93.34605836868286
+}

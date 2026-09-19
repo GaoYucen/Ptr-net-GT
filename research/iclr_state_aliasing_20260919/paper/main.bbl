@@ -1,0 +1,94 @@
+\begin{thebibliography}{11}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Drakulic et~al.(2023)Drakulic, Michel, Mai, Sors, and
+  Andreoli]{drakulic2023bqnco}
+Darko Drakulic, Sofia Michel, Florian Mai, Arnaud Sors, and Jean-Marc Andreoli.
+\newblock {BQ-NCO}: Bisimulation quotienting for efficient neural combinatorial
+  optimization.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~36, pp.\  77416--77429, 2023.
+\newblock URL
+  \url{https://proceedings.neurips.cc/paper_files/paper/2023/hash/f445ba15f0f05c26e1d24f908ea78d60-Abstract.html}.
+
+\bibitem[Goudet et~al.(2026)Goudet, Suire, Go{\"e}ffon, Saubion, and
+  Lamprier]{goudet2026order}
+Olivier Goudet, Quentin Suire, Adrien Go{\"e}ffon, Fr{\'e}d{\'e}ric Saubion,
+  and Sylvain Lamprier.
+\newblock Black-box combinatorial optimization with order-invariant
+  reinforcement learning.
+\newblock In \emph{International Conference on Machine Learning}, 2026.
+\newblock URL \url{https://arxiv.org/abs/2510.01824}.
+
+\bibitem[Kool et~al.(2019)Kool, van Hoof, and Welling]{kool2019attention}
+Wouter Kool, Herke van Hoof, and Max Welling.
+\newblock Attention, learn to solve routing problems!
+\newblock In \emph{International Conference on Learning Representations}, 2019.
+\newblock URL \url{https://openreview.net/forum?id=ByxBFsRqYm}.
+
+\bibitem[Li et~al.(2025)Li, Liu, Wang, and Zhang]{li2025drhg}
+Ke~Li, Fei Liu, Zhenkun Wang, and Qingfu Zhang.
+\newblock Destroy and repair using hyper-graphs for routing.
+\newblock In \emph{Proceedings of the AAAI Conference on Artificial
+  Intelligence}, volume~39, pp.\  18341--18349, 2025.
+\newblock \doi{10.1609/aaai.v39i17.34018}.
+\newblock URL \url{https://ojs.aaai.org/index.php/AAAI/article/view/34018}.
+
+\bibitem[Li et~al.(2006)Li, Walsh, and Littman]{li2006abstraction}
+Lihong Li, Thomas~J. Walsh, and Michael~L. Littman.
+\newblock Towards a unified theory of state abstraction for {MDPs}.
+\newblock In \emph{International Symposium on Artificial Intelligence and
+  Mathematics}, 2006.
+\newblock URL \url{https://thomasjwalsh.net/pub/aima06Towards.pdf}.
+
+\bibitem[Luo et~al.(2025)Luo, Lin, Zhong, Liu, Wang, Sun, and
+  Zhang]{luo2025insert}
+Fu~Luo, Xi~Lin, Mengyuan Zhong, Fei Liu, Zhenkun Wang, Jianyong Sun, and Qingfu
+  Zhang.
+\newblock Learning to insert for constructive neural vehicle routing solver.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~38, 2025.
+\newblock URL
+  \url{https://papers.nips.cc/paper_files/paper/2025/hash/7e3192a54b4ce5855a90dc182eac2036-Abstract-Conference.html}.
+
+\bibitem[Luttmann \& Xie(2026)Luttmann and Xie]{luttmann2026macsim}
+Laurin Luttmann and Lin Xie.
+\newblock Multi-action self-improvement for neural combinatorial optimization.
+\newblock In \emph{International Conference on Learning Representations}, 2026.
+\newblock URL
+  \url{https://proceedings.iclr.cc/paper_files/paper/2026/hash/1bf4cad47f5a54c98fbe7d10516ebf77-Abstract-Conference.html}.
+
+\bibitem[Mamano et~al.(2019)Mamano, Efrat, Eppstein, Frishberg, Goodrich,
+  Kobourov, Matias, and Polishchuk]{mamano2019multifragment}
+Nil Mamano, Alon Efrat, David Eppstein, Daniel Frishberg, Michael Goodrich,
+  Stephen Kobourov, Pedro Matias, and Valentin Polishchuk.
+\newblock Euclidean {TSP}, motorcycle graphs, and other new applications of
+  nearest-neighbor chains, 2019.
+\newblock URL \url{https://arxiv.org/abs/1902.06875}.
+
+\bibitem[Ouyang et~al.(2026)Ouyang, Li, Ma, and Wu]{ouyang2026segment}
+Wenbin Ouyang, Sirui Li, Yining Ma, and Cathy Wu.
+\newblock Learning to segment for vehicle routing problems.
+\newblock In \emph{International Conference on Learning Representations}, 2026.
+\newblock URL \url{https://openreview.net/forum?id=pN261iTKvr}.
+
+\bibitem[Song et~al.(2019)Song, Cao, Zhang, and Lim]{song2019ordering}
+Wen Song, Zhiguang Cao, Jie Zhang, and Andrew Lim.
+\newblock Learning variable ordering heuristics for solving constraint
+  satisfaction problems, 2019.
+\newblock URL \url{https://arxiv.org/abs/1912.10762}.
+
+\bibitem[Zhou et~al.(2026)Zhou, Lin, Wang, Tong, Yuan, and Zhang]{zhou2026icam}
+Changliang Zhou, Xi~Lin, Zhenkun Wang, Xialiang Tong, Mingxuan Yuan, and Qingfu
+  Zhang.
+\newblock Instance-conditioned adaptation for large-scale generalization of
+  neural routing solver.
+\newblock \emph{IEEE Transactions on Intelligent Transportation Systems}, 2026.
+\newblock \doi{10.1109/TITS.2026.3674538}.
+\newblock URL \url{https://arxiv.org/abs/2405.01906}.
+
+\end{thebibliography}

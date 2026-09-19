@@ -1,0 +1,10 @@
+{
+  "seed": 12041,
+  "mode": "random",
+  "aware": false,
+  "best_step": 7000,
+  "training_seconds": 84.62829514732584,
+  "wall_seconds": 103.00330282980576,
+  "steps": 12000,
+  "parameters": 58306
+}

@@ -1,0 +1,199 @@
+\section{Assumptions and limits of the regret statement}
+The observation-conditioned distribution in Proposition~\ref{prop:risk} is
+part of the problem specification. A constructed equal-weight pair yields a
+valid risk statement for that pair. If a decoder's true observation class also
+contains additional states, then an oracle that is told which pair was sampled
+has extra information. Its average pairwise minimum can be smaller than the
+minimum achievable by a decoder lacking pair identity. We therefore label
+pairwise and full observation-class enumeration separately.
+
+Randomization cannot exploit hidden state unless its random seed is itself
+correlated with that state conditional on the observation. Recurrent history,
+dynamic encoder inputs, or a source-selector hidden message violate the
+interface assumed by the bound. A learned source also changes both the
+conditional state distribution and the information conveyed by its selected
+index. None of our conditional lower bounds is an impossibility theorem for
+joint source--target policies.
+
+If approximate action values satisfy
+$|\widehat Q_F(s,a)-Q_F(s,a)|\leq\epsilon$ uniformly, the estimated regret
+gap differs from the exact gap by at most $2\epsilon$: each of the two terms
+in Equation~\eqref{eq:risk} changes by at most $\epsilon$. Feasible heuristic
+completions only upper-bound action values, and usually do not provide such
+two-sided error control. A disagreement between heuristic completions alone
+does not certify positive irreducible regret.
+
+\section{Contraction and completion counts}
+Every completion must retain all fixed directed path edges. Contract each path
+to a component with its ordered head and tail. A completed tour corresponds to
+a cyclic ordering of the $m$ distinguishable components, with one connector
+from each component's tail to the next component's head. Conversely any
+cyclic component order expands into a Hamiltonian tour because the graph is
+complete. Fixing one component to remove rotational duplicates gives
+$(m-1)!$ completions. Specifying a legal connector merges two components and
+leaves $(m-2)!$ orders. With one component only its closure remains.
+
+Any optimal completion assigns a successor to every open source, so fixing
+which source is queried first does not change the optimal completion value
+provided all its legal heads remain available. It can nevertheless change
+the outcome of a restricted neural policy. These statements concern the
+directed fixed-fragment problem. Reversing a fragment changes its fixed
+successor assignments; destroy-and-repair, sparse graphs, capacity constraints,
+and time windows require different transition and feasibility analyses.
+
+\section{Numerically certified witness}
+The witness uses the following recorded decimal coordinates, with zero-based
+vertex numbering:
+\begin{center}\small
+\begin{tabular}{rrr}\toprule
+Vertex & $x$ & $y$\\\midrule
+0 & 0.9667947888374329 & 0.144645094871521\\
+1 & 0.16519033908843994 & 0.6777374148368835\\
+2 & 0.01400136947631836 & 0.032273709774017334\\
+3 & 0.27172255516052246 & 0.45283347368240356\\
+4 & 0.11830371618270874 & 0.4929446578025818\\
+5 & 0.49647223949432373 & 0.7829722166061401\\
+6 & 0.6254234313964844 & 0.34477776288986206\\\bottomrule
+\end{tabular}\end{center}
+Each decimal is interpreted as an exact rational. For every squared distance
+$q$, integer square roots bound $\sqrt q$ between adjacent multiples of
+$10^{-15}$. Summing the lower and upper edge bounds along all anchored tours
+and taking actionwise minima bounds each conditional optimal completion cost.
+For $L_s(a)\leq Q_s(a)\leq U_s(a)$, a valid lower bound on the equal-pair
+regret is
+\[
+\frac12\min_a\sum_s L_s(a)-\frac12\sum_s\min_a U_s(a),
+\]
+with the upper bound obtained by interchanging $L$ and $U$.
+The verification uses only Python's standard library and checks all 720 tours.
+This is a certificate for the specified decimal instance, distinct from
+claiming exact real arithmetic on unspecified binary-coordinate inputs.
+
+\section{Larger-instance stress generator}
+Uniform instances sample $n$ coordinates independently in $[0,1]^2$.
+Clustered instances sample four centers uniformly in $[0.15,0.85]^2$, assign
+each vertex uniformly to a center, add independent Gaussian noise with
+standard deviation $0.04$, and clip to the unit square. There are 256
+geometries per size/distribution cell and no test-dependent selection.
+Seeds are $91972000+10n+b$, where $b=0$ for uniform and $b=1$ for clustered.
+
+A nearest-neighbor tour begins at vertex zero. Deterministic best-improvement
+2-opt accepts at most 100 improving moves. This is a feasible construction,
+not an optimality certificate or a benchmark competitor. Five cut positions
+are sampled without replacement among the $n-1$ gaps in its linearized order,
+giving six paths. If fewer than two non-source paths have length at least two,
+cuts are resampled. From eligible paths, two are sampled and cut internally;
+their suffixes are exchanged. The source is the tail of path zero and is
+unchanged. All path heads and the set of tails remain unchanged.
+
+For each pair, all 120 directed cycles on six components are enumerated.
+Q-values include fixed internal lengths, but these cancel separately within
+each forest when computing regret. Both forests are retained, including all
+zero-regret pairs. A control duplicating the original forest must yield zero.
+In floating-point summaries, a pair is marked conflicting when its minimum
+shared-action regret exceeds $10^{-9}$.
+Bootstrap intervals use 4,000 resamples of whole geometries, never treating
+the two forests as independent observations. These sampling rules are
+deliberately explicit because different fragment and counterfactual generators
+can give different conflict rates.
+
+\section{Controlled neural prediction protocol}
+For $n=2k+3$ vertices, vertex zero is the selected singleton source;
+vertices $1,\ldots,k$ are nontrivial component heads and vertices
+$k+1,\ldots,2k$ are their tails. The last two vertices are singletons.
+An initial uniform random matching defines $k$ length-two components;
+swapping two randomly selected matches constructs the second forest.
+Coordinates are sampled independently of the matching. The number of
+components is $k+3$, so enumerating anchored component cycles is tractable
+for the tested $k=2,3,4,5$. Distances and action values are computed in
+float64 from coordinates stored as float32.
+
+The shared node features are source-relative coordinates, a head indicator,
+a non-head indicator, a source indicator, and a non-singleton indicator.
+Two additional channels contain displacement to the paired endpoint in the
+aware condition and zeros in the blind condition. Both heads and tails
+receive the displacement. There are no positional embeddings. The network
+uses an eight-dimensional input projection to width 128, three pre-norm
+Transformer layers with eight heads and feed-forward width 256, GELU
+activation, and zero dropout. A shared normalized MLP outputs one scalar
+per candidate head. Mean-squared error to exact regret trains the scores;
+the chosen action minimizes the predicted score over legal heads.
+
+AdamW uses learning rate $3\times10^{-4}$, weight decay $10^{-5}$,
+gradient-norm clipping at one, and batch size 512 for 10,000 updates.
+Validation runs at the first update and every 500 updates thereafter;
+the lowest mean exact validation regret selects the checkpoint. The seeds
+are 19091941, 19091942, and 19091943. Train and validation geometry seeds
+are 190919101 and 190919201; each test condition concatenates 1,500
+geometries from each of seeds 190919301--190919303. The clustered condition
+uses three centers in $[0.15,0.85]^2$, Gaussian noise of standard deviation
+0.06, and clipping to the unit square. All train, validation, and test
+geometries remain disjoint; reusing a data seed at another size does not
+create an identical geometry.
+
+The independently trained random-pairing control resamples a uniform matching
+for every training example on every update using a separate RNG. It retains
+all roles and active feature channels but makes the displayed matching
+independent of the label-generating matching. Validation and test use fixed
+independent corruption streams. Test-time wrong pairing instead exchanges
+the two members' true associations while keeping the aware model fixed.
+These two experiments answer different questions. Both are supplementary
+mechanism controls designed after initial pilot validation; neither selects
+the main predictors using the final test.
+
+The supplementary full-family evaluation holds geometry and roles fixed
+and enumerates all six matchings for $k=3$. It therefore computes the exact
+Bayes regret for the enriched blind observation and the specified uniform
+matching prior. Progressive revelation groups the six matchings by the
+partners of heads $1,\ldots,r$ and averages each group's optimal shared
+action with its probability. With two known partners the third is determined.
+No learned predictor or test-based selection is needed for this calculation.
+
+Statistical summaries first average both paired states within each geometry.
+Model means then average three training seeds. Geometry-only intervals
+condition on these trained models; additional crossed bootstrap intervals
+resample both whole geometries and the three seeds. The latter do not
+compensate for having only three training seeds. The assignment comparator
+forces each candidate first action and scores an assignment relaxation of
+the remaining directed component problem, without requiring a single cycle.
+Its lower-bound scores are used as a heuristic ranking, not as exact Q-values.
+
+\section{Archived host study details}
+The earlier study starts from the official AM TSP100 epoch-99 checkpoint and
+the official ICAM checkpoint. Each host supplies greedy tours for 2,048
+uniform TSP200 training geometries, improved by up to 200 best-improvement
+2-opt moves. Route and random-order endpoint warmup use 2,500 updates of
+batch 32 at learning rate $10^{-5}$; the selected warmup is shared across
+the three subsequent joint seeds 1234, 2468, and 4321. The joint stage has
+300 updates with four independent instances and four stochastic trajectories
+per instance, leave-one-out REINFORCE baselines, host learning rate $10^{-5}$,
+selector learning rate $10^{-4}$, and gradient clipping at one.
+
+Joint validation uses 64 instances every 50 updates, including the initial
+checkpoint. The primary test has 256 uniform TSP200 instances; secondary
+tests have 64 clustered TSP200 and 64 uniform TSP500 instances. The reported
+seed uncertainty is conditional on shared warmup. Random source actions use
+a documented fixed evaluation RNG; their variation across multiple action
+seeds was not estimated in that archived study. Both hosts were evaluated
+on the same predefined conditions; failing cells were retained.
+
+The earlier prototype computes endpoint distributions for all sources at
+every step. Its forest rollouts are slower than native route construction.
+The results are matched by samples and updates, not GPU seconds. The original
+source selector uses detached endpoint-probability summaries; its gradient
+does not include derivatives through those summaries into the host. These
+details limit conclusions about efficiency and optimization.
+
+\section{Artifact organization and research boundaries}
+The root protocol distinguishes four work packages: exact controlled learning,
+official-host representation intervention, larger-instance counterfactual
+stress testing, and theory/literature verification. Analysis scripts regenerate
+tables and figures from machine-readable results. Historical cost vectors are
+identified by content hashes and are not relabeled as new measurements.
+
+The manuscript provides no claim of a new group-theoretic pruning algorithm,
+no guarantee for arbitrary constrained routing, and no equal-time solver
+ranking. Full-source freedom and complete-tour reachability concern the
+action space, not a deterministic neural policy's actual support. More
+training, a learned source policy, an alternative loss, and additional
+decoding starts are different interventions and must be compared explicitly.

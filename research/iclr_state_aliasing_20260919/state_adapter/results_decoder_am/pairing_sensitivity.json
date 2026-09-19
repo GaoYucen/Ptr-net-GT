@@ -1,0 +1,110 @@
+[
+  {
+    "seed": 12031,
+    "dataset": "uniform100",
+    "correct_nll": 0.8854707761675936,
+    "shuffled_tail_nll": 1.185482803216556,
+    "nll_increase": 0.30001202704896257,
+    "argmax_change_fraction": 0.2057291716337204,
+    "interpretation": "Post-selection test-time sensitivity; other component features remain correct."
+  },
+  {
+    "seed": 12031,
+    "dataset": "cluster100",
+    "correct_nll": 1.306123405476937,
+    "shuffled_tail_nll": 1.6350135430024357,
+    "nll_increase": 0.3288901375254986,
+    "argmax_change_fraction": 0.2369791716337204,
+    "interpretation": "Post-selection test-time sensitivity; other component features remain correct."
+  },
+  {
+    "seed": 12031,
+    "dataset": "uniform200",
+    "correct_nll": 0.772425179577159,
+    "shuffled_tail_nll": 1.07524021404819,
+    "nll_increase": 0.30281503447103114,
+    "argmax_change_fraction": 0.2916666567325592,
+    "interpretation": "Post-selection test-time sensitivity; other component features remain correct."
+  },
+  {
+    "seed": 12031,
+    "dataset": "cluster200",
+    "correct_nll": 1.5159884419375658,
+    "shuffled_tail_nll": 1.686720313286287,
+    "nll_increase": 0.17073187134872114,
+    "argmax_change_fraction": 0.3203125,
+    "interpretation": "Post-selection test-time sensitivity; other component features remain correct."
+  },
+  {
+    "seed": 12037,
+    "dataset": "uniform100",
+    "correct_nll": 0.871207440183785,
+    "shuffled_tail_nll": 1.1480979725488634,
+    "nll_increase": 0.2768905323650783,
+    "argmax_change_fraction": 0.1927083283662796,
+    "interpretation": "Post-selection test-time sensitivity; other component features remain correct."
+  },
+  {
+    "seed": 12037,
+    "dataset": "cluster100",
+    "correct_nll": 1.2080587134043788,
+    "shuffled_tail_nll": 1.4806604122956342,
+    "nll_increase": 0.27260169889125524,
+    "argmax_change_fraction": 0.2213541716337204,
+    "interpretation": "Post-selection test-time sensitivity; other component features remain correct."
+  },
+  {
+    "seed": 12037,
+    "dataset": "uniform200",
+    "correct_nll": 0.7617615909686611,
+    "shuffled_tail_nll": 1.0472516506055354,
+    "nll_increase": 0.2854900596368742,
+    "argmax_change_fraction": 0.2161458283662796,
+    "interpretation": "Post-selection test-time sensitivity; other component features remain correct."
+  },
+  {
+    "seed": 12037,
+    "dataset": "cluster200",
+    "correct_nll": 1.4278505721311678,
+    "shuffled_tail_nll": 1.6166567034614825,
+    "nll_increase": 0.18880613133031451,
+    "argmax_change_fraction": 0.3307291567325592,
+    "interpretation": "Post-selection test-time sensitivity; other component features remain correct."
+  },
+  {
+    "seed": 12041,
+    "dataset": "uniform100",
+    "correct_nll": 0.8515706713850827,
+    "shuffled_tail_nll": 1.173405712933684,
+    "nll_increase": 0.32183504154860126,
+    "argmax_change_fraction": 0.203125,
+    "interpretation": "Post-selection test-time sensitivity; other component features remain correct."
+  },
+  {
+    "seed": 12041,
+    "dataset": "cluster100",
+    "correct_nll": 1.3479765949053284,
+    "shuffled_tail_nll": 1.6798285845594947,
+    "nll_increase": 0.3318519896541665,
+    "argmax_change_fraction": 0.2734375,
+    "interpretation": "Post-selection test-time sensitivity; other component features remain correct."
+  },
+  {
+    "seed": 12041,
+    "dataset": "uniform200",
+    "correct_nll": 0.7697152334848146,
+    "shuffled_tail_nll": 1.0523019739269779,
+    "nll_increase": 0.2825867404421632,
+    "argmax_change_fraction": 0.2760416567325592,
+    "interpretation": "Post-selection test-time sensitivity; other component features remain correct."
+  },
+  {
+    "seed": 12041,
+    "dataset": "cluster200",
+    "correct_nll": 1.4934323043532534,
+    "shuffled_tail_nll": 1.6817997367114306,
+    "nll_increase": 0.1883674323581772,
+    "argmax_change_fraction": 0.3776041567325592,
+    "interpretation": "Post-selection test-time sensitivity; other component features remain correct."
+  }
+]

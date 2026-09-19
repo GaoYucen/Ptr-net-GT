@@ -1,0 +1,48 @@
+{
+  "seed": 12031,
+  "aware": false,
+  "mode": "route",
+  "selected_step": 3000,
+  "test": {
+    "uniform100": {
+      "mean": 7.8408450074493885,
+      "seconds": 2.0535270548425615,
+      "conditional": {
+        "nll": 0.6218692226079362,
+        "accuracy": 0.9505208134651184
+      },
+      "native_relative_percent": 0.4517531991004944,
+      "teacher_relative_percent": 0.6127678155899048
+    },
+    "cluster100": {
+      "mean": 3.937128337100148,
+      "seconds": 0.8490992761217058,
+      "conditional": {
+        "nll": 2.302364156836651,
+        "accuracy": 0.75
+      },
+      "native_relative_percent": -3.0794320106506348,
+      "teacher_relative_percent": 14.453279495239258
+    },
+    "uniform200": {
+      "mean": 10.83464764803648,
+      "seconds": 1.616512858774513,
+      "conditional": {
+        "nll": 0.4925720335040375,
+        "accuracy": 0.9322916865348816
+      },
+      "native_relative_percent": 0.4425784945487976,
+      "teacher_relative_percent": 0.6128841042518616
+    },
+    "cluster200": {
+      "mean": 5.176173288375139,
+      "seconds": 1.5652959649451077,
+      "conditional": {
+        "nll": 1.4698370955647064,
+        "accuracy": 0.7526041865348816
+      },
+      "native_relative_percent": -1.8867770433425903,
+      "teacher_relative_percent": 14.678523063659668
+    }
+  }
+}

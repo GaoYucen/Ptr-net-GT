@@ -1,0 +1,17 @@
+{
+  "checkpoints": {
+    "route-blind-seed12031": "28c9893e96c6279ebec932a4362b29375e06747193e7b66c7bed2967881e8b96",
+    "route-blind-seed12037": "d9a5fdc8a3b2a41cbafdb3799a8f695ce00f9def6cc40aaa7b4e71fe0aaeeee8",
+    "route-blind-seed12041": "83da8d93fd0dee89541c98a040c99b62af1b9b81cfe325cb5565253cc0ddf685",
+    "route-aware-seed12031": "07bdf04db33d40c265dbe07cbd8271772757693af36e917dbc1a35a34e168ce3",
+    "route-aware-seed12037": "df920cbe366a8babe6b355f9d451f09a3f03ba82ad78656c024b49ce1ed348a4",
+    "route-aware-seed12041": "acafce48c8ed6c509006de8af58f0c24e60a5e2df917cb02d839e2ec6e2650f7",
+    "random-blind-seed12031": "f95926808d7d69e3274296aa729d66226de820eb74bb116dc02302e57c040f2a",
+    "random-blind-seed12037": "5a5a0367d1bbef2a6261048c9a0e31d10d6cca52ddce585054ba3242176d844f",
+    "random-blind-seed12041": "b7bc88e938710199427c657eee517dba39c4e650a7bf55352d55fd2987a4c9fc",
+    "random-aware-seed12031": "d059f63edc8679b432ba38f7e160d03bee60571f89aa819b62e69662e5ec67cb",
+    "random-aware-seed12037": "c8662d96ab2df535d7bbec139684088c0473ec8706581205eb3ff7580acdfbc4",
+    "random-aware-seed12041": "9348d0a5230db77ea07820c11cfbc7743c55c0d9753fb3c9078e789b46b37530"
+  },
+  "frozen_unix_time": 1789803999.6458304
+}

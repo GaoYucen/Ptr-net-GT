@@ -1,0 +1,65 @@
+{
+  "kind": "rational interval certificate",
+  "coordinate_semantics": "JSON decimal strings are exact rationals",
+  "enumerated_anchored_tours_per_forest": 720,
+  "valid_completion_counts": [
+    24,
+    24
+  ],
+  "distance_interval_unit": "1/1000000000000000",
+  "legal_heads": [
+    1,
+    2,
+    5,
+    6
+  ],
+  "source": 0,
+  "equal_prior": true,
+  "certified_optimal_shared_heads": [
+    6
+  ],
+  "bayes_regret_lower": "0.058876330550917",
+  "bayes_regret_upper": "0.058876330550931",
+  "bayes_regret_lower_rational": "58876330550917/1000000000000000",
+  "bayes_regret_upper_rational": "58876330550931/1000000000000000",
+  "conditional_q_intervals": [
+    {
+      "1": [
+        "3.506182239204954",
+        "3.506182239204961"
+      ],
+      "2": [
+        "3.123100723285473",
+        "3.12310072328548"
+      ],
+      "5": [
+        "3.278947044167586",
+        "3.278947044167593"
+      ],
+      "6": [
+        "3.186468699578349",
+        "3.186468699578356"
+      ]
+    },
+    {
+      "1": [
+        "3.370771868129174",
+        "3.370771868129181"
+      ],
+      "2": [
+        "3.221214019213149",
+        "3.221214019213156"
+      ],
+      "5": [
+        "3.062252564958527",
+        "3.062252564958534"
+      ],
+      "6": [
+        "3.116637249767499",
+        "3.116637249767506"
+      ]
+    }
+  ],
+  "input_sha256": "7014437423378e9d9ffd7d65d7788d672be3744e54befd8b57771db3edacc34e",
+  "script_sha256": "aeacf00078a08d988fa1af63e361d9e44d6b243ba2855832900b71b3baaeb53f"
+}

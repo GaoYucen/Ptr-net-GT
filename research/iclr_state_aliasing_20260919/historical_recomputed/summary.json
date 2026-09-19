@@ -1,0 +1,578 @@
+{
+  "source": "Archived official AM/ICAM pilot; no new training",
+  "rows": [
+    {
+      "host": "am",
+      "case": "test200",
+      "test_instances": 256,
+      "training_seeds": [
+        1234,
+        2468,
+        4321
+      ],
+      "historical": true,
+      "shared_warmup": true,
+      "native_mean": 11.581380303949118,
+      "means": {
+        "route": 11.557907919088999,
+        "random": 18.218827176839113,
+        "learned": 14.273495654265085
+      },
+      "per_seed_means": {
+        "route": [
+          11.53392432257533,
+          11.572896014899015,
+          11.566903419792652
+        ],
+        "random": [
+          18.268755801022053,
+          18.3045822866261,
+          18.083143442869186
+        ],
+        "learned": [
+          14.199653521180153,
+          15.036069866269827,
+          13.584763575345278
+        ]
+      },
+      "comparisons": {
+        "random": {
+          "improvement_percent": -57.63083859449134,
+          "paired_instance_ci": [
+            -58.621153957889156,
+            -56.66766551048515
+          ],
+          "per_seed_improvement_percent": [
+            -58.39150049965776,
+            -58.167689946065984,
+            -56.33521597427969
+          ]
+        },
+        "learned": {
+          "improvement_percent": -23.495495501318466,
+          "paired_instance_ci": [
+            -23.99584718996801,
+            -23.00716163434415
+          ],
+          "per_seed_improvement_percent": [
+            -23.112074642168363,
+            -29.924867957962302,
+            -17.44511977250345
+          ]
+        }
+      }
+    },
+    {
+      "host": "am",
+      "case": "test200-aug8",
+      "test_instances": 256,
+      "training_seeds": [
+        1234,
+        2468,
+        4321
+      ],
+      "historical": true,
+      "shared_warmup": true,
+      "native_mean": 11.348591964691877,
+      "means": {
+        "route": 11.322852504750093,
+        "random": 16.56089363247156,
+        "learned": 13.404155364880959
+      },
+      "per_seed_means": {
+        "route": [
+          11.310899838805199,
+          11.328104473650455,
+          11.329553201794624
+        ],
+        "random": [
+          16.531455237418413,
+          16.699288744479418,
+          16.451936915516853
+        ],
+        "learned": [
+          13.352213356643915,
+          14.060522940009832,
+          12.79972979798913
+        ]
+      },
+      "comparisons": {
+        "random": {
+          "improvement_percent": -46.260790958144504,
+          "paired_instance_ci": [
+            -46.7194939241579,
+            -45.792982113047415
+          ],
+          "per_seed_improvement_percent": [
+            -46.155084679493335,
+            -47.414678098374836,
+            -45.212583607540964
+          ]
+        },
+        "learned": {
+          "improvement_percent": -18.381435766806383,
+          "paired_instance_ci": [
+            -18.62221194574415,
+            -18.147735007677298
+          ],
+          "per_seed_improvement_percent": [
+            -18.04731318400876,
+            -24.120703271364352,
+            -12.976474623567915
+          ]
+        }
+      }
+    },
+    {
+      "host": "am",
+      "case": "cluster200",
+      "test_instances": 64,
+      "training_seeds": [
+        1234,
+        2468,
+        4321
+      ],
+      "historical": true,
+      "shared_warmup": true,
+      "native_mean": 6.698969267308712,
+      "means": {
+        "route": 8.033672866721949,
+        "random": 17.855252141753834,
+        "learned": 11.999719349046549
+      },
+      "per_seed_means": {
+        "route": [
+          7.90220744907856,
+          7.703498505055904,
+          8.49531264603138
+        ],
+        "random": [
+          17.00649143755436,
+          18.15739117562771,
+          18.40187381207943
+        ],
+        "learned": [
+          16.62032363563776,
+          11.189808964729309,
+          8.189025446772575
+        ]
+      },
+      "comparisons": {
+        "random": {
+          "improvement_percent": -122.25515574222617,
+          "paired_instance_ci": [
+            -156.63171964702025,
+            -92.4098524821819
+          ],
+          "per_seed_improvement_percent": [
+            -115.21190815532701,
+            -135.70318295915527,
+            -116.61208455554535
+          ]
+        },
+        "learned": {
+          "improvement_percent": -49.36778666646034,
+          "paired_instance_ci": [
+            -74.96188624600349,
+            -27.935959370788442
+          ],
+          "per_seed_improvement_percent": [
+            -110.32507362959421,
+            -45.256197004325955,
+            3.605367006732679
+          ]
+        }
+      }
+    },
+    {
+      "host": "am",
+      "case": "test500",
+      "test_instances": 64,
+      "training_seeds": [
+        1234,
+        2468,
+        4321
+      ],
+      "historical": true,
+      "shared_warmup": true,
+      "native_mean": 20.03039476275444,
+      "means": {
+        "route": 19.702274759610493,
+        "random": 31.78571746746699,
+        "learned": 24.572859674692154
+      },
+      "per_seed_means": {
+        "route": [
+          19.638397365808487,
+          19.744718104600906,
+          19.72370880842209
+        ],
+        "random": [
+          32.14975216984749,
+          31.33130356669426,
+          31.876096665859222
+        ],
+        "learned": [
+          24.438830882310867,
+          26.37584948539734,
+          22.903898656368256
+        ]
+      },
+      "comparisons": {
+        "random": {
+          "improvement_percent": -61.330190829677484,
+          "paired_instance_ci": [
+            -63.622214536802346,
+            -59.04992090686073
+          ],
+          "per_seed_improvement_percent": [
+            -63.70863452341558,
+            -58.681949272263616,
+            -61.61309708774459
+          ]
+        },
+        "learned": {
+          "improvement_percent": -24.720926768650695,
+          "paired_instance_ci": [
+            -25.503271119593403,
+            -23.927562578547008
+          ],
+          "per_seed_improvement_percent": [
+            -24.4441205006891,
+            -33.58433048102747,
+            -16.12369092869702
+          ]
+        }
+      }
+    },
+    {
+      "host": "icam",
+      "case": "test200",
+      "test_instances": 256,
+      "training_seeds": [
+        1234,
+        2468,
+        4321
+      ],
+      "historical": true,
+      "shared_warmup": true,
+      "native_mean": 10.808111518621445,
+      "means": {
+        "route": 10.830674069623152,
+        "random": 12.699876243869463,
+        "learned": 11.508645791560411
+      },
+      "per_seed_means": {
+        "route": [
+          10.830985810607672,
+          10.83499838784337,
+          10.826038010418415
+        ],
+        "random": [
+          12.797393538057804,
+          12.646956320852041,
+          12.655278872698545
+        ],
+        "learned": [
+          11.339049059897661,
+          11.155827350914478,
+          12.031060963869095
+        ]
+      },
+      "comparisons": {
+        "random": {
+          "improvement_percent": -17.258410346673365,
+          "paired_instance_ci": [
+            -18.094656824979822,
+            -16.40841624074209
+          ],
+          "per_seed_improvement_percent": [
+            -18.155390117160604,
+            -16.723195224852528,
+            -16.896678734360293
+          ]
+        },
+        "learned": {
+          "improvement_percent": -6.259737090960663,
+          "paired_instance_ci": [
+            -6.6722971949451795,
+            -5.851819576286919
+          ],
+          "per_seed_improvement_percent": [
+            -4.69083108568383,
+            -2.9610430162229733,
+            -11.130784431857975
+          ]
+        }
+      }
+    },
+    {
+      "host": "icam",
+      "case": "test200-aug8",
+      "test_instances": 256,
+      "training_seeds": [
+        1234,
+        2468,
+        4321
+      ],
+      "historical": true,
+      "shared_warmup": true,
+      "native_mean": 10.751788537949324,
+      "means": {
+        "route": 10.754247102886438,
+        "random": 11.491607677191496,
+        "learned": 10.94172385459145
+      },
+      "per_seed_means": {
+        "route": [
+          10.753600921481848,
+          10.754797451198101,
+          10.754342935979366
+        ],
+        "random": [
+          11.522635705769062,
+          11.458567142486572,
+          11.493620183318853
+        ],
+        "learned": [
+          10.869911562651396,
+          10.853458501398563,
+          11.101801499724388
+        ]
+      },
+      "comparisons": {
+        "random": {
+          "improvement_percent": -6.856459287672031,
+          "paired_instance_ci": [
+            -7.2210666755888,
+            -6.486721949647303
+          ],
+          "per_seed_improvement_percent": [
+            -7.151416440896164,
+            -6.543774482801349,
+            -6.874220505524201
+          ]
+        },
+        "learned": {
+          "improvement_percent": -1.7432810489791701,
+          "paired_instance_ci": [
+            -1.8321028517511773,
+            -1.6575604585393269
+          ],
+          "per_seed_improvement_percent": [
+            -1.081597150747904,
+            -0.9173678132773327,
+            -3.230867434797678
+          ]
+        }
+      }
+    },
+    {
+      "host": "icam",
+      "case": "cluster200",
+      "test_instances": 64,
+      "training_seeds": [
+        1234,
+        2468,
+        4321
+      ],
+      "historical": true,
+      "shared_warmup": true,
+      "native_mean": 5.270135015249252,
+      "means": {
+        "route": 5.279226263364156,
+        "random": 8.112590809663137,
+        "learned": 6.437447351713975
+      },
+      "per_seed_means": {
+        "route": [
+          5.276753216981888,
+          5.2863797172904015,
+          5.274545855820179
+        ],
+        "random": [
+          8.276301749050617,
+          7.933680668473244,
+          8.12779001146555
+        ],
+        "learned": [
+          6.187952660024166,
+          6.215178526937962,
+          6.909210868179798
+        ]
+      },
+      "comparisons": {
+        "random": {
+          "improvement_percent": -53.6700721839006,
+          "paired_instance_ci": [
+            -60.49063798859038,
+            -47.453604966685376
+          ],
+          "per_seed_improvement_percent": [
+            -56.844586220470674,
+            -50.077767636028774,
+            -54.094593802743574
+          ]
+        },
+        "learned": {
+          "improvement_percent": -21.939220457123383,
+          "paired_instance_ci": [
+            -28.66362938266081,
+            -16.276073357304064
+          ],
+          "per_seed_improvement_percent": [
+            -17.268183778422966,
+            -17.569657484302457,
+            -30.991578366047456
+          ]
+        }
+      }
+    },
+    {
+      "host": "icam",
+      "case": "test500",
+      "test_instances": 64,
+      "training_seeds": [
+        1234,
+        2468,
+        4321
+      ],
+      "historical": true,
+      "shared_warmup": true,
+      "native_mean": 16.824453353881836,
+      "means": {
+        "route": 16.909125119447708,
+        "random": 21.174106866121292,
+        "learned": 18.396880050500233
+      },
+      "per_seed_means": {
+        "route": [
+          16.94428738951683,
+          16.89595514535904,
+          16.887132823467255
+        ],
+        "random": [
+          21.20867171883583,
+          21.131923258304596,
+          21.18172562122345
+        ],
+        "learned": [
+          18.287984162569046,
+          17.736368536949158,
+          19.166287451982498
+        ]
+      },
+      "comparisons": {
+        "random": {
+          "improvement_percent": -25.222959298871686,
+          "paired_instance_ci": [
+            -26.32476709772688,
+            -24.102981278034783
+          ],
+          "per_seed_improvement_percent": [
+            -25.167091606090846,
+            -25.070900558759398,
+            -25.431154256027412
+          ]
+        },
+        "learned": {
+          "improvement_percent": -8.798532866383566,
+          "paired_instance_ci": [
+            -9.55615869510931,
+            -8.074326485536957
+          ],
+          "per_seed_improvement_percent": [
+            -7.930087245118021,
+            -4.974050797127987,
+            -13.496397833432146
+          ]
+        }
+      }
+    }
+  ],
+  "bootstrap_samples": 10000,
+  "bootstrap_seed": 91975001,
+  "input_sha256": {
+    "strong_hosts_20260919/evidence/am/route-seed1234/test200-costs.pt": "9a65e99014a424d91778b49fce008c4ea04b4ad0690d0f651d287a04e3353628",
+    "strong_hosts_20260919/evidence/am/route-seed2468/test200-costs.pt": "dbd44c37776927f231c3fdc8070a8273f8783e2dbc9af0c24ab89f4d8459cd78",
+    "strong_hosts_20260919/evidence/am/route-seed4321/test200-costs.pt": "9d04623c06697a0e3e1bd28431179ee6f8659a4678a36a93d559553fd15bd4b3",
+    "strong_hosts_20260919/evidence/am/random-seed1234/test200-costs.pt": "a739bc03dda4394cc20aad2c292626472bf8d615c07f1bdbaa43bd8410745b00",
+    "strong_hosts_20260919/evidence/am/random-seed2468/test200-costs.pt": "bb51c2e63901358667154aa443e25b09210362ee99c39ea5babbdc60e3fd32f3",
+    "strong_hosts_20260919/evidence/am/random-seed4321/test200-costs.pt": "22ef09ee9a57c1de1a356e5720f7f3d71b3037e851e0d4abd395dfcb762fe220",
+    "strong_hosts_20260919/evidence/am/learned-seed1234/test200-costs.pt": "650c5b4652339e6e066c409f18cfb49e8c34f7e9b8d89d7cb8b2bb7ac36e6ac0",
+    "strong_hosts_20260919/evidence/am/learned-seed2468/test200-costs.pt": "6e0e251a66a03cbeff1ed295899789c0468c0886bb22723158acf0ebf7a91321",
+    "strong_hosts_20260919/evidence/am/learned-seed4321/test200-costs.pt": "ca5e457a086f99e0826252cfcf76bd37d0e60ae93beb08b0137e49580beab694",
+    "strong_hosts_20260919/evidence/am/native-test200-costs.pt": "3cfa19946ddc9f0f9ce2e15effb2dcc02e77663818a57c63bde191f01a7634e5",
+    "strong_hosts_20260919/evidence/am/route-seed1234/test200-aug8-costs.pt": "407b8cc188b89754b8f2f0d0d570f4f0ed8be1d381cf12f6c5dd2f9b153aa4f1",
+    "strong_hosts_20260919/evidence/am/route-seed2468/test200-aug8-costs.pt": "ed84521d180888d7c604045e4fbed24deb5f0c38fe03eac3c7ee10326e6970ed",
+    "strong_hosts_20260919/evidence/am/route-seed4321/test200-aug8-costs.pt": "a3a24ca5f7ee0c0349fde2319a398b84a636708ee5a251c84523b105b06a3318",
+    "strong_hosts_20260919/evidence/am/random-seed1234/test200-aug8-costs.pt": "45854af0a6ff11cb309d3909cde6b4017eeb24d2cad4475bedeb090d3079bcec",
+    "strong_hosts_20260919/evidence/am/random-seed2468/test200-aug8-costs.pt": "868c6cf131cb40888161713f56c9f2ea2483ef92edc2187549e2633e944c7c70",
+    "strong_hosts_20260919/evidence/am/random-seed4321/test200-aug8-costs.pt": "804e80f29b97be95726f6e320fdeda0ed173f2fcb9baae8ddfeb7f6dc3bd3d38",
+    "strong_hosts_20260919/evidence/am/learned-seed1234/test200-aug8-costs.pt": "d0cff9f3ae21b7ba73d8a1e4e031907b8dc168c20d977d5ee351afb4e47c5542",
+    "strong_hosts_20260919/evidence/am/learned-seed2468/test200-aug8-costs.pt": "bbfb9b8e47ed79e611a52df0521001f6e5367e20a62b8b2166f99c2f25d6827d",
+    "strong_hosts_20260919/evidence/am/learned-seed4321/test200-aug8-costs.pt": "ea5ef6e66895fdb42dd7fad156dd7fa264aaa6896e7c8561f096c67022668d1a",
+    "strong_hosts_20260919/evidence/am/native-test200-aug8-costs.pt": "165b8e2e145a75052d5aecca5462ea2c0447e192cf018151f27e3d5eec93d198",
+    "strong_hosts_20260919/evidence/am/route-seed1234/cluster200-costs.pt": "6543874b4ba450931d7028d5218330a1294e1a25a879f0a8ab9bc742fae5c749",
+    "strong_hosts_20260919/evidence/am/route-seed2468/cluster200-costs.pt": "fdf6b2ba37ebce8d359de8008e08eb8ca86f067b0ee31f6c704e4287f0378730",
+    "strong_hosts_20260919/evidence/am/route-seed4321/cluster200-costs.pt": "de5743080ce3a736aa5bf64c8c0b65fdb27608063d800e6209fb4ef5586f8432",
+    "strong_hosts_20260919/evidence/am/random-seed1234/cluster200-costs.pt": "e70c0446d878944f806db4553faa5b059371a70a822ea2f13b0a92d2fefef8a7",
+    "strong_hosts_20260919/evidence/am/random-seed2468/cluster200-costs.pt": "56bd17c89ed2f7f72e4a13547b01f6154224bcc6a74ccebedd9e4370650caff2",
+    "strong_hosts_20260919/evidence/am/random-seed4321/cluster200-costs.pt": "7ad79e8ef564fa01938c38c53f52043537aacacd112ff43c3b109fdf29536e6c",
+    "strong_hosts_20260919/evidence/am/learned-seed1234/cluster200-costs.pt": "847d5fe0602f63d326db4bc4a42aa42c900deef251c8833a22e8ea2d5c43cc01",
+    "strong_hosts_20260919/evidence/am/learned-seed2468/cluster200-costs.pt": "366d4610af298dfeb00fa4872eba6ff8a732bf9bc248f90e00824fe5aa167308",
+    "strong_hosts_20260919/evidence/am/learned-seed4321/cluster200-costs.pt": "08341b96d1400444e0c0abf771bfaf86f86a90c71241ffbde23934795dd6a2b5",
+    "strong_hosts_20260919/evidence/am/native-cluster200-costs.pt": "18d322e6652b16e9d08fb12fcc8f1d869c0928452d6dffba5a26f23cf6463fa5",
+    "strong_hosts_20260919/evidence/am/route-seed1234/test500-costs.pt": "37eb737174ec809ffd864dfb89caa596ca06b147fe15bd87017d1458f3f81a6c",
+    "strong_hosts_20260919/evidence/am/route-seed2468/test500-costs.pt": "e380e34d28f330d05a546cbfdcce03855af1c6922c2c02b2708b23302092042b",
+    "strong_hosts_20260919/evidence/am/route-seed4321/test500-costs.pt": "3435027fab59a395b81a7799c089754dd7b87edd37fb323979c4c7ca729781c7",
+    "strong_hosts_20260919/evidence/am/random-seed1234/test500-costs.pt": "352f2534e81732736f46ccbf6376176bf2723f5c8ef2720d0b03cd64e7a0ddd3",
+    "strong_hosts_20260919/evidence/am/random-seed2468/test500-costs.pt": "a1cc00320d0bb36e9403a5a380398917cfddf4cac9bb814ff74a69428397746b",
+    "strong_hosts_20260919/evidence/am/random-seed4321/test500-costs.pt": "f9d646b5e0de219b1b6ea8210cce8741ad7730c8f379382ae43d8124e94dcbe3",
+    "strong_hosts_20260919/evidence/am/learned-seed1234/test500-costs.pt": "bbcd4633a2f82e5357c49ec8264f83c0bb9d21be7f37012fb5d1c58ad93ae892",
+    "strong_hosts_20260919/evidence/am/learned-seed2468/test500-costs.pt": "9f83b3c14dccf2a976ed9478d3bbdd97725478e51c09cfc0c26b2737e2f1824a",
+    "strong_hosts_20260919/evidence/am/learned-seed4321/test500-costs.pt": "8eb61971c2d76f78d6de0c6b0614da77fc1943bdbfe67060de977e3fe5240ad4",
+    "strong_hosts_20260919/evidence/am/native-test500-costs.pt": "52cf558ce1fcc253baafda4658a77002c12dd4eb03ce9b0785dcae3752beb8fd",
+    "strong_hosts_20260919/evidence/icam/route-seed1234/test200-costs.pt": "46db186e2faf51bf96f151fefb6baddf2bcf0a8ff87153c90c34bb51322a74fa",
+    "strong_hosts_20260919/evidence/icam/route-seed2468/test200-costs.pt": "4089eee66f6bcc33d6782210bc1812cd70277ea76c29a5aa335b2839f881dc6c",
+    "strong_hosts_20260919/evidence/icam/route-seed4321/test200-costs.pt": "f053f5d7fee477bd82b3780a047901367d6dafa1d426b51adf530c358a560877",
+    "strong_hosts_20260919/evidence/icam/random-seed1234/test200-costs.pt": "0ee49be35cd07352deff94ec73c54e3581e63703c1b106bf4b69ee5cdb8bf20c",
+    "strong_hosts_20260919/evidence/icam/random-seed2468/test200-costs.pt": "744b2b74c5c08623c3d7ffc2b7359544232dd26f233a340379ea7257df69f3d4",
+    "strong_hosts_20260919/evidence/icam/random-seed4321/test200-costs.pt": "f12bee1ed2eb700adb7f6e4a156f3d2c8cbf9484825865c5843634222efdb9a2",
+    "strong_hosts_20260919/evidence/icam/learned-seed1234/test200-costs.pt": "035fdfbf8c0baef8f52dd7003c8b38fff50b6d6e3c6b19622135a19d9690de95",
+    "strong_hosts_20260919/evidence/icam/learned-seed2468/test200-costs.pt": "03387afd0d05aca41b64a49dec4ebe3b0895a42da437248c51e2ba0306b004b1",
+    "strong_hosts_20260919/evidence/icam/learned-seed4321/test200-costs.pt": "8f6102dd6d9c223cf1f5cde19477bc8d213861a810acfa3e7543e8afbce35f16",
+    "strong_hosts_20260919/evidence/icam/native-test200-costs.pt": "d64771f7901201808a2bcc48f8d85df10683424fbf04b1d4b66405060628f0e6",
+    "strong_hosts_20260919/evidence/icam/route-seed1234/test200-aug8-costs.pt": "30ee72237ee65fcf7dd9d65355d39d98d71fbd1678979645899a4a0f19415aed",
+    "strong_hosts_20260919/evidence/icam/route-seed2468/test200-aug8-costs.pt": "c62433639f47f13b3626a13b14cc6c287bda18e0e4cf16131bf78e2225a92080",
+    "strong_hosts_20260919/evidence/icam/route-seed4321/test200-aug8-costs.pt": "7bd1ca47c27d3e48d3ec3a8f6be8225033d2eb00a6c653a7926bcad2b787771c",
+    "strong_hosts_20260919/evidence/icam/random-seed1234/test200-aug8-costs.pt": "7561db34a58d3f0fc1d161397c0a006e8f46b08b2c81257a7649822a35f59b39",
+    "strong_hosts_20260919/evidence/icam/random-seed2468/test200-aug8-costs.pt": "80aac1ae1afea7e82d8dbf681154f2a9a1b47bb2335268669f94dec3e92cf7fd",
+    "strong_hosts_20260919/evidence/icam/random-seed4321/test200-aug8-costs.pt": "fc39c95506488484cc371f05a8226d62d802aaba32fc4f6060f93fb18c5d900c",
+    "strong_hosts_20260919/evidence/icam/learned-seed1234/test200-aug8-costs.pt": "b97139b0f6be05a574f509775d2275ec1b43af1a9a48c6c2a93ad10ba85fc764",
+    "strong_hosts_20260919/evidence/icam/learned-seed2468/test200-aug8-costs.pt": "8700e962d940f9e49a3292bf08cfddeb9eb32c12a5222752a590705126731e4d",
+    "strong_hosts_20260919/evidence/icam/learned-seed4321/test200-aug8-costs.pt": "b403625315036cbe4a74fed9c670335c991594658bb64aa8734ddd88840628e5",
+    "strong_hosts_20260919/evidence/icam/native-test200-aug8-costs.pt": "77a586789cd9568562c0b6b08440a6a37c03c47d9b83258be568884d3f2a1e44",
+    "strong_hosts_20260919/evidence/icam/route-seed1234/cluster200-costs.pt": "d3edd542cc6d53a148b2b01dc6e13155b27542afcacf60be99d764219575c6aa",
+    "strong_hosts_20260919/evidence/icam/route-seed2468/cluster200-costs.pt": "ed23189f920bfd50e05ca9726a77d52b8733ea9782e4873dfe6d94fd34efd513",
+    "strong_hosts_20260919/evidence/icam/route-seed4321/cluster200-costs.pt": "c676aad12e059e019935c32dcba83befd9c304408219e017619a141c081a35e4",
+    "strong_hosts_20260919/evidence/icam/random-seed1234/cluster200-costs.pt": "5e07073ba7cecc81379294673deb467528e29426f48f23897e57e526ec5afedf",
+    "strong_hosts_20260919/evidence/icam/random-seed2468/cluster200-costs.pt": "592401282085deb05c40264c4a9fdaa8b2d8e94acbc7bd0092c5f556b4a7f95a",
+    "strong_hosts_20260919/evidence/icam/random-seed4321/cluster200-costs.pt": "82c0cefb819f1e2f766d23047bcf09ddcca4bc2efbe2af9afc6b545ed8f48ded",
+    "strong_hosts_20260919/evidence/icam/learned-seed1234/cluster200-costs.pt": "31a0842de9502c750327565b51a0139a026629bfbea44131f5807d0c24e4310c",
+    "strong_hosts_20260919/evidence/icam/learned-seed2468/cluster200-costs.pt": "25a857b1f1c808ad7d4f0dcbdc1e607efb8af1e2da0765e66060e684f8300b25",
+    "strong_hosts_20260919/evidence/icam/learned-seed4321/cluster200-costs.pt": "871154635dc183589ece6ada79aedc5239e382de842c834e5136e2673efb529e",
+    "strong_hosts_20260919/evidence/icam/native-cluster200-costs.pt": "481046678d0f5d868e6480eb53e0c1097627a7a946ba971f0cbb506a1d6ede99",
+    "strong_hosts_20260919/evidence/icam/route-seed1234/test500-costs.pt": "a834a6a64da19dee54d7a386d1b8b84c1d36c33b9ccd671afb1b67cc0c89d6bc",
+    "strong_hosts_20260919/evidence/icam/route-seed2468/test500-costs.pt": "0c42e658375f744996a09cf2cb7cb52af8277ff1c23c597b47f708ca3b6a7afa",
+    "strong_hosts_20260919/evidence/icam/route-seed4321/test500-costs.pt": "652008f6469ef4d40b973888227c018610db3b0a47a70a128efa9063d9bd4e8e",
+    "strong_hosts_20260919/evidence/icam/random-seed1234/test500-costs.pt": "5c67c808a4f1675989c8333448e5e2779b756ec91510a3d2a31ebd2415cb4677",
+    "strong_hosts_20260919/evidence/icam/random-seed2468/test500-costs.pt": "1611216ca2f9b41f6f76d8e1b1ba1267fa3c0559f84193aef6d7cce5545b6d73",
+    "strong_hosts_20260919/evidence/icam/random-seed4321/test500-costs.pt": "d3c2d538e0820e76e7fd11a8f113442cca0c68415c7d2fce7ef3b2f2d8d26d16",
+    "strong_hosts_20260919/evidence/icam/learned-seed1234/test500-costs.pt": "57aabfcd5fd04f2b3b799e8b88b726953d23a86a778e44a7e5d8e6925bdd7aed",
+    "strong_hosts_20260919/evidence/icam/learned-seed2468/test500-costs.pt": "15645122d8364ce9f8bd530df081c7f5949c8cb4b25d757add9ad4398af99f4c",
+    "strong_hosts_20260919/evidence/icam/learned-seed4321/test500-costs.pt": "b7e0bf008fd3b4a2a01eb18cf65f583a5ff1418849e8d6b6df88ef1141d84bdc",
+    "strong_hosts_20260919/evidence/icam/native-test500-costs.pt": "9194e875e466922ecd610fd9bf8c06bc80f478664883badf2ede6c4bb3ee8057"
+  },
+  "script_sha256": "fbeac7d795c35f50b3915033b5135277743fc601872ecc85889ba39fef263531"
+}

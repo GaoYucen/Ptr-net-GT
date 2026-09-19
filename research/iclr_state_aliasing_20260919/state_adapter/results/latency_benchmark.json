@@ -1,0 +1,271 @@
+{
+  "records": [
+    {
+      "dataset": "uniform100",
+      "method": "native",
+      "batch": 32,
+      "end_to_end": {
+        "median_seconds": 0.1898714448325336,
+        "repetitions_seconds": [
+          0.1898714448325336,
+          0.21289225481450558,
+          0.205054122954607,
+          0.18422096502035856,
+          0.18236536718904972
+        ]
+      },
+      "encoding": {
+        "median_seconds": 0.01916350331157446,
+        "repetitions_seconds": [
+          0.020914901979267597,
+          0.01952014397829771,
+          0.01874636672437191,
+          0.01916350331157446,
+          0.018335869070142508
+        ]
+      }
+    },
+    {
+      "dataset": "uniform100",
+      "method": "route-blind",
+      "batch": 32,
+      "seed": 12031,
+      "checkpoint_sha256": "6f0fe554167e34151cc3996fc121d7a346fefb50ad3c3335421c34801494441e",
+      "end_to_end": {
+        "median_seconds": 0.20152452774345875,
+        "repetitions_seconds": [
+          0.20152452774345875,
+          0.19944469071924686,
+          0.19890593877062201,
+          0.2129001528955996,
+          0.24420914705842733
+        ]
+      },
+      "cached_encoder": {
+        "median_seconds": 0.1751654502004385,
+        "repetitions_seconds": [
+          0.17486913595348597,
+          0.17653015023097396,
+          0.1751432679593563,
+          0.1751654502004385,
+          0.17911356687545776
+        ]
+      }
+    },
+    {
+      "dataset": "uniform100",
+      "method": "route-aware",
+      "batch": 32,
+      "seed": 12031,
+      "checkpoint_sha256": "a9ba616e4b64de04d9c62e7ad47cf83cb333bb14231a14ca4c84cac82598b488",
+      "end_to_end": {
+        "median_seconds": 0.2043947451747954,
+        "repetitions_seconds": [
+          0.20297045214101672,
+          0.2034031031653285,
+          0.20537890074774623,
+          0.2043947451747954,
+          0.23032750096172094
+        ]
+      },
+      "cached_encoder": {
+        "median_seconds": 0.19641084782779217,
+        "repetitions_seconds": [
+          0.2010438391007483,
+          0.2132204631343484,
+          0.19641084782779217,
+          0.184071013238281,
+          0.1825401121750474
+        ]
+      }
+    },
+    {
+      "dataset": "uniform100",
+      "method": "random-blind",
+      "batch": 32,
+      "seed": 12031,
+      "checkpoint_sha256": "a2edc23a24c1a0a65c5d96192a4af7e6b432abdfa277d011347b0068eb0b7776",
+      "end_to_end": {
+        "median_seconds": 0.21440736204385757,
+        "repetitions_seconds": [
+          0.21129757585003972,
+          0.21222882717847824,
+          0.21533031715080142,
+          0.21440736204385757,
+          0.23475843388587236
+        ]
+      },
+      "cached_encoder": {
+        "median_seconds": 0.19487773580476642,
+        "repetitions_seconds": [
+          0.19429941894486547,
+          0.20649750670418143,
+          0.19487773580476642,
+          0.19506093999370933,
+          0.19476591795682907
+        ]
+      }
+    },
+    {
+      "dataset": "uniform100",
+      "method": "random-aware",
+      "batch": 32,
+      "seed": 12031,
+      "checkpoint_sha256": "e77c0528d165514af03bed7a611036bbb221b2080b46aaada0c188e206c6b125",
+      "end_to_end": {
+        "median_seconds": 0.2116935639642179,
+        "repetitions_seconds": [
+          0.2089416291564703,
+          0.2116935639642179,
+          0.20514589687809348,
+          0.21336444187909365,
+          0.24632702860981226
+        ]
+      },
+      "cached_encoder": {
+        "median_seconds": 0.21157380705699325,
+        "repetitions_seconds": [
+          0.19422621512785554,
+          0.19318981934338808,
+          0.21332135703414679,
+          0.2417297656647861,
+          0.21157380705699325
+        ]
+      }
+    },
+    {
+      "dataset": "uniform200",
+      "method": "native",
+      "batch": 32,
+      "end_to_end": {
+        "median_seconds": 0.3762757903896272,
+        "repetitions_seconds": [
+          0.5447809956967831,
+          1.0948729729279876,
+          0.3762757903896272,
+          0.3479402861557901,
+          0.3362637781538069
+        ]
+      },
+      "encoding": {
+        "median_seconds": 0.02128826081752777,
+        "repetitions_seconds": [
+          0.021450228057801723,
+          0.02171993302181363,
+          0.02128826081752777,
+          0.020090495236217976,
+          0.020869769621640444
+        ]
+      }
+    },
+    {
+      "dataset": "uniform200",
+      "method": "route-blind",
+      "batch": 32,
+      "seed": 12031,
+      "checkpoint_sha256": "6f0fe554167e34151cc3996fc121d7a346fefb50ad3c3335421c34801494441e",
+      "end_to_end": {
+        "median_seconds": 0.39761442225426435,
+        "repetitions_seconds": [
+          0.39014762127771974,
+          0.39761442225426435,
+          0.3930613719858229,
+          0.3990396112203598,
+          0.41421600617468357
+        ]
+      },
+      "cached_encoder": {
+        "median_seconds": 0.38202180387452245,
+        "repetitions_seconds": [
+          0.37558369617909193,
+          0.38202180387452245,
+          0.3913973858579993,
+          0.39123041136190295,
+          0.36997531400993466
+        ]
+      }
+    },
+    {
+      "dataset": "uniform200",
+      "method": "route-aware",
+      "batch": 32,
+      "seed": 12031,
+      "checkpoint_sha256": "a9ba616e4b64de04d9c62e7ad47cf83cb333bb14231a14ca4c84cac82598b488",
+      "end_to_end": {
+        "median_seconds": 0.3852442507632077,
+        "repetitions_seconds": [
+          0.3852442507632077,
+          0.3817868228070438,
+          0.3971026879735291,
+          0.39499183697625995,
+          0.38305932097136974
+        ]
+      },
+      "cached_encoder": {
+        "median_seconds": 0.372622475028038,
+        "repetitions_seconds": [
+          0.3706180080771446,
+          0.372622475028038,
+          0.3641832945868373,
+          0.3726850710809231,
+          0.3822372662834823
+        ]
+      }
+    },
+    {
+      "dataset": "uniform200",
+      "method": "random-blind",
+      "batch": 32,
+      "seed": 12031,
+      "checkpoint_sha256": "a2edc23a24c1a0a65c5d96192a4af7e6b432abdfa277d011347b0068eb0b7776",
+      "end_to_end": {
+        "median_seconds": 0.4228554917499423,
+        "repetitions_seconds": [
+          0.4228554917499423,
+          0.40317919896915555,
+          0.4027093630284071,
+          0.44862710125744343,
+          0.45243267389014363
+        ]
+      },
+      "cached_encoder": {
+        "median_seconds": 0.39692611107602715,
+        "repetitions_seconds": [
+          0.3825398599728942,
+          0.37970716692507267,
+          0.4003041791729629,
+          0.4034775123000145,
+          0.39692611107602715
+        ]
+      }
+    },
+    {
+      "dataset": "uniform200",
+      "method": "random-aware",
+      "batch": 32,
+      "seed": 12031,
+      "checkpoint_sha256": "e77c0528d165514af03bed7a611036bbb221b2080b46aaada0c188e206c6b125",
+      "end_to_end": {
+        "median_seconds": 0.4309540670365095,
+        "repetitions_seconds": [
+          0.42325153574347496,
+          0.42165110679343343,
+          0.4463049368932843,
+          0.5103373588062823,
+          0.4309540670365095
+        ]
+      },
+      "cached_encoder": {
+        "median_seconds": 0.40028968593105674,
+        "repetitions_seconds": [
+          0.40028968593105674,
+          0.39515330409631133,
+          0.39997845655307174,
+          0.44932546792551875,
+          0.4022951549850404
+        ]
+      }
+    }
+  ],
+  "scope": "Five repeats, one warmup, no tour validation inside timed region. Includes cost computation. No claim of exclusive hardware tenancy."
+}

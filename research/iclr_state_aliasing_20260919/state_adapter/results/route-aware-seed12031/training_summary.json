@@ -1,0 +1,10 @@
+{
+  "seed": 12031,
+  "mode": "route",
+  "aware": true,
+  "best_step": 12000,
+  "training_seconds": 120.77744555892423,
+  "wall_seconds": 135.91299333935603,
+  "steps": 12000,
+  "parameters": 58306
+}

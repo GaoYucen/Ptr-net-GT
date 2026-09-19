@@ -1,0 +1,18 @@
+{
+  "seed": 12037,
+  "mode": "random",
+  "aware": true,
+  "best_step": 8000,
+  "training_seconds": 126.96703504398465,
+  "wall_seconds": 146.88839109800756,
+  "steps": 12000,
+  "parameters": 123844,
+  "decoder_parameter_names": [
+    "net.decoder.alpha1",
+    "net.decoder.alpha2",
+    "net.decoder.Wq_first.weight",
+    "net.decoder.Wq_last.weight",
+    "net.decoder.Wk.weight",
+    "net.decoder.Wv.weight"
+  ]
+}

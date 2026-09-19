@@ -1,0 +1,293 @@
+{
+  "protocol": "Additional diagnostic specified after main training began. For the same geometry and uniform distribution over all six matchings, reveal the partners of fixed non-singleton heads 1,...,r. Partition the six latent states by those observations. For each observation class choose the action minimizing mean exact regret, then average classes by their probability. These are exact conditional Bayes risks, with no neural training.",
+  "datasets": {
+    "iid_n9": {
+      "n_geometry": 4500,
+      "matchings_per_geometry": 6,
+      "curve": [
+        {
+          "revealed_fixed_heads": 0,
+          "observation_groups": 1,
+          "bayes_regret": {
+            "mean": 0.028314153209439388,
+            "ci95": [
+              0.0269258079419196,
+              0.02957447813583012
+            ],
+            "n_geometry": 4500
+          }
+        },
+        {
+          "revealed_fixed_heads": 1,
+          "observation_groups": 3,
+          "bayes_regret": {
+            "mean": 0.01621994082239419,
+            "ci95": [
+              0.015373429648918155,
+              0.017039113133717282
+            ],
+            "n_geometry": 4500
+          },
+          "reduction_from_previous": {
+            "mean": 0.012094212387045198,
+            "ci95": [
+              0.011287768090449833,
+              0.012865929470360103
+            ],
+            "n_geometry": 4500
+          }
+        },
+        {
+          "revealed_fixed_heads": 2,
+          "observation_groups": 6,
+          "bayes_regret": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "n_geometry": 4500
+          },
+          "reduction_from_previous": {
+            "mean": 0.01621994082239419,
+            "ci95": [
+              0.015373429648918155,
+              0.017039113133717282
+            ],
+            "n_geometry": 4500
+          }
+        },
+        {
+          "revealed_fixed_heads": 3,
+          "observation_groups": 6,
+          "bayes_regret": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "n_geometry": 4500
+          },
+          "reduction_from_previous": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "n_geometry": 4500
+          }
+        }
+      ],
+      "partitions": [
+        [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ]
+        ],
+        [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ]
+      ]
+    },
+    "cluster_n9": {
+      "n_geometry": 4500,
+      "matchings_per_geometry": 6,
+      "curve": [
+        {
+          "revealed_fixed_heads": 0,
+          "observation_groups": 1,
+          "bayes_regret": {
+            "mean": 0.011931035376149184,
+            "ci95": [
+              0.011233473942824545,
+              0.012613289166353922
+            ],
+            "n_geometry": 4500
+          }
+        },
+        {
+          "revealed_fixed_heads": 1,
+          "observation_groups": 3,
+          "bayes_regret": {
+            "mean": 0.006222410595037434,
+            "ci95": [
+              0.005837776660998342,
+              0.006599168461060786
+            ],
+            "n_geometry": 4500
+          },
+          "reduction_from_previous": {
+            "mean": 0.005708624781111751,
+            "ci95": [
+              0.005255275075379447,
+              0.0061510976211559786
+            ],
+            "n_geometry": 4500
+          }
+        },
+        {
+          "revealed_fixed_heads": 2,
+          "observation_groups": 6,
+          "bayes_regret": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "n_geometry": 4500
+          },
+          "reduction_from_previous": {
+            "mean": 0.006222410595037434,
+            "ci95": [
+              0.005837776660998342,
+              0.006599168461060786
+            ],
+            "n_geometry": 4500
+          }
+        },
+        {
+          "revealed_fixed_heads": 3,
+          "observation_groups": 6,
+          "bayes_regret": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "n_geometry": 4500
+          },
+          "reduction_from_previous": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "n_geometry": 4500
+          }
+        }
+      ],
+      "partitions": [
+        [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ]
+        ],
+        [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ]
+      ]
+    }
+  }
+}

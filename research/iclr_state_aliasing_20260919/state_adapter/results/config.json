@@ -1,0 +1,30 @@
+{
+  "protocol": "# Frozen ICAM component-state pilot, 2026-09-19\n\nThis protocol is written before development or test measurements. This is an\nendpoint-interface pilot, not sufficient training of the full ASCC policy.\n\nThe official ICAM checkpoint and all host weights are frozen. Four arms share\nexactly the same endpoint residual architecture and parameter count (the actual\ncount is programmatically recorded): route/blind, route/aware, random/blind,\nrandom/aware. Blind inputs contain only static embeddings, source path start\nand tail, legal head mask and functions of their coordinates. Aware inputs add\ncomponent mean embedding, size and target component's other endpoint. The\nThe shared attention layer pools all legal target-component representations\ninto the source query, making each endpoint score depend on the other paths.\nEqual parameter count does not imply equal effective capacity: some blind\nfeature slots are constant or redundant. No universal-policy representation\ntheorem is claimed for the finite residual network. The residual is zero at\ninitialization, so route initially matches native ICAM.\nNo learned source selector is claimed in this study.\n\nThe training data are an equal mixture of uniform and five-cluster TSP100;\n2048 independent instances. Teachers are official native greedy tours improved\nwith deterministic best-improvement 2-opt (not exact-optimal labels). Each arm\nuses the same 2048 teachers, minibatch sequence and sampled depths for paired\nseeds 12031, 12037, 12041. Each seed independently initializes the residual.\nEach update samples a depth uniformly from 0 to N-2. Route removes a contiguous\nprefix of the teacher tour; random removes a uniform subset of teacher edges.\nEndpoint supervision does not train a source policy. Adam, learning rate\n3e-4, batch size 64, gradient clipping 1.0; planned 12000 updates per arm.\n\nDevelopment: 64 uniform + 64 clustered TSP100 instances, disjoint from training.\nEvaluate full greedy tours every 1000 updates; select the checkpoint with the\nlowest mean normalized greedy cost over those two equal-size sets. Conditional\nNLL/accuracy is separately evaluated on pre-fixed teacher partial states at\ndepth fractions 0.25, 0.50 and 0.75. Any budget change is recorded prospectively.\n\nFinal test is generated from separate fixed seeds only after model selection:\n256 uniform TSP100, 128 clustered TSP100, 128 uniform TSP200, 128 clustered\nTSP200. Test is inspected once for the frozen selected checkpoints. No model\nselection or hyperparameter change uses final test. Native baseline, paired\nper-instance costs, greedy-tour validity and latency are retained. Conditional\ntest labels are the same teacher recipe; NLL improvement is not a tour benefit.\n\nPrimary comparisons: aware versus blind within random (state repair), aware\nrandom versus aware route (forest value), each versus native. Report per-seed\nmeans, seed-average paired per-instance bootstrap confidence intervals and\nwin fractions, with seed and instance variability distinguished. Three seeds\nare a pilot, not evidence of universal robustness or publication readiness.\n\nProspective budget amendment before any development results: the isolated smoke\nprofile measured 100 batch-64 updates in 1.30 seconds. Consequently the original\n3000-update plan was increased to 12000 updates per arm, with validation every\n1000 updates. The architecture was frozen before this smoke and remains fixed.\n",
+  "sources": {
+    "component_adapter.py": "1671896a344f255750a3fa2525224e3ca1ce1ada364ced6436bd8017cf3a2ffa",
+    "run_pilot.py": "24903658ea9815f7741aafebb99167c6bb71947b1716a214e7886fd2d62f68cd",
+    "strong_adapter.py": "40b5ad73e44e82ad72b57d952ad1580bff0f5ce4648a2f2fdc0a6c8f87c26377",
+    "verify_strong.py": "d2f86b01ad2e220eb4f58beaaa3a10da4ca59a54d2293b39190371a0e75db010",
+    "run_strong.py": "f665079715bcca2d34ab53066d1cc79e1654b2351056375b53d2fbe084c66acc"
+  },
+  "checkpoint_sha": "4f2fdb06e955b243f9636d4987e17fc1adfb25cd9ea57adf2e62ad12aee77bf2",
+  "torch_version": "2.6.0+cu124",
+  "device": "NVIDIA GeForce RTX 4090",
+  "residual_parameters": 58306,
+  "train_seeds": [
+    73019101,
+    73019102
+  ],
+  "development_seeds": [
+    73019103,
+    73019104
+  ],
+  "final_test_seeds": [
+    73019111,
+    73019112,
+    73019113,
+    73019114
+  ],
+  "steps": 12000,
+  "batch": 64
+}

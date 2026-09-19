@@ -1,0 +1,42 @@
+{
+  "uniform100": {
+    "seed": 73019211,
+    "count": 256,
+    "n": 100,
+    "clustered": false,
+    "sha": "f823cd131a62ec09375e47479a7dfa48169c02972c6c1d1f3658b7671afe85bc",
+    "native_mean": 8.076690673828125,
+    "teacher_mean": 7.9956254959106445,
+    "encoding_seconds": 0.20877774897962809
+  },
+  "cluster100": {
+    "seed": 73019212,
+    "count": 128,
+    "n": 100,
+    "clustered": true,
+    "sha": "2e309fc957e6dda8d36b4fe307b91a930ef724669fa7c9cb1bccee779bbd093f",
+    "native_mean": 4.812413215637207,
+    "teacher_mean": 3.475966453552246,
+    "encoding_seconds": 0.013160237111151218
+  },
+  "uniform200": {
+    "seed": 73019213,
+    "count": 128,
+    "n": 200,
+    "clustered": false,
+    "sha": "1b5a475d819218d4e9d3dd09233401a69f1987809cb9fbcd9130f5fe58d73286",
+    "native_mean": 11.558603286743164,
+    "teacher_mean": 11.25214958190918,
+    "encoding_seconds": 0.032252644188702106
+  },
+  "cluster200": {
+    "seed": 73019214,
+    "count": 128,
+    "n": 200,
+    "clustered": true,
+    "sha": "80913a0f2dec76497970d3f03b2dfc62a908d40f37202ed05c63ea81c7bf5c5c",
+    "native_mean": 7.268664836883545,
+    "teacher_mean": 4.5739521980285645,
+    "encoding_seconds": 0.023829891812056303
+  }
+}

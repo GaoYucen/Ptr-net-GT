@@ -1,0 +1,41 @@
+We next test whether the component-state intervention transfers to complete
+tours with official AM and ICAM backbones.  For each backbone we compare four
+arms---route or uniformly random source selection, each with blind or aware
+component inputs---under three independent training seeds.  The residual has
+58,306 parameters in every arm.  In the frozen setting only the residual is
+trained; in the decoder setting the encoder remains frozen while the native
+decoder and residual are adapted.  Each arm receives 12,000 supervised updates
+on the same native-plus-2-opt teachers.  Checkpoints are selected by complete
+tour validation before four disjoint final-test sets are generated.  No learned
+source policy is used in this experiment.
+
+\begin{table}[t]
+\centering\scriptsize
+\resizebox{\linewidth}{!}{\input{adapter_table.tex}}
+\caption{Complete-tour cost for official-backbone interventions (lower is
+better). B/A denote blind/aware component inputs. Forest uses a uniformly
+random open source; route continues the current path. Each learned entry is
+the mean of three training seeds. Frozen and decoder-adapted suites use
+different final-test seeds and are not paired across training phases.}
+\label{tab:adapter}
+\end{table}
+
+The complete-tour results do not mirror the conditional diagnostic.  With a
+frozen AM host, awareness lowers forest cost in all four cells, but aware forest
+remains 35--56\% worse than aware route.  Frozen ICAM effects are smaller and
+mixed across the four cells.  When the ICAM decoder is also adapted, awareness
+reduces teacher-state NLL from 1.183 to 0.539 on U100 and from 1.662 to 0.588 on
+U200, yet complete-tour forest cost becomes 7.47\% and 7.44\% worse,
+respectively.  It improves clustered C100 and C200 forest tours by 7.53\% and
+9.18\%, but still trails aware route by 20--28\%.  Across all 16 host, training,
+and test cells in Table~\ref{tab:adapter}, aware forest is worse than aware
+route.
+
+Three additional source-action RNG seeds reproduce the broad frozen-host
+conclusion and show that the sign of small individual ICAM effects is not
+stable.  A target-tail shuffling sensitivity test confirms that fitted models
+use the supplied correspondence, but it does not construct an alternative
+legal forest and is not a causal estimate.  These outcomes separate two claims:
+connectivity is valuable in exact conditional decisions, while this residual,
+teacher, and random-source training protocol does not turn that information
+into a competitive full-tour forest solver.

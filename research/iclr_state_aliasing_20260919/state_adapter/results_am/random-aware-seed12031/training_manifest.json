@@ -1,0 +1,17 @@
+{
+  "host": "am",
+  "sources": {
+    "run_secondary.py": "1ba308c82358bf860183d0dce6e1324233436ad4b56e8abb0e82ecd577e58681",
+    "component_adapter.py": "f1e353d6d409323d960570d7ef73aec1029abe121bdad8f1119de564179f0b8c",
+    "run_pilot.py": "d75fb5fb9c19de27b9bd428e219aaa196131f0f927dc9d8006d3d80b29c3dbd8",
+    "posthoc_diagnostics.py": "dbcd2cb4ada8cd4d81ea84419c54761814a69e2ad0abb556c43012dee59aa52b",
+    "strong_adapter.py": "40b5ad73e44e82ad72b57d952ad1580bff0f5ce4648a2f2fdc0a6c8f87c26377",
+    "verify_strong.py": "d2f86b01ad2e220eb4f58beaaa3a10da4ca59a54d2293b39190371a0e75db010",
+    "secondary_component.py": "c81eebf85a4ca534719e8a8f82b17a466f1f43d3a34388f83d26e5d5c9b6660e",
+    "summarize_pilot.py": "d0277e63d2298e6f52701f737479a77cb948fb895978b72872f9448d8dd3901d",
+    "run_strong.py": "f665079715bcca2d34ab53066d1cc79e1654b2351056375b53d2fbe084c66acc",
+    "source_variability.py": "346bf2a59fa9a2a8accabcdd69a50bd8806a368eb33ab11b2d35bb1eb1d2dcc5"
+  },
+  "protocol_sha": "cbadd9f374d11c56a259bae954dc16d93095bd0d684612e690afab0af9f9d994",
+  "data_sha": "de059cd28a2a88b4c16965ca6435a7aa65697c56f1f2c3d18324e00b5ebb33e7"
+}

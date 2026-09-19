@@ -1,0 +1,9 @@
+{
+  "name": "aware_s19091942",
+  "aware": true,
+  "seed": 19091942,
+  "best_step": 10000,
+  "validation_regret": 0.006324313770998394,
+  "parameters": 415489,
+  "training_seconds": 93.70115232467651
+}

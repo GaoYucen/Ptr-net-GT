@@ -1,0 +1,62 @@
+[
+  {
+    "native_route_exact": true
+  },
+  {
+    "mode": "route",
+    "depth": 0,
+    "fragments_valid": true,
+    "nll": 0.1844445765018463
+  },
+  {
+    "mode": "route",
+    "depth": 7,
+    "fragments_valid": true,
+    "nll": 0.27207744121551514
+  },
+  {
+    "mode": "route",
+    "depth": 18,
+    "fragments_valid": true,
+    "nll": 0.0
+  },
+  {
+    "mode": "random",
+    "depth": 0,
+    "fragments_valid": true,
+    "nll": 23.71613121032715
+  },
+  {
+    "mode": "random",
+    "depth": 7,
+    "fragments_valid": true,
+    "nll": 2.910074234008789
+  },
+  {
+    "mode": "random",
+    "depth": 18,
+    "fragments_valid": true,
+    "nll": 0.0
+  },
+  {
+    "aware": false,
+    "permutation_max_error": 3.5762786865234375e-05
+  },
+  {
+    "aware": true,
+    "permutation_max_error": 3.5762786865234375e-05
+  },
+  {
+    "updates": 100,
+    "seconds": 1.8117385949008167,
+    "batch": 64,
+    "n": 100,
+    "peak_mib": 85.9697265625
+  },
+  {
+    "decode": {
+      "mean": 9.151886060833931,
+      "seconds": 0.45492595387622714
+    }
+  }
+]

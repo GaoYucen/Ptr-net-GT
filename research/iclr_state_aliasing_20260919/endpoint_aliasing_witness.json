@@ -1,0 +1,26 @@
+{
+  "kind": "constructed representational counterexample",
+  "seed": 90919017,
+  "search_trial": 0,
+  "coordinates": [
+    [0.9667947888374329, 0.144645094871521],
+    [0.16519033908843994, 0.6777374148368835],
+    [0.01400136947631836, 0.032273709774017334],
+    [0.27172255516052246, 0.45283347368240356],
+    [0.11830371618270874, 0.4929446578025818],
+    [0.49647223949432373, 0.7829722166061401],
+    [0.6254234313964844, 0.34477776288986206]
+  ],
+  "partial_edges": [
+    [[1, 3], [2, 4]],
+    [[1, 4], [2, 3]]
+  ],
+  "source": 0,
+  "exact_best_completion_by_head": [
+    [null, 3.506182239204958, 3.123100723285477, null, null, 3.27894704416759, 3.186468699578353],
+    [null, 3.370771868129178, 3.2212140192131526, null, null, 3.0622525649585306, 3.1166372497675034]
+  ],
+  "optimal_heads": [2, 5],
+  "cross_state_wrong_head_regret": [0.15584632088211325, 0.15896145425462205],
+  "limitation": "Selected-source endpoint ambiguity only. Joint source policy can observe different selector features; this is not a bound on its attainable cost."
+}

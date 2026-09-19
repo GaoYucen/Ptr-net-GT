@@ -1,0 +1,290 @@
+[
+  {
+    "arm": "random-aware-seed12031",
+    "dataset": "uniform100",
+    "nll_error": 4.8266277641317856e-08,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "random-aware-seed12031",
+    "dataset": "cluster100",
+    "nll_error": 4.510366125032306e-08,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "random-aware-seed12031",
+    "dataset": "uniform200",
+    "nll_error": 6.829699028543246e-09,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "random-aware-seed12031",
+    "dataset": "cluster200",
+    "nll_error": 3.7536665331572294e-08,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "random-aware-seed12037",
+    "dataset": "uniform100",
+    "nll_error": 9.992315419538045e-09,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "random-aware-seed12037",
+    "dataset": "cluster100",
+    "nll_error": 4.895264282822609e-08,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "random-aware-seed12037",
+    "dataset": "uniform200",
+    "nll_error": 1.58033799380064e-08,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "random-aware-seed12037",
+    "dataset": "cluster200",
+    "nll_error": 1.9955829877460474e-08,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "random-aware-seed12041",
+    "dataset": "uniform100",
+    "nll_error": 5.60733770527122e-09,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "random-aware-seed12041",
+    "dataset": "cluster100",
+    "nll_error": 4.349991833407785e-08,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "random-aware-seed12041",
+    "dataset": "uniform200",
+    "nll_error": 5.044663931030868e-08,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "random-aware-seed12041",
+    "dataset": "cluster200",
+    "nll_error": 1.5764545224783433e-10,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "random-blind-seed12031",
+    "dataset": "uniform100",
+    "nll_error": 0.0,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "random-blind-seed12031",
+    "dataset": "cluster100",
+    "nll_error": 0.0,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "random-blind-seed12031",
+    "dataset": "uniform200",
+    "nll_error": 0.0,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "random-blind-seed12031",
+    "dataset": "cluster200",
+    "nll_error": 0.0,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "random-blind-seed12037",
+    "dataset": "uniform100",
+    "nll_error": 0.0,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "random-blind-seed12037",
+    "dataset": "cluster100",
+    "nll_error": 0.0,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "random-blind-seed12037",
+    "dataset": "uniform200",
+    "nll_error": 0.0,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "random-blind-seed12037",
+    "dataset": "cluster200",
+    "nll_error": 0.0,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "random-blind-seed12041",
+    "dataset": "uniform100",
+    "nll_error": 0.0,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "random-blind-seed12041",
+    "dataset": "cluster100",
+    "nll_error": 0.0,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "random-blind-seed12041",
+    "dataset": "uniform200",
+    "nll_error": 0.0,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "random-blind-seed12041",
+    "dataset": "cluster200",
+    "nll_error": 0.0,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "route-aware-seed12031",
+    "dataset": "uniform100",
+    "nll_error": 9.565458980453911e-09,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "route-aware-seed12031",
+    "dataset": "cluster100",
+    "nll_error": 4.825536370489658e-08,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "route-aware-seed12031",
+    "dataset": "uniform200",
+    "nll_error": 5.948337883365795e-08,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "route-aware-seed12031",
+    "dataset": "cluster200",
+    "nll_error": 1.039552444126457e-08,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "route-aware-seed12037",
+    "dataset": "uniform100",
+    "nll_error": 1.1082496143011156e-08,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "route-aware-seed12037",
+    "dataset": "cluster100",
+    "nll_error": 3.8077496711252934e-10,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "route-aware-seed12037",
+    "dataset": "uniform200",
+    "nll_error": 1.5344994608312845e-08,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "route-aware-seed12037",
+    "dataset": "cluster200",
+    "nll_error": 3.03358926867503e-08,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "route-aware-seed12041",
+    "dataset": "uniform100",
+    "nll_error": 3.280971816455036e-08,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "route-aware-seed12041",
+    "dataset": "cluster100",
+    "nll_error": 4.869555914055468e-08,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "route-aware-seed12041",
+    "dataset": "uniform200",
+    "nll_error": 1.203685917605668e-08,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "route-aware-seed12041",
+    "dataset": "cluster200",
+    "nll_error": 7.781151611929715e-08,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "route-blind-seed12031",
+    "dataset": "uniform100",
+    "nll_error": 0.0,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "route-blind-seed12031",
+    "dataset": "cluster100",
+    "nll_error": 0.0,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "route-blind-seed12031",
+    "dataset": "uniform200",
+    "nll_error": 0.0,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "route-blind-seed12031",
+    "dataset": "cluster200",
+    "nll_error": 0.0,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "route-blind-seed12037",
+    "dataset": "uniform100",
+    "nll_error": 0.0,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "route-blind-seed12037",
+    "dataset": "cluster100",
+    "nll_error": 0.0,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "route-blind-seed12037",
+    "dataset": "uniform200",
+    "nll_error": 0.0,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "route-blind-seed12037",
+    "dataset": "cluster200",
+    "nll_error": 0.0,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "route-blind-seed12041",
+    "dataset": "uniform100",
+    "nll_error": 0.0,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "route-blind-seed12041",
+    "dataset": "cluster100",
+    "nll_error": 0.0,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "route-blind-seed12041",
+    "dataset": "uniform200",
+    "nll_error": 0.0,
+    "accuracy_error": 0.0
+  },
+  {
+    "arm": "route-blind-seed12041",
+    "dataset": "cluster200",
+    "nll_error": 0.0,
+    "accuracy_error": 0.0
+  }
+]
