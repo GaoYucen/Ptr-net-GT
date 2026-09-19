@@ -1,0 +1,167 @@
+{
+  "role": "one_seed_size_distribution_development_diagnostic",
+  "cells": [
+    {
+      "nodes": 200,
+      "distribution": "uniform",
+      "seed": 2026092110,
+      "coordinate_sha256": "589396c0500e2600ed39e9ce82ab6c257fc3834631b6507a3d341e5639b6741c",
+      "models": {
+        "route": {
+          "mean_cost": 11.040780425071716,
+          "seconds": 5.281066351104528,
+          "checkpoint_step": 0,
+          "checkpoint_sha256": "464c9f210b338a28009157981b1ff9e031ea851551ca008560b48114ae79d7ea"
+        },
+        "learned": {
+          "mean_cost": 14.368361353874207,
+          "seconds": 4.5660073407925665,
+          "checkpoint_step": 200,
+          "checkpoint_sha256": "4d92fe5e52976db17826da653fd901787e0503f281899c296ad58f30520e7959"
+        }
+      },
+      "route_minus_ascc": -3.3275809288024902,
+      "relative_improvement_percent": -30.139001055089597,
+      "conditional_normal_ci95": [
+        -3.619412648564521,
+        -3.0357492090404596
+      ]
+    },
+    {
+      "nodes": 200,
+      "distribution": "clustered",
+      "seed": 2026092111,
+      "coordinate_sha256": "2e0325316e2e7cecacdf0ff6e9bd945d41e18271b2a745476e9447224f0afc15",
+      "models": {
+        "route": {
+          "mean_cost": 4.87222383916378,
+          "seconds": 4.872453173622489,
+          "checkpoint_step": 0,
+          "checkpoint_sha256": "464c9f210b338a28009157981b1ff9e031ea851551ca008560b48114ae79d7ea"
+        },
+        "learned": {
+          "mean_cost": 6.527311787009239,
+          "seconds": 4.491863633040339,
+          "checkpoint_step": 200,
+          "checkpoint_sha256": "4d92fe5e52976db17826da653fd901787e0503f281899c296ad58f30520e7959"
+        }
+      },
+      "route_minus_ascc": -1.655087947845459,
+      "relative_improvement_percent": -33.969866789402715,
+      "conditional_normal_ci95": [
+        -1.8962404778320685,
+        -1.4139354178588495
+      ]
+    },
+    {
+      "nodes": 500,
+      "distribution": "uniform",
+      "seed": 2026092410,
+      "coordinate_sha256": "e9608059599c9ddcfe4c6a3a40e2deb6438cb798a283bce6dc26ed1e34174405",
+      "models": {
+        "route": {
+          "mean_cost": 19.960191309452057,
+          "seconds": 11.137470511253923,
+          "checkpoint_step": 0,
+          "checkpoint_sha256": "464c9f210b338a28009157981b1ff9e031ea851551ca008560b48114ae79d7ea"
+        },
+        "learned": {
+          "mean_cost": 26.726562321186066,
+          "seconds": 11.388392942026258,
+          "checkpoint_step": 200,
+          "checkpoint_sha256": "4d92fe5e52976db17826da653fd901787e0503f281899c296ad58f30520e7959"
+        }
+      },
+      "route_minus_ascc": -6.766371011734009,
+      "relative_improvement_percent": -33.89932945447184,
+      "conditional_normal_ci95": [
+        -7.108374449787629,
+        -6.424367573680389
+      ]
+    },
+    {
+      "nodes": 500,
+      "distribution": "clustered",
+      "seed": 2026092411,
+      "coordinate_sha256": "0a6da92fe1181431c018d47b83ef90c44a5d761df4fb24fed0b7e2af83651c07",
+      "models": {
+        "route": {
+          "mean_cost": 8.54580682516098,
+          "seconds": 11.209912993013859,
+          "checkpoint_step": 0,
+          "checkpoint_sha256": "464c9f210b338a28009157981b1ff9e031ea851551ca008560b48114ae79d7ea"
+        },
+        "learned": {
+          "mean_cost": 12.24722445011139,
+          "seconds": 11.966187190264463,
+          "checkpoint_step": 200,
+          "checkpoint_sha256": "4d92fe5e52976db17826da653fd901787e0503f281899c296ad58f30520e7959"
+        }
+      },
+      "route_minus_ascc": -3.701417624950409,
+      "relative_improvement_percent": -43.31267603724104,
+      "conditional_normal_ci95": [
+        -4.030729147411917,
+        -3.3721061024889005
+      ]
+    },
+    {
+      "nodes": 1000,
+      "distribution": "uniform",
+      "seed": 2026092910,
+      "coordinate_sha256": "2194167716304f9b71f12e907f0e3cfcef97f22f7841039a22da2156ee7614cf",
+      "models": {
+        "route": {
+          "mean_cost": 30.797687888145447,
+          "seconds": 23.68724129209295,
+          "checkpoint_step": 0,
+          "checkpoint_sha256": "464c9f210b338a28009157981b1ff9e031ea851551ca008560b48114ae79d7ea"
+        },
+        "learned": {
+          "mean_cost": 43.96629762649536,
+          "seconds": 24.833717599976808,
+          "checkpoint_step": 200,
+          "checkpoint_sha256": "4d92fe5e52976db17826da653fd901787e0503f281899c296ad58f30520e7959"
+        }
+      },
+      "route_minus_ascc": -13.168609738349915,
+      "relative_improvement_percent": -42.75843623773698,
+      "conditional_normal_ci95": [
+        -13.69070808147118,
+        -12.646511395228648
+      ]
+    },
+    {
+      "nodes": 1000,
+      "distribution": "clustered",
+      "seed": 2026092911,
+      "coordinate_sha256": "1ab3893520cf9427499fca9abb1b053265015c55b0ac2891908d19bdd1a97cec",
+      "models": {
+        "route": {
+          "mean_cost": 13.011314362287521,
+          "seconds": 23.691005532164127,
+          "checkpoint_step": 0,
+          "checkpoint_sha256": "464c9f210b338a28009157981b1ff9e031ea851551ca008560b48114ae79d7ea"
+        },
+        "learned": {
+          "mean_cost": 21.30748575925827,
+          "seconds": 24.235983684193343,
+          "checkpoint_step": 200,
+          "checkpoint_sha256": "4d92fe5e52976db17826da653fd901787e0503f281899c296ad58f30520e7959"
+        }
+      },
+      "route_minus_ascc": -8.296171396970749,
+      "relative_improvement_percent": -63.761209405689875,
+      "conditional_normal_ci95": [
+        -9.451298612189033,
+        -7.141044181752465
+      ]
+    }
+  ],
+  "no_opt_labels": true,
+  "checkpoint_selection": "TSP100 validation only",
+  "count_per_cell": 32,
+  "rollouts": 8,
+  "augmentation": false,
+  "postprocessing": false
+}

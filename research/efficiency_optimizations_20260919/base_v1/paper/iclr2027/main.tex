@@ -1,0 +1,59 @@
+\documentclass{article}
+
+% ICLR 2027 官方投稿样式。投稿阶段请勿启用 \iclrfinalcopy。
+\usepackage{iclr2027_conference,times}
+\input{math_commands.tex}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{url}
+
+% 工作标题，收到正式写作内容后再统一修改。
+\title{GroupOpt: A General Construction Paradigm for Neural Combinatorial Optimization}
+
+% 双盲投稿阶段保持匿名。Camera-ready 时再填写真实作者信息。
+\author{Anonymous Authors}
+
+% \iclrfinalcopy  % 仅在论文接收并制作 camera-ready 时启用。
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+% TODO: 摘要必须为单段；建议依次说明问题、方法、主要结果和结论。
+This document is the anonymous ICLR 2027 manuscript template for GroupOpt.
+\end{abstract}
+
+\input{sections/01_introduction}
+\input{sections/02_related_work}
+\input{sections/03_method}
+\input{sections/04_experiments}
+\input{sections/05_conclusion}
+
+\subsection*{AI use statement}
+% ICLR 2027 必需部分，不计入正文页数。提交前必须按实际使用情况改写。
+This section will disclose the use of generative AI tools in accordance with
+the ICLR 2027 AI Policy for Authors. The authors will review and verify all
+AI-assisted work and take responsibility for the final content of the paper.
+
+\subsection*{Reproducibility statement}
+% 推荐部分，不计入正文页数。后续应指向正文、附录和匿名代码。
+Implementation details, training protocols, evaluation instances, and paired
+statistical analyses will be documented in the main paper and appendix. Code
+and experiment configurations will be included in the supplementary material.
+
+% 如论文涉及伦理风险，可在此加入不超过一页的 Ethics statement。
+
+\bibliography{references}
+\bibliographystyle{iclr2027_conference}
+
+\appendix
+\input{sections/appendix}
+
+\end{document}

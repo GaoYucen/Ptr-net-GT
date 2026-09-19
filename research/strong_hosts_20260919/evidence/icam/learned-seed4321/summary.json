@@ -1,0 +1,35 @@
+{
+  "host": "icam",
+  "mode": "learned",
+  "seed": 4321,
+  "best_step": 150,
+  "steps": 300,
+  "training_seconds": 612.1745118973777,
+  "warmup_seconds": 191.67777808196843,
+  "wall_seconds": 791.1406441559084,
+  "evaluation": {
+    "test200": {
+      "mean": 12.031060963869095,
+      "seconds": 15.49666728079319,
+      "source_deviation": 0.380097646266222
+    },
+    "cluster200": {
+      "mean": 6.909210868179798,
+      "seconds": 3.6789417173713446,
+      "source_deviation": 0.46812499314546585
+    },
+    "test500": {
+      "mean": 19.166287451982498,
+      "seconds": 9.796248687896878,
+      "source_deviation": 0.3527500107884407
+    },
+    "test200-aug8": {
+      "mean": 11.101801499724388,
+      "seconds": 122.80150179285556,
+      "source_deviation": 0.3773779218317941
+    }
+  },
+  "parameters": 2390414,
+  "shared_warmup_seed": true,
+  "official_checkpoint_sha": "4f2fdb06e955b243f9636d4987e17fc1adfb25cd9ea57adf2e62ad12aee77bf2"
+}

@@ -1,0 +1,13 @@
+{
+  "batch_size": 4,
+  "eval_every": 1,
+  "final_chunk": 20,
+  "lr": 0.0001,
+  "max_grad_norm": 1.0,
+  "out": "/workspace/groupopt-bopo-h2/full-ascc/smoke-v1",
+  "pomo_size": 8,
+  "seed": 1234,
+  "skip_final": true,
+  "steps": 3,
+  "validation_size": 4
+}

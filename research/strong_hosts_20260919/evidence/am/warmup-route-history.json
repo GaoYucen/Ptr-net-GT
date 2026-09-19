@@ -1,0 +1,90 @@
+[
+  {
+    "stage": "warmup",
+    "mode": "route",
+    "step": 0,
+    "val_endpoint_nll": 2.056524269282818,
+    "recent_loss": 0.0,
+    "training_seconds": 0.0
+  },
+  {
+    "stage": "warmup",
+    "mode": "route",
+    "step": 250,
+    "val_endpoint_nll": 0.8803530083969235,
+    "recent_loss": 1.1612669830918312,
+    "training_seconds": 11.117988480255008
+  },
+  {
+    "stage": "warmup",
+    "mode": "route",
+    "step": 500,
+    "val_endpoint_nll": 0.6971497857011855,
+    "recent_loss": 0.7374623774588108,
+    "training_seconds": 22.457615370396525
+  },
+  {
+    "stage": "warmup",
+    "mode": "route",
+    "step": 750,
+    "val_endpoint_nll": 0.5355846686288714,
+    "recent_loss": 0.5928941733241081,
+    "training_seconds": 32.95206444012001
+  },
+  {
+    "stage": "warmup",
+    "mode": "route",
+    "step": 1000,
+    "val_endpoint_nll": 0.405602652579546,
+    "recent_loss": 0.5772423614859581,
+    "training_seconds": 44.02488187327981
+  },
+  {
+    "stage": "warmup",
+    "mode": "route",
+    "step": 1250,
+    "val_endpoint_nll": 0.40875454619526863,
+    "recent_loss": 0.5259685605168343,
+    "training_seconds": 52.971324779093266
+  },
+  {
+    "stage": "warmup",
+    "mode": "route",
+    "step": 1500,
+    "val_endpoint_nll": 0.38046105206012726,
+    "recent_loss": 0.49335267275571826,
+    "training_seconds": 63.285020982380956
+  },
+  {
+    "stage": "warmup",
+    "mode": "route",
+    "step": 1750,
+    "val_endpoint_nll": 0.3878975138068199,
+    "recent_loss": 0.46546509212255477,
+    "training_seconds": 74.21250650053844
+  },
+  {
+    "stage": "warmup",
+    "mode": "route",
+    "step": 2000,
+    "val_endpoint_nll": 0.40173654444515705,
+    "recent_loss": 0.47742003393173216,
+    "training_seconds": 85.37342775519937
+  },
+  {
+    "stage": "warmup",
+    "mode": "route",
+    "step": 2250,
+    "val_endpoint_nll": 0.3799721859395504,
+    "recent_loss": 0.47456326654553416,
+    "training_seconds": 96.41463692067191
+  },
+  {
+    "stage": "warmup",
+    "mode": "route",
+    "step": 2500,
+    "val_endpoint_nll": 0.3819010369479656,
+    "recent_loss": 0.4463652201890945,
+    "training_seconds": 107.88910837145522
+  }
+]

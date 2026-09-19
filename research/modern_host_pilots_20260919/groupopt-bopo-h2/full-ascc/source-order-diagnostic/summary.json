@@ -1,0 +1,16 @@
+{
+  "best_step": 1900,
+  "choose_other_source_given_previous_endpoint_legal_rate": 0.05987951632280075,
+  "interpretation": "Post-hoc only; not used for training, checkpoint selection, or official-test tuning.",
+  "nonterminal_choose_other_source_given_previous_endpoint_legal_rate": 0.060950275801950546,
+  "nonterminal_previous_endpoint_illegal_as_next_source_rate": 0.04504807291666667,
+  "nonterminal_source_ne_previous_endpoint_rate": 0.10325265625,
+  "official_augmented_instances": 8000,
+  "pomo": 50,
+  "previous_endpoint_illegal_as_next_source_rate": 0.047809030612244896,
+  "rollouts": 400000,
+  "rollouts_with_any_forced_fragment_jump_rate": 0.9835075,
+  "rollouts_with_any_source_deviation_rate": 0.9835075,
+  "source_decisions_excluding_initial": 19600000,
+  "source_ne_previous_endpoint_rate": 0.10482576530612245
+}

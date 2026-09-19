@@ -1,0 +1,16 @@
+{
+  "branch": "codex/ascc-bopo-joint-20260919",
+  "implementation_commit": "ed445fc",
+  "remote_repository": "/workspace/计算群论/repos/groupopt-ascc-bopo-joint-20260919",
+  "pytest_total": 24,
+  "pytest_passed": 24,
+  "new_semantic_tests": 17,
+  "upstream_route_actions_exact": true,
+  "upstream_route_cost_max_abs_diff": 0.0,
+  "upstream_comparison_sizes": [20, 100],
+  "upstream_comparison_start_counts": [20, 100],
+  "gpu_forward_backward_smoke": "passed",
+  "original_research_source_modified": false,
+  "system_driver_modified": false,
+  "runtime_library_selection": "/workspace/计算群论/environments/cuda-driver-535"
+}

@@ -1,0 +1,166 @@
+{
+  "comparisons": {
+    "capacity_vs_full": {
+      "all_seeds_favor_contender": true,
+      "baseline_mode": "native_capacity_single_chain",
+      "contender_mode": "native_conditional_free",
+      "per_seed": {
+        "1234": {
+          "baseline_mean": 6.40175191822052,
+          "baseline_minus_contender": 0.3011142746448517,
+          "contender_mean": 6.100637643575668,
+          "contender_relative_improvement_percent": 4.7036229846368665,
+          "contender_win_rate": 0.8056,
+          "paired_ci95_high": 0.3079348418661796,
+          "paired_ci95_low": 0.2942937074235238,
+          "test_size": 10000
+        },
+        "2468": {
+          "baseline_mean": 6.424919284915924,
+          "baseline_minus_contender": 0.3276199491024017,
+          "contender_mean": 6.097299335813522,
+          "contender_relative_improvement_percent": 5.099207236292754,
+          "contender_win_rate": 0.8323,
+          "paired_ci95_high": 0.3343188827396978,
+          "paired_ci95_low": 0.32092101546510565,
+          "test_size": 10000
+        },
+        "4321": {
+          "baseline_mean": 6.387724152803421,
+          "baseline_minus_contender": 0.27788181586265565,
+          "contender_mean": 6.1098423369407655,
+          "contender_relative_improvement_percent": 4.350247587643554,
+          "contender_win_rate": 0.7861,
+          "paired_ci95_high": 0.2846375321799206,
+          "paired_ci95_low": 0.2711260995453907,
+          "test_size": 10000
+        }
+      },
+      "pooled_instance_seed_pairs": {
+        "baseline_mean": 6.404798451979955,
+        "baseline_minus_contender": 0.30220534653663633,
+        "contender_mean": 6.102593105443319,
+        "contender_relative_improvement_percent": 4.718420865268819,
+        "contender_win_rate": 0.808,
+        "paired_ci95_high": 0.3061140590431141,
+        "paired_ci95_low": 0.29829663403015855,
+        "test_size": 30000
+      }
+    },
+    "original_vs_capacity": {
+      "all_seeds_favor_contender": true,
+      "baseline_mode": "native_original",
+      "contender_mode": "native_capacity_single_chain",
+      "per_seed": {
+        "1234": {
+          "baseline_mean": 6.429762303733826,
+          "baseline_minus_contender": 0.028010385513305664,
+          "contender_mean": 6.40175191822052,
+          "contender_relative_improvement_percent": 0.4356364075393566,
+          "contender_win_rate": 0.5366,
+          "paired_ci95_high": 0.034702593244911824,
+          "paired_ci95_low": 0.021318177781699504,
+          "test_size": 10000
+        },
+        "2468": {
+          "baseline_mean": 6.444314811134339,
+          "baseline_minus_contender": 0.019395526218414307,
+          "contender_mean": 6.424919284915924,
+          "contender_relative_improvement_percent": 0.30097111619847855,
+          "contender_win_rate": 0.5152,
+          "paired_ci95_high": 0.02678262661739212,
+          "paired_ci95_low": 0.012008425819436492,
+          "test_size": 10000
+        },
+        "4321": {
+          "baseline_mean": 6.431000649642944,
+          "baseline_minus_contender": 0.04327649683952332,
+          "contender_mean": 6.387724152803421,
+          "contender_relative_improvement_percent": 0.6729356626938874,
+          "contender_win_rate": 0.5767,
+          "paired_ci95_high": 0.0481498762934853,
+          "paired_ci95_low": 0.03840311738556133,
+          "test_size": 10000
+        }
+      },
+      "pooled_instance_seed_pairs": {
+        "baseline_mean": 6.435025921503703,
+        "baseline_minus_contender": 0.030227469523747764,
+        "contender_mean": 6.404798451979955,
+        "contender_relative_improvement_percent": 0.46973345395140986,
+        "contender_win_rate": 0.5428333333333333,
+        "paired_ci95_high": 0.033927452951274646,
+        "paired_ci95_low": 0.02652748609622088,
+        "test_size": 30000
+      }
+    },
+    "original_vs_full": {
+      "all_seeds_favor_contender": true,
+      "baseline_mode": "native_original",
+      "contender_mode": "native_conditional_free",
+      "per_seed": {
+        "1234": {
+          "baseline_mean": 6.429762303733826,
+          "baseline_minus_contender": 0.32912466015815733,
+          "contender_mean": 6.100637643575668,
+          "contender_relative_improvement_percent": 5.118768697981755,
+          "contender_win_rate": 0.8226,
+          "paired_ci95_high": 0.33614188223705693,
+          "paired_ci95_low": 0.32210743807925774,
+          "test_size": 10000
+        },
+        "2468": {
+          "baseline_mean": 6.444314811134339,
+          "baseline_minus_contender": 0.34701547532081606,
+          "contender_mean": 6.097299335813522,
+          "contender_relative_improvement_percent": 5.384831211554888,
+          "contender_win_rate": 0.8448,
+          "paired_ci95_high": 0.35383365355953134,
+          "paired_ci95_low": 0.3401972970821008,
+          "test_size": 10000
+        },
+        "4321": {
+          "baseline_mean": 6.431000649642944,
+          "baseline_minus_contender": 0.3211583127021789,
+          "contender_mean": 6.1098423369407655,
+          "contender_relative_improvement_percent": 4.993908882904707,
+          "contender_win_rate": 0.8189,
+          "paired_ci95_high": 0.32810144946542097,
+          "paired_ci95_low": 0.3142151759389369,
+          "test_size": 10000
+        }
+      },
+      "pooled_instance_seed_pairs": {
+        "baseline_mean": 6.435025921503703,
+        "baseline_minus_contender": 0.3324328160603841,
+        "contender_mean": 6.102593105443319,
+        "contender_relative_improvement_percent": 5.165990317917838,
+        "contender_win_rate": 0.8287666666666667,
+        "paired_ci95_high": 0.33643366661398044,
+        "paired_ci95_low": 0.32843196550678777,
+        "test_size": 30000
+      }
+    }
+  },
+  "experiment": "paper_capacity_control_am_tsp50_v1",
+  "mode_mean_across_seeds": {
+    "native_capacity_single_chain": 6.404798451979954,
+    "native_conditional_free": 6.102593105443319,
+    "native_original": 6.435025921503702
+  },
+  "parameter_validation": {
+    "additional_active_parameters": 131712,
+    "capacity_active_parameters": 841600,
+    "full_active_parameters": 841600,
+    "original_active_parameters": 709888,
+    "status": "passed"
+  },
+  "problem": "uniform_euclidean_tsp50",
+  "sign_convention": "positive baseline-minus-contender means contender is better",
+  "test_seed": 20260904,
+  "training_seeds": [
+    1234,
+    4321,
+    2468
+  ]
+}

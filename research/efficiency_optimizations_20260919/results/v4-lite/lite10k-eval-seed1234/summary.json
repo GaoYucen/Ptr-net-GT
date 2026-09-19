@@ -1,0 +1,21 @@
+{
+  "base_mode": "native_free_no_head_summary",
+  "best_validation_cost": 6.10009241104126,
+  "checkpoint": "/workspace/groupopt-ascc-efficiency-v4-lite-results/lite10k-seed1234/checkpoints/step-010000.pt",
+  "checkpoint_step": 10000,
+  "distribution": "uniform",
+  "evaluation_action_seed": 20260905,
+  "graph_size": 50,
+  "is_size_transfer": false,
+  "mean_cost": 6.128951072692871,
+  "model": "am",
+  "problem": "tsp",
+  "standard_deviation": 0.3371824026107788,
+  "standard_error": 0.003371824026107788,
+  "test_seed": 20260904,
+  "test_size": 10000,
+  "train_seed": 1234,
+  "training_base_mode": "native_free_no_head_summary",
+  "training_graph_size": 50,
+  "training_scheme": "reinforce"
+}

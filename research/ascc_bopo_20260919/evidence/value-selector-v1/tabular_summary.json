@@ -1,0 +1,21 @@
+{
+  "role": "held_out_tabular_rollout_value_selector",
+  "selected_on_validation": {
+    "model": "extra-reg-leaf20",
+    "kind": "regressor",
+    "threshold": 0.19361538143763674,
+    "validation_cost": 5.8486785888671875
+  },
+  "candidate_model_families": 15,
+  "validation_model_threshold_combinations": 925,
+  "test_not_used_for_selection": true,
+  "test_deviation_rate": 0.375,
+  "mean_cost": 5.8170037269592285,
+  "relative_improvement_percent": -0.08844262357309592,
+  "conditional_normal_ci95": [
+    -0.015494668908002173,
+    0.005214338242592608
+  ],
+  "improved_fraction": 0.020833333333333332,
+  "oracle_hit_rate": 0.3541666666666667
+}

@@ -1,0 +1,18 @@
+{
+  "base_mode": "native_conditional_free",
+  "batch_size": 512,
+  "checkpoint_every": 300,
+  "device": "cuda",
+  "embedding_dim": 128,
+  "encoder_layers": 3,
+  "eval_every": 300,
+  "feed_forward_dim": 512,
+  "graph_size": 50,
+  "heads": 8,
+  "learning_rate": 0.0001,
+  "max_grad_norm": 1.0,
+  "normalization": "batch",
+  "seed": 999,
+  "steps": 300,
+  "validation_size": 64
+}

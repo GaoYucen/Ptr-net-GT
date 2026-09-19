@@ -1,0 +1,31 @@
+{
+  "original": {
+    "eval_seconds": 12.03,
+    "train_300_seconds": 51.06,
+    "train_peak_gb": 1.935
+  },
+  "canonical_ascc": {
+    "eval_seconds": 23.65,
+    "train_300_seconds": 109.78,
+    "train_peak_gb": 16.682,
+    "eval_ratio_vs_original": 1.9659185369908563,
+    "train_ratio_vs_original": 2.1500195848021932,
+    "memory_ratio_vs_original": 8.621188630490956
+  },
+  "v1_ascc": {
+    "eval_seconds": 22.22,
+    "train_300_seconds": 103.84,
+    "train_peak_gb": 8.831,
+    "eval_ratio_vs_original": 1.8470490440565253,
+    "train_ratio_vs_original": 2.0336858597728162,
+    "memory_ratio_vs_original": 4.563824289405685
+  },
+  "v2_ascc": {
+    "eval_seconds": 25.86,
+    "train_300_seconds": 107.6,
+    "train_peak_gb": 7.741,
+    "eval_ratio_vs_original": 2.1496259351620948,
+    "train_ratio_vs_original": 2.107324716020368,
+    "memory_ratio_vs_original": 4.000516795865633
+  }
+}

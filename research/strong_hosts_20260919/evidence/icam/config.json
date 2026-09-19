@@ -1,0 +1,46 @@
+{
+  "host": "icam",
+  "out": "/workspace/计算群论/results/ascc-strong-hosts-20260919/icam",
+  "warmup_steps": 2500,
+  "warmup_batch": 32,
+  "warmup_eval_every": 250,
+  "warmup_lr": 1e-05,
+  "teacher_size": 2048,
+  "steps": 300,
+  "batch": 4,
+  "rollouts": 4,
+  "host_lr": 1e-05,
+  "source_lr": 0.0001,
+  "eval_every": 50,
+  "eval_batch": 8,
+  "seeds": [
+    1234,
+    4321,
+    2468
+  ],
+  "modes": [
+    "route",
+    "random",
+    "learned"
+  ],
+  "resume": false,
+  "smoke": false,
+  "checkpoint_sha": "4f2fdb06e955b243f9636d4987e17fc1adfb25cd9ea57adf2e62ad12aee77bf2",
+  "data_hash": {
+    "val200": "57d182817e1d34921d757885336b3ec8a2b58cce1d8bd6b115e8617902ea37a7",
+    "test200": "00927a186086d15acbdb5db275068fb388182000551c0a835b2edde1aed39a77",
+    "cluster200": "b2c6bd5eddca099a629397a0a8111c67311f166f732dc5d77c86cf0394ae5fd9",
+    "test500": "6e17c4e0bd3a3eeae7b04404b3e601679024e8474ab6b6efd935f8dee0065090"
+  },
+  "source_hash": {
+    "strong_adapter.py": "d704421861dd49a02a402a1b64019db88d5c6f2da13cb9672e635961fe6fd170",
+    "verify_strong.py": "d2f86b01ad2e220eb4f58beaaa3a10da4ca59a54d2293b39190371a0e75db010",
+    "run_strong.py": "f665079715bcca2d34ab53066d1cc79e1654b2351056375b53d2fbe084c66acc"
+  },
+  "torch_version": "2.6.0+cu124",
+  "device": "NVIDIA GeForce RTX 4090",
+  "protocol": "TSP200 official-pretrained joint adaptation; no OPT claims; new heldout seeds",
+  "shared_warmup": true,
+  "normalization": "official eval statistics fixed; weights trainable",
+  "GPU": "1"
+}

@@ -1,0 +1,7 @@
+{
+  "validation_seed": 2026091801,
+  "instances": 64,
+  "pomo": 8,
+  "native_bopo_mean": 5.649979151785374,
+  "native_bopo_all_rollout_mean": 6.987395899370313
+}

@@ -1,0 +1,21 @@
+{
+  "base_mode": "native_original",
+  "best_validation_cost": 6.4066619873046875,
+  "checkpoint": "/workspace/groupopt-paper-canonical-repro-results/from-scratch-main-tsp50/train/am_tsp50_native_original_seed1234/checkpoints/step-010000.pt",
+  "checkpoint_step": 10000,
+  "distribution": "uniform",
+  "evaluation_action_seed": 20260905,
+  "graph_size": 50,
+  "is_size_transfer": false,
+  "mean_cost": 6.42838716506958,
+  "model": "am",
+  "problem": "tsp",
+  "standard_deviation": 0.3916514217853546,
+  "standard_error": 0.003916514217853546,
+  "test_seed": 20260904,
+  "test_size": 10000,
+  "train_seed": 1234,
+  "training_base_mode": "native_original",
+  "training_graph_size": 50,
+  "training_scheme": "reinforce"
+}

@@ -1,0 +1,13 @@
+{
+  "batch_size": 16,
+  "eval_every": 100,
+  "final_chunk": 4,
+  "lr": 0.0001,
+  "max_grad_norm": 1.0,
+  "out": "/workspace/groupopt-bopo-tsp100/full-ascc-v2/seed1234-pilot-v1",
+  "pomo_size": 8,
+  "seed": 1234,
+  "skip_final": false,
+  "steps": 1500,
+  "validation_size": 32
+}

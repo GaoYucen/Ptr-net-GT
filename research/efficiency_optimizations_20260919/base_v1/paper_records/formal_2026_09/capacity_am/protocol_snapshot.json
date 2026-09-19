@@ -1,0 +1,44 @@
+{
+  "experiment_id": "paper_capacity_control_am_tsp50_v1",
+  "claim": "The gain of GroupOpt on AM cannot be explained solely by its additional active parameters",
+  "problem": "uniform_euclidean_tsp",
+  "graph_size": 50,
+  "host": "am",
+  "modes": [
+    "native_original",
+    "native_capacity_single_chain",
+    "native_conditional_free"
+  ],
+  "new_training_mode": "native_capacity_single_chain",
+  "reference_experiment": "paper_final_tsp50_v1",
+  "training_seeds": [1234, 4321, 2468],
+  "training": {
+    "steps": 10000,
+    "batch_size": 512,
+    "validation_size": 1024,
+    "embedding_dim": 128,
+    "encoder_layers": 3,
+    "attention_heads": 8,
+    "feed_forward_dim": 512,
+    "normalization": "batch",
+    "learning_rate": 0.0001,
+    "eval_every": 100,
+    "checkpoint_every": 1000
+  },
+  "evaluation": {
+    "test_seed": 20260904,
+    "test_size": 10000,
+    "batch_size": 64,
+    "decode_type": "greedy",
+    "paired_instances": true
+  },
+  "control_definition": {
+    "native_capacity_single_chain": "Uses the same active projection and attention parameters as Full GroupOpt but keeps tail fixed to the previous head and never constructs a forest",
+    "required_checks": [
+      "capacity and full have identical active parameter counts",
+      "all capacity parameters receive non-zero finite gradients",
+      "capacity tail at step t equals head at step t-1",
+      "all outputs are Hamiltonian cycles"
+    ]
+  }
+}

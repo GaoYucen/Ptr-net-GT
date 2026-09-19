@@ -1,0 +1,50 @@
+{
+  "ascc_gap_mean": 0.243472109000542,
+  "ascc_mean": 7.7729575128555295,
+  "hardness_quartiles": [
+    {
+      "ascc_gap_mean": 0.06850184831426077,
+      "cost_improvement_mean": -0.007234175250215351,
+      "n": 212,
+      "native_gap_mean": -0.02502783202578721,
+      "quartile": 1,
+      "win_rate": 0.02358490566037736
+    },
+    {
+      "ascc_gap_mean": 0.16538641384181973,
+      "cost_improvement_mean": -0.012070440583758883,
+      "n": 288,
+      "native_gap_mean": 0.010187904187248844,
+      "quartile": 2,
+      "win_rate": 0.14930555555555555
+    },
+    {
+      "ascc_gap_mean": 0.24565650630671323,
+      "cost_improvement_mean": -0.012381147384643555,
+      "n": 250,
+      "native_gap_mean": 0.08643774715305312,
+      "quartile": 3,
+      "win_rate": 0.144
+    },
+    {
+      "ascc_gap_mean": 0.47961721357918524,
+      "cost_improvement_mean": -0.013489343643188477,
+      "n": 250,
+      "native_gap_mean": 0.3067968521039072,
+      "quartile": 4,
+      "win_rate": 0.188
+    }
+  ],
+  "losses": 827,
+  "median_improvement": -0.006447315216064453,
+  "native_eval_seconds": 21.980441730935127,
+  "native_gap_mean_recomputed": 0.09593686583070085,
+  "native_mean_recomputed": 7.761479958057404,
+  "paired_ci95": [
+    -0.012579401814937592,
+    -0.010396646940708163
+  ],
+  "paired_cost_improvement_mean": -0.01147755479812622,
+  "ties": 42,
+  "wins": 131
+}

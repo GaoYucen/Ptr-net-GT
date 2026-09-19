@@ -1,0 +1,26 @@
+{
+  "status": "completed_steps",
+  "steps": 200,
+  "best_step": 200,
+  "initial_validation": {
+    "mean_cost": 9.754332460463047,
+    "seconds": 5.959810903761536,
+    "voluntary_source_deviation": 0.9261997767857143
+  },
+  "best_validation": 9.079512298107147,
+  "final_test": {
+    "mean_cost": 8.939862582832575,
+    "seconds": 10.367954855784774,
+    "voluntary_source_deviation": 0.9162348533163265
+  },
+  "best_test": {
+    "mean_cost": 8.939862582832575,
+    "seconds": 9.671038453932852,
+    "voluntary_source_deviation": 0.9162348533163265
+  },
+  "train_seconds": 191.74144056765363,
+  "total_elapsed": 223.28503502206877,
+  "test_sha256": "66f826afe3a44cf684d687ce25b3550e70bdf32d128b365cc64ac3c3f4c4ac39",
+  "final_checkpoint_sha256": "4d92fe5e52976db17826da653fd901787e0503f281899c296ad58f30520e7959",
+  "best_checkpoint_sha256": "4d92fe5e52976db17826da653fd901787e0503f281899c296ad58f30520e7959"
+}

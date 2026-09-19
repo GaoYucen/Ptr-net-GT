@@ -1,0 +1,21 @@
+{
+  "base_mode": "native_free_no_path_state",
+  "best_validation_cost": 6.235098838806152,
+  "checkpoint": "/root/autodl-tmp/groupopt-paper-canonical/artifacts/paper_ablation_am_tsp50_v1/train/am_tsp50_native_free_no_path_state_seed1234/checkpoints/step-010000.pt",
+  "checkpoint_step": 10000,
+  "distribution": "uniform",
+  "evaluation_action_seed": 20260905,
+  "graph_size": 50,
+  "is_size_transfer": false,
+  "mean_cost": 6.281063556671143,
+  "model": "am",
+  "problem": "tsp",
+  "standard_deviation": 0.37124669551849365,
+  "standard_error": 0.0037124669551849366,
+  "test_seed": 20260904,
+  "test_size": 10000,
+  "train_seed": 1234,
+  "training_base_mode": "native_free_no_path_state",
+  "training_graph_size": 50,
+  "training_scheme": "reinforce"
+}

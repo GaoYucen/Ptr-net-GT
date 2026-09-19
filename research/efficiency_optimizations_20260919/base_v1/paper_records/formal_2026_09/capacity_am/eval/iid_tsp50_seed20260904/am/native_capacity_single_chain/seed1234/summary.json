@@ -1,0 +1,21 @@
+{
+  "base_mode": "native_capacity_single_chain",
+  "best_validation_cost": 6.389420032501221,
+  "checkpoint": "/root/autodl-tmp/groupopt-paper-canonical/artifacts/paper_capacity_control_am_tsp50_v1/train/am_tsp50_native_capacity_single_chain_seed1234/checkpoints/step-010000.pt",
+  "checkpoint_step": 10000,
+  "distribution": "uniform",
+  "evaluation_action_seed": 20260905,
+  "graph_size": 50,
+  "is_size_transfer": false,
+  "mean_cost": 6.40175199508667,
+  "model": "am",
+  "problem": "tsp",
+  "standard_deviation": 0.38998422026634216,
+  "standard_error": 0.003899842202663422,
+  "test_seed": 20260904,
+  "test_size": 10000,
+  "train_seed": 1234,
+  "training_base_mode": "native_capacity_single_chain",
+  "training_graph_size": 50,
+  "training_scheme": "reinforce"
+}

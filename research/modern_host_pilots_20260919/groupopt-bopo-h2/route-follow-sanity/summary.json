@@ -1,0 +1,18 @@
+{
+  "round_id": "E4-H2-BOPO-ROUTE-FOLLOW-SANITY",
+  "raw_shape": [
+    8,
+    1000,
+    50
+  ],
+  "raw_bitwise_equal": true,
+  "raw_max_abs_diff": 0.0,
+  "raw_mismatch_gt_1e7": 0,
+  "raw_mismatch_gt_1e6": 0,
+  "instance_bitwise_equal": true,
+  "instance_max_abs_diff": 0.0,
+  "instance_mismatch_gt_1e7": 0,
+  "official_mean": 5.6942396249771114,
+  "route_follow_mean": 5.6942396249771114,
+  "eval_seconds": 4.706140745896846
+}

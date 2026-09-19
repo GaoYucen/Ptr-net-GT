@@ -1,0 +1,41 @@
+{
+  "experiment": "paper_main_tsp50_v1",
+  "test_seed": 20260902,
+  "test_size_per_training_seed": 10000,
+  "training_seeds": [1234, 4321, 2468],
+  "comparison": "native_original vs native_conditional_free",
+  "families": {
+    "am": {
+      "original_mean": 6.7493563491,
+      "groupopt_mean": 6.3230982396,
+      "relative_improvement_percent": 6.315537,
+      "pooled_ci95": [0.42114646, 0.43136975],
+      "groupopt_win_rate": 0.8346333,
+      "all_seeds_improve": true
+    },
+    "ptrnet": {
+      "original_mean": 7.4644117540,
+      "groupopt_mean": 6.5934552754,
+      "relative_improvement_percent": 11.668119,
+      "pooled_ci95": [0.86615831, 0.87575465],
+      "groupopt_win_rate": 0.9799333,
+      "all_seeds_improve": true
+    },
+    "gpn": {
+      "original_mean": 6.4617883344,
+      "groupopt_mean": 6.3320111753,
+      "relative_improvement_percent": 2.008378,
+      "pooled_ci95": [0.12562417, 0.13393014],
+      "groupopt_win_rate": 0.6380333,
+      "all_seeds_improve": true
+    },
+    "pomo": {
+      "original_mean": 6.2760929307,
+      "groupopt_mean": 6.1343936103,
+      "relative_improvement_percent": 2.257763,
+      "pooled_ci95": [0.13877265, 0.14462599],
+      "groupopt_win_rate": 0.7086,
+      "all_seeds_improve": true
+    }
+  }
+}

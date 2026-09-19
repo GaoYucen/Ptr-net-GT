@@ -1,0 +1,16 @@
+{
+  "role": "validation_selected_conservative_value_selector",
+  "threshold": 0.0003620532515924424,
+  "validation_deviation_rate": 0.5833333134651184,
+  "test_deviation_rate": 0.6666666865348816,
+  "mean_cost": 5.8549580574035645,
+  "relative_improvement_percent": -0.7414921101381703,
+  "conditional_normal_ci95": [
+    -0.12405096128582954,
+    0.03786192968487739
+  ],
+  "improved_fraction": 0.1666666716337204,
+  "oracle_hit_rate": 0.3541666567325592,
+  "threshold_candidates": 64,
+  "test_not_used_for_threshold": true
+}

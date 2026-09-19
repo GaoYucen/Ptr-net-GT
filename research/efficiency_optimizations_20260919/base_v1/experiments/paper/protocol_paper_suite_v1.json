@@ -1,0 +1,85 @@
+{
+  "experiment_suite": "groupopt_paper_suite_v1",
+  "primary_claim": "GroupOpt improves a host model against that same host's native original decoder",
+  "global_evaluation": {
+    "decode_type": "greedy",
+    "paired_instances": true,
+    "report": [
+      "mean_cost",
+      "relative_improvement_percent",
+      "paired_95_percent_ci",
+      "win_rate",
+      "training_seed_mean_and_std"
+    ],
+    "test_instances": 10000
+  },
+  "stages": [
+    {
+      "id": "paper_final_tsp50_v1",
+      "role": "primary_cross_model_table",
+      "problem": "uniform_tsp50",
+      "hosts": ["am", "ptrnet", "gpn", "pomo"],
+      "modes": ["native_original", "native_conditional_free"],
+      "training_seeds": [1234, 4321, 2468],
+      "final_steps": {"am": 10000, "ptrnet": 10000, "gpn": 10000, "pomo": 5000}
+    },
+    {
+      "id": "paper_cross_problem_v1",
+      "role": "problem_breadth",
+      "cells": {
+        "cvrp50": ["am", "pomo"],
+        "min_3_ccp50": ["am_style_sequential"]
+      },
+      "training_seeds": [1234, 4321, 2468]
+    },
+    {
+      "id": "paper_scale_effect_v1",
+      "role": "effectiveness_at_larger_scales_after_retraining",
+      "problem_sizes": [20, 50, 100, 200],
+      "hosts": ["am", "pomo"],
+      "training_policy": "retrain_original_and_groupopt_at_each_size"
+    },
+    {
+      "id": "paper_size_transfer_v1",
+      "role": "zero_shot_size_generalization",
+      "train_size": 50,
+      "test_sizes": [20, 50, 100, 200],
+      "hosts": ["am", "pomo"]
+    },
+    {
+      "id": "paper_capacity_control_v1",
+      "role": "exclude_extra_parameter_explanation",
+      "host": "am",
+      "modes": [
+        "native_original",
+        "native_capacity_single_chain",
+        "native_conditional_free"
+      ]
+    },
+    {
+      "id": "paper_ablation_v1",
+      "role": "mechanism_ablation",
+      "host": "am",
+      "modes": [
+        "native_original",
+        "native_random_tail",
+        "native_forest_fixed",
+        "native_free_no_head_summary",
+        "native_free_no_path_state",
+        "native_free_no_last_head",
+        "native_conditional_free"
+      ]
+    },
+    {
+      "id": "paper_efficiency_v1",
+      "role": "quality_cost_tradeoff",
+      "metrics": [
+        "total_parameters",
+        "active_parameters",
+        "training_steps_per_second",
+        "greedy_inference_milliseconds_per_instance",
+        "peak_gpu_memory_gb"
+      ]
+    }
+  ]
+}

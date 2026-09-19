@@ -1,0 +1,20 @@
+{
+  "full": {
+    "gap_percent": 0.29106761935889003,
+    "head_change_vs_native_rate": 0.01983675,
+    "mean": 7.799278206825257,
+    "source_deviation_rate": 0.028356060606060607
+  },
+  "head_only": {
+    "gap_percent": 0.13875147657818943,
+    "head_change_vs_native_rate": 0.02115675,
+    "mean": 7.787396416664124,
+    "source_deviation_rate": 0.0
+  },
+  "tail_only": {
+    "gap_percent": 0.2419417035474355,
+    "head_change_vs_native_rate": 0.0,
+    "mean": 7.795465879440307,
+    "source_deviation_rate": 0.029633333333333334
+  }
+}

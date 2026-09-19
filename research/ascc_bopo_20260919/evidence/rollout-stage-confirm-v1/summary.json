@@ -1,0 +1,52 @@
+{
+  "role": "one_shot_rollout_value_stage_sweep",
+  "n": 50,
+  "count": 64,
+  "stages": [
+    20,
+    30
+  ],
+  "checkpoint_sha256": "69217d554d34d460305958e59e7ebd8bd4260814787d18b2f5ba3ecc37272400",
+  "results": [
+    {
+      "stage": 20,
+      "method": "source_once",
+      "mean_cost": 5.767812728881836,
+      "relative_improvement_percent": 0.6748333358925591,
+      "conditional_normal_ci95": [
+        0.004585835412144662,
+        0.07378931038081646
+      ]
+    },
+    {
+      "stage": 20,
+      "method": "endpoint_once",
+      "mean_cost": 5.78163480758667,
+      "relative_improvement_percent": 0.43679813402876394,
+      "conditional_normal_ci95": [
+        -0.006988106369972227,
+        0.057717843055725096
+      ]
+    },
+    {
+      "stage": 30,
+      "method": "source_once",
+      "mean_cost": 5.758434295654297,
+      "relative_improvement_percent": 0.8363225809444808,
+      "conditional_normal_ci95": [
+        0.014233648627996448,
+        0.08289685860276222
+      ]
+    },
+    {
+      "stage": 30,
+      "method": "endpoint_once",
+      "mean_cost": 5.791345119476318,
+      "relative_improvement_percent": 0.2695952804700742,
+      "conditional_normal_ci95": [
+        -0.0026649336889386158,
+        0.033975730426609514
+      ]
+    }
+  ]
+}

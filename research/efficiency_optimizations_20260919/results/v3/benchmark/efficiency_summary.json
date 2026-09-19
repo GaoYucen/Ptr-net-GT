@@ -1,0 +1,39 @@
+{
+  "original": {
+    "eval_seconds": 11.96,
+    "train_300_seconds": 51.42,
+    "train_peak_gb": 1.935,
+    "step300_train_cost": 7.738813,
+    "step300_val_cost": 7.226593
+  },
+  "canonical_ascc": {
+    "eval_seconds": 25.3,
+    "train_300_seconds": 108.49,
+    "train_peak_gb": 16.682,
+    "step300_train_cost": 7.8047,
+    "step300_val_cost": 6.863532,
+    "eval_ratio_vs_original": 2.1153846153846154,
+    "train_ratio_vs_original": 2.1098794243485024,
+    "memory_ratio_vs_original": 8.621188630490956
+  },
+  "v1_ascc": {
+    "eval_seconds": 23.07,
+    "train_300_seconds": 103.19,
+    "train_peak_gb": 8.831,
+    "step300_train_cost": 7.087698,
+    "step300_val_cost": 6.52346,
+    "eval_ratio_vs_original": 1.9289297658862876,
+    "train_ratio_vs_original": 2.0068066900038892,
+    "memory_ratio_vs_original": 4.563824289405685
+  },
+  "v3_ascc": {
+    "eval_seconds": 22.99,
+    "train_300_seconds": 135.8,
+    "train_peak_gb": 2.134,
+    "step300_train_cost": 15.916643,
+    "step300_val_cost": 16.178307,
+    "eval_ratio_vs_original": 1.922240802675585,
+    "train_ratio_vs_original": 2.6409957215091406,
+    "memory_ratio_vs_original": 1.1028423772609819
+  }
+}

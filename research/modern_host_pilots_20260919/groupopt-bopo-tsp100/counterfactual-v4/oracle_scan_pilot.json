@@ -1,0 +1,64 @@
+{
+  "benchmark": "uniform_TSP100_counterfactual_one_deviation_pilot",
+  "candidate_ranking": "lowest frozen-BOPO endpoint expected edge distance",
+  "candidate_topk": 4,
+  "instances": 4,
+  "mean_oracle_gain_all_rollouts": 0.01737588569521904,
+  "mean_rollout_any_positive_rate": 0.14375,
+  "pomo": 8,
+  "records": [
+    {
+      "best_gain_max": 0.36202573776245117,
+      "candidates": 128,
+      "edge": 10,
+      "oracle_gain_mean_all_rollouts": 0.01803670823574066,
+      "oracle_gain_mean_positive_rollouts": 0.19239155451456705,
+      "positive_candidate_rate": 0.0390625,
+      "rollout_any_positive_rate": 0.09375
+    },
+    {
+      "best_gain_max": 0.8033490180969238,
+      "candidates": 128,
+      "edge": 30,
+      "oracle_gain_mean_all_rollouts": 0.03491012752056122,
+      "oracle_gain_mean_positive_rollouts": 0.15958915437970841,
+      "positive_candidate_rate": 0.1171875,
+      "rollout_any_positive_rate": 0.21875
+    },
+    {
+      "best_gain_max": 0.26425600051879883,
+      "candidates": 128,
+      "edge": 50,
+      "oracle_gain_mean_all_rollouts": 0.010698094964027405,
+      "oracle_gain_mean_positive_rollouts": 0.05705650647481282,
+      "positive_candidate_rate": 0.078125,
+      "rollout_any_positive_rate": 0.1875
+    },
+    {
+      "best_gain_max": 0.682776927947998,
+      "candidates": 128,
+      "edge": 70,
+      "oracle_gain_mean_all_rollouts": 0.02219349890947342,
+      "oracle_gain_mean_positive_rollouts": 0.14203834533691406,
+      "positive_candidate_rate": 0.0546875,
+      "rollout_any_positive_rate": 0.15625
+    },
+    {
+      "best_gain_max": 0.02327805757522583,
+      "candidates": 128,
+      "edge": 90,
+      "oracle_gain_mean_all_rollouts": 0.0010409988462924957,
+      "oracle_gain_mean_positive_rollouts": 0.016655921936035156,
+      "positive_candidate_rate": 0.015625,
+      "rollout_any_positive_rate": 0.0625
+    }
+  ],
+  "targets": [
+    10,
+    30,
+    50,
+    70,
+    90
+  ],
+  "weighted_positive_candidate_rate": 0.0609375
+}

@@ -1,0 +1,161 @@
+{
+  "comparisons": {
+    "native_free_no_head_summary_vs_full": {
+      "ablation_mode": "native_free_no_head_summary",
+      "all_seeds_favor_full": false,
+      "full_mode": "native_conditional_free",
+      "per_seed": {
+        "1234": {
+          "ablation_mean": 6.104306344175339,
+          "ablation_minus_full": 0.00366870059967041,
+          "full_mean": 6.100637643575668,
+          "full_relative_improvement_percent": 0.06010020455758387,
+          "full_win_rate": 0.5047,
+          "paired_ci95_high": 0.008662208569303389,
+          "paired_ci95_low": -0.0013248073699625683,
+          "test_size": 10000
+        },
+        "2468": {
+          "ablation_mean": 6.048877245187759,
+          "ablation_minus_full": -0.04842209062576294,
+          "full_mean": 6.097299335813522,
+          "full_relative_improvement_percent": -0.8005136930871916,
+          "full_win_rate": 0.419,
+          "paired_ci95_high": -0.04366382183225324,
+          "paired_ci95_low": -0.05318035941927265,
+          "test_size": 10000
+        },
+        "4321": {
+          "ablation_mean": 6.087687796545029,
+          "ablation_minus_full": -0.022154540395736694,
+          "full_mean": 6.1098423369407655,
+          "full_relative_improvement_percent": -0.3639237282882685,
+          "full_win_rate": 0.4679,
+          "paired_ci95_high": -0.017132421376759036,
+          "paired_ci95_low": -0.027176659414714352,
+          "test_size": 10000
+        }
+      },
+      "pooled_instance_seed_pairs": {
+        "ablation_mean": 6.080290461969375,
+        "ablation_minus_full": -0.022302643473943076,
+        "full_mean": 6.102593105443319,
+        "full_relative_improvement_percent": -0.3668022706059929,
+        "full_win_rate": 0.46386666666666665,
+        "paired_ci95_high": -0.019448517816233593,
+        "paired_ci95_low": -0.02515676913165256,
+        "test_size": 30000
+      }
+    },
+    "native_free_no_path_state_vs_full": {
+      "ablation_mode": "native_free_no_path_state",
+      "all_seeds_favor_full": true,
+      "full_mode": "native_conditional_free",
+      "per_seed": {
+        "1234": {
+          "ablation_mean": 6.281063415527344,
+          "ablation_minus_full": 0.18042577195167542,
+          "full_mean": 6.100637643575668,
+          "full_relative_improvement_percent": 2.8725354293613257,
+          "full_win_rate": 0.7269,
+          "paired_ci95_high": 0.18646404430645794,
+          "paired_ci95_low": 0.1743874995968929,
+          "test_size": 10000
+        },
+        "2468": {
+          "ablation_mean": 6.299638842391968,
+          "ablation_minus_full": 0.20233950657844543,
+          "full_mean": 6.097299335813522,
+          "full_relative_improvement_percent": 3.2119223282586957,
+          "full_win_rate": 0.7577,
+          "paired_ci95_high": 0.20825460387126019,
+          "paired_ci95_low": 0.19642440928563068,
+          "test_size": 10000
+        },
+        "4321": {
+          "ablation_mean": 6.2939162460327145,
+          "ablation_minus_full": 0.18407390909194946,
+          "full_mean": 6.1098423369407655,
+          "full_relative_improvement_percent": 2.924632325826984,
+          "full_win_rate": 0.7201,
+          "paired_ci95_high": 0.19028464368768613,
+          "paired_ci95_low": 0.17786317449621278,
+          "test_size": 10000
+        }
+      },
+      "pooled_instance_seed_pairs": {
+        "ablation_mean": 6.2915395013173425,
+        "ablation_minus_full": 0.18894639587402343,
+        "full_mean": 6.102593105443319,
+        "full_relative_improvement_percent": 3.0031822232771748,
+        "full_win_rate": 0.7349,
+        "paired_ci95_high": 0.19244434640667482,
+        "paired_ci95_low": 0.18544844534137203,
+        "test_size": 30000
+      }
+    },
+    "native_random_tail_vs_full": {
+      "ablation_mode": "native_random_tail",
+      "all_seeds_favor_full": true,
+      "full_mode": "native_conditional_free",
+      "per_seed": {
+        "1234": {
+          "ablation_mean": 7.235845974302292,
+          "ablation_minus_full": 1.1352083307266236,
+          "full_mean": 6.100637643575668,
+          "full_relative_improvement_percent": 15.688674617429022,
+          "full_win_rate": 0.992,
+          "paired_ci95_high": 1.1460768014015583,
+          "paired_ci95_low": 1.124339860051689,
+          "test_size": 10000
+        },
+        "2468": {
+          "ablation_mean": 7.2433560962677,
+          "ablation_minus_full": 1.1460567604541778,
+          "full_mean": 6.097299335813522,
+          "full_relative_improvement_percent": 15.822178907436415,
+          "full_win_rate": 0.991,
+          "paired_ci95_high": 1.1572085417407139,
+          "paired_ci95_low": 1.1349049791676418,
+          "test_size": 10000
+        },
+        "4321": {
+          "ablation_mean": 7.241565422105789,
+          "ablation_minus_full": 1.1317230851650237,
+          "full_mean": 6.1098423369407655,
+          "full_relative_improvement_percent": 15.628155228844532,
+          "full_win_rate": 0.9904,
+          "paired_ci95_high": 1.1428710610176078,
+          "paired_ci95_low": 1.1205751093124396,
+          "test_size": 10000
+        }
+      },
+      "pooled_instance_seed_pairs": {
+        "ablation_mean": 7.240255830891927,
+        "ablation_minus_full": 1.1376627254486085,
+        "full_mean": 6.102593105443319,
+        "full_relative_improvement_percent": 15.713018324498345,
+        "full_win_rate": 0.9911333333333333,
+        "paired_ci95_high": 1.1440465742613015,
+        "paired_ci95_low": 1.1312788766359154,
+        "test_size": 30000
+      }
+    }
+  },
+  "experiment": "paper_ablation_am_tsp50_v1",
+  "implementation_validation_status": "passed",
+  "mode_mean_across_seeds": {
+    "native_conditional_free": 6.102593105443319,
+    "native_free_no_head_summary": 6.080290461969376,
+    "native_free_no_path_state": 6.291539501317342,
+    "native_random_tail": 7.240255830891926
+  },
+  "problem": "uniform_euclidean_tsp50",
+  "sign_convention": "positive ablation-minus-full means Full GroupOpt is better",
+  "test_seed": 20260904,
+  "training_seeds": [
+    1234,
+    4321,
+    2468
+  ]
+}

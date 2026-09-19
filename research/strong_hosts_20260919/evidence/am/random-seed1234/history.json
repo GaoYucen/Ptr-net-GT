@@ -1,0 +1,139 @@
+[
+  {
+    "stage": "joint",
+    "host": "am",
+    "mode": "random",
+    "seed": 1234,
+    "step": 0,
+    "validation": {
+      "mean": 19.05859073996544,
+      "seconds": 3.7047579418867826,
+      "source_deviation": 0.9695311933755875
+    },
+    "training_seconds": 0.0,
+    "warmup_seconds": 105.37445896863937,
+    "recent_sample_cost": 0.0,
+    "recent_loss": 0.0,
+    "gradient_norm": {}
+  },
+  {
+    "stage": "joint",
+    "host": "am",
+    "mode": "random",
+    "seed": 1234,
+    "step": 50,
+    "validation": {
+      "mean": 18.367792442440987,
+      "seconds": 3.7782510560937226,
+      "source_deviation": 0.969843715429306
+    },
+    "training_seconds": 136.6488725473173,
+    "warmup_seconds": 105.37445896863937,
+    "recent_sample_cost": 21.57926990509033,
+    "recent_loss": -15.781282052993774,
+    "gradient_norm": {
+      "host": 808.9197061243658,
+      "selector": 0.0
+    }
+  },
+  {
+    "stage": "joint",
+    "host": "am",
+    "mode": "random",
+    "seed": 1234,
+    "step": 100,
+    "validation": {
+      "mean": 18.464778438210487,
+      "seconds": 4.495725967921317,
+      "source_deviation": 0.9689062163233757
+    },
+    "training_seconds": 273.274537790101,
+    "warmup_seconds": 105.37445896863937,
+    "recent_sample_cost": 21.291617813110353,
+    "recent_loss": -12.325975890159606,
+    "gradient_norm": {
+      "host": 650.3632953963169,
+      "selector": 0.0
+    }
+  },
+  {
+    "stage": "joint",
+    "host": "am",
+    "mode": "random",
+    "seed": 1234,
+    "step": 150,
+    "validation": {
+      "mean": 18.34050065279007,
+      "seconds": 4.24271502578631,
+      "source_deviation": 0.9702343568205833
+    },
+    "training_seconds": 410.817929785233,
+    "warmup_seconds": 105.37445896863937,
+    "recent_sample_cost": 21.211495246887207,
+    "recent_loss": -12.030595874786377,
+    "gradient_norm": {
+      "host": 397.96210740697745,
+      "selector": 0.0
+    }
+  },
+  {
+    "stage": "joint",
+    "host": "am",
+    "mode": "random",
+    "seed": 1234,
+    "step": 200,
+    "validation": {
+      "mean": 18.177661329507828,
+      "seconds": 4.775659068953246,
+      "source_deviation": 0.9699999615550041
+    },
+    "training_seconds": 547.3578259353526,
+    "warmup_seconds": 105.37445896863937,
+    "recent_sample_cost": 20.944661026000976,
+    "recent_loss": -9.339120121002198,
+    "gradient_norm": {
+      "host": 551.9486183837255,
+      "selector": 0.0
+    }
+  },
+  {
+    "stage": "joint",
+    "host": "am",
+    "mode": "random",
+    "seed": 1234,
+    "step": 250,
+    "validation": {
+      "mean": 18.184643775224686,
+      "seconds": 3.722911556251347,
+      "source_deviation": 0.969843715429306
+    },
+    "training_seconds": 682.995636460837,
+    "warmup_seconds": 105.37445896863937,
+    "recent_sample_cost": 20.895256385803222,
+    "recent_loss": -12.198732299804687,
+    "gradient_norm": {
+      "host": 263.3428066457049,
+      "selector": 0.0
+    }
+  },
+  {
+    "stage": "joint",
+    "host": "am",
+    "mode": "random",
+    "seed": 1234,
+    "step": 300,
+    "validation": {
+      "mean": 18.133465081453323,
+      "seconds": 4.74354019574821,
+      "source_deviation": 0.9703905954957008
+    },
+    "training_seconds": 820.2236473686062,
+    "warmup_seconds": 105.37445896863937,
+    "recent_sample_cost": 20.89758487701416,
+    "recent_loss": -10.813936324119569,
+    "gradient_norm": {
+      "host": 324.97750416214546,
+      "selector": 0.0
+    }
+  }
+]

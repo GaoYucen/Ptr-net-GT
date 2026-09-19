@@ -1,0 +1,10 @@
+mode,train_seed,mean_cost
+native_original,1234,6.429762303733826
+native_original,4321,6.431000649642944
+native_original,2468,6.444314811134339
+native_capacity_single_chain,1234,6.40175191822052
+native_capacity_single_chain,4321,6.387724152803421
+native_capacity_single_chain,2468,6.424919284915924
+native_conditional_free,1234,6.100637643575668
+native_conditional_free,4321,6.1098423369407655
+native_conditional_free,2468,6.097299335813522

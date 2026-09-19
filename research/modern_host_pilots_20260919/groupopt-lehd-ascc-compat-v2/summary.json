@@ -1,0 +1,147 @@
+{
+  "round_id": "E4-H1B-LEHD-COMPAT",
+  "host": "LEHD NeurIPS 2023 official checkpoint-150",
+  "graph_size": 50,
+  "test_instances": 1024,
+  "validation_instances": 512,
+  "eval_rollouts": 8,
+  "route_follow_sanity": {
+    "base_mean": 5.698750972747803,
+    "wrapper_mean": 5.698750972747803,
+    "max_abs_instance_cost_diff": 9.5367431640625e-07,
+    "mismatch_count_gt_1e-6": 0,
+    "eval_seconds": 3.455994740128517,
+    "eval_peak_gb": 0.23989343643188477
+  },
+  "tail_only_frozen_host": {
+    "mean_cost": 5.698750972747803,
+    "improvement_vs_base_percent": 0.0,
+    "best_val_mean": 5.703677654266357,
+    "best_step": 0,
+    "eval_seconds": 3.617346008308232,
+    "eval_peak_gb": 0.2610297203063965,
+    "train_seconds": 220.85135652218014,
+    "train_peak_gb": 0.21434402465820312,
+    "source_deviation_fraction": 0.0,
+    "mean_abs_endpoint_residual": 0.0,
+    "history": [
+      {
+        "step": 0,
+        "val": 5.703677654266357,
+        "continuation_logit": 5.0
+      },
+      {
+        "step": 100,
+        "train_cost": 8.026363372802734,
+        "loss": -2.561307907104492,
+        "val": 5.703677654266357,
+        "continuation_logit": 5.0046234130859375,
+        "source_deviation_fraction": 0.0,
+        "mean_abs_endpoint_residual": 0.0
+      },
+      {
+        "step": 200,
+        "train_cost": 8.117610931396484,
+        "loss": -6.359933853149414,
+        "val": 5.703677654266357,
+        "continuation_logit": 5.009498119354248,
+        "source_deviation_fraction": 0.0,
+        "mean_abs_endpoint_residual": 0.0
+      },
+      {
+        "step": 400,
+        "train_cost": 7.810502529144287,
+        "loss": -8.238031387329102,
+        "val": 5.703677654266357,
+        "continuation_logit": 5.0193281173706055,
+        "source_deviation_fraction": 0.0,
+        "mean_abs_endpoint_residual": 0.0
+      },
+      {
+        "step": 800,
+        "train_cost": 7.734027862548828,
+        "loss": -6.420814514160156,
+        "val": 5.703677654266357,
+        "continuation_logit": 5.037984371185303,
+        "source_deviation_fraction": 0.0,
+        "mean_abs_endpoint_residual": 0.0
+      }
+    ]
+  },
+  "forest_aware_frozen_host": {
+    "mean_cost": 5.698750972747803,
+    "improvement_vs_base_percent": 0.0,
+    "improvement_vs_tail_only_percent": 0.0,
+    "best_val_mean": 5.703677654266357,
+    "best_step": 0,
+    "eval_seconds": 4.214779001194984,
+    "eval_peak_gb": 0.26711416244506836,
+    "train_seconds": 408.370777387172,
+    "train_peak_gb": 0.3778719902038574,
+    "adapter_parameters": 16609,
+    "tail_parameters": 32961,
+    "source_deviation_fraction": 0.0,
+    "mean_abs_endpoint_residual": 9.644303327149828e-05,
+    "history": [
+      {
+        "step": 0,
+        "val": 5.703677654266357,
+        "continuation_logit": 5.0
+      },
+      {
+        "step": 100,
+        "train_cost": 8.019542694091797,
+        "loss": -6.715445518493652,
+        "val": 5.703677654266357,
+        "continuation_logit": 5.002865791320801,
+        "source_deviation_fraction": 0.0,
+        "mean_abs_endpoint_residual": 0.004753873974550515,
+        "endpoint_gate": 0.12039995938539505
+      },
+      {
+        "step": 200,
+        "train_cost": 7.878790855407715,
+        "loss": -4.681521415710449,
+        "val": 5.7036895751953125,
+        "continuation_logit": 5.005724906921387,
+        "source_deviation_fraction": 0.0,
+        "mean_abs_endpoint_residual": 0.022712927777320147,
+        "endpoint_gate": 0.12225106358528137
+      },
+      {
+        "step": 400,
+        "train_cost": 8.021045684814453,
+        "loss": -6.103303909301758,
+        "val": 5.703699588775635,
+        "continuation_logit": 5.011467456817627,
+        "source_deviation_fraction": 0.0,
+        "mean_abs_endpoint_residual": 0.08800092060118914,
+        "endpoint_gate": 0.125605046749115
+      },
+      {
+        "step": 800,
+        "train_cost": 7.753376007080078,
+        "loss": -8.417922973632812,
+        "val": 5.704019069671631,
+        "continuation_logit": 5.023151397705078,
+        "source_deviation_fraction": 0.0,
+        "mean_abs_endpoint_residual": 0.3144589737057686,
+        "endpoint_gate": 0.13175098598003387
+      },
+      {
+        "step": 1200,
+        "train_cost": 7.734614372253418,
+        "loss": -4.309502601623535,
+        "val": 5.704410076141357,
+        "continuation_logit": 5.03427791595459,
+        "source_deviation_fraction": 0.0,
+        "mean_abs_endpoint_residual": 0.6239644512534142,
+        "endpoint_gate": 0.1372707635164261
+      }
+    ]
+  },
+  "base_eval_seconds": 3.524263213388622,
+  "base_eval_peak_gb": 0.2321605682373047,
+  "assessment": "YELLOW",
+  "interpretation": "Compatibility repair is near parity; more mechanism diagnosis is needed."
+}

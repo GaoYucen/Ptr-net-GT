@@ -1,0 +1,219 @@
+{
+  "experiment": "paper_final_tsp50_v1",
+  "families": {
+    "am": {
+      "macro": {
+        "all_seeds_improve": true,
+        "groupopt_mean": 6.102593105443319,
+        "original_mean": 6.435025921503702,
+        "original_minus_groupopt": 0.33243281606038355,
+        "relative_improvement_percent": 5.165990317917824,
+        "seed_count": 3,
+        "seed_difference_standard_deviation": 0.013242210399957393
+      },
+      "pooled_instance_seed_pairs": {
+        "groupopt_mean": 6.102593105443319,
+        "groupopt_win_rate": 0.8287666666666667,
+        "original_mean": 6.435025921503703,
+        "original_minus_groupopt": 0.3324328160603841,
+        "paired_ci95_high": 0.33643366661398044,
+        "paired_ci95_low": 0.32843196550678777,
+        "relative_improvement_percent": 5.165990317917832,
+        "test_size": 30000
+      },
+      "seeds": {
+        "1234": {
+          "groupopt_mean": 6.100637643575668,
+          "groupopt_win_rate": 0.8226,
+          "original_mean": 6.429762303733826,
+          "original_minus_groupopt": 0.32912466015815733,
+          "paired_ci95_high": 0.33614188223705693,
+          "paired_ci95_low": 0.32210743807925774,
+          "relative_improvement_percent": 5.11876869798175,
+          "test_size": 10000
+        },
+        "2468": {
+          "groupopt_mean": 6.097299335813522,
+          "groupopt_win_rate": 0.8448,
+          "original_mean": 6.444314811134339,
+          "original_minus_groupopt": 0.34701547532081606,
+          "paired_ci95_high": 0.35383365355953134,
+          "paired_ci95_low": 0.3401972970821008,
+          "relative_improvement_percent": 5.384831211554884,
+          "test_size": 10000
+        },
+        "4321": {
+          "groupopt_mean": 6.1098423369407655,
+          "groupopt_win_rate": 0.8189,
+          "original_mean": 6.431000649642944,
+          "original_minus_groupopt": 0.3211583127021789,
+          "paired_ci95_high": 0.32810144946542097,
+          "paired_ci95_low": 0.3142151759389369,
+          "relative_improvement_percent": 4.993908882904716,
+          "test_size": 10000
+        }
+      }
+    },
+    "gpn": {
+      "macro": {
+        "all_seeds_improve": true,
+        "groupopt_mean": 6.2347381224314375,
+        "original_mean": 6.302547921880087,
+        "original_minus_groupopt": 0.06780979944864907,
+        "relative_improvement_percent": 1.07591089015347,
+        "seed_count": 3,
+        "seed_difference_standard_deviation": 0.032163052788655604
+      },
+      "pooled_instance_seed_pairs": {
+        "groupopt_mean": 6.2347381224314375,
+        "groupopt_win_rate": 0.5816,
+        "original_mean": 6.302547921880087,
+        "original_minus_groupopt": 0.0678097994486491,
+        "paired_ci95_high": 0.07154108663262401,
+        "paired_ci95_low": 0.06407851226467418,
+        "relative_improvement_percent": 1.0759108901534704,
+        "test_size": 30000
+      },
+      "seeds": {
+        "1234": {
+          "groupopt_mean": 6.1960218591213225,
+          "groupopt_win_rate": 0.6268,
+          "original_mean": 6.2988185018062595,
+          "original_minus_groupopt": 0.10279664268493652,
+          "paired_ci95_high": 0.10902500230807427,
+          "paired_ci95_low": 0.09656828306179877,
+          "relative_improvement_percent": 1.6319988051006453,
+          "test_size": 10000
+        },
+        "2468": {
+          "groupopt_mean": 6.247090482473373,
+          "groupopt_win_rate": 0.5712,
+          "original_mean": 6.308195862340927,
+          "original_minus_groupopt": 0.06110537986755371,
+          "paired_ci95_high": 0.06768429803958861,
+          "paired_ci95_low": 0.05452646169551881,
+          "relative_improvement_percent": 0.9686664967450446,
+          "test_size": 10000
+        },
+        "4321": {
+          "groupopt_mean": 6.261102025699615,
+          "groupopt_win_rate": 0.5468,
+          "original_mean": 6.300629401493072,
+          "original_minus_groupopt": 0.03952737579345703,
+          "paired_ci95_high": 0.046042081125827826,
+          "paired_ci95_low": 0.03301267046108624,
+          "relative_improvement_percent": 0.6273559873889767,
+          "test_size": 10000
+        }
+      }
+    },
+    "pomo": {
+      "macro": {
+        "all_seeds_improve": false,
+        "groupopt_mean": 5.995604315471649,
+        "original_mean": 6.037294075409572,
+        "original_minus_groupopt": 0.04168975993792312,
+        "relative_improvement_percent": 0.69053717472086,
+        "seed_count": 3,
+        "seed_difference_standard_deviation": 0.08230249933166502
+      },
+      "pooled_instance_seed_pairs": {
+        "groupopt_mean": 5.995604315471649,
+        "groupopt_win_rate": 0.5849666666666666,
+        "original_mean": 6.037294075409571,
+        "original_minus_groupopt": 0.041689759937922156,
+        "paired_ci95_high": 0.043956374095407987,
+        "paired_ci95_low": 0.039423145780436326,
+        "relative_improvement_percent": 0.690537174720844,
+        "test_size": 30000
+      },
+      "seeds": {
+        "1234": {
+          "groupopt_mean": 6.0282131316185,
+          "groupopt_win_rate": 0.3908,
+          "original_mean": 5.975256043529511,
+          "original_minus_groupopt": -0.05295708808898926,
+          "paired_ci95_high": -0.049351532404753304,
+          "paired_ci95_low": -0.056562643773225216,
+          "relative_improvement_percent": -0.886273118728284,
+          "test_size": 10000
+        },
+        "2468": {
+          "groupopt_mean": 5.984937326669693,
+          "groupopt_win_rate": 0.6872,
+          "original_mean": 6.081378970432281,
+          "original_minus_groupopt": 0.0964416437625885,
+          "paired_ci95_high": 0.1002747777766017,
+          "paired_ci95_low": 0.0926085097485753,
+          "relative_improvement_percent": 1.585851568065214,
+          "test_size": 10000
+        },
+        "4321": {
+          "groupopt_mean": 5.973662488126755,
+          "groupopt_win_rate": 0.6769,
+          "original_mean": 6.055247212266922,
+          "original_minus_groupopt": 0.08158472414016724,
+          "paired_ci95_high": 0.08523754518355545,
+          "paired_ci95_low": 0.07793190309677903,
+          "relative_improvement_percent": 1.3473392791443786,
+          "test_size": 10000
+        }
+      }
+    },
+    "ptrnet": {
+      "macro": {
+        "all_seeds_improve": true,
+        "groupopt_mean": 6.285077767197291,
+        "original_mean": 6.741774881410599,
+        "original_minus_groupopt": 0.4566971142133083,
+        "relative_improvement_percent": 6.774137704784239,
+        "seed_count": 3,
+        "seed_difference_standard_deviation": 0.08161734896045603
+      },
+      "pooled_instance_seed_pairs": {
+        "groupopt_mean": 6.285077767197291,
+        "groupopt_win_rate": 0.8749666666666667,
+        "original_mean": 6.741774881410599,
+        "original_minus_groupopt": 0.4566971142133077,
+        "paired_ci95_high": 0.46119270495471903,
+        "paired_ci95_low": 0.4522015234718964,
+        "relative_improvement_percent": 6.774137704784231,
+        "test_size": 30000
+      },
+      "seeds": {
+        "1234": {
+          "groupopt_mean": 6.268558910274505,
+          "groupopt_win_rate": 0.8757,
+          "original_mean": 6.703189909696579,
+          "original_minus_groupopt": 0.43463099942207334,
+          "paired_ci95_high": 0.44204666372407847,
+          "paired_ci95_low": 0.4272153351200682,
+          "relative_improvement_percent": 6.483942798537645,
+          "test_size": 10000
+        },
+        "2468": {
+          "groupopt_mean": 6.277210434007644,
+          "groupopt_win_rate": 0.8396,
+          "original_mean": 6.665591966152191,
+          "original_minus_groupopt": 0.3883815321445465,
+          "paired_ci95_high": 0.3960179912504221,
+          "paired_ci95_low": 0.38074507303867094,
+          "relative_improvement_percent": 5.826662269709037,
+          "test_size": 10000
+        },
+        "4321": {
+          "groupopt_mean": 6.309463957309723,
+          "groupopt_win_rate": 0.9096,
+          "original_mean": 6.856542768383026,
+          "original_minus_groupopt": 0.5470788110733033,
+          "paired_ci95_high": 0.5550461804907618,
+          "paired_ci95_low": 0.5391114416558447,
+          "relative_improvement_percent": 7.978930921221695,
+          "test_size": 10000
+        }
+      }
+    }
+  },
+  "lower_cost_is_better": true,
+  "test_seed": 20260904
+}

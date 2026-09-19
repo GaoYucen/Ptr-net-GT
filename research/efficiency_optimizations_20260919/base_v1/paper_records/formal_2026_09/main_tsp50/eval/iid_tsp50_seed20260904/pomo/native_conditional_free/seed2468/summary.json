@@ -1,0 +1,21 @@
+{
+  "base_mode": "native_conditional_free",
+  "best_validation_cost": 5.944084167480469,
+  "checkpoint": "/root/autodl-tmp/groupopt-paper-canonical/artifacts/paper_final_tsp50_v1/train/pomo_tsp50_native_conditional_free_seed2468/checkpoints/step-005000.pt",
+  "checkpoint_step": 5000,
+  "distribution": "uniform",
+  "evaluation_action_seed": 20260905,
+  "graph_size": 50,
+  "is_size_transfer": false,
+  "mean_cost": 5.9849371910095215,
+  "model": "pomo",
+  "problem": "tsp",
+  "standard_deviation": 0.29174479842185974,
+  "standard_error": 0.0029174479842185973,
+  "test_seed": 20260904,
+  "test_size": 10000,
+  "train_seed": 2468,
+  "training_base_mode": "native_conditional_free",
+  "training_graph_size": 50,
+  "training_scheme": "pomo"
+}

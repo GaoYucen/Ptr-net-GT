@@ -1,0 +1,97 @@
+{
+  "host": "LEHD NeurIPS 2023 official checkpoint-150",
+  "graph_size": 50,
+  "test_instances": 1024,
+  "pomo_rollouts_eval": 8,
+  "finetune_steps": 800,
+  "train_batch_instances": 24,
+  "train_rollouts": 4,
+  "base_mean": 5.698750972747803,
+  "sequential_finetune_mean": 5.698841094970703,
+  "ascc_finetune_mean": 5.707069396972656,
+  "ascc_vs_base_improvement_percent": -0.1459692529930391,
+  "ascc_vs_seq_finetune_improvement_percent": -0.144385531458575,
+  "seq_finetune_vs_base_improvement_percent": -0.00158143816656259,
+  "base_eval_seconds": 3.521935455966741,
+  "seq_eval_seconds": 3.2799687180668116,
+  "ascc_eval_seconds": 3.59972166409716,
+  "seq_train_seconds": 390.79417636897415,
+  "ascc_train_seconds": 463.6690235612914,
+  "base_eval_peak_gb": 0.2429523468017578,
+  "seq_eval_peak_gb": 0.2600822448730469,
+  "ascc_eval_peak_gb": 0.27149438858032227,
+  "seq_train_peak_gb": 4.653275012969971,
+  "ascc_train_peak_gb": 4.853626251220703,
+  "seq_history": [
+    {
+      "step": 1,
+      "train_cost": 5.662782192230225,
+      "loss": -0.03963661938905716,
+      "val": 5.723687171936035
+    },
+    {
+      "step": 100,
+      "train_cost": 5.753602504730225,
+      "loss": -0.06004294380545616,
+      "val": 5.72376012802124
+    },
+    {
+      "step": 200,
+      "train_cost": 5.802886962890625,
+      "loss": -0.01128325890749693,
+      "val": 5.7234015464782715
+    },
+    {
+      "step": 400,
+      "train_cost": 5.766599178314209,
+      "loss": -0.02883739583194256,
+      "val": 5.723598003387451
+    },
+    {
+      "step": 800,
+      "train_cost": 5.719559669494629,
+      "loss": -0.016403283923864365,
+      "val": 5.723657131195068
+    }
+  ],
+  "ascc_history": [
+    {
+      "step": 1,
+      "train_cost": 8.613021850585938,
+      "loss": -1.3379769325256348,
+      "val": 5.723935127258301,
+      "continuation_logit": 3.0000998973846436
+    },
+    {
+      "step": 100,
+      "train_cost": 8.04317855834961,
+      "loss": -0.06684362888336182,
+      "val": 5.725573539733887,
+      "continuation_logit": 3.0054097175598145
+    },
+    {
+      "step": 200,
+      "train_cost": 7.7234015464782715,
+      "loss": -0.6914680004119873,
+      "val": 5.726046562194824,
+      "continuation_logit": 3.010782480239868
+    },
+    {
+      "step": 400,
+      "train_cost": 7.298287868499756,
+      "loss": -0.9223739504814148,
+      "val": 5.732367038726807,
+      "continuation_logit": 3.017104387283325
+    },
+    {
+      "step": 800,
+      "train_cost": 6.962707042694092,
+      "loss": -0.6202031970024109,
+      "val": 5.73965311050415,
+      "continuation_logit": 3.0252130031585693
+    }
+  ],
+  "tail_parameters": 32961,
+  "host_trainable_decoder_parameters": 1233921,
+  "assessment": "RED"
+}

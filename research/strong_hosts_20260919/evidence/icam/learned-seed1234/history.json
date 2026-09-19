@@ -1,0 +1,139 @@
+[
+  {
+    "stage": "joint",
+    "host": "icam",
+    "mode": "learned",
+    "seed": 1234,
+    "step": 0,
+    "validation": {
+      "mean": 12.467627212405205,
+      "seconds": 3.895845890045166,
+      "source_deviation": 0.7196874991059303
+    },
+    "training_seconds": 0.0,
+    "warmup_seconds": 191.67777808196843,
+    "recent_sample_cost": 0.0,
+    "recent_loss": 0.0,
+    "gradient_norm": {}
+  },
+  {
+    "stage": "joint",
+    "host": "icam",
+    "mode": "learned",
+    "seed": 1234,
+    "step": 50,
+    "validation": {
+      "mean": 11.85754469037056,
+      "seconds": 4.397088149096817,
+      "source_deviation": 0.4825781099498272
+    },
+    "training_seconds": 102.2941394681111,
+    "warmup_seconds": 191.67777808196843,
+    "recent_sample_cost": 16.447982711791994,
+    "recent_loss": -36.530834426879885,
+    "gradient_norm": {
+      "host": 399.14279104288306,
+      "selector": 260.4841454160359
+    }
+  },
+  {
+    "stage": "joint",
+    "host": "icam",
+    "mode": "learned",
+    "seed": 1234,
+    "step": 100,
+    "validation": {
+      "mean": 11.233121305704117,
+      "seconds": 3.7108910512179136,
+      "source_deviation": 0.2848437447100878
+    },
+    "training_seconds": 204.30571032734588,
+    "warmup_seconds": 191.67777808196843,
+    "recent_sample_cost": 12.642861347198487,
+    "recent_loss": -13.062447681427003,
+    "gradient_norm": {
+      "host": 146.0812420698822,
+      "selector": 66.83686297170007
+    }
+  },
+  {
+    "stage": "joint",
+    "host": "icam",
+    "mode": "learned",
+    "seed": 1234,
+    "step": 150,
+    "validation": {
+      "mean": 11.418379127979279,
+      "seconds": 4.370898592285812,
+      "source_deviation": 0.4245312362909317
+    },
+    "training_seconds": 306.84541300684214,
+    "warmup_seconds": 191.67777808196843,
+    "recent_sample_cost": 11.900863208770751,
+    "recent_loss": -10.910173556804658,
+    "gradient_norm": {
+      "host": 228.86597616971704,
+      "selector": 247.8414784020608
+    }
+  },
+  {
+    "stage": "joint",
+    "host": "icam",
+    "mode": "learned",
+    "seed": 1234,
+    "step": 200,
+    "validation": {
+      "mean": 11.3091441988945,
+      "seconds": 4.360041717067361,
+      "source_deviation": 0.3821093663573265
+    },
+    "training_seconds": 408.9156905808486,
+    "warmup_seconds": 191.67777808196843,
+    "recent_sample_cost": 11.927531585693359,
+    "recent_loss": -6.776240100860596,
+    "gradient_norm": {
+      "host": 239.68883010515287,
+      "selector": 85.49933929076533
+    }
+  },
+  {
+    "stage": "joint",
+    "host": "icam",
+    "mode": "learned",
+    "seed": 1234,
+    "step": 250,
+    "validation": {
+      "mean": 11.399671584367752,
+      "seconds": 3.7177712651900947,
+      "source_deviation": 0.32484373450279236
+    },
+    "training_seconds": 511.15912542073056,
+    "warmup_seconds": 191.67777808196843,
+    "recent_sample_cost": 11.563100242614746,
+    "recent_loss": -5.6784063398838045,
+    "gradient_norm": {
+      "host": 329.5591366862874,
+      "selector": 118.77238293564574
+    }
+  },
+  {
+    "stage": "joint",
+    "host": "icam",
+    "mode": "learned",
+    "seed": 1234,
+    "step": 300,
+    "validation": {
+      "mean": 11.237503811717033,
+      "seconds": 3.8867855658754706,
+      "source_deviation": 0.3231249898672104
+    },
+    "training_seconds": 613.0539315384813,
+    "warmup_seconds": 191.67777808196843,
+    "recent_sample_cost": 11.496941585540771,
+    "recent_loss": -9.225838273763657,
+    "gradient_norm": {
+      "host": 163.85834200200762,
+      "selector": 101.38040594393134
+    }
+  }
+]

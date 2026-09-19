@@ -1,0 +1,15 @@
+{
+  "instances": 1000,
+  "augmentations": 8,
+  "pomo": 50,
+  "checkpoint_epoch": 200,
+  "noaug_mean": 5.701919157505035,
+  "aug_mean": 5.6942396249771114,
+  "official_logged_aug_score": 5.6942,
+  "logged_vs_vector_abs": 3.96249771110746e-05,
+  "raw_shape": [
+    8,
+    1000,
+    50
+  ]
+}

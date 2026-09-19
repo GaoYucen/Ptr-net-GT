@@ -1,0 +1,13 @@
+mode,train_seed,mean_cost
+native_conditional_free,1234,6.100637643575668
+native_conditional_free,4321,6.1098423369407655
+native_conditional_free,2468,6.097299335813522
+native_random_tail,1234,7.235845974302292
+native_random_tail,4321,7.241565422105789
+native_random_tail,2468,7.2433560962677
+native_free_no_head_summary,1234,6.104306344175339
+native_free_no_head_summary,4321,6.087687796545029
+native_free_no_head_summary,2468,6.048877245187759
+native_free_no_path_state,1234,6.281063415527344
+native_free_no_path_state,4321,6.2939162460327145
+native_free_no_path_state,2468,6.299638842391968

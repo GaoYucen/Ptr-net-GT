@@ -1,0 +1,90 @@
+{
+  "am": {
+    "mean_difference": 0.33243281606038355,
+    "seed_sd_difference": 0.013242210399957393,
+    "seed_t_ci95": [
+      0.2995373418176799,
+      0.3653282903030872
+    ],
+    "costs": {
+      "native_original": {
+        "train_elapsed_mean_s": 2723.194061258187,
+        "peak_gpu_memory_mean_gb": 1.9380642573038738,
+        "seed_mean_cost_sd": 0.008068207860191643,
+        "train_elapsed_stitched_mean_s": 2920.2019323346517
+      },
+      "native_conditional_free": {
+        "train_elapsed_mean_s": 3526.2542092564204,
+        "peak_gpu_memory_mean_gb": 16.684882164001465,
+        "seed_mean_cost_sd": 0.006496121354807203,
+        "train_elapsed_stitched_mean_s": 3776.3383203347526
+      }
+    }
+  },
+  "gpn": {
+    "mean_difference": 0.06780979944864907,
+    "seed_sd_difference": 0.032163052788655604,
+    "seed_t_ci95": [
+      -0.0120876529116717,
+      0.14770725180896982
+    ],
+    "costs": {
+      "native_original": {
+        "train_elapsed_mean_s": 603.51852831617,
+        "peak_gpu_memory_mean_gb": 0.44946861267089844,
+        "seed_mean_cost_sd": 0.00497436056250717,
+        "train_elapsed_stitched_mean_s": 647.112537852178
+      },
+      "native_conditional_free": {
+        "train_elapsed_mean_s": 3317.083223464588,
+        "peak_gpu_memory_mean_gb": 18.176608085632324,
+        "seed_mean_cost_sd": 0.034253359242836234,
+        "train_elapsed_stitched_mean_s": 3553.6482309301696
+      }
+    }
+  },
+  "pomo": {
+    "mean_difference": 0.04168975993792312,
+    "seed_sd_difference": 0.08230249933166502,
+    "seed_t_ci95": [
+      -0.16276098243086118,
+      0.24614050230670742
+    ],
+    "costs": {
+      "native_original": {
+        "train_elapsed_mean_s": 468.6305995893975,
+        "peak_gpu_memory_mean_gb": 1.5332010587056477,
+        "seed_mean_cost_sd": 0.055292451979151454,
+        "train_elapsed_stitched_mean_s": 501.8653103001416
+      },
+      "native_conditional_free": {
+        "train_elapsed_mean_s": 1724.2615958452225,
+        "peak_gpu_memory_mean_gb": 13.089394887288412,
+        "seed_mean_cost_sd": 0.028797250978464417,
+        "train_elapsed_stitched_mean_s": 1846.764319166541
+      }
+    }
+  },
+  "ptrnet": {
+    "mean_difference": 0.4566971142133083,
+    "seed_sd_difference": 0.08161734896045603,
+    "seed_t_ci95": [
+      0.25394837971992795,
+      0.6594458487066885
+    ],
+    "costs": {
+      "native_original": {
+        "train_elapsed_mean_s": 551.8926314848164,
+        "peak_gpu_memory_mean_gb": 0.649010181427002,
+        "seed_mean_cost_sd": 0.10115410149755974,
+        "train_elapsed_stitched_mean_s": 590.8438698376218
+      },
+      "native_conditional_free": {
+        "train_elapsed_mean_s": 2396.4933461770415,
+        "peak_gpu_memory_mean_gb": 10.512582302093506,
+        "seed_mean_cost_sd": 0.021557525759605015,
+        "train_elapsed_stitched_mean_s": 2564.0516040598354
+      }
+    }
+  }
+}

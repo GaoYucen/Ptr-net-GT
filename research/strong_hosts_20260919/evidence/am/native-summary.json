@@ -1,0 +1,22 @@
+{
+  "test200": {
+    "mean": 11.581380303949118,
+    "seconds": 6.312650723382831,
+    "source_deviation": 0.0
+  },
+  "cluster200": {
+    "mean": 6.698969267308712,
+    "seconds": 1.2478524087928236,
+    "source_deviation": 0.0
+  },
+  "test500": {
+    "mean": 20.03039476275444,
+    "seconds": 3.2708809869363904,
+    "source_deviation": 0.0
+  },
+  "test200-aug8": {
+    "mean": 11.348591964691877,
+    "seconds": 46.23602195922285,
+    "source_deviation": 0.0
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "server_report_links_checked": 96,
+  "link_errors": [],
+  "original_source_checkpoint_hashes_rechecked": 19375,
+  "changed_original_files": [],
+  "portable_path_only_copies_verified": 11,
+  "portable_errors": [],
+  "delivery_appledouble_files_removed": 41,
+  "status": "passed"
+}

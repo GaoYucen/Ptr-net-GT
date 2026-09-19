@@ -1,0 +1,45 @@
+{
+  "experiment_id": "paper_ablation_am_tsp50_v1",
+  "claim": "GroupOpt gains depend on learned tail selection, native head-distribution summaries, and forest path-state information",
+  "problem": "uniform_euclidean_tsp",
+  "graph_size": 50,
+  "host": "am",
+  "modes": [
+    "native_conditional_free",
+    "native_random_tail",
+    "native_free_no_head_summary",
+    "native_free_no_path_state"
+  ],
+  "new_training_modes": [
+    "native_random_tail",
+    "native_free_no_head_summary",
+    "native_free_no_path_state"
+  ],
+  "reference_experiment": "paper_final_tsp50_v1",
+  "training_seeds": [1234, 4321, 2468],
+  "training": {
+    "steps": 10000,
+    "batch_size": 512,
+    "validation_size": 1024,
+    "embedding_dim": 128,
+    "encoder_layers": 3,
+    "attention_heads": 8,
+    "feed_forward_dim": 512,
+    "normalization": "batch",
+    "learning_rate": 0.0001,
+    "eval_every": 100,
+    "checkpoint_every": 1000
+  },
+  "evaluation": {
+    "test_seed": 20260904,
+    "test_size": 10000,
+    "batch_size": 64,
+    "decode_type": "greedy",
+    "paired_instances": true
+  },
+  "ablation_definitions": {
+    "native_random_tail": "Replace the learned Tail Selector with uniform random choice among legal component endpoints while retaining the native AM head decoder",
+    "native_free_no_head_summary": "Remove entropy, expected edge length, and maximum-probability summaries of each tail-conditioned native head distribution",
+    "native_free_no_path_state": "Remove component endpoint, component mean, and normalized component-size features from tail scoring"
+  }
+}

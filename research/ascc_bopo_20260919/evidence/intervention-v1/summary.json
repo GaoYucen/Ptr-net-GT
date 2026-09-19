@@ -1,0 +1,86 @@
+{
+  "role": "post_hoc_policy_intervention_not_retrained_ablation",
+  "checkpoint_sha256": "4d92fe5e52976db17826da653fd901787e0503f281899c296ad58f30520e7959",
+  "test_sha256": "66f826afe3a44cf684d687ce25b3550e70bdf32d128b365cc64ac3c3f4c4ac39",
+  "rollouts": 8,
+  "count": 256,
+  "results": [
+    {
+      "policy": "learned",
+      "action_seed": 0,
+      "mean_cost": 8.939862582832575,
+      "seconds": 10.264967924915254,
+      "cost_minus_learned": 0.0,
+      "conditional_normal_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "policy": "route",
+      "action_seed": 0,
+      "mean_cost": 7.807378388941288,
+      "seconds": 9.344594059046358,
+      "cost_minus_learned": -1.1324841938912868,
+      "conditional_normal_ci95": [
+        -1.2025554912754637,
+        -1.06241289650711
+      ]
+    },
+    {
+      "policy": "fixed",
+      "action_seed": 0,
+      "mean_cost": 10.447947461158037,
+      "seconds": 8.67323480406776,
+      "cost_minus_learned": 1.5080848783254623,
+      "conditional_normal_ci95": [
+        1.367966915561038,
+        1.6482028410898866
+      ]
+    },
+    {
+      "policy": "shortest",
+      "action_seed": 0,
+      "mean_cost": 10.54893208667636,
+      "seconds": 9.41035734815523,
+      "cost_minus_learned": 1.6090695038437843,
+      "conditional_normal_ci95": [
+        1.4707259527678764,
+        1.7474130549196922
+      ]
+    },
+    {
+      "policy": "random",
+      "action_seed": 7001,
+      "mean_cost": 9.081107892096043,
+      "seconds": 10.22174789570272,
+      "cost_minus_learned": 0.1412453092634678,
+      "conditional_normal_ci95": [
+        0.047255305334382214,
+        0.23523531319255336
+      ]
+    },
+    {
+      "policy": "random",
+      "action_seed": 7002,
+      "mean_cost": 9.063608720898628,
+      "seconds": 9.51758982706815,
+      "cost_minus_learned": 0.12374613806605339,
+      "conditional_normal_ci95": [
+        0.034705236491047564,
+        0.21278703964105922
+      ]
+    },
+    {
+      "policy": "random",
+      "action_seed": 7003,
+      "mean_cost": 9.023671302944422,
+      "seconds": 10.392785150092095,
+      "cost_minus_learned": 0.08380872011184692,
+      "conditional_normal_ci95": [
+        -0.009858166324009085,
+        0.17747560654770295
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+{"elapsed_seconds": 0.0, "step": 0, "validation_greedy_cost": 14.573583602905273}
+{"action_entropy": 1.452850580215454, "best_validation_greedy_cost": 6.6040239334106445, "effective_batch_size": 512, "elapsed_seconds": 100.73891261499375, "gradient_norm": 7.849472522735596, "loss": -1.8072867393493652, "peak_gpu_memory_gb": 8.830845832824707, "policy_loss": -1.8072867393493652, "step": 300, "tail_entropy": 0.8885914087295532, "tail_entropy_bonus": 0.0, "train_cost": 7.389558792114258, "validation_greedy_cost": 6.6040239334106445}

@@ -1,0 +1,21 @@
+{
+  "base_mode": "native_original",
+  "best_validation_cost": 9.198535919189453,
+  "checkpoint": "/root/autodl-tmp/groupopt-paper-canonical/artifacts/paper_scale_effect_tsp_v1/train/pomo_tsp100_native_original_seed2468/checkpoints/step-005000.pt",
+  "checkpoint_step": 5000,
+  "distribution": "uniform",
+  "evaluation_action_seed": 20260905,
+  "graph_size": 100,
+  "is_size_transfer": false,
+  "mean_cost": 9.276101112365723,
+  "model": "pomo",
+  "problem": "tsp",
+  "standard_deviation": 0.34542492032051086,
+  "standard_error": 0.0034542492032051085,
+  "test_seed": 20260904,
+  "test_size": 10000,
+  "train_seed": 2468,
+  "training_base_mode": "native_original",
+  "training_graph_size": 100,
+  "training_scheme": "pomo"
+}

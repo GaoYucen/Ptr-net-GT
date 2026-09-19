@@ -1,0 +1,218 @@
+{
+  "results": {
+    "cluster": {
+      "500": [
+        {
+          "best_gain": 0.168243408203125,
+          "candidates": 21,
+          "groups": 5,
+          "native": 9.285674095153809,
+          "oracle_group_gain_mean": 0.033648681640625,
+          "positive_candidates": 2,
+          "positive_groups": 1,
+          "seconds": 10.470999240875244
+        },
+        {
+          "best_gain": -0.14045673608779907,
+          "candidates": 21,
+          "groups": 5,
+          "native": 9.800886154174805,
+          "oracle_group_gain_mean": 0.0,
+          "positive_candidates": 0,
+          "positive_groups": 0,
+          "seconds": 10.062898397445679
+        },
+        {
+          "best_gain": -0.0021524429321289062,
+          "candidates": 20,
+          "groups": 5,
+          "native": 10.72067928314209,
+          "oracle_group_gain_mean": 0.0,
+          "positive_candidates": 0,
+          "positive_groups": 0,
+          "seconds": 10.049456119537354
+        }
+      ],
+      "650": [
+        {
+          "best_gain": 0.11063206195831299,
+          "candidates": 21,
+          "groups": 5,
+          "native": 10.292155265808105,
+          "oracle_group_gain_mean": 0.022126412391662596,
+          "positive_candidates": 3,
+          "positive_groups": 1,
+          "seconds": 13.335339784622192
+        },
+        {
+          "best_gain": -0.017206668853759766,
+          "candidates": 20,
+          "groups": 5,
+          "native": 13.028449058532715,
+          "oracle_group_gain_mean": 0.0,
+          "positive_candidates": 0,
+          "positive_groups": 0,
+          "seconds": 13.42414140701294
+        },
+        {
+          "best_gain": 0.01915884017944336,
+          "candidates": 20,
+          "groups": 5,
+          "native": 12.919466972351074,
+          "oracle_group_gain_mean": 0.003831768035888672,
+          "positive_candidates": 1,
+          "positive_groups": 1,
+          "seconds": 13.020774841308594
+        }
+      ],
+      "800": [
+        {
+          "best_gain": -0.0660097599029541,
+          "candidates": 21,
+          "groups": 5,
+          "native": 12.412737846374512,
+          "oracle_group_gain_mean": 0.0,
+          "positive_candidates": 0,
+          "positive_groups": 0,
+          "seconds": 16.170501232147217
+        },
+        {
+          "best_gain": 0.029108285903930664,
+          "candidates": 22,
+          "groups": 5,
+          "native": 12.58884334564209,
+          "oracle_group_gain_mean": 0.005821657180786133,
+          "positive_candidates": 1,
+          "positive_groups": 1,
+          "seconds": 17.898866176605225
+        },
+        {
+          "best_gain": 0.08493614196777344,
+          "candidates": 24,
+          "groups": 5,
+          "native": 14.201571464538574,
+          "oracle_group_gain_mean": 0.0291445255279541,
+          "positive_candidates": 5,
+          "positive_groups": 3,
+          "seconds": 18.815342903137207
+        }
+      ]
+    },
+    "mixed": {
+      "500": [
+        {
+          "best_gain": -0.5813674926757812,
+          "candidates": 24,
+          "groups": 5,
+          "native": 17.505887985229492,
+          "oracle_group_gain_mean": 0.0,
+          "positive_candidates": 0,
+          "positive_groups": 0,
+          "seconds": 11.125868797302246
+        },
+        {
+          "best_gain": -0.12362480163574219,
+          "candidates": 16,
+          "groups": 5,
+          "native": 17.259735107421875,
+          "oracle_group_gain_mean": 0.0,
+          "positive_candidates": 0,
+          "positive_groups": 0,
+          "seconds": 9.675877571105957
+        },
+        {
+          "best_gain": 0.02519512176513672,
+          "candidates": 22,
+          "groups": 5,
+          "native": 17.697208404541016,
+          "oracle_group_gain_mean": 0.005039024353027344,
+          "positive_candidates": 1,
+          "positive_groups": 1,
+          "seconds": 10.499975204467773
+        }
+      ],
+      "650": [
+        {
+          "best_gain": -0.13814163208007812,
+          "candidates": 18,
+          "groups": 5,
+          "native": 20.551006317138672,
+          "oracle_group_gain_mean": 0.0,
+          "positive_candidates": 0,
+          "positive_groups": 0,
+          "seconds": 13.936802864074707
+        },
+        {
+          "best_gain": -0.24594879150390625,
+          "candidates": 23,
+          "groups": 5,
+          "native": 21.038612365722656,
+          "oracle_group_gain_mean": 0.0,
+          "positive_candidates": 0,
+          "positive_groups": 0,
+          "seconds": 14.120397806167603
+        },
+        {
+          "best_gain": -0.44376087188720703,
+          "candidates": 21,
+          "groups": 5,
+          "native": 20.777318954467773,
+          "oracle_group_gain_mean": 0.0,
+          "positive_candidates": 0,
+          "positive_groups": 0,
+          "seconds": 14.018675088882446
+        }
+      ],
+      "800": [
+        {
+          "best_gain": 0.38350820541381836,
+          "candidates": 21,
+          "groups": 5,
+          "native": 23.517778396606445,
+          "oracle_group_gain_mean": 0.19195733070373536,
+          "positive_candidates": 9,
+          "positive_groups": 3,
+          "seconds": 16.39055562019348
+        },
+        {
+          "best_gain": 0.007537364959716797,
+          "candidates": 21,
+          "groups": 5,
+          "native": 23.62591552734375,
+          "oracle_group_gain_mean": 0.0015948295593261718,
+          "positive_candidates": 2,
+          "positive_groups": 2,
+          "seconds": 16.05718731880188
+        },
+        {
+          "best_gain": 0.5326824188232422,
+          "candidates": 20,
+          "groups": 5,
+          "native": 24.201311111450195,
+          "oracle_group_gain_mean": 0.20203495025634766,
+          "positive_candidates": 5,
+          "positive_groups": 3,
+          "seconds": 17.848374605178833
+        }
+      ]
+    }
+  },
+  "summary": {
+    "cluster": {
+      "best_gain_max": 0.168243408203125,
+      "instances": 9,
+      "instances_with_positive": 5,
+      "mean_oracle_group_gain": 0.010508116086324055,
+      "positive_candidate_rate": 0.06315789473684211,
+      "positive_group_rate": 0.15555555555555556
+    },
+    "mixed": {
+      "best_gain_max": 0.5326824188232422,
+      "instances": 9,
+      "instances_with_positive": 4,
+      "mean_oracle_group_gain": 0.04451401498582627,
+      "positive_candidate_rate": 0.0913978494623656,
+      "positive_group_rate": 0.2
+    }
+  }
+}

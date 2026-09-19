@@ -1,0 +1,2852 @@
+[
+  {
+    "distribution": "uniform",
+    "instance": 0,
+    "n": 500,
+    "native_cost": 20.31436538696289,
+    "states": [
+      {
+        "candidate_budget": 4,
+        "edge": 175,
+        "endpoint_best_gain": 0.08361434936523438,
+        "endpoint_gains": [
+          0.08361434936523438,
+          0.05924224853515625,
+          -0.044442176818847656,
+          -0.00051116943359375
+        ],
+        "endpoint_positive_candidates": 2,
+        "progress": 0.35070140280561124,
+        "random_source_best_gain": 0.1345815658569336,
+        "random_source_gains": [
+          0.1345815658569336,
+          -1.0371131896972656,
+          -1.5826616287231445,
+          0.0043849945068359375
+        ],
+        "random_source_positive_candidates": 2,
+        "source_best_gain": 0.10286235809326172,
+        "source_gains": [
+          -1.8906898498535156,
+          -0.42104244232177734,
+          0.10286235809326172,
+          -0.7778759002685547
+        ],
+        "source_positive_candidates": 1
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 250,
+        "endpoint_best_gain": -0.027100563049316406,
+        "endpoint_gains": [
+          -0.027100563049316406,
+          -0.07029438018798828,
+          -0.20311450958251953,
+          -0.2298879623413086
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.501002004008016,
+        "random_source_best_gain": -0.12935638427734375,
+        "random_source_gains": [
+          -0.12935638427734375,
+          -0.18381977081298828,
+          -1.2985858917236328,
+          -0.15787887573242188
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": 0.010295867919921875,
+        "source_gains": [
+          -0.47408580780029297,
+          -1.7407522201538086,
+          -3.836087226867676,
+          0.010295867919921875
+        ],
+        "source_positive_candidates": 1
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 325,
+        "endpoint_best_gain": -0.04099130630493164,
+        "endpoint_gains": [
+          -0.04099130630493164,
+          -0.08202028274536133,
+          -0.2333207130432129,
+          -0.2525300979614258
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.6513026052104208,
+        "random_source_best_gain": -0.5382108688354492,
+        "random_source_gains": [
+          -1.1356606483459473,
+          -0.7070574760437012,
+          -0.5382108688354492,
+          -1.4300427436828613
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.7027573585510254,
+        "source_gains": [
+          -0.8390593528747559,
+          -0.7027573585510254,
+          -0.7070574760437012,
+          -0.7702555656433105
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 5,
+        "edge": 400,
+        "endpoint_best_gain": 0.11255359649658203,
+        "endpoint_gains": [
+          0.09894704818725586,
+          0.11255359649658203,
+          -0.03321218490600586,
+          -0.029804229736328125,
+          -0.1141357421875
+        ],
+        "endpoint_positive_candidates": 2,
+        "progress": 0.8016032064128257,
+        "random_source_best_gain": -0.07366418838500977,
+        "random_source_gains": [
+          -0.3480815887451172,
+          -0.22924470901489258,
+          -0.13622140884399414,
+          -0.17784929275512695,
+          -0.07366418838500977
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.08446884155273438,
+        "source_gains": [
+          -0.15289592742919922,
+          -0.24536848068237305,
+          -0.4177279472351074,
+          -0.08446884155273438,
+          -0.33243656158447266
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 2,
+        "edge": 450,
+        "endpoint_best_gain": -0.0007979869842529297,
+        "endpoint_gains": [
+          -0.0007979869842529297,
+          -0.033292293548583984
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.9018036072144289,
+        "random_source_best_gain": -0.1923682689666748,
+        "random_source_gains": [
+          -0.1923682689666748,
+          -0.4035041332244873
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": 0.015343189239501953,
+        "source_gains": [
+          0.015343189239501953,
+          0.013438701629638672
+        ],
+        "source_positive_candidates": 2
+      }
+    ]
+  },
+  {
+    "distribution": "uniform",
+    "instance": 1,
+    "n": 500,
+    "native_cost": 19.707805633544922,
+    "states": [
+      {
+        "candidate_budget": 5,
+        "edge": 175,
+        "endpoint_best_gain": 1.33514404296875e-05,
+        "endpoint_gains": [
+          -0.004725456237792969,
+          1.33514404296875e-05,
+          -0.32956981658935547,
+          -0.34237194061279297,
+          -0.10240745544433594
+        ],
+        "endpoint_positive_candidates": 1,
+        "progress": 0.35070140280561124,
+        "random_source_best_gain": -0.9067411422729492,
+        "random_source_gains": [
+          -1.6417236328125,
+          -2.195603370666504,
+          -0.9067411422729492,
+          -2.123915672302246,
+          -2.8983678817749023
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.9548254013061523,
+        "source_gains": [
+          -2.2786483764648438,
+          -2.281041145324707,
+          -1.2951364517211914,
+          -0.9548254013061523,
+          -1.4341011047363281
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 5,
+        "edge": 250,
+        "endpoint_best_gain": 0.006936073303222656,
+        "endpoint_gains": [
+          0.006936073303222656,
+          -0.07248783111572266,
+          -1.9273176193237305,
+          -0.10280609130859375,
+          -0.030365943908691406
+        ],
+        "endpoint_positive_candidates": 1,
+        "progress": 0.501002004008016,
+        "random_source_best_gain": -0.3934059143066406,
+        "random_source_gains": [
+          -0.4743232727050781,
+          -1.650191307067871,
+          -0.3934059143066406,
+          -2.2463817596435547,
+          -1.0669918060302734
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.3875408172607422,
+        "source_gains": [
+          -0.6441888809204102,
+          -1.5769968032836914,
+          -1.2308778762817383,
+          -0.9741344451904297,
+          -0.3875408172607422
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 5,
+        "edge": 325,
+        "endpoint_best_gain": -0.0070056915283203125,
+        "endpoint_gains": [
+          -0.009580612182617188,
+          -0.0070056915283203125,
+          -0.11880683898925781,
+          -0.10697221755981445,
+          -0.18027925491333008
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.6513026052104208,
+        "random_source_best_gain": -0.27340221405029297,
+        "random_source_gains": [
+          -0.27340221405029297,
+          -1.3147192001342773,
+          -1.4080209732055664,
+          -1.3132362365722656,
+          -1.1180200576782227
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.5554623603820801,
+        "source_gains": [
+          -1.3961763381958008,
+          -1.511587142944336,
+          -0.5554623603820801,
+          -0.8067526817321777,
+          -0.8326401710510254
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 5,
+        "edge": 400,
+        "endpoint_best_gain": 0.20297861099243164,
+        "endpoint_gains": [
+          0.11890363693237305,
+          0.20297861099243164,
+          0.0028505325317382812,
+          0.03003072738647461,
+          0.06815671920776367
+        ],
+        "endpoint_positive_candidates": 5,
+        "progress": 0.8016032064128257,
+        "random_source_best_gain": -0.5791945457458496,
+        "random_source_gains": [
+          -0.6296753883361816,
+          -0.6816873550415039,
+          -0.6074018478393555,
+          -0.5791945457458496,
+          -0.6226449012756348
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.32970571517944336,
+        "source_gains": [
+          -0.6235575675964355,
+          -0.6296753883361816,
+          -0.32970571517944336,
+          -0.7320895195007324,
+          -0.6676435470581055
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 5,
+        "edge": 450,
+        "endpoint_best_gain": 0.020798444747924805,
+        "endpoint_gains": [
+          -0.033598899841308594,
+          -0.04192972183227539,
+          -0.04988670349121094,
+          0.020798444747924805,
+          -0.051103830337524414
+        ],
+        "endpoint_positive_candidates": 1,
+        "progress": 0.9018036072144289,
+        "random_source_best_gain": -0.14920330047607422,
+        "random_source_gains": [
+          -0.7982277870178223,
+          -0.410358190536499,
+          -0.14920330047607422,
+          -0.37322020530700684,
+          -0.1496427059173584
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.07948732376098633,
+        "source_gains": [
+          -0.1496427059173584,
+          -0.07948732376098633,
+          -0.32866692543029785,
+          -0.8083174228668213,
+          -0.7525684833526611
+        ],
+        "source_positive_candidates": 0
+      }
+    ]
+  },
+  {
+    "distribution": "uniform",
+    "instance": 2,
+    "n": 500,
+    "native_cost": 18.91011619567871,
+    "states": [
+      {
+        "candidate_budget": 4,
+        "edge": 175,
+        "endpoint_best_gain": 0.031133651733398438,
+        "endpoint_gains": [
+          -0.5877923965454102,
+          0.031133651733398438,
+          -0.03601837158203125,
+          -0.40392017364501953
+        ],
+        "endpoint_positive_candidates": 1,
+        "progress": 0.35070140280561124,
+        "random_source_best_gain": -0.7773027420043945,
+        "random_source_gains": [
+          -0.9504737854003906,
+          -1.8598241806030273,
+          -0.7773027420043945,
+          -2.0217819213867188
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.5955533981323242,
+        "source_gains": [
+          -1.5567970275878906,
+          -1.5492792129516602,
+          -0.5955533981323242,
+          -2.480804443359375
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 250,
+        "endpoint_best_gain": -0.03686332702636719,
+        "endpoint_gains": [
+          -0.03686332702636719,
+          -0.045444488525390625,
+          -0.045706748962402344,
+          -0.11601638793945312
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.501002004008016,
+        "random_source_best_gain": -1.3233613967895508,
+        "random_source_gains": [
+          -1.3233613967895508,
+          -1.5016365051269531,
+          -1.8512563705444336,
+          -1.5877351760864258
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -1.1890382766723633,
+        "source_gains": [
+          -1.238865852355957,
+          -1.1890382766723633,
+          -1.2083158493041992,
+          -1.8822755813598633
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 325,
+        "endpoint_best_gain": -0.0543513298034668,
+        "endpoint_gains": [
+          -0.08877706527709961,
+          -0.0543513298034668,
+          -0.0999002456665039,
+          -0.06816577911376953
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.6513026052104208,
+        "random_source_best_gain": -0.9099092483520508,
+        "random_source_gains": [
+          -0.9099092483520508,
+          -1.0981807708740234,
+          -0.9536237716674805,
+          -1.4433364868164062
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -1.389054298400879,
+        "source_gains": [
+          -1.389054298400879,
+          -1.4604387283325195,
+          -1.4769258499145508,
+          -1.771336555480957
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 400,
+        "endpoint_best_gain": -0.006175518035888672,
+        "endpoint_gains": [
+          -0.006175518035888672,
+          -0.036214351654052734,
+          -0.07505655288696289,
+          -0.10524654388427734
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.8016032064128257,
+        "random_source_best_gain": -0.539217472076416,
+        "random_source_gains": [
+          -0.539217472076416,
+          -1.3094854354858398,
+          -1.7275333404541016,
+          -1.7070975303649902
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.1707291603088379,
+        "source_gains": [
+          -0.1707291603088379,
+          -0.28221654891967773,
+          -1.3880972862243652,
+          -1.299975872039795
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 5,
+        "edge": 450,
+        "endpoint_best_gain": 0.07390999794006348,
+        "endpoint_gains": [
+          0.07390999794006348,
+          -0.03321123123168945,
+          -0.05402827262878418,
+          -0.04386162757873535,
+          -0.07570457458496094
+        ],
+        "endpoint_positive_candidates": 1,
+        "progress": 0.9018036072144289,
+        "random_source_best_gain": -0.16831636428833008,
+        "random_source_gains": [
+          -0.5052371025085449,
+          -0.16831636428833008,
+          -0.170729398727417,
+          -0.9057502746582031,
+          -0.9702489376068115
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.170729398727417,
+        "source_gains": [
+          -0.170729398727417,
+          -0.5514280796051025,
+          -0.46595120429992676,
+          -0.7528862953186035,
+          -0.7208032608032227
+        ],
+        "source_positive_candidates": 0
+      }
+    ]
+  },
+  {
+    "distribution": "uniform",
+    "instance": 0,
+    "n": 650,
+    "native_cost": 23.810588836669922,
+    "states": [
+      {
+        "candidate_budget": 4,
+        "edge": 227,
+        "endpoint_best_gain": -0.06898880004882812,
+        "endpoint_gains": [
+          -0.06898880004882812,
+          -0.10468673706054688,
+          -0.22484493255615234,
+          -0.33255863189697266
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.349768875192604,
+        "random_source_best_gain": -0.9008188247680664,
+        "random_source_gains": [
+          -1.1061601638793945,
+          -2.526881217956543,
+          -3.3307390213012695,
+          -0.9008188247680664
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -1.0914812088012695,
+        "source_gains": [
+          -4.009554862976074,
+          -4.009062767028809,
+          -1.0914812088012695,
+          -1.4456777572631836
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 325,
+        "endpoint_best_gain": 0.01862621307373047,
+        "endpoint_gains": [
+          -0.02968311309814453,
+          0.013747215270996094,
+          -0.1470651626586914,
+          0.01862621307373047
+        ],
+        "endpoint_positive_candidates": 2,
+        "progress": 0.5007704160246533,
+        "random_source_best_gain": -1.6215019226074219,
+        "random_source_gains": [
+          -2.1147470474243164,
+          -2.1865177154541016,
+          -1.6215019226074219,
+          -1.9172782897949219
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -1.0566024780273438,
+        "source_gains": [
+          -2.0962305068969727,
+          -2.102292060852051,
+          -1.0566024780273438,
+          -1.0884523391723633
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 5,
+        "edge": 422,
+        "endpoint_best_gain": -0.08011436462402344,
+        "endpoint_gains": [
+          -0.08011436462402344,
+          -0.1010599136352539,
+          -0.1345205307006836,
+          -0.15086841583251953,
+          -0.12276935577392578
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.650231124807396,
+        "random_source_best_gain": -1.187972068786621,
+        "random_source_gains": [
+          -2.156665802001953,
+          -1.187972068786621,
+          -2.1482372283935547,
+          -1.3354520797729492,
+          -1.9951515197753906
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.9014387130737305,
+        "source_gains": [
+          -1.6602535247802734,
+          -1.6673307418823242,
+          -0.9014387130737305,
+          -1.693735122680664,
+          -1.7123355865478516
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 520,
+        "endpoint_best_gain": -0.010508060455322266,
+        "endpoint_gains": [
+          -0.010508060455322266,
+          -0.010737419128417969,
+          -0.09604501724243164,
+          -1.0661444664001465
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.8012326656394453,
+        "random_source_best_gain": -0.7207555770874023,
+        "random_source_gains": [
+          -0.7207555770874023,
+          -0.9860506057739258,
+          -1.012197494506836,
+          -1.050412654876709
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.4330167770385742,
+        "source_gains": [
+          -0.5276670455932617,
+          -0.506126880645752,
+          -0.47052764892578125,
+          -0.4330167770385742
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 585,
+        "endpoint_best_gain": 0.014017820358276367,
+        "endpoint_gains": [
+          0.014017820358276367,
+          -0.8271026611328125,
+          -0.8611268997192383,
+          -0.9364492893218994
+        ],
+        "endpoint_positive_candidates": 1,
+        "progress": 0.901386748844376,
+        "random_source_best_gain": -0.01656484603881836,
+        "random_source_gains": [
+          -0.6575703620910645,
+          -0.6533167362213135,
+          -0.9575774669647217,
+          -0.01656484603881836
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": 0.04957318305969238,
+        "source_gains": [
+          0.028033018112182617,
+          0.04957318305969238,
+          -0.571436882019043,
+          -0.6403708457946777
+        ],
+        "source_positive_candidates": 2
+      }
+    ]
+  },
+  {
+    "distribution": "uniform",
+    "instance": 1,
+    "n": 650,
+    "native_cost": 23.3665828704834,
+    "states": [
+      {
+        "candidate_budget": 5,
+        "edge": 227,
+        "endpoint_best_gain": 0.10761260986328125,
+        "endpoint_gains": [
+          -0.06700515747070312,
+          -0.04238605499267578,
+          -0.047855377197265625,
+          -0.09346580505371094,
+          0.10761260986328125
+        ],
+        "endpoint_positive_candidates": 1,
+        "progress": 0.349768875192604,
+        "random_source_best_gain": -0.06783390045166016,
+        "random_source_gains": [
+          -2.224824905395508,
+          -2.510374069213867,
+          -0.06783390045166016,
+          -1.0365715026855469,
+          -0.4288921356201172
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": 0.18688201904296875,
+        "source_gains": [
+          -0.22623252868652344,
+          -0.7427253723144531,
+          -0.1003580093383789,
+          -1.1485233306884766,
+          0.18688201904296875
+        ],
+        "source_positive_candidates": 1
+      },
+      {
+        "candidate_budget": 5,
+        "edge": 325,
+        "endpoint_best_gain": 0.008130073547363281,
+        "endpoint_gains": [
+          0.008130073547363281,
+          -0.029438018798828125,
+          -0.03959465026855469,
+          -0.08024024963378906,
+          -0.08479595184326172
+        ],
+        "endpoint_positive_candidates": 1,
+        "progress": 0.5007704160246533,
+        "random_source_best_gain": -0.3257942199707031,
+        "random_source_gains": [
+          -1.5515775680541992,
+          -1.6159906387329102,
+          -0.3925943374633789,
+          -0.3257942199707031,
+          -0.8528461456298828
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.06733512878417969,
+        "source_gains": [
+          -0.06733512878417969,
+          -0.0795297622680664,
+          -0.3599100112915039,
+          -0.8889904022216797,
+          -0.9379405975341797
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 422,
+        "endpoint_best_gain": -0.014484405517578125,
+        "endpoint_gains": [
+          -0.02249908447265625,
+          -0.014484405517578125,
+          -0.11012649536132812,
+          -0.14318561553955078
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.650231124807396,
+        "random_source_best_gain": -0.17025470733642578,
+        "random_source_gains": [
+          -0.17025470733642578,
+          -0.24922561645507812,
+          -0.8361082077026367,
+          -0.649561882019043
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": 0.13143157958984375,
+        "source_gains": [
+          0.13143157958984375,
+          -0.40065574645996094,
+          -0.9609231948852539,
+          -0.9198207855224609
+        ],
+        "source_positive_candidates": 1
+      },
+      {
+        "candidate_budget": 3,
+        "edge": 520,
+        "endpoint_best_gain": -0.056615352630615234,
+        "endpoint_gains": [
+          -0.18035078048706055,
+          -0.0726017951965332,
+          -0.056615352630615234
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.8012326656394453,
+        "random_source_best_gain": -0.08038091659545898,
+        "random_source_gains": [
+          -0.20914077758789062,
+          -0.28501129150390625,
+          -0.08038091659545898
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.21358537673950195,
+        "source_gains": [
+          -0.21358537673950195,
+          -0.5997176170349121,
+          -0.3343844413757324
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 585,
+        "endpoint_best_gain": 0.027755022048950195,
+        "endpoint_gains": [
+          0.002313375473022461,
+          0.027755022048950195,
+          -0.03157162666320801,
+          -0.07151627540588379
+        ],
+        "endpoint_positive_candidates": 2,
+        "progress": 0.901386748844376,
+        "random_source_best_gain": 0.009787559509277344,
+        "random_source_gains": [
+          -0.07501530647277832,
+          -0.3480508327484131,
+          -0.12338995933532715,
+          0.009787559509277344
+        ],
+        "random_source_positive_candidates": 1,
+        "source_best_gain": -0.0201871395111084,
+        "source_gains": [
+          -0.3493964672088623,
+          -0.19818425178527832,
+          -0.0201871395111084,
+          -0.2594873905181885
+        ],
+        "source_positive_candidates": 0
+      }
+    ]
+  },
+  {
+    "distribution": "uniform",
+    "instance": 2,
+    "n": 650,
+    "native_cost": 23.68022346496582,
+    "states": [
+      {
+        "candidate_budget": 4,
+        "edge": 227,
+        "endpoint_best_gain": 0.02244281768798828,
+        "endpoint_gains": [
+          -0.022001266479492188,
+          0.01963329315185547,
+          -0.025770187377929688,
+          0.02244281768798828
+        ],
+        "endpoint_positive_candidates": 2,
+        "progress": 0.349768875192604,
+        "random_source_best_gain": -0.5401840209960938,
+        "random_source_gains": [
+          -0.5835933685302734,
+          -0.5401840209960938,
+          -1.8059043884277344,
+          -2.0411205291748047
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -1.1487483978271484,
+        "source_gains": [
+          -1.9419975280761719,
+          -1.1487483978271484,
+          -1.4390926361083984,
+          -2.086458206176758
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 5,
+        "edge": 325,
+        "endpoint_best_gain": 0.2649869918823242,
+        "endpoint_gains": [
+          0.2649869918823242,
+          -0.02906322479248047,
+          0.059533119201660156,
+          0.017180442810058594,
+          0.008531570434570312
+        ],
+        "endpoint_positive_candidates": 4,
+        "progress": 0.5007704160246533,
+        "random_source_best_gain": -0.7316761016845703,
+        "random_source_gains": [
+          -2.5724172592163086,
+          -1.921431541442871,
+          -2.137871742248535,
+          -2.34226131439209,
+          -0.7316761016845703
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.3431282043457031,
+        "source_gains": [
+          -0.3431282043457031,
+          -0.7465829849243164,
+          -0.9086904525756836,
+          -0.6973190307617188,
+          -0.440521240234375
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 6,
+        "edge": 422,
+        "endpoint_best_gain": 0.1540212631225586,
+        "endpoint_gains": [
+          -0.0444488525390625,
+          -0.06918048858642578,
+          -0.07730770111083984,
+          -0.1253795623779297,
+          0.1540212631225586,
+          -0.1639842987060547
+        ],
+        "endpoint_positive_candidates": 1,
+        "progress": 0.650231124807396,
+        "random_source_best_gain": -1.006582260131836,
+        "random_source_gains": [
+          -1.006582260131836,
+          -1.1871929168701172,
+          -1.8227148056030273,
+          -1.9664936065673828,
+          -1.0239200592041016,
+          -1.5021047592163086
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.8525514602661133,
+        "source_gains": [
+          -1.0008773803710938,
+          -1.0362005233764648,
+          -1.3497180938720703,
+          -1.2203865051269531,
+          -0.8905220031738281,
+          -0.8525514602661133
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 6,
+        "edge": 520,
+        "endpoint_best_gain": -0.0665884017944336,
+        "endpoint_gains": [
+          -0.0689535140991211,
+          -0.1319727897644043,
+          -0.11792564392089844,
+          -0.10762691497802734,
+          -0.0665884017944336,
+          -0.12949132919311523
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.8012326656394453,
+        "random_source_best_gain": -0.7374401092529297,
+        "random_source_gains": [
+          -1.3974170684814453,
+          -0.9758906364440918,
+          -0.7428221702575684,
+          -1.0912575721740723,
+          -0.7374401092529297,
+          -0.7570610046386719
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.7403221130371094,
+        "source_gains": [
+          -0.9889650344848633,
+          -0.888279914855957,
+          -0.9455180168151855,
+          -0.7403221130371094,
+          -0.828101634979248,
+          -0.7428221702575684
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 5,
+        "edge": 585,
+        "endpoint_best_gain": -0.06032752990722656,
+        "endpoint_gains": [
+          -0.10135054588317871,
+          -0.07041072845458984,
+          -0.10277056694030762,
+          -0.09843087196350098,
+          -0.06032752990722656
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.901386748844376,
+        "random_source_best_gain": -0.21304917335510254,
+        "random_source_gains": [
+          -0.3619687557220459,
+          -0.40858960151672363,
+          -0.21304917335510254,
+          -0.7053825855255127,
+          -0.686098575592041
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.3221261501312256,
+        "source_gains": [
+          -0.530684232711792,
+          -0.32656049728393555,
+          -0.3221261501312256,
+          -0.39691996574401855,
+          -0.4253244400024414
+        ],
+        "source_positive_candidates": 0
+      }
+    ]
+  },
+  {
+    "distribution": "uniform",
+    "instance": 0,
+    "n": 800,
+    "native_cost": 26.66582489013672,
+    "states": [
+      {
+        "candidate_budget": 4,
+        "edge": 280,
+        "endpoint_best_gain": -0.05912971496582031,
+        "endpoint_gains": [
+          -0.05912971496582031,
+          -0.1301746368408203,
+          -1.7773323059082031,
+          -0.101898193359375
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.3504380475594493,
+        "random_source_best_gain": -0.5564537048339844,
+        "random_source_gains": [
+          -0.6918849945068359,
+          -0.5564537048339844,
+          -2.2324142456054688,
+          -2.956480026245117
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -1.6498355865478516,
+        "source_gains": [
+          -2.6890182495117188,
+          -2.3597164154052734,
+          -1.6498355865478516,
+          -2.293109893798828
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 400,
+        "endpoint_best_gain": 0.014943122863769531,
+        "endpoint_gains": [
+          0.014943122863769531,
+          -0.03952503204345703,
+          0.0024213790893554688,
+          0.014157295227050781
+        ],
+        "endpoint_positive_candidates": 3,
+        "progress": 0.5006257822277848,
+        "random_source_best_gain": -1.8111162185668945,
+        "random_source_gains": [
+          -2.0156774520874023,
+          -1.8111162185668945,
+          -1.9789457321166992,
+          -2.1392698287963867
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -1.1069154739379883,
+        "source_gains": [
+          -2.906928062438965,
+          -2.882988929748535,
+          -1.1069154739379883,
+          -1.7333135604858398
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 520,
+        "endpoint_best_gain": 0.011628150939941406,
+        "endpoint_gains": [
+          -0.1310405731201172,
+          0.011628150939941406,
+          -0.2030630111694336,
+          -0.22898197174072266
+        ],
+        "endpoint_positive_candidates": 1,
+        "progress": 0.6508135168961201,
+        "random_source_best_gain": -0.6815929412841797,
+        "random_source_gains": [
+          -1.110478401184082,
+          -0.6815929412841797,
+          -0.8825407028198242,
+          -1.658477783203125
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.5414419174194336,
+        "source_gains": [
+          -0.7823495864868164,
+          -0.7811193466186523,
+          -0.5414419174194336,
+          -0.7432012557983398
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 640,
+        "endpoint_best_gain": -0.0011224746704101562,
+        "endpoint_gains": [
+          -0.019527912139892578,
+          -0.0011224746704101562,
+          -0.04969644546508789,
+          -0.1158604621887207
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.8010012515644556,
+        "random_source_best_gain": -0.6039443016052246,
+        "random_source_gains": [
+          -1.0758075714111328,
+          -0.9143214225769043,
+          -0.6039443016052246,
+          -1.583188533782959
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": 0.14570903778076172,
+        "source_gains": [
+          -1.299870491027832,
+          -1.3000221252441406,
+          0.14570903778076172,
+          -0.983945369720459
+        ],
+        "source_positive_candidates": 1
+      },
+      {
+        "candidate_budget": 5,
+        "edge": 720,
+        "endpoint_best_gain": -0.062284231185913086,
+        "endpoint_gains": [
+          -0.062284231185913086,
+          -0.09244537353515625,
+          -0.0659487247467041,
+          -0.11821198463439941,
+          -0.12952899932861328
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.9011264080100125,
+        "random_source_best_gain": -0.4929540157318115,
+        "random_source_gains": [
+          -0.8558485507965088,
+          -0.6666746139526367,
+          -0.4929540157318115,
+          -0.8882508277893066,
+          -1.1071548461914062
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": 0.052405357360839844,
+        "source_gains": [
+          -0.8530957698822021,
+          -0.8525180816650391,
+          -0.7894856929779053,
+          0.052405357360839844,
+          -0.38962769508361816
+        ],
+        "source_positive_candidates": 1
+      }
+    ]
+  },
+  {
+    "distribution": "uniform",
+    "instance": 1,
+    "n": 800,
+    "native_cost": 26.978269577026367,
+    "states": [
+      {
+        "candidate_budget": 5,
+        "edge": 280,
+        "endpoint_best_gain": -0.012897491455078125,
+        "endpoint_gains": [
+          -0.020360946655273438,
+          -0.16399383544921875,
+          -0.01839447021484375,
+          -0.012897491455078125,
+          -0.11368751525878906
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.3504380475594493,
+        "random_source_best_gain": -0.39199256896972656,
+        "random_source_gains": [
+          -3.3809452056884766,
+          -0.5990009307861328,
+          -2.508665084838867,
+          -0.39199256896972656,
+          -2.614276885986328
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -1.8580856323242188,
+        "source_gains": [
+          -2.9389190673828125,
+          -2.9401721954345703,
+          -2.4457340240478516,
+          -1.8580856323242188,
+          -2.010976791381836
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 5,
+        "edge": 400,
+        "endpoint_best_gain": 0.18642711639404297,
+        "endpoint_gains": [
+          0.05834197998046875,
+          0.18642711639404297,
+          0.03216743469238281,
+          0.06660938262939453,
+          -0.05779266357421875
+        ],
+        "endpoint_positive_candidates": 4,
+        "progress": 0.5006257822277848,
+        "random_source_best_gain": -0.7437763214111328,
+        "random_source_gains": [
+          -0.7437763214111328,
+          -3.6883926391601562,
+          -2.6052703857421875,
+          -2.0811614990234375,
+          -1.963653564453125
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.9241714477539062,
+        "source_gains": [
+          -2.339944839477539,
+          -1.9338407516479492,
+          -1.140085220336914,
+          -0.9241714477539062,
+          -1.1426877975463867
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 5,
+        "edge": 520,
+        "endpoint_best_gain": -0.06834030151367188,
+        "endpoint_gains": [
+          -0.07401180267333984,
+          -0.079193115234375,
+          -0.0794687271118164,
+          -0.08429718017578125,
+          -0.06834030151367188
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.6508135168961201,
+        "random_source_best_gain": -1.2259693145751953,
+        "random_source_gains": [
+          -1.4390935897827148,
+          -1.6101570129394531,
+          -1.2259693145751953,
+          -1.8390312194824219,
+          -2.3137121200561523
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -1.3321208953857422,
+        "source_gains": [
+          -2.038576126098633,
+          -1.3321208953857422,
+          -1.6241483688354492,
+          -1.6101045608520508,
+          -2.2998828887939453
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 5,
+        "edge": 640,
+        "endpoint_best_gain": 0.0030870437622070312,
+        "endpoint_gains": [
+          -0.09975290298461914,
+          -0.08194160461425781,
+          -0.0010004043579101562,
+          -0.12909841537475586,
+          0.0030870437622070312
+        ],
+        "endpoint_positive_candidates": 1,
+        "progress": 0.8010012515644556,
+        "random_source_best_gain": -1.0452361106872559,
+        "random_source_gains": [
+          -2.0307703018188477,
+          -1.1484155654907227,
+          -1.2087206840515137,
+          -1.0452361106872559,
+          -1.400780200958252
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -1.1415915489196777,
+        "source_gains": [
+          -1.2352633476257324,
+          -1.1415915489196777,
+          -1.1562986373901367,
+          -1.91658353805542,
+          -1.3041510581970215
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 5,
+        "edge": 720,
+        "endpoint_best_gain": 0.03331708908081055,
+        "endpoint_gains": [
+          -0.04418826103210449,
+          -0.008720159530639648,
+          -0.029852628707885742,
+          0.03331708908081055,
+          -0.030267953872680664
+        ],
+        "endpoint_positive_candidates": 1,
+        "progress": 0.9011264080100125,
+        "random_source_best_gain": -0.5937151908874512,
+        "random_source_gains": [
+          -0.9766335487365723,
+          -0.5937151908874512,
+          -0.6712915897369385,
+          -0.6069536209106445,
+          -0.6672806739807129
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.414475679397583,
+        "source_gains": [
+          -0.8103728294372559,
+          -0.8517847061157227,
+          -0.414475679397583,
+          -0.5149459838867188,
+          -0.6399295330047607
+        ],
+        "source_positive_candidates": 0
+      }
+    ]
+  },
+  {
+    "distribution": "uniform",
+    "instance": 2,
+    "n": 800,
+    "native_cost": 26.059574127197266,
+    "states": [
+      {
+        "candidate_budget": 5,
+        "edge": 280,
+        "endpoint_best_gain": 0.018342971801757812,
+        "endpoint_gains": [
+          -0.357025146484375,
+          -0.00994873046875,
+          0.018342971801757812,
+          -0.0276947021484375,
+          -0.0909423828125
+        ],
+        "endpoint_positive_candidates": 1,
+        "progress": 0.3504380475594493,
+        "random_source_best_gain": -1.3214969635009766,
+        "random_source_gains": [
+          -2.981473922729492,
+          -1.7709522247314453,
+          -1.3214969635009766,
+          -3.524282455444336,
+          -2.3633041381835938
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.06695938110351562,
+        "source_gains": [
+          -1.4162940979003906,
+          -2.238283157348633,
+          -0.268798828125,
+          -0.06695938110351562,
+          -0.10325050354003906
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 400,
+        "endpoint_best_gain": -0.06987380981445312,
+        "endpoint_gains": [
+          -0.21245861053466797,
+          -0.16773223876953125,
+          -0.1685342788696289,
+          -0.06987380981445312
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.5006257822277848,
+        "random_source_best_gain": -0.951446533203125,
+        "random_source_gains": [
+          -3.0568008422851562,
+          -3.473430633544922,
+          -3.526651382446289,
+          -0.951446533203125
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.15732860565185547,
+        "source_gains": [
+          -1.356353759765625,
+          -1.0210132598876953,
+          -0.15732860565185547,
+          -0.26068115234375
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 6,
+        "edge": 520,
+        "endpoint_best_gain": 0.03689384460449219,
+        "endpoint_gains": [
+          0.03689384460449219,
+          -0.11733341217041016,
+          0.031049728393554688,
+          -0.18011856079101562,
+          -0.10474872589111328,
+          -0.12166976928710938
+        ],
+        "endpoint_positive_candidates": 2,
+        "progress": 0.6508135168961201,
+        "random_source_best_gain": -0.621729850769043,
+        "random_source_gains": [
+          -1.3643817901611328,
+          -1.9535865783691406,
+          -1.7195549011230469,
+          -0.621729850769043,
+          -1.1727581024169922,
+          -2.0281171798706055
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": 0.09123039245605469,
+        "source_gains": [
+          -1.783090591430664,
+          -1.1468029022216797,
+          -0.11707401275634766,
+          -0.013514518737792969,
+          0.09123039245605469,
+          -0.002071380615234375
+        ],
+        "source_positive_candidates": 1
+      },
+      {
+        "candidate_budget": 5,
+        "edge": 640,
+        "endpoint_best_gain": -0.06506633758544922,
+        "endpoint_gains": [
+          -0.07498884201049805,
+          -0.09234380722045898,
+          -0.06506633758544922,
+          -0.07731056213378906,
+          -0.09891366958618164
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.8010012515644556,
+        "random_source_best_gain": -0.1520552635192871,
+        "random_source_gains": [
+          -1.05649995803833,
+          -1.1654949188232422,
+          -1.1259546279907227,
+          -1.0984902381896973,
+          -0.1520552635192871
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.0384984016418457,
+        "source_gains": [
+          -1.2195358276367188,
+          -1.1917643547058105,
+          -1.0431718826293945,
+          -0.0384984016418457,
+          -0.809689998626709
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 5,
+        "edge": 720,
+        "endpoint_best_gain": -0.0021355152130126953,
+        "endpoint_gains": [
+          -0.05058145523071289,
+          -0.010079383850097656,
+          -0.0021355152130126953,
+          -0.07213902473449707,
+          -0.011567354202270508
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.9011264080100125,
+        "random_source_best_gain": -0.15996503829956055,
+        "random_source_gains": [
+          -0.749382734298706,
+          -0.6872525215148926,
+          -0.9893467426300049,
+          -0.15996503829956055,
+          -0.9352517127990723
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.6078486442565918,
+        "source_gains": [
+          -0.6097829341888428,
+          -0.6078486442565918,
+          -0.6827869415283203,
+          -0.9454917907714844,
+          -0.7528703212738037
+        ],
+        "source_positive_candidates": 0
+      }
+    ]
+  },
+  {
+    "distribution": "clustered",
+    "instance": 0,
+    "n": 500,
+    "native_cost": 13.607868194580078,
+    "states": [
+      {
+        "candidate_budget": 4,
+        "edge": 175,
+        "endpoint_best_gain": -1.382582664489746,
+        "endpoint_gains": [
+          -2.1504650115966797,
+          -1.6465740203857422,
+          -1.382582664489746,
+          -1.951375961303711
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.35070140280561124,
+        "random_source_best_gain": -2.4078731536865234,
+        "random_source_gains": [
+          -3.1222381591796875,
+          -2.4078731536865234,
+          -2.610386848449707,
+          -2.918062210083008
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.35816001892089844,
+        "source_gains": [
+          -1.266871452331543,
+          -1.5420875549316406,
+          -0.35816001892089844,
+          -0.6653804779052734
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 5,
+        "edge": 250,
+        "endpoint_best_gain": -0.004809379577636719,
+        "endpoint_gains": [
+          -0.004809379577636719,
+          -0.034427642822265625,
+          -0.03392601013183594,
+          -0.03558540344238281,
+          -0.04550457000732422
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.501002004008016,
+        "random_source_best_gain": -0.7525482177734375,
+        "random_source_gains": [
+          -1.555948257446289,
+          -1.6902227401733398,
+          -0.7525482177734375,
+          -1.7082042694091797,
+          -1.7068777084350586
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.36177539825439453,
+        "source_gains": [
+          -0.36177539825439453,
+          -1.2549324035644531,
+          -1.2759027481079102,
+          -0.41658496856689453,
+          -0.4506845474243164
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 5,
+        "edge": 325,
+        "endpoint_best_gain": -0.033921241760253906,
+        "endpoint_gains": [
+          -0.09468746185302734,
+          -0.033921241760253906,
+          -0.040266990661621094,
+          -0.16730594635009766,
+          -0.1802067756652832
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.6513026052104208,
+        "random_source_best_gain": 0.06433916091918945,
+        "random_source_gains": [
+          -1.517153263092041,
+          -1.54486083984375,
+          -1.437964916229248,
+          -0.9631609916687012,
+          0.06433916091918945
+        ],
+        "random_source_positive_candidates": 1,
+        "source_best_gain": -0.3082728385925293,
+        "source_gains": [
+          -1.9308528900146484,
+          -1.9104785919189453,
+          -0.3082728385925293,
+          -1.4950413703918457,
+          -1.9096999168395996
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 2,
+        "edge": 400,
+        "endpoint_best_gain": 0.004076719284057617,
+        "endpoint_gains": [
+          0.004076719284057617,
+          -0.0038421154022216797
+        ],
+        "endpoint_positive_candidates": 1,
+        "progress": 0.8016032064128257,
+        "random_source_best_gain": -1.1625125408172607,
+        "random_source_gains": [
+          -1.1625125408172607,
+          -1.7082483768463135
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -1.718291997909546,
+        "source_gains": [
+          -1.718291997909546,
+          -1.7222683429718018
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 450,
+        "endpoint_best_gain": -0.019136548042297363,
+        "endpoint_gains": [
+          -0.0578005313873291,
+          -0.019136548042297363,
+          -0.030710220336914062,
+          -0.07462823390960693
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.9018036072144289,
+        "random_source_best_gain": -0.14756011962890625,
+        "random_source_gains": [
+          -0.1650911569595337,
+          -0.31263065338134766,
+          -0.29022836685180664,
+          -0.14756011962890625
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.20017528533935547,
+        "source_gains": [
+          -0.31554222106933594,
+          -0.31457972526550293,
+          -0.20017528533935547,
+          -0.2673192024230957
+        ],
+        "source_positive_candidates": 0
+      }
+    ]
+  },
+  {
+    "distribution": "clustered",
+    "instance": 1,
+    "n": 500,
+    "native_cost": 12.644908905029297,
+    "states": [
+      {
+        "candidate_budget": 5,
+        "edge": 175,
+        "endpoint_best_gain": 0.009931564331054688,
+        "endpoint_gains": [
+          0.009931564331054688,
+          -1.2774524688720703,
+          -1.1808414459228516,
+          -1.3193206787109375,
+          -0.07651710510253906
+        ],
+        "endpoint_positive_candidates": 1,
+        "progress": 0.35070140280561124,
+        "random_source_best_gain": 0.0297698974609375,
+        "random_source_gains": [
+          -1.0597267150878906,
+          -0.4433269500732422,
+          0.028954505920410156,
+          -0.32003307342529297,
+          0.0297698974609375
+        ],
+        "random_source_positive_candidates": 2,
+        "source_best_gain": 0.028954505920410156,
+        "source_gains": [
+          -0.16402721405029297,
+          -1.073328971862793,
+          -0.42021846771240234,
+          0.028954505920410156,
+          0.027330398559570312
+        ],
+        "source_positive_candidates": 2
+      },
+      {
+        "candidate_budget": 6,
+        "edge": 250,
+        "endpoint_best_gain": 0.026771068572998047,
+        "endpoint_gains": [
+          -0.00031375885009765625,
+          -0.011855602264404297,
+          0.026771068572998047,
+          -0.03391075134277344,
+          0.010250091552734375,
+          0.017533302307128906
+        ],
+        "endpoint_positive_candidates": 3,
+        "progress": 0.501002004008016,
+        "random_source_best_gain": -0.1794137954711914,
+        "random_source_gains": [
+          -0.4073209762573242,
+          -0.3811168670654297,
+          -0.48137998580932617,
+          -0.38912200927734375,
+          -0.6464433670043945,
+          -0.1794137954711914
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": 0.014605998992919922,
+        "source_gains": [
+          -0.29524850845336914,
+          -0.3425431251525879,
+          -0.722318172454834,
+          0.014605998992919922,
+          -0.3560791015625,
+          -0.15043973922729492
+        ],
+        "source_positive_candidates": 1
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 325,
+        "endpoint_best_gain": -0.02685689926147461,
+        "endpoint_gains": [
+          -0.02685689926147461,
+          -0.027386188507080078,
+          -0.04918193817138672,
+          -0.05814409255981445
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.6513026052104208,
+        "random_source_best_gain": 0.034440040588378906,
+        "random_source_gains": [
+          0.034440040588378906,
+          -0.3184990882873535,
+          -0.060222625732421875,
+          -0.6211152076721191
+        ],
+        "random_source_positive_candidates": 1,
+        "source_best_gain": -0.059929847717285156,
+        "source_gains": [
+          -0.7269253730773926,
+          -0.7262144088745117,
+          -0.059929847717285156,
+          -0.060222625732421875
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 5,
+        "edge": 400,
+        "endpoint_best_gain": -0.0028116703033447266,
+        "endpoint_gains": [
+          -0.0028116703033447266,
+          -0.02039957046508789,
+          -0.046090126037597656,
+          -0.05890345573425293,
+          -0.07749199867248535
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.8016032064128257,
+        "random_source_best_gain": -0.8475368022918701,
+        "random_source_gains": [
+          -0.8786301612854004,
+          -0.8475368022918701,
+          -0.862872838973999,
+          -0.8999645709991455,
+          -0.9910569190979004
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.029833078384399414,
+        "source_gains": [
+          -0.8493330478668213,
+          -0.8826091289520264,
+          -0.029833078384399414,
+          -0.11166858673095703,
+          -1.020160436630249
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 450,
+        "endpoint_best_gain": 0.02702045440673828,
+        "endpoint_gains": [
+          -0.05965292453765869,
+          0.02702045440673828,
+          -0.06444942951202393,
+          0.01915132999420166
+        ],
+        "endpoint_positive_candidates": 2,
+        "progress": 0.9018036072144289,
+        "random_source_best_gain": -0.06658124923706055,
+        "random_source_gains": [
+          -0.06658124923706055,
+          -0.10673153400421143,
+          -0.172507643699646,
+          -0.10621428489685059
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.1920309066772461,
+        "source_gains": [
+          -0.20632553100585938,
+          -0.19689667224884033,
+          -0.3038969039916992,
+          -0.1920309066772461
+        ],
+        "source_positive_candidates": 0
+      }
+    ]
+  },
+  {
+    "distribution": "clustered",
+    "instance": 2,
+    "n": 500,
+    "native_cost": 12.37275218963623,
+    "states": [
+      {
+        "candidate_budget": 2,
+        "edge": 175,
+        "endpoint_best_gain": 0.1398763656616211,
+        "endpoint_gains": [
+          -0.004383087158203125,
+          0.1398763656616211
+        ],
+        "endpoint_positive_candidates": 1,
+        "progress": 0.35070140280561124,
+        "random_source_best_gain": -0.06665515899658203,
+        "random_source_gains": [
+          -1.135685920715332,
+          -0.06665515899658203
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.7899112701416016,
+        "source_gains": [
+          -1.370133399963379,
+          -0.7899112701416016
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 250,
+        "endpoint_best_gain": -0.0010390281677246094,
+        "endpoint_gains": [
+          -0.008054733276367188,
+          -0.0010390281677246094,
+          -0.4047818183898926,
+          -0.03369140625
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.501002004008016,
+        "random_source_best_gain": -0.22521400451660156,
+        "random_source_gains": [
+          -0.89166259765625,
+          -1.5529670715332031,
+          -0.8381252288818359,
+          -0.22521400451660156
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.08731603622436523,
+        "source_gains": [
+          -0.45017147064208984,
+          -0.08731603622436523,
+          -0.7546806335449219,
+          -0.9948530197143555
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 3,
+        "edge": 325,
+        "endpoint_best_gain": -0.019591331481933594,
+        "endpoint_gains": [
+          -0.019591331481933594,
+          -0.03337907791137695,
+          -0.033533573150634766
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.6513026052104208,
+        "random_source_best_gain": -0.1999645233154297,
+        "random_source_gains": [
+          -1.1081538200378418,
+          -0.1999645233154297,
+          -0.3392958641052246
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.3425154685974121,
+        "source_gains": [
+          -0.3425154685974121,
+          -0.5302119255065918,
+          -0.5173659324645996
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 400,
+        "endpoint_best_gain": -0.03067612648010254,
+        "endpoint_gains": [
+          -0.057528018951416016,
+          -0.04290771484375,
+          -0.06894874572753906,
+          -0.03067612648010254
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.8016032064128257,
+        "random_source_best_gain": -0.8887991905212402,
+        "random_source_gains": [
+          -0.8887991905212402,
+          -1.1014251708984375,
+          -1.1007881164550781,
+          -1.0989933013916016
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": 0.010688066482543945,
+        "source_gains": [
+          -0.46448612213134766,
+          -0.504542350769043,
+          0.010688066482543945,
+          -0.7080588340759277
+        ],
+        "source_positive_candidates": 1
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 450,
+        "endpoint_best_gain": 0.02310967445373535,
+        "endpoint_gains": [
+          0.02310967445373535,
+          -0.04119300842285156,
+          -0.003235936164855957,
+          0.00046455860137939453
+        ],
+        "endpoint_positive_candidates": 2,
+        "progress": 0.9018036072144289,
+        "random_source_best_gain": -0.2696586847305298,
+        "random_source_gains": [
+          -0.6453090906143188,
+          -0.5809739828109741,
+          -0.2696586847305298,
+          -0.5544975996017456
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.17364275455474854,
+        "source_gains": [
+          -0.2388066053390503,
+          -0.24111497402191162,
+          -0.17853236198425293,
+          -0.17364275455474854
+        ],
+        "source_positive_candidates": 0
+      }
+    ]
+  },
+  {
+    "distribution": "clustered",
+    "instance": 0,
+    "n": 650,
+    "native_cost": 14.598621368408203,
+    "states": [
+      {
+        "candidate_budget": 5,
+        "edge": 227,
+        "endpoint_best_gain": 0.006674766540527344,
+        "endpoint_gains": [
+          -0.004833221435546875,
+          -0.47838878631591797,
+          -0.46478843688964844,
+          0.006674766540527344,
+          -0.475494384765625
+        ],
+        "endpoint_positive_candidates": 1,
+        "progress": 0.349768875192604,
+        "random_source_best_gain": -0.711512565612793,
+        "random_source_gains": [
+          -1.2397241592407227,
+          -0.9591093063354492,
+          -0.7443943023681641,
+          -1.4635400772094727,
+          -0.711512565612793
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.6063394546508789,
+        "source_gains": [
+          -1.3014888763427734,
+          -0.9905662536621094,
+          -1.420806884765625,
+          -0.829554557800293,
+          -0.6063394546508789
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 5,
+        "edge": 325,
+        "endpoint_best_gain": 0.14926576614379883,
+        "endpoint_gains": [
+          0.03063058853149414,
+          0.029085159301757812,
+          0.0037298202514648438,
+          0.14926576614379883,
+          -0.06362152099609375
+        ],
+        "endpoint_positive_candidates": 4,
+        "progress": 0.5007704160246533,
+        "random_source_best_gain": -0.41023778915405273,
+        "random_source_gains": [
+          -0.41023778915405273,
+          -0.7437472343444824,
+          -1.8509526252746582,
+          -0.8044571876525879,
+          -0.8081202507019043
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.19504880905151367,
+        "source_gains": [
+          -0.8214621543884277,
+          -0.8701920509338379,
+          -0.19504880905151367,
+          -1.0489506721496582,
+          -0.7987360954284668
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 422,
+        "endpoint_best_gain": -0.01858377456665039,
+        "endpoint_gains": [
+          -0.01858377456665039,
+          -0.030501842498779297,
+          -0.0666055679321289,
+          -0.0648031234741211
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.650231124807396,
+        "random_source_best_gain": -0.3659968376159668,
+        "random_source_gains": [
+          -0.8589448928833008,
+          -0.8383350372314453,
+          -1.4987983703613281,
+          -0.3659968376159668
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.039855003356933594,
+        "source_gains": [
+          -0.3474545478820801,
+          -0.34459590911865234,
+          -0.9643073081970215,
+          -0.039855003356933594
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 5,
+        "edge": 520,
+        "endpoint_best_gain": 0.00928497314453125,
+        "endpoint_gains": [
+          -0.018136024475097656,
+          -0.07356142997741699,
+          -0.03709149360656738,
+          -0.08188509941101074,
+          0.00928497314453125
+        ],
+        "endpoint_positive_candidates": 1,
+        "progress": 0.8012326656394453,
+        "random_source_best_gain": -0.529731273651123,
+        "random_source_gains": [
+          -1.1146278381347656,
+          -0.6679055690765381,
+          -0.529731273651123,
+          -0.5543458461761475,
+          -0.636580228805542
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.4579310417175293,
+        "source_gains": [
+          -0.6679055690765381,
+          -0.6097593307495117,
+          -0.46653294563293457,
+          -0.4579310417175293,
+          -0.4946157932281494
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 585,
+        "endpoint_best_gain": -0.008953332901000977,
+        "endpoint_gains": [
+          -0.008953332901000977,
+          -0.024547219276428223,
+          -0.0245969295501709,
+          -0.03242480754852295
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.901386748844376,
+        "random_source_best_gain": -0.5718927383422852,
+        "random_source_gains": [
+          -0.5718927383422852,
+          -0.6360843181610107,
+          -0.7173278331756592,
+          -0.7619612216949463
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.5414857864379883,
+        "source_gains": [
+          -0.58306884765625,
+          -0.5414857864379883,
+          -0.65621018409729,
+          -0.6937873363494873
+        ],
+        "source_positive_candidates": 0
+      }
+    ]
+  },
+  {
+    "distribution": "clustered",
+    "instance": 1,
+    "n": 650,
+    "native_cost": 15.031694412231445,
+    "states": [
+      {
+        "candidate_budget": 4,
+        "edge": 227,
+        "endpoint_best_gain": -0.018589019775390625,
+        "endpoint_gains": [
+          -0.018589019775390625,
+          -0.18195819854736328,
+          -1.2692508697509766,
+          -0.2520275115966797
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.349768875192604,
+        "random_source_best_gain": -1.0004959106445312,
+        "random_source_gains": [
+          -1.5011491775512695,
+          -2.382946014404297,
+          -1.0004959106445312,
+          -1.3957700729370117
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.0052738189697265625,
+        "source_gains": [
+          -1.6243095397949219,
+          -0.6132736206054688,
+          -0.0052738189697265625,
+          -0.1912822723388672
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 325,
+        "endpoint_best_gain": 0.029242515563964844,
+        "endpoint_gains": [
+          0.0032958984375,
+          0.029242515563964844,
+          0.006015300750732422,
+          -6.198883056640625e-06
+        ],
+        "endpoint_positive_candidates": 3,
+        "progress": 0.5007704160246533,
+        "random_source_best_gain": -1.197099208831787,
+        "random_source_gains": [
+          -1.3905692100524902,
+          -1.2973437309265137,
+          -1.197099208831787,
+          -1.2056946754455566
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.07825374603271484,
+        "source_gains": [
+          -0.48564672470092773,
+          -0.4455265998840332,
+          -0.07825374603271484,
+          -1.476555347442627
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 422,
+        "endpoint_best_gain": -9.822845458984375e-05,
+        "endpoint_gains": [
+          -9.822845458984375e-05,
+          -0.004880428314208984,
+          -0.2337322235107422,
+          -0.16214227676391602
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.650231124807396,
+        "random_source_best_gain": -0.18207693099975586,
+        "random_source_gains": [
+          -0.6639666557312012,
+          -1.1349115371704102,
+          -1.0705199241638184,
+          -0.18207693099975586
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.07983541488647461,
+        "source_gains": [
+          -0.07983541488647461,
+          -0.0881338119506836,
+          -0.22085857391357422,
+          -0.9621996879577637
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 5,
+        "edge": 520,
+        "endpoint_best_gain": -0.016681432723999023,
+        "endpoint_gains": [
+          -0.016681432723999023,
+          -0.022873878479003906,
+          -0.14418315887451172,
+          -0.04063987731933594,
+          -0.055092811584472656
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.8012326656394453,
+        "random_source_best_gain": -0.04099273681640625,
+        "random_source_gains": [
+          -0.04099273681640625,
+          -0.912773847579956,
+          -1.0928170680999756,
+          -0.12034773826599121,
+          -0.7700374126434326
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": 0.011471986770629883,
+        "source_gains": [
+          -0.7766692638397217,
+          -0.7740757465362549,
+          -0.22954034805297852,
+          -2.2649765014648438e-05,
+          0.011471986770629883
+        ],
+        "source_positive_candidates": 1
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 585,
+        "endpoint_best_gain": -0.01961040496826172,
+        "endpoint_gains": [
+          -0.01961040496826172,
+          -0.32410764694213867,
+          -0.3412184715270996,
+          -0.3327353000640869
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.901386748844376,
+        "random_source_best_gain": -0.5594580173492432,
+        "random_source_gains": [
+          -0.6484119892120361,
+          -0.9697790145874023,
+          -0.7844643592834473,
+          -0.5594580173492432
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.5594580173492432,
+        "source_gains": [
+          -0.5674910545349121,
+          -0.5663397312164307,
+          -0.5599744319915771,
+          -0.5594580173492432
+        ],
+        "source_positive_candidates": 0
+      }
+    ]
+  },
+  {
+    "distribution": "clustered",
+    "instance": 2,
+    "n": 650,
+    "native_cost": 15.446621894836426,
+    "states": [
+      {
+        "candidate_budget": 5,
+        "edge": 227,
+        "endpoint_best_gain": 0.04057598114013672,
+        "endpoint_gains": [
+          0.04057598114013672,
+          -0.02724456787109375,
+          0.011144638061523438,
+          0.012206077575683594,
+          -0.037224769592285156
+        ],
+        "endpoint_positive_candidates": 3,
+        "progress": 0.349768875192604,
+        "random_source_best_gain": -0.026419639587402344,
+        "random_source_gains": [
+          -1.1404838562011719,
+          -1.5395288467407227,
+          -0.026419639587402344,
+          -0.1231689453125,
+          -1.2990150451660156
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": 0.359954833984375,
+        "source_gains": [
+          0.359954833984375,
+          0.34506893157958984,
+          -1.9608983993530273,
+          -1.4050235748291016,
+          -1.0712337493896484
+        ],
+        "source_positive_candidates": 2
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 325,
+        "endpoint_best_gain": 0.45318603515625,
+        "endpoint_gains": [
+          0.45318603515625,
+          -0.002529144287109375,
+          -0.004340171813964844,
+          -0.003753662109375
+        ],
+        "endpoint_positive_candidates": 1,
+        "progress": 0.5007704160246533,
+        "random_source_best_gain": -0.029895782470703125,
+        "random_source_gains": [
+          -0.3079538345336914,
+          -0.727046012878418,
+          -1.0501518249511719,
+          -0.029895782470703125
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.6339292526245117,
+        "source_gains": [
+          -0.6339292526245117,
+          -1.1865196228027344,
+          -1.1605567932128906,
+          -0.8437910079956055
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 6,
+        "edge": 422,
+        "endpoint_best_gain": -0.005191802978515625,
+        "endpoint_gains": [
+          -0.02040719985961914,
+          -0.019515037536621094,
+          -0.03098297119140625,
+          -0.005191802978515625,
+          -0.040433406829833984,
+          -0.03989267349243164
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.650231124807396,
+        "random_source_best_gain": 0.2803840637207031,
+        "random_source_gains": [
+          -0.23792695999145508,
+          -0.17023229598999023,
+          0.2803840637207031,
+          -0.27224302291870117,
+          -0.3247556686401367,
+          -0.0819249153137207
+        ],
+        "random_source_positive_candidates": 1,
+        "source_best_gain": 0.43413496017456055,
+        "source_gains": [
+          -0.3796048164367676,
+          -0.38638925552368164,
+          -0.16480398178100586,
+          0.43413496017456055,
+          -0.02231884002685547,
+          -0.09228181838989258
+        ],
+        "source_positive_candidates": 1
+      },
+      {
+        "candidate_budget": 3,
+        "edge": 520,
+        "endpoint_best_gain": 0.5555570125579834,
+        "endpoint_gains": [
+          0.5473241806030273,
+          -0.0012507438659667969,
+          0.5555570125579834
+        ],
+        "endpoint_positive_candidates": 2,
+        "progress": 0.8012326656394453,
+        "random_source_best_gain": 0.5272135734558105,
+        "random_source_gains": [
+          0.5272135734558105,
+          0.2577221393585205,
+          0.5102889537811279
+        ],
+        "random_source_positive_candidates": 3,
+        "source_best_gain": 0.4536104202270508,
+        "source_gains": [
+          0.4536104202270508,
+          -0.16607904434204102,
+          0.17579865455627441
+        ],
+        "source_positive_candidates": 2
+      },
+      {
+        "candidate_budget": 5,
+        "edge": 585,
+        "endpoint_best_gain": 0.18412256240844727,
+        "endpoint_gains": [
+          -0.005793571472167969,
+          -0.019994616508483887,
+          0.18412256240844727,
+          -0.040709733963012695,
+          -0.040276169776916504
+        ],
+        "endpoint_positive_candidates": 1,
+        "progress": 0.901386748844376,
+        "random_source_best_gain": 0.15861928462982178,
+        "random_source_gains": [
+          0.10580313205718994,
+          -0.04390513896942139,
+          0.06389987468719482,
+          0.15861928462982178,
+          0.12477123737335205
+        ],
+        "random_source_positive_candidates": 4,
+        "source_best_gain": 0.21167898178100586,
+        "source_gains": [
+          0.16869127750396729,
+          0.21064543724060059,
+          0.19103753566741943,
+          0.2062084674835205,
+          0.21167898178100586
+        ],
+        "source_positive_candidates": 5
+      }
+    ]
+  },
+  {
+    "distribution": "clustered",
+    "instance": 0,
+    "n": 800,
+    "native_cost": 15.777291297912598,
+    "states": [
+      {
+        "candidate_budget": 2,
+        "edge": 280,
+        "endpoint_best_gain": 0.006938934326171875,
+        "endpoint_gains": [
+          0.006938934326171875,
+          -0.3693418502807617
+        ],
+        "endpoint_positive_candidates": 1,
+        "progress": 0.3504380475594493,
+        "random_source_best_gain": -1.0498313903808594,
+        "random_source_gains": [
+          -1.0498313903808594,
+          -1.4813566207885742
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": 0.1288900375366211,
+        "source_gains": [
+          0.1288900375366211,
+          -0.6367902755737305
+        ],
+        "source_positive_candidates": 1
+      },
+      {
+        "candidate_budget": 5,
+        "edge": 400,
+        "endpoint_best_gain": 0.023027420043945312,
+        "endpoint_gains": [
+          -0.023148536682128906,
+          0.023027420043945312,
+          0.0072689056396484375,
+          0.015027999877929688,
+          -0.03143024444580078
+        ],
+        "endpoint_positive_candidates": 3,
+        "progress": 0.5006257822277848,
+        "random_source_best_gain": -0.7820138931274414,
+        "random_source_gains": [
+          -1.1275138854980469,
+          -0.7942886352539062,
+          -1.1996889114379883,
+          -0.7820138931274414,
+          -1.0775699615478516
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.010181427001953125,
+        "source_gains": [
+          -0.010181427001953125,
+          -0.011279106140136719,
+          -0.10648822784423828,
+          -0.05712604522705078,
+          -0.3870868682861328
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 520,
+        "endpoint_best_gain": 0.00045299530029296875,
+        "endpoint_gains": [
+          -0.015605449676513672,
+          0.00045299530029296875,
+          -0.07477712631225586,
+          -0.03765439987182617
+        ],
+        "endpoint_positive_candidates": 1,
+        "progress": 0.6508135168961201,
+        "random_source_best_gain": 0.24892902374267578,
+        "random_source_gains": [
+          -1.2767467498779297,
+          -0.3988456726074219,
+          0.05044269561767578,
+          0.24892902374267578
+        ],
+        "random_source_positive_candidates": 2,
+        "source_best_gain": 0.01716899871826172,
+        "source_gains": [
+          -0.2310638427734375,
+          -0.2312612533569336,
+          0.01716899871826172,
+          -0.4158439636230469
+        ],
+        "source_positive_candidates": 1
+      },
+      {
+        "candidate_budget": 2,
+        "edge": 640,
+        "endpoint_best_gain": 0.0198211669921875,
+        "endpoint_gains": [
+          0.0198211669921875,
+          0.006219148635864258
+        ],
+        "endpoint_positive_candidates": 2,
+        "progress": 0.8010012515644556,
+        "random_source_best_gain": -0.04761958122253418,
+        "random_source_gains": [
+          -0.04761958122253418,
+          -1.014286756515503
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.04761958122253418,
+        "source_gains": [
+          -0.04761958122253418,
+          -0.09279274940490723
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 2,
+        "edge": 720,
+        "endpoint_best_gain": -0.016815662384033203,
+        "endpoint_gains": [
+          -0.016815662384033203,
+          -0.042971134185791016
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.9011264080100125,
+        "random_source_best_gain": -0.5724811553955078,
+        "random_source_gains": [
+          -0.5724811553955078,
+          -0.8860931396484375
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.21722960472106934,
+        "source_gains": [
+          -0.21851825714111328,
+          -0.21722960472106934
+        ],
+        "source_positive_candidates": 0
+      }
+    ]
+  },
+  {
+    "distribution": "clustered",
+    "instance": 1,
+    "n": 800,
+    "native_cost": 16.060609817504883,
+    "states": [
+      {
+        "candidate_budget": 5,
+        "edge": 280,
+        "endpoint_best_gain": -0.010929107666015625,
+        "endpoint_gains": [
+          -1.57269287109375,
+          -1.5786399841308594,
+          -0.010929107666015625,
+          -0.048996925354003906,
+          -0.8639650344848633
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.3504380475594493,
+        "random_source_best_gain": -0.3700094223022461,
+        "random_source_gains": [
+          -0.7767372131347656,
+          -1.7551965713500977,
+          -0.3700094223022461,
+          -1.9596376419067383,
+          -1.4666309356689453
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -1.2906761169433594,
+        "source_gains": [
+          -2.211994171142578,
+          -3.0418167114257812,
+          -1.2906761169433594,
+          -1.6252460479736328,
+          -1.4041986465454102
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 5,
+        "edge": 400,
+        "endpoint_best_gain": -0.16279220581054688,
+        "endpoint_gains": [
+          -1.6442070007324219,
+          -1.6310882568359375,
+          -0.16279220581054688,
+          -0.3107481002807617,
+          -1.6479997634887695
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.5006257822277848,
+        "random_source_best_gain": -1.4288253784179688,
+        "random_source_gains": [
+          -1.775996208190918,
+          -1.4288253784179688,
+          -2.2663679122924805,
+          -1.8183975219726562,
+          -2.3170480728149414
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -1.0035820007324219,
+        "source_gains": [
+          -1.883255958557129,
+          -2.291595458984375,
+          -1.0035820007324219,
+          -1.1527023315429688,
+          -1.283956527709961
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 5,
+        "edge": 520,
+        "endpoint_best_gain": 0.007943153381347656,
+        "endpoint_gains": [
+          -0.053795814514160156,
+          -0.035630226135253906,
+          -0.32616186141967773,
+          -0.3326544761657715,
+          0.007943153381347656
+        ],
+        "endpoint_positive_candidates": 1,
+        "progress": 0.6508135168961201,
+        "random_source_best_gain": -0.6902279853820801,
+        "random_source_gains": [
+          -1.5414624214172363,
+          -2.1169095039367676,
+          -1.967237949371338,
+          -2.498412609100342,
+          -0.6902279853820801
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.6902279853820801,
+        "source_gains": [
+          -1.5523991584777832,
+          -1.5959405899047852,
+          -0.7967023849487305,
+          -0.9668889045715332,
+          -0.6902279853820801
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 640,
+        "endpoint_best_gain": -0.00547027587890625,
+        "endpoint_gains": [
+          -0.018375873565673828,
+          -0.007480144500732422,
+          -0.00547027587890625,
+          -0.050412893295288086
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.8010012515644556,
+        "random_source_best_gain": -0.23123598098754883,
+        "random_source_gains": [
+          -0.23123598098754883,
+          -2.0479328632354736,
+          -2.2846062183380127,
+          -1.3672163486480713
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -1.0489132404327393,
+        "source_gains": [
+          -1.2118008136749268,
+          -1.2032029628753662,
+          -1.0759999752044678,
+          -1.0489132404327393
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 720,
+        "endpoint_best_gain": -0.002216339111328125,
+        "endpoint_gains": [
+          -0.002216339111328125,
+          -0.010123968124389648,
+          -0.007503509521484375,
+          -0.012756824493408203
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.9011264080100125,
+        "random_source_best_gain": -0.18045568466186523,
+        "random_source_gains": [
+          -0.26538777351379395,
+          -0.18045568466186523,
+          -0.35139942169189453,
+          -0.9808614253997803
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.15958690643310547,
+        "source_gains": [
+          -0.17237067222595215,
+          -0.15958690643310547,
+          -0.9774212837219238,
+          -1.0286154747009277
+        ],
+        "source_positive_candidates": 0
+      }
+    ]
+  },
+  {
+    "distribution": "clustered",
+    "instance": 2,
+    "n": 800,
+    "native_cost": 15.667882919311523,
+    "states": [
+      {
+        "candidate_budget": 5,
+        "edge": 280,
+        "endpoint_best_gain": 0.004582405090332031,
+        "endpoint_gains": [
+          -0.020002365112304688,
+          0.004582405090332031,
+          -0.0641641616821289,
+          -0.013010978698730469,
+          0.0021839141845703125
+        ],
+        "endpoint_positive_candidates": 2,
+        "progress": 0.3504380475594493,
+        "random_source_best_gain": -0.09646797180175781,
+        "random_source_gains": [
+          -1.519425392150879,
+          -0.5164527893066406,
+          -0.7347393035888672,
+          -0.09646797180175781,
+          -1.2456064224243164
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": 0.020107269287109375,
+        "source_gains": [
+          -1.5871362686157227,
+          -1.7226276397705078,
+          -0.09300804138183594,
+          0.020107269287109375,
+          -1.315420150756836
+        ],
+        "source_positive_candidates": 1
+      },
+      {
+        "candidate_budget": 2,
+        "edge": 400,
+        "endpoint_best_gain": -0.015273094177246094,
+        "endpoint_gains": [
+          -0.015273094177246094,
+          -0.8120861053466797
+        ],
+        "endpoint_positive_candidates": 0,
+        "progress": 0.5006257822277848,
+        "random_source_best_gain": -0.41054344177246094,
+        "random_source_gains": [
+          -1.2206592559814453,
+          -0.41054344177246094
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.8411922454833984,
+        "source_gains": [
+          -0.9463720321655273,
+          -0.8411922454833984
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 5,
+        "edge": 520,
+        "endpoint_best_gain": 0.07690048217773438,
+        "endpoint_gains": [
+          0.009246349334716797,
+          0.005959510803222656,
+          0.07690048217773438,
+          0.03448772430419922,
+          -1.0723843574523926
+        ],
+        "endpoint_positive_candidates": 4,
+        "progress": 0.6508135168961201,
+        "random_source_best_gain": 0.04687786102294922,
+        "random_source_gains": [
+          -0.34605884552001953,
+          -0.123291015625,
+          -0.8223052024841309,
+          0.04687786102294922,
+          -0.5626940727233887
+        ],
+        "random_source_positive_candidates": 1,
+        "source_best_gain": -0.31861114501953125,
+        "source_gains": [
+          -0.3256826400756836,
+          -0.31861114501953125,
+          -0.6245741844177246,
+          -0.7480239868164062,
+          -0.7307882308959961
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 4,
+        "edge": 640,
+        "endpoint_best_gain": 0.050299644470214844,
+        "endpoint_gains": [
+          0.04290509223937988,
+          0.04534482955932617,
+          0.050299644470214844,
+          0.04067039489746094
+        ],
+        "endpoint_positive_candidates": 4,
+        "progress": 0.8010012515644556,
+        "random_source_best_gain": -0.03896617889404297,
+        "random_source_gains": [
+          -0.34458446502685547,
+          -0.09511947631835938,
+          -0.03896617889404297,
+          -0.3817896842956543
+        ],
+        "random_source_positive_candidates": 0,
+        "source_best_gain": -0.213761568069458,
+        "source_gains": [
+          -0.6092875003814697,
+          -0.5984933376312256,
+          -0.213761568069458,
+          -0.34038734436035156
+        ],
+        "source_positive_candidates": 0
+      },
+      {
+        "candidate_budget": 6,
+        "edge": 720,
+        "endpoint_best_gain": 0.07542085647583008,
+        "endpoint_gains": [
+          -0.0025703907012939453,
+          -0.0025718212127685547,
+          -0.003954648971557617,
+          0.07542085647583008,
+          0.04313206672668457,
+          0.011914730072021484
+        ],
+        "endpoint_positive_candidates": 3,
+        "progress": 0.9011264080100125,
+        "random_source_best_gain": 0.09944963455200195,
+        "random_source_gains": [
+          0.08261394500732422,
+          -0.39684057235717773,
+          -0.13982367515563965,
+          -0.11073136329650879,
+          -0.5716817378997803,
+          0.09944963455200195
+        ],
+        "random_source_positive_candidates": 2,
+        "source_best_gain": 0.08110666275024414,
+        "source_gains": [
+          -0.17087340354919434,
+          -0.17087459564208984,
+          0.08110666275024414,
+          -0.2509613037109375,
+          -0.11073136329650879,
+          -0.4864537715911865
+        ],
+        "source_positive_candidates": 1
+      }
+    ]
+  }
+]

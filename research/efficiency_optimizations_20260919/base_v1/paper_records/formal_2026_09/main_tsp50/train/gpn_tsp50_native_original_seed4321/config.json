@@ -1,0 +1,19 @@
+{
+  "base_mode": "native_original",
+  "batch_size": 128,
+  "checkpoint_every": 1000,
+  "device": "cuda",
+  "embedding_dim": 128,
+  "encoder_layers": 3,
+  "eval_every": 100,
+  "feed_forward_dim": 512,
+  "graph_size": 50,
+  "heads": 8,
+  "learning_rate": 0.0001,
+  "max_grad_norm": 1.0,
+  "model": "gpn",
+  "normalization": "batch",
+  "seed": 4321,
+  "steps": 10000,
+  "validation_size": 1024
+}

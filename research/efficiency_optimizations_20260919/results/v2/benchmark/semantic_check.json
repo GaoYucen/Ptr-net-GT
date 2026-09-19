@@ -1,0 +1,10 @@
+{
+  "canonical_vs_saved_max_abs": 0.0,
+  "v1_vs_canonical_max_abs": 0.0,
+  "v2_vs_canonical_max_abs": 0.9025115966796875,
+  "v2_exact_fraction_vs_canonical": 0.5336999893188477,
+  "original_mean": 6.428387383174896,
+  "canonical_ascc_mean": 6.1457518886566165,
+  "v1_ascc_mean": 6.1457518886566165,
+  "v2_ascc_mean": 6.145139770126343
+}

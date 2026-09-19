@@ -1,0 +1,72 @@
+{
+  "round_id": "E4-H2-ICAM-PILOT",
+  "host": "ICAM official icam_tsp.pt frozen",
+  "host_commit": "58309bc2fd2e6f3b65ee8ac83151b99edc5f9b59",
+  "graph_size": 50,
+  "test_instances": 1024,
+  "validation_instances": 512,
+  "eval_rollouts": 8,
+  "base_mean": 5.74180793762207,
+  "base_eval_seconds": 1.417268332093954,
+  "base_eval_peak_gb": 0.250791072845459,
+  "route_follow_wrapper_mean": 5.7418084144592285,
+  "route_follow_max_abs_diff": 9.5367431640625e-07,
+  "route_follow_mismatch_gt_1e6": 0,
+  "best_val_mean": 5.744156360626221,
+  "best_step": 0,
+  "ascc_source_mean": 5.7418084144592285,
+  "improvement_vs_base_percent": -8.304651834115576e-06,
+  "eval_seconds": 1.2868328909389675,
+  "eval_peak_gb": 0.3042011260986328,
+  "train_seconds": 106.39458928909153,
+  "train_peak_gb": 0.36956357955932617,
+  "source_parameters": 32961,
+  "source_deviation_fraction": 0.0,
+  "continuation_logit": 2.5,
+  "history": [
+    {
+      "step": 0,
+      "val": 5.744156360626221,
+      "source_deviation_fraction": 0.0,
+      "continuation_logit": 2.5
+    },
+    {
+      "step": 100,
+      "train_cost": 6.477872371673584,
+      "loss": -0.27623969316482544,
+      "sample_source_deviation_fraction": 0.8244357705116272,
+      "val": 5.744156360626221,
+      "source_deviation_fraction": 0.0,
+      "continuation_logit": 2.501476287841797
+    },
+    {
+      "step": 200,
+      "train_cost": 6.366826057434082,
+      "loss": -0.11104385554790497,
+      "sample_source_deviation_fraction": 0.8226996660232544,
+      "val": 5.744156360626221,
+      "source_deviation_fraction": 0.0,
+      "continuation_logit": 2.502995729446411
+    },
+    {
+      "step": 400,
+      "train_cost": 6.483928680419922,
+      "loss": -0.42839932441711426,
+      "sample_source_deviation_fraction": 0.8283420205116272,
+      "val": 5.744156360626221,
+      "source_deviation_fraction": 0.0,
+      "continuation_logit": 2.5044867992401123
+    },
+    {
+      "step": 600,
+      "train_cost": 6.5677008628845215,
+      "loss": -0.2736119031906128,
+      "sample_source_deviation_fraction": 0.8220486044883728,
+      "val": 5.744156360626221,
+      "source_deviation_fraction": 0.0,
+      "continuation_logit": 2.5052475929260254
+    }
+  ],
+  "assessment": "YELLOW",
+  "interpretation": "Frozen ICAM remains near parity; source-order gain is not established in this bounded pilot."
+}

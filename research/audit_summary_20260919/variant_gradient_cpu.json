@@ -1,0 +1,40 @@
+{
+  "v1": {
+    "loss": -0.33767199516296387,
+    "gradient_finite": true,
+    "gradient_norm": 29.87933349609375
+  },
+  "v3": {
+    "loss": -0.33767199516296387,
+    "gradient_finite": true,
+    "gradient_norm": 170.93185424804688,
+    "tails_exact": true,
+    "heads_exact": true,
+    "relative_gradient_l2": 5.80000638961792
+  },
+  "v31": {
+    "loss": -0.33767199516296387,
+    "gradient_finite": true,
+    "gradient_norm": 29.87933349609375,
+    "tails_exact": true,
+    "heads_exact": true,
+    "relative_gradient_l2": 0.0
+  },
+  "cvrp_two_routes_counterexample": {
+    "initial_two_single_customer_routes_feasible": true,
+    "initial_is_terminal": false,
+    "legal_actions": [
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ],
+    "comment": "No stop/close action while a capacity-feasible merge exists; feasible two-route solution unreachable as final output."
+  }
+}

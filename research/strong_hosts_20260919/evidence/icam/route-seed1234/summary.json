@@ -1,0 +1,35 @@
+{
+  "host": "icam",
+  "mode": "route",
+  "seed": 1234,
+  "best_step": 150,
+  "steps": 300,
+  "training_seconds": 170.15920179756358,
+  "warmup_seconds": 202.0872858245857,
+  "wall_seconds": 226.99067676393315,
+  "evaluation": {
+    "test200": {
+      "mean": 10.830985810607672,
+      "seconds": 5.724905990064144,
+      "source_deviation": 0.0
+    },
+    "cluster200": {
+      "mean": 5.276753216981888,
+      "seconds": 1.0609855777584016,
+      "source_deviation": 0.0
+    },
+    "test500": {
+      "mean": 16.94428738951683,
+      "seconds": 2.500464309938252,
+      "source_deviation": 0.0
+    },
+    "test200-aug8": {
+      "mean": 10.753600921481848,
+      "seconds": 38.232708730734885,
+      "source_deviation": 0.0
+    }
+  },
+  "parameters": 2390414,
+  "shared_warmup_seed": true,
+  "official_checkpoint_sha": "4f2fdb06e955b243f9636d4987e17fc1adfb25cd9ea57adf2e62ad12aee77bf2"
+}

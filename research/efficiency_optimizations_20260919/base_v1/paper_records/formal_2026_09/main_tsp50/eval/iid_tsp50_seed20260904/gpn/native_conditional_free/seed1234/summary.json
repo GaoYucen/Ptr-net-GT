@@ -1,0 +1,21 @@
+{
+  "base_mode": "native_conditional_free",
+  "best_validation_cost": 6.176159858703613,
+  "checkpoint": "/root/autodl-tmp/groupopt-paper-canonical/artifacts/paper_final_tsp50_v1/train/gpn_tsp50_native_conditional_free_seed1234/checkpoints/step-010000.pt",
+  "checkpoint_step": 10000,
+  "distribution": "uniform",
+  "evaluation_action_seed": 20260905,
+  "graph_size": 50,
+  "is_size_transfer": false,
+  "mean_cost": 6.196021556854248,
+  "model": "gpn",
+  "problem": "tsp",
+  "standard_deviation": 0.33994773030281067,
+  "standard_error": 0.0033994773030281067,
+  "test_seed": 20260904,
+  "test_size": 10000,
+  "train_seed": 1234,
+  "training_base_mode": "native_conditional_free",
+  "training_graph_size": 50,
+  "training_scheme": "reinforce"
+}

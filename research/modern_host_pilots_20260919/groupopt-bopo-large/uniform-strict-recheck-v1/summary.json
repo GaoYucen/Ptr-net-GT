@@ -1,0 +1,239 @@
+{
+  "protocol": {
+    "candidate_per_view": 2,
+    "exact_old_uniform_seed_formula": true,
+    "fractions": [
+      0.35,
+      0.5,
+      0.65,
+      0.8,
+      0.9
+    ],
+    "max_candidates": 6,
+    "strict_recovery": true
+  },
+  "splits": {
+    "test": {
+      "instance_count": 6,
+      "instances": [
+        {
+          "best_gain": -0.006404399871826172,
+          "candidates": 22,
+          "groups": 5,
+          "mean_positive_clipped_group_gain": 0.0,
+          "n": 500,
+          "positive_candidates": 0,
+          "positive_groups": 0,
+          "seconds": 10.555111408233643,
+          "seed": 20313000
+        },
+        {
+          "best_gain": -0.2796285152435303,
+          "candidates": 21,
+          "groups": 5,
+          "mean_positive_clipped_group_gain": 0.0,
+          "n": 500,
+          "positive_candidates": 0,
+          "positive_groups": 0,
+          "seconds": 9.439961194992065,
+          "seed": 20313001
+        },
+        {
+          "best_gain": -0.3530597686767578,
+          "candidates": 22,
+          "groups": 5,
+          "mean_positive_clipped_group_gain": 0.0,
+          "n": 650,
+          "positive_candidates": 0,
+          "positive_groups": 0,
+          "seconds": 13.547442436218262,
+          "seed": 20328000
+        },
+        {
+          "best_gain": 0.17533588409423828,
+          "candidates": 21,
+          "groups": 5,
+          "mean_positive_clipped_group_gain": 0.047814798355102536,
+          "n": 650,
+          "positive_candidates": 3,
+          "positive_groups": 3,
+          "seconds": 13.284639358520508,
+          "seed": 20328001
+        },
+        {
+          "best_gain": 0.06158924102783203,
+          "candidates": 21,
+          "groups": 5,
+          "mean_positive_clipped_group_gain": 0.012317848205566407,
+          "n": 800,
+          "positive_candidates": 1,
+          "positive_groups": 1,
+          "seconds": 16.043508768081665,
+          "seed": 20343000
+        },
+        {
+          "best_gain": -0.4020519256591797,
+          "candidates": 19,
+          "groups": 5,
+          "mean_positive_clipped_group_gain": 0.0,
+          "n": 800,
+          "positive_candidates": 0,
+          "positive_groups": 0,
+          "seconds": 15.134641647338867,
+          "seed": 20343001
+        }
+      ],
+      "instances_with_positive": 2,
+      "positive_candidate_rate": 0.031746031746031744,
+      "positive_group_rate": 0.13333333333333333
+    },
+    "train": {
+      "instance_count": 9,
+      "instances": [
+        {
+          "best_gain": -0.6381945610046387,
+          "candidates": 22,
+          "groups": 5,
+          "mean_positive_clipped_group_gain": 0.0,
+          "n": 500,
+          "positive_candidates": 0,
+          "positive_groups": 0,
+          "seconds": 13.316831111907959,
+          "seed": 20311000
+        },
+        {
+          "best_gain": -0.16695213317871094,
+          "candidates": 16,
+          "groups": 5,
+          "mean_positive_clipped_group_gain": 0.0,
+          "n": 500,
+          "positive_candidates": 0,
+          "positive_groups": 0,
+          "seconds": 9.60519552230835,
+          "seed": 20311001
+        },
+        {
+          "best_gain": 0.02512836456298828,
+          "candidates": 23,
+          "groups": 5,
+          "mean_positive_clipped_group_gain": 0.005025672912597656,
+          "n": 500,
+          "positive_candidates": 1,
+          "positive_groups": 1,
+          "seconds": 10.923904657363892,
+          "seed": 20311002
+        },
+        {
+          "best_gain": -0.15050172805786133,
+          "candidates": 21,
+          "groups": 5,
+          "mean_positive_clipped_group_gain": 0.0,
+          "n": 650,
+          "positive_candidates": 0,
+          "positive_groups": 0,
+          "seconds": 13.043650388717651,
+          "seed": 20326000
+        },
+        {
+          "best_gain": 0.15063858032226562,
+          "candidates": 24,
+          "groups": 5,
+          "mean_positive_clipped_group_gain": 0.030127716064453126,
+          "n": 650,
+          "positive_candidates": 1,
+          "positive_groups": 1,
+          "seconds": 15.094828128814697,
+          "seed": 20326001
+        },
+        {
+          "best_gain": -0.5947449207305908,
+          "candidates": 20,
+          "groups": 5,
+          "mean_positive_clipped_group_gain": 0.0,
+          "n": 650,
+          "positive_candidates": 0,
+          "positive_groups": 0,
+          "seconds": 11.632548570632935,
+          "seed": 20326002
+        },
+        {
+          "best_gain": -0.020286083221435547,
+          "candidates": 27,
+          "groups": 5,
+          "mean_positive_clipped_group_gain": 0.0,
+          "n": 800,
+          "positive_candidates": 0,
+          "positive_groups": 0,
+          "seconds": 21.01149845123291,
+          "seed": 20341000
+        },
+        {
+          "best_gain": 0.12325596809387207,
+          "candidates": 21,
+          "groups": 5,
+          "mean_positive_clipped_group_gain": 0.024651193618774415,
+          "n": 800,
+          "positive_candidates": 1,
+          "positive_groups": 1,
+          "seconds": 15.854002714157104,
+          "seed": 20341001
+        },
+        {
+          "best_gain": 0.03618335723876953,
+          "candidates": 18,
+          "groups": 5,
+          "mean_positive_clipped_group_gain": 0.007236671447753906,
+          "n": 800,
+          "positive_candidates": 1,
+          "positive_groups": 1,
+          "seconds": 14.723324298858643,
+          "seed": 20341002
+        }
+      ],
+      "instances_with_positive": 4,
+      "positive_candidate_rate": 0.020833333333333332,
+      "positive_group_rate": 0.08888888888888889
+    },
+    "val": {
+      "instance_count": 3,
+      "instances": [
+        {
+          "best_gain": 0.16460514068603516,
+          "candidates": 21,
+          "groups": 5,
+          "mean_positive_clipped_group_gain": 0.07770795822143554,
+          "n": 500,
+          "positive_candidates": 3,
+          "positive_groups": 3,
+          "seconds": 9.234365701675415,
+          "seed": 20312000
+        },
+        {
+          "best_gain": 0.07729721069335938,
+          "candidates": 21,
+          "groups": 5,
+          "mean_positive_clipped_group_gain": 0.036418914794921875,
+          "n": 650,
+          "positive_candidates": 9,
+          "positive_groups": 3,
+          "seconds": 13.803247213363647,
+          "seed": 20327000
+        },
+        {
+          "best_gain": -0.10868072509765625,
+          "candidates": 25,
+          "groups": 5,
+          "mean_positive_clipped_group_gain": 0.0,
+          "n": 800,
+          "positive_candidates": 0,
+          "positive_groups": 0,
+          "seconds": 19.45331859588623,
+          "seed": 20342000
+        }
+      ],
+      "instances_with_positive": 2,
+      "positive_candidate_rate": 0.1791044776119403,
+      "positive_group_rate": 0.4
+    }
+  }
+}

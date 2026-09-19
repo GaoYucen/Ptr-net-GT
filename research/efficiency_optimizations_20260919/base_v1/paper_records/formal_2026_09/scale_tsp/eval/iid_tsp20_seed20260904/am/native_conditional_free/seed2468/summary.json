@@ -1,0 +1,21 @@
+{
+  "base_mode": "native_conditional_free",
+  "best_validation_cost": 3.92399263381958,
+  "checkpoint": "/root/autodl-tmp/groupopt-paper-canonical/artifacts/paper_scale_effect_tsp_v1/train/am_tsp20_native_conditional_free_seed2468/checkpoints/step-010000.pt",
+  "checkpoint_step": 10000,
+  "distribution": "uniform",
+  "evaluation_action_seed": 20260905,
+  "graph_size": 20,
+  "is_size_transfer": false,
+  "mean_cost": 3.9264371395111084,
+  "model": "am",
+  "problem": "tsp",
+  "standard_deviation": 0.33350902795791626,
+  "standard_error": 0.0033350902795791625,
+  "test_seed": 20260904,
+  "test_size": 10000,
+  "train_seed": 2468,
+  "training_base_mode": "native_conditional_free",
+  "training_graph_size": 20,
+  "training_scheme": "reinforce"
+}

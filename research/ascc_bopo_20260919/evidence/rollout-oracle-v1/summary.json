@@ -1,0 +1,123 @@
+{
+  "role": "actual_downstream_rollout_value_oracle",
+  "checkpoint_sha256": "69217d554d34d460305958e59e7ebd8bd4260814787d18b2f5ba3ecc37272400",
+  "count_per_size": 64,
+  "sizes": [
+    20,
+    50
+  ],
+  "start_components": 10,
+  "downstream_policy": "route source with fitted greedy endpoint",
+  "methods": [
+    {
+      "n": 20,
+      "method": "route",
+      "mean_cost": 4.195583820343018,
+      "route_minus_method": 0.0,
+      "relative_improvement_percent": 0.0,
+      "conditional_normal_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "n": 20,
+      "method": "source_once",
+      "mean_cost": 4.0708394050598145,
+      "route_minus_method": 0.12474454939365387,
+      "relative_improvement_percent": 2.9732345898753882,
+      "conditional_normal_ci95": [
+        0.06847696483135224,
+        0.1810121339559555
+      ]
+    },
+    {
+      "n": 20,
+      "method": "source_repeated",
+      "mean_cost": 4.0680623054504395,
+      "route_minus_method": 0.1275213360786438,
+      "relative_improvement_percent": 3.039418148681345,
+      "conditional_normal_ci95": [
+        0.07131314612925052,
+        0.18372952602803708
+      ]
+    },
+    {
+      "n": 20,
+      "method": "endpoint_once",
+      "mean_cost": 4.151674747467041,
+      "route_minus_method": 0.04390934482216835,
+      "relative_improvement_percent": 1.046561019929247,
+      "conditional_normal_ci95": [
+        0.013336081914603712,
+        0.07448260772973299
+      ]
+    },
+    {
+      "n": 20,
+      "method": "endpoint_repeated",
+      "mean_cost": 4.082007884979248,
+      "route_minus_method": 0.11357591301202774,
+      "relative_improvement_percent": 2.707034774548781,
+      "conditional_normal_ci95": [
+        0.06295521587133407,
+        0.1641966101527214
+      ]
+    },
+    {
+      "n": 50,
+      "method": "route",
+      "mean_cost": 5.807000160217285,
+      "route_minus_method": 0.0,
+      "relative_improvement_percent": 0.0,
+      "conditional_normal_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "n": 50,
+      "method": "source_once",
+      "mean_cost": 5.798694133758545,
+      "route_minus_method": 0.008305840194225311,
+      "relative_improvement_percent": 0.14303151308875675,
+      "conditional_normal_ci95": [
+        -0.0030340860411524773,
+        0.019645766429603098
+      ]
+    },
+    {
+      "n": 50,
+      "method": "source_repeated",
+      "mean_cost": 5.797948837280273,
+      "route_minus_method": 0.00905095785856247,
+      "relative_improvement_percent": 0.1558628828800274,
+      "conditional_normal_ci95": [
+        -0.0023244147561490534,
+        0.020426330473273992
+      ]
+    },
+    {
+      "n": 50,
+      "method": "endpoint_once",
+      "mean_cost": 5.807000160217285,
+      "route_minus_method": 0.0,
+      "relative_improvement_percent": 0.0,
+      "conditional_normal_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "n": 50,
+      "method": "endpoint_repeated",
+      "mean_cost": 5.79549503326416,
+      "route_minus_method": 0.011504732072353363,
+      "relative_improvement_percent": 0.19811833571437135,
+      "conditional_normal_ci95": [
+        8.131239563226658e-05,
+        0.02292815174907446
+      ]
+    }
+  ]
+}

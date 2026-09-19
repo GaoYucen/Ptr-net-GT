@@ -1,0 +1,322 @@
+{
+  "arms": {
+    "learned-bopo-seed1234": {
+      "summary": {
+        "status": "completed_steps",
+        "steps": 200,
+        "best_step": 200,
+        "initial_validation": {
+          "mean_cost": 9.754332460463047,
+          "seconds": 5.959810903761536,
+          "voluntary_source_deviation": 0.9261997767857143
+        },
+        "best_validation": 9.079512298107147,
+        "final_test": {
+          "mean_cost": 8.939862582832575,
+          "seconds": 10.367954855784774,
+          "voluntary_source_deviation": 0.9162348533163265
+        },
+        "best_test": {
+          "mean_cost": 8.939862582832575,
+          "seconds": 9.671038453932852,
+          "voluntary_source_deviation": 0.9162348533163265
+        },
+        "train_seconds": 191.74144056765363,
+        "total_elapsed": 223.28503502206877,
+        "test_sha256": "66f826afe3a44cf684d687ce25b3550e70bdf32d128b365cc64ac3c3f4c4ac39",
+        "final_checkpoint_sha256": "4d92fe5e52976db17826da653fd901787e0503f281899c296ad58f30520e7959",
+        "best_checkpoint_sha256": "4d92fe5e52976db17826da653fd901787e0503f281899c296ad58f30520e7959"
+      },
+      "config": {
+        "out": "/workspace/\u8ba1\u7b97\u7fa4\u8bba/results/ascc-bopo-joint-20260919/screen-v1/learned-bopo-seed1234",
+        "objective": "bopo",
+        "source": "learned",
+        "backbone": "/workspace/\u8ba1\u7b97\u7fa4\u8bba/repos/groupopt-modern-hosts/BOPO/TSP/result/saved_n100/checkpoint-700.pt",
+        "steps": 200,
+        "nodes": 100,
+        "batch": 4,
+        "rollouts": 16,
+        "filtered": 8,
+        "seed": 1234,
+        "lr": 0.0001,
+        "backbone_lr": 1e-05,
+        "validation_size": 128,
+        "test_size": 256,
+        "eval_rollouts": 8,
+        "eval_batch": 8,
+        "eval_every": 100,
+        "log_every": 25,
+        "max_seconds": 600,
+        "device": "cuda:0",
+        "threads": 2,
+        "memory_fraction": 0.22,
+        "tiny": false,
+        "dimensions": {},
+        "source_hashes": {
+          "experiments/train_ascc_bopo.py": "6cea072396bcf10d645447edddb2e4115b308b9ec34371281508b5ce92056e50",
+          "src/groupopt/models/ascc_bopo.py": "a20f41d5d3cfd01d724985fbc651902e07c89cfb8b8735b573f19ed1f1de18b6",
+          "src/groupopt/training/preference.py": "51b9828e66d1aef045d741e9509e2567a5930e7fcdd7f4e1ef1e9aabb4b633a5",
+          "src/groupopt/models/pomo.py": "8ff70110e1a117b687bae37cc9e59f3b4138c94926162744fe0d39e1065872bd"
+        },
+        "git_head": "9d9dd33d6375fc8288c211716d6e8f7c25294b9b",
+        "backbone_sha256": "1279b1993e6815ef6e3a7068e731d12446f38c7a3a554a5e054bd9d2efe4d0f2",
+        "torch_version": "2.6.0+cu124",
+        "cuda_visible_devices": "0",
+        "ld_library_path": "/workspace/\u8ba1\u7b97\u7fa4\u8bba/environments/cuda-driver-535",
+        "total_parameters": 1306720,
+        "all_backbone_parameters_trainable": true,
+        "protocol": "screening_v1_complete_tour_joint_policy_no_source_gate",
+        "train_sampling": "B-1 stochastic + one explicit greedy; same initial anchor context",
+        "evaluation": "multi anchor context; best of K; no augmentation; no local search",
+        "validation_sha256": "0a85fea45f1cd6daa7795ed427c9b1d8062a2b4b913868cc19c69de6c9cfeff7",
+        "test_sha256": "66f826afe3a44cf684d687ce25b3550e70bdf32d128b365cc64ac3c3f4c4ac39"
+      }
+    },
+    "learned-reinforce-seed1234": {
+      "summary": {
+        "status": "completed_steps",
+        "steps": 200,
+        "best_step": 200,
+        "initial_validation": {
+          "mean_cost": 9.754332460463047,
+          "seconds": 5.548755085095763,
+          "voluntary_source_deviation": 0.9261997767857143
+        },
+        "best_validation": 8.74370551854372,
+        "final_test": {
+          "mean_cost": 8.640332028269768,
+          "seconds": 9.534734718035907,
+          "voluntary_source_deviation": 0.8960708306760204
+        },
+        "best_test": {
+          "mean_cost": 8.640332028269768,
+          "seconds": 10.156337989028543,
+          "voluntary_source_deviation": 0.8960708306760204
+        },
+        "train_seconds": 189.3711844473146,
+        "total_elapsed": 219.9458749270998,
+        "test_sha256": "66f826afe3a44cf684d687ce25b3550e70bdf32d128b365cc64ac3c3f4c4ac39",
+        "final_checkpoint_sha256": "69217d554d34d460305958e59e7ebd8bd4260814787d18b2f5ba3ecc37272400",
+        "best_checkpoint_sha256": "69217d554d34d460305958e59e7ebd8bd4260814787d18b2f5ba3ecc37272400"
+      },
+      "config": {
+        "out": "/workspace/\u8ba1\u7b97\u7fa4\u8bba/results/ascc-bopo-joint-20260919/screen-v1/learned-reinforce-seed1234",
+        "objective": "reinforce",
+        "source": "learned",
+        "backbone": "/workspace/\u8ba1\u7b97\u7fa4\u8bba/repos/groupopt-modern-hosts/BOPO/TSP/result/saved_n100/checkpoint-700.pt",
+        "steps": 200,
+        "nodes": 100,
+        "batch": 4,
+        "rollouts": 16,
+        "filtered": 8,
+        "seed": 1234,
+        "lr": 0.0001,
+        "backbone_lr": 1e-05,
+        "validation_size": 128,
+        "test_size": 256,
+        "eval_rollouts": 8,
+        "eval_batch": 8,
+        "eval_every": 100,
+        "log_every": 25,
+        "max_seconds": 600,
+        "device": "cuda:0",
+        "threads": 2,
+        "memory_fraction": 0.22,
+        "tiny": false,
+        "dimensions": {},
+        "source_hashes": {
+          "experiments/train_ascc_bopo.py": "6cea072396bcf10d645447edddb2e4115b308b9ec34371281508b5ce92056e50",
+          "src/groupopt/models/ascc_bopo.py": "a20f41d5d3cfd01d724985fbc651902e07c89cfb8b8735b573f19ed1f1de18b6",
+          "src/groupopt/training/preference.py": "51b9828e66d1aef045d741e9509e2567a5930e7fcdd7f4e1ef1e9aabb4b633a5",
+          "src/groupopt/models/pomo.py": "8ff70110e1a117b687bae37cc9e59f3b4138c94926162744fe0d39e1065872bd"
+        },
+        "git_head": "9d9dd33d6375fc8288c211716d6e8f7c25294b9b",
+        "backbone_sha256": "1279b1993e6815ef6e3a7068e731d12446f38c7a3a554a5e054bd9d2efe4d0f2",
+        "torch_version": "2.6.0+cu124",
+        "cuda_visible_devices": "0",
+        "ld_library_path": "/workspace/\u8ba1\u7b97\u7fa4\u8bba/environments/cuda-driver-535",
+        "total_parameters": 1306720,
+        "all_backbone_parameters_trainable": true,
+        "protocol": "screening_v1_complete_tour_joint_policy_no_source_gate",
+        "train_sampling": "B-1 stochastic + one explicit greedy; same initial anchor context",
+        "evaluation": "multi anchor context; best of K; no augmentation; no local search",
+        "validation_sha256": "0a85fea45f1cd6daa7795ed427c9b1d8062a2b4b913868cc19c69de6c9cfeff7",
+        "test_sha256": "66f826afe3a44cf684d687ce25b3550e70bdf32d128b365cc64ac3c3f4c4ac39"
+      }
+    },
+    "route-bopo-seed1234": {
+      "summary": {
+        "status": "completed_steps",
+        "steps": 200,
+        "best_step": 0,
+        "initial_validation": {
+          "mean_cost": 7.857607740908861,
+          "seconds": 5.05859902407974,
+          "voluntary_source_deviation": 0.0
+        },
+        "best_validation": 7.857607740908861,
+        "final_test": {
+          "mean_cost": 7.805747043341398,
+          "seconds": 9.581730101723224,
+          "voluntary_source_deviation": 0.0
+        },
+        "best_test": {
+          "mean_cost": 7.807221660390496,
+          "seconds": 8.874731122981757,
+          "voluntary_source_deviation": 0.0
+        },
+        "train_seconds": 151.00437624612823,
+        "total_elapsed": 179.56817516498268,
+        "test_sha256": "66f826afe3a44cf684d687ce25b3550e70bdf32d128b365cc64ac3c3f4c4ac39",
+        "final_checkpoint_sha256": "7233e7e6ef304e2b7b64a05e3c8b7cbc674411fc1310c5a968d2019683d2f759",
+        "best_checkpoint_sha256": "464c9f210b338a28009157981b1ff9e031ea851551ca008560b48114ae79d7ea"
+      },
+      "config": {
+        "out": "/workspace/\u8ba1\u7b97\u7fa4\u8bba/results/ascc-bopo-joint-20260919/screen-v1/route-bopo-seed1234",
+        "objective": "bopo",
+        "source": "route",
+        "backbone": "/workspace/\u8ba1\u7b97\u7fa4\u8bba/repos/groupopt-modern-hosts/BOPO/TSP/result/saved_n100/checkpoint-700.pt",
+        "steps": 200,
+        "nodes": 100,
+        "batch": 4,
+        "rollouts": 16,
+        "filtered": 8,
+        "seed": 1234,
+        "lr": 0.0001,
+        "backbone_lr": 1e-05,
+        "validation_size": 128,
+        "test_size": 256,
+        "eval_rollouts": 8,
+        "eval_batch": 8,
+        "eval_every": 100,
+        "log_every": 25,
+        "max_seconds": 600,
+        "device": "cuda:0",
+        "threads": 2,
+        "memory_fraction": 0.22,
+        "tiny": false,
+        "dimensions": {},
+        "source_hashes": {
+          "experiments/train_ascc_bopo.py": "6cea072396bcf10d645447edddb2e4115b308b9ec34371281508b5ce92056e50",
+          "src/groupopt/models/ascc_bopo.py": "a20f41d5d3cfd01d724985fbc651902e07c89cfb8b8735b573f19ed1f1de18b6",
+          "src/groupopt/training/preference.py": "51b9828e66d1aef045d741e9509e2567a5930e7fcdd7f4e1ef1e9aabb4b633a5",
+          "src/groupopt/models/pomo.py": "8ff70110e1a117b687bae37cc9e59f3b4138c94926162744fe0d39e1065872bd"
+        },
+        "git_head": "9d9dd33d6375fc8288c211716d6e8f7c25294b9b",
+        "backbone_sha256": "1279b1993e6815ef6e3a7068e731d12446f38c7a3a554a5e054bd9d2efe4d0f2",
+        "torch_version": "2.6.0+cu124",
+        "cuda_visible_devices": "0",
+        "ld_library_path": "/workspace/\u8ba1\u7b97\u7fa4\u8bba/environments/cuda-driver-535",
+        "total_parameters": 1306720,
+        "all_backbone_parameters_trainable": true,
+        "protocol": "screening_v1_complete_tour_joint_policy_no_source_gate",
+        "train_sampling": "B-1 stochastic + one explicit greedy; same initial anchor context",
+        "evaluation": "multi anchor context; best of K; no augmentation; no local search",
+        "validation_sha256": "0a85fea45f1cd6daa7795ed427c9b1d8062a2b4b913868cc19c69de6c9cfeff7",
+        "test_sha256": "66f826afe3a44cf684d687ce25b3550e70bdf32d128b365cc64ac3c3f4c4ac39"
+      }
+    },
+    "route-reinforce-seed1234": {
+      "summary": {
+        "status": "completed_steps",
+        "steps": 200,
+        "best_step": 100,
+        "initial_validation": {
+          "mean_cost": 7.857607740908861,
+          "seconds": 5.21755627123639,
+          "voluntary_source_deviation": 0.0
+        },
+        "best_validation": 7.856664530932903,
+        "final_test": {
+          "mean_cost": 7.809346832334995,
+          "seconds": 9.206570805981755,
+          "voluntary_source_deviation": 0.0
+        },
+        "best_test": {
+          "mean_cost": 7.811115305870771,
+          "seconds": 9.209977817721665,
+          "voluntary_source_deviation": 0.0
+        },
+        "train_seconds": 145.05575122544542,
+        "total_elapsed": 172.735803052783,
+        "test_sha256": "66f826afe3a44cf684d687ce25b3550e70bdf32d128b365cc64ac3c3f4c4ac39",
+        "final_checkpoint_sha256": "2b6b77dc9603c07c206211b6bda0ba82784714ecc5ccbc75657f3962be49469a",
+        "best_checkpoint_sha256": "f79ab60dc57918e7a3df015ef74aec5c12635cef0aa53343bfc7b305de8c6490"
+      },
+      "config": {
+        "out": "/workspace/\u8ba1\u7b97\u7fa4\u8bba/results/ascc-bopo-joint-20260919/screen-v1/route-reinforce-seed1234",
+        "objective": "reinforce",
+        "source": "route",
+        "backbone": "/workspace/\u8ba1\u7b97\u7fa4\u8bba/repos/groupopt-modern-hosts/BOPO/TSP/result/saved_n100/checkpoint-700.pt",
+        "steps": 200,
+        "nodes": 100,
+        "batch": 4,
+        "rollouts": 16,
+        "filtered": 8,
+        "seed": 1234,
+        "lr": 0.0001,
+        "backbone_lr": 1e-05,
+        "validation_size": 128,
+        "test_size": 256,
+        "eval_rollouts": 8,
+        "eval_batch": 8,
+        "eval_every": 100,
+        "log_every": 25,
+        "max_seconds": 600,
+        "device": "cuda:0",
+        "threads": 2,
+        "memory_fraction": 0.22,
+        "tiny": false,
+        "dimensions": {},
+        "source_hashes": {
+          "experiments/train_ascc_bopo.py": "6cea072396bcf10d645447edddb2e4115b308b9ec34371281508b5ce92056e50",
+          "src/groupopt/models/ascc_bopo.py": "a20f41d5d3cfd01d724985fbc651902e07c89cfb8b8735b573f19ed1f1de18b6",
+          "src/groupopt/training/preference.py": "51b9828e66d1aef045d741e9509e2567a5930e7fcdd7f4e1ef1e9aabb4b633a5",
+          "src/groupopt/models/pomo.py": "8ff70110e1a117b687bae37cc9e59f3b4138c94926162744fe0d39e1065872bd"
+        },
+        "git_head": "9d9dd33d6375fc8288c211716d6e8f7c25294b9b",
+        "backbone_sha256": "1279b1993e6815ef6e3a7068e731d12446f38c7a3a554a5e054bd9d2efe4d0f2",
+        "torch_version": "2.6.0+cu124",
+        "cuda_visible_devices": "0",
+        "ld_library_path": "/workspace/\u8ba1\u7b97\u7fa4\u8bba/environments/cuda-driver-535",
+        "total_parameters": 1306720,
+        "all_backbone_parameters_trainable": true,
+        "protocol": "screening_v1_complete_tour_joint_policy_no_source_gate",
+        "train_sampling": "B-1 stochastic + one explicit greedy; same initial anchor context",
+        "evaluation": "multi anchor context; best of K; no augmentation; no local search",
+        "validation_sha256": "0a85fea45f1cd6daa7795ed427c9b1d8062a2b4b913868cc19c69de6c9cfeff7",
+        "test_sha256": "66f826afe3a44cf684d687ce25b3550e70bdf32d128b365cc64ac3c3f4c4ac39"
+      }
+    }
+  },
+  "comparisons": [
+    {
+      "objective": "bopo",
+      "baseline": "route-bopo-seed1234",
+      "ascc": "learned-bopo-seed1234",
+      "paired_difference": -1.1326409224420786,
+      "relative_improvement_percent": -14.507605544088355,
+      "conditional_normal_ci95": [
+        -1.2031419960256247,
+        -1.0621398488585325
+      ],
+      "instance_count": 256,
+      "training_seeds": 1,
+      "ascc_best_step": 200
+    },
+    {
+      "objective": "reinforce",
+      "baseline": "route-reinforce-seed1234",
+      "ascc": "learned-reinforce-seed1234",
+      "paired_difference": -0.8292167223989964,
+      "relative_improvement_percent": -10.615855609963456,
+      "conditional_normal_ci95": [
+        -0.8811205503718051,
+        -0.7773128944261876
+      ],
+      "instance_count": 256,
+      "training_seeds": 1,
+      "ascc_best_step": 200
+    }
+  ]
+}

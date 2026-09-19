@@ -1,0 +1,56 @@
+{
+  "full": {
+    "64": {
+      "seconds": 19.81,
+      "mean_cost": 6.1457518886566165,
+      "max_abs_vs_saved": 0.0,
+      "exact_fraction_vs_saved": 1.0
+    },
+    "128": {
+      "seconds": 10.9,
+      "mean_cost": 6.1457518886566165,
+      "max_abs_vs_saved": 0.0,
+      "exact_fraction_vs_saved": 1.0
+    },
+    "256": {
+      "seconds": 6.94,
+      "mean_cost": 6.1457518886566165,
+      "max_abs_vs_saved": 0.0,
+      "exact_fraction_vs_saved": 1.0
+    },
+    "512": {
+      "seconds": 4.77,
+      "mean_cost": 6.145751886606217,
+      "max_abs_vs_saved": 2.0503997802734375e-05,
+      "exact_fraction_vs_saved": 0.9998999834060669
+    },
+    "1024": {
+      "seconds": 4.65,
+      "mean_cost": 6.145751886606217,
+      "max_abs_vs_saved": 2.0503997802734375e-05,
+      "exact_fraction_vs_saved": 0.9998999834060669
+    }
+  },
+  "lite_timing_only": {
+    "64": {
+      "seconds": 15.46,
+      "mean_cost": 6.431676809597016
+    },
+    "128": {
+      "seconds": 9.42,
+      "mean_cost": 6.431676809597016
+    },
+    "256": {
+      "seconds": 5.91,
+      "mean_cost": 6.431676809597016
+    },
+    "512": {
+      "seconds": 4.29,
+      "mean_cost": 6.431676809597016
+    },
+    "1024": {
+      "seconds": 3.69,
+      "mean_cost": 6.431676809597016
+    }
+  }
+}

@@ -1,0 +1,88 @@
+[
+  {
+    "n": 10,
+    "native_actions_exact": true,
+    "cost_max_error": 2.384185791015625e-07
+  },
+  {
+    "n": 50,
+    "native_actions_exact": true,
+    "cost_max_error": 0.0
+  },
+  {
+    "n": 100,
+    "native_actions_exact": true,
+    "cost_max_error": 0.0
+  },
+  {
+    "n": 200,
+    "native_actions_exact": true,
+    "cost_max_error": 9.5367431640625e-07
+  },
+  {
+    "mode": "route",
+    "valid_tours": true,
+    "replay": true,
+    "checkpoint_gradient_max_error": 0.0,
+    "gradient_norm": {
+      "host": 181.6643158032354,
+      "selector": 0.0
+    }
+  },
+  {
+    "mode": "learned",
+    "valid_tours": true,
+    "replay": true,
+    "checkpoint_gradient_max_error": 0.0,
+    "gradient_norm": {
+      "host": 207.75818611169953,
+      "selector": 31.740048478443452
+    }
+  },
+  {
+    "mode": "capacity",
+    "valid_tours": true,
+    "replay": true,
+    "checkpoint_gradient_max_error": 0.0,
+    "gradient_norm": {
+      "host": 158.36559054960352,
+      "selector": 10.776582170812867
+    }
+  },
+  {
+    "mode": "random",
+    "valid_tours": true,
+    "replay": true,
+    "checkpoint_gradient_max_error": 0.0,
+    "gradient_norm": {
+      "host": 258.18129069083665,
+      "selector": 0.0
+    }
+  },
+  {
+    "mode": "fixed",
+    "valid_tours": true,
+    "replay": true,
+    "checkpoint_gradient_max_error": 0.0,
+    "gradient_norm": {
+      "host": 214.27421911359036,
+      "selector": 0.0
+    }
+  },
+  {
+    "warmup_mode": "route",
+    "loss": 0.9099054336547852,
+    "selector_unsupervised": true
+  },
+  {
+    "warmup_mode": "random",
+    "loss": 9.197367668151855,
+    "selector_unsupervised": true
+  },
+  {
+    "profile_nodes": 200,
+    "batch": 4,
+    "full_update_seconds": 2.2670610919594765,
+    "peak_mib": 690.69873046875
+  }
+]

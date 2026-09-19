@@ -1,0 +1,42 @@
+{
+  "experiment_id": "paper_scale_effect_tsp_v1",
+  "claim": "After training at each graph size, GroupOpt continues to improve the same host's native original decoder",
+  "problem": "uniform_euclidean_tsp",
+  "sizes": [20, 50, 100],
+  "new_training_sizes": [20, 100],
+  "reused_size": {
+    "size": 50,
+    "experiment_id": "paper_final_tsp50_v1"
+  },
+  "hosts": ["am", "pomo"],
+  "modes": ["native_original", "native_conditional_free"],
+  "training_seeds": [1234, 4321, 2468],
+  "training": {
+    "am": {
+      "steps": 10000,
+      "batch_size_by_size": {"20": 512, "50": 512, "100": 64}
+    },
+    "pomo": {
+      "steps": 5000,
+      "pomo_size": 8,
+      "batch_size_by_size": {"20": 64, "50": 64, "100": 8}
+    }
+  },
+  "evaluation": {
+    "test_seed": 20260904,
+    "test_instances_per_size": 10000,
+    "decode_type": "greedy",
+    "paired_instances": true
+  },
+  "fairness": [
+    "Within every host-size-seed cell, Original and GroupOpt use identical training and evaluation budgets",
+    "Every reported checkpoint is the predeclared final step rather than a test-selected checkpoint",
+    "Raw tour lengths are compared only within the same graph size",
+    "Across sizes, the primary statistic is GroupOpt relative improvement over the corresponding Original"
+  ],
+  "naming": "This is scale-wise effectiveness after retraining, not zero-shot size generalization",
+  "excluded_from_current_report": {
+    "size": 200,
+    "reason": "Deferred by project decision after feasibility probes and partial training; no TSP200 result is used in the current paper table"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "batch_size": 64,
+  "eval_every": 100,
+  "final_chunk": 20,
+  "lr": 0.0001,
+  "max_grad_norm": 1.0,
+  "out": "/workspace/groupopt-bopo-h2/full-ascc/seed1234-formal-v1",
+  "pomo_size": 8,
+  "seed": 1234,
+  "skip_final": false,
+  "steps": 5000,
+  "validation_size": 64
+}

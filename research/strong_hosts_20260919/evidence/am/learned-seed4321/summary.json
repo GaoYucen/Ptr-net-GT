@@ -1,0 +1,35 @@
+{
+  "host": "am",
+  "mode": "learned",
+  "seed": 4321,
+  "best_step": 300,
+  "steps": 300,
+  "training_seconds": 839.2876221858896,
+  "warmup_seconds": 105.37445896863937,
+  "wall_seconds": 1063.0216667512432,
+  "evaluation": {
+    "test200": {
+      "mean": 13.584763575345278,
+      "seconds": 15.263332488946617,
+      "source_deviation": 0.3059765542857349
+    },
+    "cluster200": {
+      "mean": 8.189025446772575,
+      "seconds": 4.776912330184132,
+      "source_deviation": 0.38945311680436134
+    },
+    "test500": {
+      "mean": 22.903898656368256,
+      "seconds": 46.1144667849876,
+      "source_deviation": 0.30653127282857895
+    },
+    "test200-aug8": {
+      "mean": 12.79972979798913,
+      "seconds": 127.91742480918765,
+      "source_deviation": 0.30317137972451746
+    }
+  },
+  "parameters": 856576,
+  "shared_warmup_seed": true,
+  "official_checkpoint_sha": "eefdf5496cc1a15e1b95b0a3025e1bcf703279d22aebc19b5b57c80ca8e3200a"
+}

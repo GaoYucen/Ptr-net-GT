@@ -1,0 +1,44 @@
+{
+  "protocol": "Separate official native checkpoint, all N starting nodes and 8 geometric augmentations. Post-hoc evaluation-budget diagnostic, not part of matched training arms.",
+  "training_updates": 0,
+  "batch": 1,
+  "single_start_helper_verified": true,
+  "cases": {
+    "test200": {
+      "instances": 256,
+      "starts": 200,
+      "greedy_first_start_mean": 10.808111518621445,
+      "multistart_mean": 10.76261455565691,
+      "multistart_aug8_mean": 10.729056984186172,
+      "reference_mean": 10.699675424517375,
+      "multistart_gap_percent": 0.58823402245749,
+      "multistart_aug8_gap_percent": 0.2746023454269553,
+      "first_start_max_cost_difference_from_original_evaluation": 0.0,
+      "total_evaluation_seconds": 31.423407935071737
+    },
+    "cluster200": {
+      "instances": 64,
+      "starts": 200,
+      "greedy_first_start_mean": 5.270135015249252,
+      "multistart_mean": 4.859688848257065,
+      "multistart_aug8_mean": 4.711192689836025,
+      "reference_mean": 4.2587730285795535,
+      "multistart_gap_percent": 14.110069159471905,
+      "multistart_aug8_gap_percent": 10.623239562672104,
+      "first_start_max_cost_difference_from_original_evaluation": 0.0,
+      "total_evaluation_seconds": 7.861898558214307
+    },
+    "test500": {
+      "instances": 64,
+      "starts": 500,
+      "greedy_first_start_mean": 16.824453353881836,
+      "multistart_mean": 16.748516649007797,
+      "multistart_aug8_mean": 16.688095539808273,
+      "reference_mean": 16.562394131720243,
+      "multistart_gap_percent": 1.1237657781074883,
+      "multistart_aug8_gap_percent": 0.7589567491772753,
+      "first_start_max_cost_difference_from_original_evaluation": 3.814697265625e-06,
+      "total_evaluation_seconds": 18.81812370195985
+    }
+  }
+}

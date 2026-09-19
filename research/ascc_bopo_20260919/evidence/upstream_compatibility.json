@@ -1,0 +1,19 @@
+{
+  "checkpoint": "/workspace/\u8ba1\u7b97\u7fa4\u8bba/repos/groupopt-modern-hosts/BOPO/TSP/result/saved_n100/checkpoint-700.pt",
+  "checkpoint_sha256": "1279b1993e6815ef6e3a7068e731d12446f38c7a3a554a5e054bd9d2efe4d0f2",
+  "cases": [
+    {
+      "nodes": 20,
+      "starts": 20,
+      "actions_exact": true,
+      "max_cost_difference": 0.0
+    },
+    {
+      "nodes": 100,
+      "starts": 100,
+      "actions_exact": true,
+      "max_cost_difference": 0.0
+    }
+  ],
+  "status": "passed"
+}

@@ -1,0 +1,29 @@
+{
+  "solver": "elkai 2.0.1 / LKH3, RUNS=3",
+  "integer_scale": 1000000,
+  "rescored": "original float64 Euclidean distances",
+  "certified_optimal": false,
+  "cases": {
+    "test200": {
+      "mean": 10.699675424517375,
+      "wall_seconds": 108.96497558103874,
+      "summed_solver_seconds": 213.75166423851624,
+      "instances": 256,
+      "coords_sha256": "00927a186086d15acbdb5db275068fb388182000551c0a835b2edde1aed39a77"
+    },
+    "cluster200": {
+      "mean": 4.2587730285795535,
+      "wall_seconds": 64.61900649778545,
+      "summed_solver_seconds": 128.35009899921715,
+      "instances": 64,
+      "coords_sha256": "b2c6bd5eddca099a629397a0a8111c67311f166f732dc5d77c86cf0394ae5fd9"
+    },
+    "test500": {
+      "mean": 16.562394131720243,
+      "wall_seconds": 190.2899992018938,
+      "summed_solver_seconds": 376.6663766768761,
+      "instances": 64,
+      "coords_sha256": "6e17c4e0bd3a3eeae7b04404b3e601679024e8474ab6b6efd935f8dee0065090"
+    }
+  }
+}

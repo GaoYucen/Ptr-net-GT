@@ -1,0 +1,45 @@
+{
+  "experiment_id": "paper_main_tsp50_v1",
+  "method": {
+    "name": "Full GroupOpt",
+    "mode": "native_conditional_free",
+    "definition": "Forest-native head proposals followed by a learned tail decision"
+  },
+  "original_mode": "native_original",
+  "problem": "uniform_euclidean_tsp50",
+  "training_seeds": [1234, 4321, 2468],
+  "test": {
+    "seed": 20260902,
+    "instances": 10000,
+    "decode_type": "greedy"
+  },
+  "hosts": {
+    "am": {
+      "steps": 2000,
+      "batch_size": 512,
+      "effective_batch_size": 512
+    },
+    "ptrnet": {
+      "steps": 2000,
+      "batch_size": 128,
+      "effective_batch_size": 128
+    },
+    "gpn": {
+      "steps": 2000,
+      "batch_size": 128,
+      "effective_batch_size": 128
+    },
+    "pomo": {
+      "steps": 1000,
+      "batch_size": 64,
+      "pomo_size": 8,
+      "effective_batch_size": 512
+    }
+  },
+  "fairness": [
+    "Original and Full use the same host encoder and training recipe within each family",
+    "Both modes use the same independent test instances and decode budget",
+    "Legacy native_conditional_fixed checkpoints are evaluated only after exact native_original equivalence validation",
+    "No checkpoint is selected using test costs"
+  ]
+}

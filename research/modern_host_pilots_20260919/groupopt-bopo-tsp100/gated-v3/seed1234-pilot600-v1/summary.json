@@ -1,0 +1,12 @@
+{
+  "best_step": 0,
+  "best_threshold": 0.2,
+  "best_validation": 7.829168111085892,
+  "kl_coeff": 0.002,
+  "mechanism": "frozen BOPO head + route-follow default + gated residual tail + paired BOPO residual baseline",
+  "official_first100_gap_percent": 0.1127816113618646,
+  "official_first100_mean": 7.7853590106964115,
+  "p0": 0.02,
+  "route_validation": 7.829168111085892,
+  "trainable_parameters": 115649
+}

@@ -1,0 +1,421 @@
+{
+  "training_code_matches_recorded_hashes": true,
+  "paired_host_datasets_identical": true,
+  "all_18_arms_verified": true,
+  "entries": [
+    {
+      "host": "am",
+      "mode": "route",
+      "seed": 1234,
+      "best_step": 300,
+      "best_checkpoint_sha256": "9d179568b10596a30a2306bdd16d913ea32117fe6d07442b83552cb613186976",
+      "final_checkpoint_sha256": "4eb23549695d9edc101520f618112930dfe1442d83f411e3dfb0d16984e68a4a",
+      "best_final_parameter_distance": {
+        "host": 0.0,
+        "selector": 0.0
+      },
+      "selector_gradient_norms": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "validation_source_deviation_initial": 0.0,
+      "validation_source_deviation_best": 0.0,
+      "evaluation_means_verified": true
+    },
+    {
+      "host": "am",
+      "mode": "random",
+      "seed": 1234,
+      "best_step": 300,
+      "best_checkpoint_sha256": "1e5d52daea177e707927ae0ac74ec952c2ec5c9770ec995996f054a0fb2b25b9",
+      "final_checkpoint_sha256": "88eb06be915045b771e7b492ee4202e88e31a3dd65910c27ed2f35f2ddba1e1a",
+      "best_final_parameter_distance": {
+        "host": 0.0,
+        "selector": 0.0
+      },
+      "selector_gradient_norms": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "validation_source_deviation_initial": 0.9695311933755875,
+      "validation_source_deviation_best": 0.9703905954957008,
+      "evaluation_means_verified": true
+    },
+    {
+      "host": "am",
+      "mode": "learned",
+      "seed": 1234,
+      "best_step": 300,
+      "best_checkpoint_sha256": "003417edcb6d788131eb897844e51d45e21b0b72eb7f323f6c9fb632f051c3e1",
+      "final_checkpoint_sha256": "9707bc440f9b7ff2a354ff840fd9b8f712a50b3992704c40dc74e336325813fc",
+      "best_final_parameter_distance": {
+        "host": 0.0,
+        "selector": 0.0
+      },
+      "selector_gradient_norms": [
+        88.40394009595965,
+        86.26044436291063,
+        76.91308834288215,
+        72.73682545012802,
+        49.698650301051245,
+        92.05684514767898
+      ],
+      "validation_source_deviation_initial": 0.7821874916553497,
+      "validation_source_deviation_best": 0.6242968514561653,
+      "evaluation_means_verified": true
+    },
+    {
+      "host": "am",
+      "mode": "route",
+      "seed": 4321,
+      "best_step": 250,
+      "best_checkpoint_sha256": "5f9e4697da823722db27703e6daedda4d075e8e977cc0301f15c6041c429d985",
+      "final_checkpoint_sha256": "6074f878c14667f9f47d59edf147a4eadbf74ded2b4f3f45f6ff97c3b9f18f18",
+      "best_final_parameter_distance": {
+        "host": 0.05335617592616371,
+        "selector": 0.0
+      },
+      "selector_gradient_norms": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "validation_source_deviation_initial": 0.0,
+      "validation_source_deviation_best": 0.0,
+      "evaluation_means_verified": true
+    },
+    {
+      "host": "am",
+      "mode": "random",
+      "seed": 4321,
+      "best_step": 200,
+      "best_checkpoint_sha256": "bae9afe69c373d33ed0527b61962b9cfa0de32a56751d2f8cfb98330f162a3a2",
+      "final_checkpoint_sha256": "eae878ce04bdab9fb089090974ac68862284868aca8c0a319a8167c42298b334",
+      "best_final_parameter_distance": {
+        "host": 0.07053959796033238,
+        "selector": 0.0
+      },
+      "selector_gradient_norms": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "validation_source_deviation_initial": 0.9695311933755875,
+      "validation_source_deviation_best": 0.9699999690055847,
+      "evaluation_means_verified": true
+    },
+    {
+      "host": "am",
+      "mode": "learned",
+      "seed": 4321,
+      "best_step": 300,
+      "best_checkpoint_sha256": "5a694f89f2eae2f8c6221744a3966c08a61e668913b42e5bf1f288ff72b196ac",
+      "final_checkpoint_sha256": "247c3936cb415e3eab2e7f11c7c86d6b6fc869aaf0713b57ec940e6378468205",
+      "best_final_parameter_distance": {
+        "host": 0.0,
+        "selector": 0.0
+      },
+      "selector_gradient_norms": [
+        115.78102197933524,
+        62.949255165671886,
+        71.32154758184998,
+        127.95776071383331,
+        64.18327676243699,
+        76.15509440396843
+      ],
+      "validation_source_deviation_initial": 0.7527343481779099,
+      "validation_source_deviation_best": 0.30296873673796654,
+      "evaluation_means_verified": true
+    },
+    {
+      "host": "am",
+      "mode": "route",
+      "seed": 2468,
+      "best_step": 300,
+      "best_checkpoint_sha256": "a842acbb9d39317d735d84bac442b3e545475656803a2c57926af11cd26ac445",
+      "final_checkpoint_sha256": "ac58aa153641196b2c2829ca8b206f657a4f384152eb32ff5ed307f368b1f9a1",
+      "best_final_parameter_distance": {
+        "host": 0.0,
+        "selector": 0.0
+      },
+      "selector_gradient_norms": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "validation_source_deviation_initial": 0.0,
+      "validation_source_deviation_best": 0.0,
+      "evaluation_means_verified": true
+    },
+    {
+      "host": "am",
+      "mode": "random",
+      "seed": 2468,
+      "best_step": 250,
+      "best_checkpoint_sha256": "14c8c086e69338d519defb9750fe762ac02fd4edd9ab8070b6b0d265e9c5d838",
+      "final_checkpoint_sha256": "a5e2b8b863519c49cb2640f537ee202a9886d331323b049c50e670c7560871ad",
+      "best_final_parameter_distance": {
+        "host": 0.045981920240249906,
+        "selector": 0.0
+      },
+      "selector_gradient_norms": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "validation_source_deviation_initial": 0.9695311933755875,
+      "validation_source_deviation_best": 0.9695312157273293,
+      "evaluation_means_verified": true
+    },
+    {
+      "host": "am",
+      "mode": "learned",
+      "seed": 2468,
+      "best_step": 300,
+      "best_checkpoint_sha256": "6909ce6bc111c73cb927b171504f8528306530f34fa3cd30cc39e672feaff991",
+      "final_checkpoint_sha256": "0d4f46b06e7d2e44dc7d8d46740abb7c9a5c0371dde11cf062e098774d6b7fa0",
+      "best_final_parameter_distance": {
+        "host": 0.0,
+        "selector": 0.0
+      },
+      "selector_gradient_norms": [
+        70.45195340146651,
+        77.45125825439685,
+        59.79576808094555,
+        60.61009591442893,
+        115.65243885931713,
+        66.69618266684043
+      ],
+      "validation_source_deviation_initial": 0.796875,
+      "validation_source_deviation_best": 0.6772656068205833,
+      "evaluation_means_verified": true
+    },
+    {
+      "host": "icam",
+      "mode": "route",
+      "seed": 1234,
+      "best_step": 150,
+      "best_checkpoint_sha256": "f73fb07b3ee22d32f9851458f362cdccc1a1e6e486ba5e4595fa81dec3af3817",
+      "final_checkpoint_sha256": "3a65c5b8fdcbdafec43d38c0403253d95cb1c222949098cf69b574f17449600b",
+      "best_final_parameter_distance": {
+        "host": 0.1779417395028558,
+        "selector": 0.0
+      },
+      "selector_gradient_norms": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "validation_source_deviation_initial": 0.0,
+      "validation_source_deviation_best": 0.0,
+      "evaluation_means_verified": true
+    },
+    {
+      "host": "icam",
+      "mode": "random",
+      "seed": 1234,
+      "best_step": 100,
+      "best_checkpoint_sha256": "7d3fc377e279d6a243b954ee095340ba5740c25778959cd4200d6914620f039d",
+      "final_checkpoint_sha256": "ba2214c213759b05113a95d5c1ddfcf93f25b709e20cff391bc9dc4a707c0522",
+      "best_final_parameter_distance": {
+        "host": 0.2093171616399224,
+        "selector": 0.0
+      },
+      "selector_gradient_norms": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "validation_source_deviation_initial": 0.970781221985817,
+      "validation_source_deviation_best": 0.9719530865550041,
+      "evaluation_means_verified": true
+    },
+    {
+      "host": "icam",
+      "mode": "learned",
+      "seed": 1234,
+      "best_step": 100,
+      "best_checkpoint_sha256": "8c31a2b0c0aa1828273d909720c7e6ebb6913e08972c352a2c4f7fcaff2280a1",
+      "final_checkpoint_sha256": "1b1ebcbd2cfaae929bbbe468852d277df39347938064d470987c7d35eed47f4c",
+      "best_final_parameter_distance": {
+        "host": 0.20648735976582225,
+        "selector": 0.4173319235029563
+      },
+      "selector_gradient_norms": [
+        260.4841454160359,
+        66.83686297170007,
+        247.8414784020608,
+        85.49933929076533,
+        118.77238293564574,
+        101.38040594393134
+      ],
+      "validation_source_deviation_initial": 0.7196874991059303,
+      "validation_source_deviation_best": 0.2848437447100878,
+      "evaluation_means_verified": true
+    },
+    {
+      "host": "icam",
+      "mode": "route",
+      "seed": 4321,
+      "best_step": 300,
+      "best_checkpoint_sha256": "b7b6e9df82a3d22424bb06c6eac2a49c5555f189d1b9e74986ee423ae5dbbf6b",
+      "final_checkpoint_sha256": "41b3e2e5ac6762145bc3a38132974db67c8125a894e9ba55ceecd354d828d786",
+      "best_final_parameter_distance": {
+        "host": 0.0,
+        "selector": 0.0
+      },
+      "selector_gradient_norms": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "validation_source_deviation_initial": 0.0,
+      "validation_source_deviation_best": 0.0,
+      "evaluation_means_verified": true
+    },
+    {
+      "host": "icam",
+      "mode": "random",
+      "seed": 4321,
+      "best_step": 300,
+      "best_checkpoint_sha256": "e0c82b03e6536f305765b9b30c0b30e5c47062b4a9d0d7e49f5acfe3bda7ad0e",
+      "final_checkpoint_sha256": "6a56236c16adf069d4cbe8a366388ff1acba6c6bbc4827597bdc3cf97db0f2b4",
+      "best_final_parameter_distance": {
+        "host": 0.0,
+        "selector": 0.0
+      },
+      "selector_gradient_norms": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "validation_source_deviation_initial": 0.970781221985817,
+      "validation_source_deviation_best": 0.9722655937075615,
+      "evaluation_means_verified": true
+    },
+    {
+      "host": "icam",
+      "mode": "learned",
+      "seed": 4321,
+      "best_step": 150,
+      "best_checkpoint_sha256": "54c28630afb82a06c02a586072963f5b1b8fb9168875a41117618de23a684025",
+      "final_checkpoint_sha256": "b3d256cde894b94e40b2cd3b4a241b14de0385d3eb30d3c2fee3ed79d77e2109",
+      "best_final_parameter_distance": {
+        "host": 0.17539516421612827,
+        "selector": 0.47443723883283295
+      },
+      "selector_gradient_norms": [
+        196.34542880447853,
+        236.22977359311474,
+        135.88693011917684,
+        192.52265732928367,
+        164.57686932131028,
+        246.62605424627617
+      ],
+      "validation_source_deviation_initial": 0.6826562359929085,
+      "validation_source_deviation_best": 0.3648437485098839,
+      "evaluation_means_verified": true
+    },
+    {
+      "host": "icam",
+      "mode": "route",
+      "seed": 2468,
+      "best_step": 150,
+      "best_checkpoint_sha256": "a6b7cee9a730c14aff6c563e664c615f21fec60d2ca30bcf387b60d8ef9bf102",
+      "final_checkpoint_sha256": "cc7acda5901fe8c43a046541dc32a3eb018d2f3db708936586f021ed8bc7d0c9",
+      "best_final_parameter_distance": {
+        "host": 0.17842999967243223,
+        "selector": 0.0
+      },
+      "selector_gradient_norms": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "validation_source_deviation_initial": 0.0,
+      "validation_source_deviation_best": 0.0,
+      "evaluation_means_verified": true
+    },
+    {
+      "host": "icam",
+      "mode": "random",
+      "seed": 2468,
+      "best_step": 300,
+      "best_checkpoint_sha256": "2c4707c1da52ee8b399de0c2002945766eeb7800f2d487d02b3f61106ec7af05",
+      "final_checkpoint_sha256": "10e67e5b00c25d2cf2bdc2655ac6fecd4da406e3ec8ee0eca85ac011ce6a253b",
+      "best_final_parameter_distance": {
+        "host": 0.0,
+        "selector": 0.0
+      },
+      "selector_gradient_norms": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "validation_source_deviation_initial": 0.970781221985817,
+      "validation_source_deviation_best": 0.9710937142372131,
+      "evaluation_means_verified": true
+    },
+    {
+      "host": "icam",
+      "mode": "learned",
+      "seed": 2468,
+      "best_step": 300,
+      "best_checkpoint_sha256": "2d959abffb8309e31c873494dbf2d54c7233f8b59e3022766c3c6b5454db8de7",
+      "final_checkpoint_sha256": "a22153dcd12b1255233b28ab0ddbfc834f7bc19ca469b3c4e19c1df1c4541cb6",
+      "best_final_parameter_distance": {
+        "host": 0.0,
+        "selector": 0.0
+      },
+      "selector_gradient_norms": [
+        298.3346078330437,
+        148.1929957071835,
+        101.66770936256667,
+        38.828969728656624,
+        58.72119181023786,
+        24.229169023860273
+      ],
+      "validation_source_deviation_initial": 0.7581249698996544,
+      "validation_source_deviation_best": 0.26164062321186066,
+      "evaluation_means_verified": true
+    }
+  ]
+}

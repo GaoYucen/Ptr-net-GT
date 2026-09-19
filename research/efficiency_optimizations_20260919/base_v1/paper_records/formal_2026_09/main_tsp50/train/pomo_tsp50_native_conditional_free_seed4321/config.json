@@ -1,0 +1,23 @@
+{
+  "base_mode": "native_conditional_free",
+  "batch_size": 64,
+  "checkpoint_every": 500,
+  "device": "cuda",
+  "effective_batch_size": 512,
+  "embedding_dim": 128,
+  "encoder_layers": 6,
+  "eval_every": 100,
+  "feed_forward_dim": 512,
+  "graph_size": 50,
+  "heads": 8,
+  "learning_rate": 0.0001,
+  "max_grad_norm": 1.0,
+  "model": "pomo",
+  "normalization": "batch",
+  "pomo_size": 8,
+  "qkv_dim": 16,
+  "seed": 4321,
+  "steps": 5000,
+  "training_scheme": "pomo",
+  "validation_size": 64
+}

@@ -1,0 +1,21 @@
+{
+  "base_mode": "native_random_tail",
+  "best_validation_cost": 7.216596603393555,
+  "checkpoint": "/root/autodl-tmp/groupopt-paper-canonical/artifacts/paper_ablation_am_tsp50_v1/train/am_tsp50_native_random_tail_seed4321/checkpoints/step-010000.pt",
+  "checkpoint_step": 10000,
+  "distribution": "uniform",
+  "evaluation_action_seed": 20260905,
+  "graph_size": 50,
+  "is_size_transfer": false,
+  "mean_cost": 7.241565704345703,
+  "model": "am",
+  "problem": "tsp",
+  "standard_deviation": 0.6076576709747314,
+  "standard_error": 0.006076576709747314,
+  "test_seed": 20260904,
+  "test_size": 10000,
+  "train_seed": 4321,
+  "training_base_mode": "native_random_tail",
+  "training_graph_size": 50,
+  "training_scheme": "reinforce"
+}

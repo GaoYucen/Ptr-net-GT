@@ -1,0 +1,39 @@
+{
+  "n": 5,
+  "tours": 24,
+  "source_orders": 120,
+  "full_trajectories": 2880,
+  "all_reachable": true,
+  "checks": [
+    {
+      "depth": 0,
+      "components": 5,
+      "legal_heads": 4,
+      "completions": 24
+    },
+    {
+      "depth": 1,
+      "components": 4,
+      "legal_heads": 3,
+      "completions": 6
+    },
+    {
+      "depth": 2,
+      "components": 3,
+      "legal_heads": 2,
+      "completions": 2
+    },
+    {
+      "depth": 3,
+      "components": 2,
+      "legal_heads": 1,
+      "completions": 1
+    },
+    {
+      "depth": 4,
+      "components": 1,
+      "legal_heads": 1,
+      "completions": 1
+    }
+  ]
+}

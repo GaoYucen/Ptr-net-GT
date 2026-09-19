@@ -1,0 +1,11 @@
+{
+  "lite_mean": 6.128950995254517,
+  "original_seed1234_mean": 6.428387383174896,
+  "full_ascc_seed1234_mean": 6.1457518886566165,
+  "lite_improvement_vs_original_percent": 4.658032723791635,
+  "full_improvement_vs_original_percent": 4.396678010694024,
+  "fraction_of_full_gain_retained": 1.059443678263889,
+  "train_time": "train_elapsed=2780.37",
+  "eval_time": "eval_elapsed=4.22",
+  "train_peak_gb": 8.864
+}

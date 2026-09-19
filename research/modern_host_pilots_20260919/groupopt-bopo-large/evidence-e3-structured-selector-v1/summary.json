@@ -1,0 +1,221 @@
+{
+  "elapsed_seconds": 833.90309715271,
+  "feature_dim": 18,
+  "protocol": {
+    "BOPO_frozen": true,
+    "candidate_per_view": 2,
+    "fractions": [
+      0.35,
+      0.5,
+      0.65,
+      0.8,
+      0.9
+    ],
+    "label": "strict full-completion signed gain",
+    "max_candidates": 6,
+    "policy": "one candidate across all scanned states per instance or abstain",
+    "sizes": [
+      500,
+      650,
+      800
+    ],
+    "test_distributions": [
+      "clustered",
+      "clustered_strong",
+      "uniform"
+    ],
+    "train_distribution": "clustered",
+    "validation_distribution": "clustered independent seed"
+  },
+  "test_label_stats": {
+    "clustered": {
+      "candidates": 250,
+      "groups": 60,
+      "positive_candidate_rate": 0.112,
+      "positive_group_rate": 0.3
+    },
+    "clustered_strong": {
+      "candidates": 200,
+      "groups": 45,
+      "positive_candidate_rate": 0.085,
+      "positive_group_rate": 0.26666666666666666
+    },
+    "uniform": {
+      "candidates": 198,
+      "groups": 45,
+      "positive_candidate_rate": 0.08080808080808081,
+      "positive_group_rate": 0.3111111111111111
+    }
+  },
+  "tests": {
+    "clustered": {
+      "pilot70": {
+        "heuristic_matched_rate_mean_gain": 0.0,
+        "learned": {
+          "deviation_rate": 0.0,
+          "deviations": 0,
+          "harmful": 0,
+          "harmful_rate": 0.0,
+          "instances": 12,
+          "max_gain": 0.0,
+          "mean_gain": 0.0,
+          "min_gain": 0.0,
+          "positive": 0,
+          "precision_positive": 0.0,
+          "total_gain": 0.0
+        },
+        "random_matched_rate_mean_gain_avg": 0.0,
+        "random_matched_rate_mean_gain_max": 0.0,
+        "random_matched_rate_mean_gain_min": 0.0
+      },
+      "strict80": {
+        "heuristic_matched_rate_mean_gain": 0.0,
+        "learned": {
+          "deviation_rate": 0.0,
+          "deviations": 0,
+          "harmful": 0,
+          "harmful_rate": 0.0,
+          "instances": 12,
+          "max_gain": 0.0,
+          "mean_gain": 0.0,
+          "min_gain": 0.0,
+          "positive": 0,
+          "precision_positive": 0.0,
+          "total_gain": 0.0
+        },
+        "random_matched_rate_mean_gain_avg": 0.0,
+        "random_matched_rate_mean_gain_max": 0.0,
+        "random_matched_rate_mean_gain_min": 0.0
+      }
+    },
+    "clustered_strong": {
+      "pilot70": {
+        "heuristic_matched_rate_mean_gain": 0.0,
+        "learned": {
+          "deviation_rate": 0.0,
+          "deviations": 0,
+          "harmful": 0,
+          "harmful_rate": 0.0,
+          "instances": 9,
+          "max_gain": 0.0,
+          "mean_gain": 0.0,
+          "min_gain": 0.0,
+          "positive": 0,
+          "precision_positive": 0.0,
+          "total_gain": 0.0
+        },
+        "random_matched_rate_mean_gain_avg": 0.0,
+        "random_matched_rate_mean_gain_max": 0.0,
+        "random_matched_rate_mean_gain_min": 0.0
+      },
+      "strict80": {
+        "heuristic_matched_rate_mean_gain": 0.0,
+        "learned": {
+          "deviation_rate": 0.0,
+          "deviations": 0,
+          "harmful": 0,
+          "harmful_rate": 0.0,
+          "instances": 9,
+          "max_gain": 0.0,
+          "mean_gain": 0.0,
+          "min_gain": 0.0,
+          "positive": 0,
+          "precision_positive": 0.0,
+          "total_gain": 0.0
+        },
+        "random_matched_rate_mean_gain_avg": 0.0,
+        "random_matched_rate_mean_gain_max": 0.0,
+        "random_matched_rate_mean_gain_min": 0.0
+      }
+    },
+    "uniform": {
+      "pilot70": {
+        "heuristic_matched_rate_mean_gain": 0.0,
+        "learned": {
+          "deviation_rate": 0.0,
+          "deviations": 0,
+          "harmful": 0,
+          "harmful_rate": 0.0,
+          "instances": 9,
+          "max_gain": 0.0,
+          "mean_gain": 0.0,
+          "min_gain": 0.0,
+          "positive": 0,
+          "precision_positive": 0.0,
+          "total_gain": 0.0
+        },
+        "random_matched_rate_mean_gain_avg": 0.0,
+        "random_matched_rate_mean_gain_max": 0.0,
+        "random_matched_rate_mean_gain_min": 0.0
+      },
+      "strict80": {
+        "heuristic_matched_rate_mean_gain": 0.0,
+        "learned": {
+          "deviation_rate": 0.0,
+          "deviations": 0,
+          "harmful": 0,
+          "harmful_rate": 0.0,
+          "instances": 9,
+          "max_gain": 0.0,
+          "mean_gain": 0.0,
+          "min_gain": 0.0,
+          "positive": 0,
+          "precision_positive": 0.0,
+          "total_gain": 0.0
+        },
+        "random_matched_rate_mean_gain_avg": 0.0,
+        "random_matched_rate_mean_gain_max": 0.0,
+        "random_matched_rate_mean_gain_min": 0.0
+      }
+    }
+  },
+  "thresholds": {
+    "pilot70": {
+      "feasible": false,
+      "threshold": Infinity,
+      "validation": {
+        "deviation_rate": 0.0,
+        "deviations": 0,
+        "harmful": 0,
+        "harmful_rate": 0.0,
+        "instances": 12,
+        "max_gain": 0.0,
+        "mean_gain": 0.0,
+        "min_gain": 0.0,
+        "positive": 0,
+        "precision_positive": 0.0,
+        "total_gain": 0.0
+      }
+    },
+    "strict80": {
+      "feasible": false,
+      "threshold": Infinity,
+      "validation": {
+        "deviation_rate": 0.0,
+        "deviations": 0,
+        "harmful": 0,
+        "harmful_rate": 0.0,
+        "instances": 12,
+        "max_gain": 0.0,
+        "mean_gain": 0.0,
+        "min_gain": 0.0,
+        "positive": 0,
+        "precision_positive": 0.0,
+        "total_gain": 0.0
+      }
+    }
+  },
+  "train_label_stats": {
+    "candidates": 491,
+    "groups": 120,
+    "positive_candidate_rate": 0.10183299389002037,
+    "positive_group_rate": 0.25833333333333336
+  },
+  "training_weighted_loss": 0.2047799527645111,
+  "val_label_stats": {
+    "candidates": 232,
+    "groups": 60,
+    "positive_candidate_rate": 0.11637931034482758,
+    "positive_group_rate": 0.3333333333333333
+  }
+}

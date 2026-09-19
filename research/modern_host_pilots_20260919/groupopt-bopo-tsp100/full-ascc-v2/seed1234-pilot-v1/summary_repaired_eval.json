@@ -1,0 +1,20 @@
+{
+  "absolute_gap_reduction_points": -0.14757210900054202,
+  "absolute_mean_cost_improvement": -0.01145751285552965,
+  "adapter_parameters": 148096,
+  "benchmark": "BOPO-TSP100",
+  "best_step": 1400,
+  "best_validation_best_pomo8_mean": 7.868756204843521,
+  "checkpoint": "checkpoint-700.pt",
+  "control_aug_gap_percent": 0.0959,
+  "control_aug_mean": 7.7615,
+  "eval_seconds": 647.124528368935,
+  "full_ascc_aug_gap_percent": 0.243472109000542,
+  "full_ascc_aug_mean": 7.7729575128555295,
+  "mechanism": "frozen BOPO + trainable tail + trainable head residual + stop-gradient head summary",
+  "peak_gpu_memory_gb": 0.7041044235229492,
+  "protocol": "official 1000 instances, POMO100, aug8",
+  "relative_gap_reduction_percent": -153.88123983372472,
+  "relative_mean_cost_improvement_percent": -0.14761982677999935,
+  "training_steps": 1500
+}

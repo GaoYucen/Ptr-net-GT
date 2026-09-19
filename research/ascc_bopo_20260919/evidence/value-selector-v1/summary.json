@@ -1,0 +1,122 @@
+{
+  "role": "held_out_rollout_value_selector_pilot",
+  "features": [
+    "source_score",
+    "endpoint_entropy",
+    "endpoint_margin",
+    "greedy_edge",
+    "source_size",
+    "target_size",
+    "source_chord",
+    "target_chord",
+    "tail_to_centroid",
+    "head_to_centroid",
+    "edge_over_min",
+    "is_route_tail",
+    "source_start_to_head",
+    "tail_to_target_end"
+  ],
+  "nodes": 50,
+  "stage": 30,
+  "counts": {
+    "train": 80,
+    "validation": 24,
+    "test": 48
+  },
+  "seeds": {
+    "train": 2026100101,
+    "validation": 2026100102,
+    "test": 2026100103
+  },
+  "checkpoint_sha256": "69217d554d34d460305958e59e7ebd8bd4260814787d18b2f5ba3ecc37272400",
+  "selected_on_validation": {
+    "width": 32,
+    "objective": "regression",
+    "seed": 22,
+    "epoch": 200,
+    "validation_cost": 5.830558776855469
+  },
+  "candidate_configurations": 18,
+  "test_results": [
+    {
+      "method": "route",
+      "mean_cost": 5.811864376068115,
+      "relative_improvement_percent": 0.0,
+      "conditional_normal_ci95": [
+        0.0,
+        0.0
+      ],
+      "improved_fraction": 0.0
+    },
+    {
+      "method": "oracle",
+      "mean_cost": 5.762758255004883,
+      "relative_improvement_percent": 0.8449278627490828,
+      "conditional_normal_ci95": [
+        0.019526394233107567,
+        0.07868572868406773
+      ],
+      "improved_fraction": 0.6041666865348816
+    },
+    {
+      "method": "random_expected",
+      "mean_cost": 6.039649486541748,
+      "relative_improvement_percent": -3.919317600320896,
+      "conditional_normal_ci95": [
+        -0.3037109126150608,
+        -0.15185993418097496
+      ],
+      "improved_fraction": 0.0625
+    },
+    {
+      "method": "pretrained_learned",
+      "mean_cost": 5.992781162261963,
+      "relative_improvement_percent": -3.1128941905488046,
+      "conditional_normal_ci95": [
+        -0.2986445325613022,
+        -0.06318984448909759
+      ],
+      "improved_fraction": 0.1666666716337204
+    },
+    {
+      "method": "min_entropy",
+      "mean_cost": 5.9870734214782715,
+      "relative_improvement_percent": -3.0146796066871326,
+      "conditional_normal_ci95": [
+        -0.2847838234901428,
+        -0.06563435673713684
+      ],
+      "improved_fraction": 0.2083333283662796
+    },
+    {
+      "method": "max_margin",
+      "mean_cost": 5.976551532745361,
+      "relative_improvement_percent": -2.8336385800948003,
+      "conditional_normal_ci95": [
+        -0.2729428119957447,
+        -0.056431650370359424
+      ],
+      "improved_fraction": 0.1458333283662796
+    },
+    {
+      "method": "shortest_edge",
+      "mean_cost": 6.106122970581055,
+      "relative_improvement_percent": -5.063075841275814,
+      "conditional_normal_ci95": [
+        -0.43401399374008176,
+        -0.1545042085647583
+      ],
+      "improved_fraction": 0.125
+    },
+    {
+      "method": "selected_value_model",
+      "mean_cost": 5.8549580574035645,
+      "relative_improvement_percent": -0.7414921101381703,
+      "conditional_normal_ci95": [
+        -0.12405096128582954,
+        0.03786192968487739
+      ],
+      "improved_fraction": 0.1666666716337204
+    }
+  ]
+}

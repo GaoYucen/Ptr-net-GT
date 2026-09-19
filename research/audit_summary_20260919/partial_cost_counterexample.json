@@ -1,0 +1,50 @@
+{
+  "coordinates": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      2,
+      2
+    ]
+  ],
+  "edges_A": [
+    [
+      1,
+      3
+    ],
+    [
+      2,
+      1
+    ]
+  ],
+  "edges_B": [
+    [
+      3,
+      4
+    ],
+    [
+      4,
+      2
+    ]
+  ],
+  "partial_cost_A": 3.23606797749979,
+  "partial_cost_B": 4.0,
+  "optimal_completed_cost_A": 10.06449510224598,
+  "optimal_completed_cost_B": 8.0,
+  "same_number_fixed_edges": 2,
+  "enumeration": "all Hamiltonian cycles rooted at node0; all two-edge subsets"
+}

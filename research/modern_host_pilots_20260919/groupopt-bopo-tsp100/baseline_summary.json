@@ -1,0 +1,12 @@
+{
+  "aug_gap_percent": 0.0959,
+  "aug_mean": 7.7615,
+  "augmentation": 8,
+  "benchmark": "BOPO-TSP100-official",
+  "eval_seconds": 469.0295,
+  "instances": 1000,
+  "log": "/workspace/groupopt-modern-hosts/BOPO/TSP/result/20260918_162853_test_n100/log.txt",
+  "noaug_gap_percent": 0.4188,
+  "noaug_mean": 7.7866,
+  "pomo": 100
+}

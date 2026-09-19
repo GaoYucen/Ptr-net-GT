@@ -1,0 +1,246 @@
+{
+  "role": "end_to_end_source_heuristic_diagnostic",
+  "checkpoint": "learned-reinforce-seed1234/best.pt",
+  "checkpoint_sha256": "69217d554d34d460305958e59e7ebd8bd4260814787d18b2f5ba3ecc37272400",
+  "count": 128,
+  "rollouts": 8,
+  "decode": "best of multi-anchor greedy endpoint rollouts",
+  "augmentation": false,
+  "local_search": false,
+  "sizes": [
+    {
+      "n": 20,
+      "seed": 2026093020,
+      "coordinate_sha256": "bfc5ad13486a2b5ff888e69b16d96ed5dce4ac203fa0dcc6af872389717a252a",
+      "policies": {
+        "learned-0": {
+          "mean_cost": 4.136201608926058,
+          "seconds": 1.8232154119759798,
+          "peak_memory_gb": 0.04123735427856445,
+          "route_minus_policy": -0.2507379297167063,
+          "relative_improvement_percent": -6.453230564433655,
+          "conditional_normal_ci95": [
+            -0.3053918746027152,
+            -0.19608398483069733
+          ]
+        },
+        "route-0": {
+          "mean_cost": 3.8854636792093515,
+          "seconds": 1.0188469141721725,
+          "peak_memory_gb": 0.041231632232666016,
+          "route_minus_policy": 0.0,
+          "relative_improvement_percent": 0.0,
+          "conditional_normal_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "min_entropy-0": {
+          "mean_cost": 4.3631384540349245,
+          "seconds": 1.6166855790652335,
+          "peak_memory_gb": 0.054553985595703125,
+          "route_minus_policy": -0.47767477482557297,
+          "relative_improvement_percent": -12.293893709045673,
+          "conditional_normal_ci95": [
+            -0.5628417042842498,
+            -0.39250784536689615
+          ]
+        },
+        "max_margin-0": {
+          "mean_cost": 4.3839209489524364,
+          "seconds": 1.823683061171323,
+          "peak_memory_gb": 0.054553985595703125,
+          "route_minus_policy": -0.4984572697430849,
+          "relative_improvement_percent": -12.828771824847308,
+          "conditional_normal_ci95": [
+            -0.5918175349769091,
+            -0.40509700450926067
+          ]
+        },
+        "shortest_edge-0": {
+          "mean_cost": 4.1861016899347305,
+          "seconds": 1.9042928759008646,
+          "peak_memory_gb": 0.054553985595703125,
+          "route_minus_policy": -0.300638010725379,
+          "relative_improvement_percent": -7.737506654200805,
+          "conditional_normal_ci95": [
+            -0.35816687648099915,
+            -0.2431091449697588
+          ]
+        },
+        "shortest-0": {
+          "mean_cost": 5.14122125133872,
+          "seconds": 1.0781841543503106,
+          "peak_memory_gb": 0.04123735427856445,
+          "route_minus_policy": -1.2557575721293688,
+          "relative_improvement_percent": -32.3193748753534,
+          "conditional_normal_ci95": [
+            -1.3942807006865257,
+            -1.117234443572212
+          ]
+        },
+        "fixed-0": {
+          "mean_cost": 5.137915009632707,
+          "seconds": 1.0350847118534148,
+          "peak_memory_gb": 0.04123258590698242,
+          "route_minus_policy": -1.252451330423355,
+          "relative_improvement_percent": -32.23428228463623,
+          "conditional_normal_ci95": [
+            -1.3749463998009257,
+            -1.1299562610457845
+          ]
+        },
+        "random-7001": {
+          "mean_cost": 4.101371336728334,
+          "seconds": 1.1381222265772521,
+          "peak_memory_gb": 0.04123735427856445,
+          "route_minus_policy": -0.2159076575189829,
+          "relative_improvement_percent": -5.556805450898403,
+          "conditional_normal_ci95": [
+            -0.26169615396856805,
+            -0.1701191610693977
+          ]
+        },
+        "random-7002": {
+          "mean_cost": 4.1208496280014515,
+          "seconds": 1.1255941009148955,
+          "peak_memory_gb": 0.04123735427856445,
+          "route_minus_policy": -0.23538594879209995,
+          "relative_improvement_percent": -6.0581173374910655,
+          "conditional_normal_ci95": [
+            -0.2831235874125956,
+            -0.1876483101716043
+          ]
+        },
+        "random-7003": {
+          "mean_cost": 4.11950184032321,
+          "seconds": 1.1348766130395234,
+          "peak_memory_gb": 0.04123735427856445,
+          "route_minus_policy": -0.23403816111385822,
+          "relative_improvement_percent": -6.023429388007621,
+          "conditional_normal_ci95": [
+            -0.2878002657862107,
+            -0.1802760564415057
+          ]
+        }
+      }
+    },
+    {
+      "n": 50,
+      "seed": 2026093050,
+      "coordinate_sha256": "6587826f23bd3aea267beffd7121c1eba259054157e5805f126425546168c745",
+      "policies": {
+        "learned-0": {
+          "mean_cost": 6.0509232468903065,
+          "seconds": 2.432783835567534,
+          "peak_memory_gb": 0.04761695861816406,
+          "route_minus_policy": -0.3323919549584389,
+          "relative_improvement_percent": -5.812540633071333,
+          "conditional_normal_ci95": [
+            -0.38777090970719197,
+            -0.2770130002096858
+          ]
+        },
+        "route-0": {
+          "mean_cost": 5.718531291931868,
+          "seconds": 2.285948429722339,
+          "peak_memory_gb": 0.04760408401489258,
+          "route_minus_policy": 0.0,
+          "relative_improvement_percent": 0.0,
+          "conditional_normal_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "min_entropy-0": {
+          "mean_cost": 6.2491144724190235,
+          "seconds": 3.7029524319805205,
+          "peak_memory_gb": 0.12592649459838867,
+          "route_minus_policy": -0.5305831804871559,
+          "relative_improvement_percent": -9.2783120945013,
+          "conditional_normal_ci95": [
+            -0.6228054323840904,
+            -0.4383609285902214
+          ]
+        },
+        "max_margin-0": {
+          "mean_cost": 6.120823696255684,
+          "seconds": 4.303809975273907,
+          "peak_memory_gb": 0.12592649459838867,
+          "route_minus_policy": -0.4022924043238163,
+          "relative_improvement_percent": -7.034890320376502,
+          "conditional_normal_ci95": [
+            -0.47671356196143655,
+            -0.32787124668619605
+          ]
+        },
+        "shortest_edge-0": {
+          "mean_cost": 6.297418862581253,
+          "seconds": 3.656510964035988,
+          "peak_memory_gb": 0.12592649459838867,
+          "route_minus_policy": -0.5788875706493855,
+          "relative_improvement_percent": -10.123011331005976,
+          "conditional_normal_ci95": [
+            -0.6464610978529567,
+            -0.5113140434458142
+          ]
+        },
+        "shortest-0": {
+          "mean_cost": 7.430935118347406,
+          "seconds": 2.3381389030255377,
+          "peak_memory_gb": 0.04761695861816406,
+          "route_minus_policy": -1.7124038264155388,
+          "relative_improvement_percent": -29.944818678032355,
+          "conditional_normal_ci95": [
+            -1.8895505827109993,
+            -1.5352570701200783
+          ]
+        },
+        "fixed-0": {
+          "mean_cost": 7.1448830515146255,
+          "seconds": 2.3096122038550675,
+          "peak_memory_gb": 0.047605037689208984,
+          "route_minus_policy": -1.426351759582758,
+          "relative_improvement_percent": -24.9426240194779,
+          "conditional_normal_ci95": [
+            -1.5754673040579816,
+            -1.2772362151075343
+          ]
+        },
+        "random-7001": {
+          "mean_cost": 6.180939693003893,
+          "seconds": 3.0971569581888616,
+          "peak_memory_gb": 0.04761695861816406,
+          "route_minus_policy": -0.4624084010720253,
+          "relative_improvement_percent": -8.086139210682045,
+          "conditional_normal_ci95": [
+            -0.537377504987383,
+            -0.3874392971566676
+          ]
+        },
+        "random-7002": {
+          "mean_cost": 6.125638224184513,
+          "seconds": 2.7883452363312244,
+          "peak_memory_gb": 0.04761695861816406,
+          "route_minus_policy": -0.4071069322526455,
+          "relative_improvement_percent": -7.119082006721245,
+          "conditional_normal_ci95": [
+            -0.46998889723405285,
+            -0.34422496727123814
+          ]
+        },
+        "random-7003": {
+          "mean_cost": 6.1624301709234715,
+          "seconds": 2.5369604052975774,
+          "peak_memory_gb": 0.04761695861816406,
+          "route_minus_policy": -0.44389887899160385,
+          "relative_improvement_percent": -7.762463057916456,
+          "conditional_normal_ci95": [
+            -0.5097437700908731,
+            -0.3780539878923345
+          ]
+        }
+      }
+    }
+  ]
+}

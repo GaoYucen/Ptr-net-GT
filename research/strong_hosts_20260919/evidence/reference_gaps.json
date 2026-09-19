@@ -1,0 +1,146 @@
+[
+  {
+    "host": "am",
+    "mode": "native",
+    "case": "test200",
+    "gap_percent": 8.240482486145261
+  },
+  {
+    "host": "am",
+    "mode": "native",
+    "case": "cluster200",
+    "gap_percent": 57.29810493195142
+  },
+  {
+    "host": "am",
+    "mode": "native",
+    "case": "test500",
+    "gap_percent": 20.939005577655557
+  },
+  {
+    "host": "am",
+    "mode": "route",
+    "case": "test200",
+    "gap_percent": 8.021107748792634
+  },
+  {
+    "host": "am",
+    "mode": "route",
+    "case": "cluster200",
+    "gap_percent": 88.63820196122198
+  },
+  {
+    "host": "am",
+    "mode": "route",
+    "case": "test500",
+    "gap_percent": 18.957891008503182
+  },
+  {
+    "host": "am",
+    "mode": "random",
+    "case": "test200",
+    "gap_percent": 70.2745780034809
+  },
+  {
+    "host": "am",
+    "mode": "random",
+    "case": "cluster200",
+    "gap_percent": 319.25812955824904
+  },
+  {
+    "host": "am",
+    "mode": "random",
+    "case": "test500",
+    "gap_percent": 91.91499257097794
+  },
+  {
+    "host": "am",
+    "mode": "learned",
+    "case": "test200",
+    "gap_percent": 33.401202260384565
+  },
+  {
+    "host": "am",
+    "mode": "learned",
+    "case": "cluster200",
+    "gap_percent": 181.7647070768847
+  },
+  {
+    "host": "am",
+    "mode": "learned",
+    "case": "test500",
+    "gap_percent": 48.36538413024656
+  },
+  {
+    "host": "icam",
+    "mode": "native",
+    "case": "test200",
+    "gap_percent": 1.01345218244282
+  },
+  {
+    "host": "icam",
+    "mode": "native",
+    "case": "cluster200",
+    "gap_percent": 23.747731562182416
+  },
+  {
+    "host": "icam",
+    "mode": "native",
+    "case": "test500",
+    "gap_percent": 1.582254474066036
+  },
+  {
+    "host": "icam",
+    "mode": "route",
+    "case": "test200",
+    "gap_percent": 1.224323541680561
+  },
+  {
+    "host": "icam",
+    "mode": "route",
+    "case": "cluster200",
+    "gap_percent": 23.96120262659216
+  },
+  {
+    "host": "icam",
+    "mode": "route",
+    "case": "test500",
+    "gap_percent": 2.0934834962260007
+  },
+  {
+    "host": "icam",
+    "mode": "random",
+    "case": "test200",
+    "gap_percent": 18.694032669148086
+  },
+  {
+    "host": "icam",
+    "mode": "random",
+    "case": "cluster200",
+    "gap_percent": 90.49126955631547
+  },
+  {
+    "host": "icam",
+    "mode": "random",
+    "case": "test500",
+    "gap_percent": 27.844481285279365
+  },
+  {
+    "host": "icam",
+    "mode": "learned",
+    "case": "test200",
+    "gap_percent": 7.560700067493187
+  },
+  {
+    "host": "icam",
+    "mode": "learned",
+    "case": "cluster200",
+    "gap_percent": 51.157324152141626
+  },
+  {
+    "host": "icam",
+    "mode": "learned",
+    "case": "test500",
+    "gap_percent": 11.076212196077307
+  }
+]

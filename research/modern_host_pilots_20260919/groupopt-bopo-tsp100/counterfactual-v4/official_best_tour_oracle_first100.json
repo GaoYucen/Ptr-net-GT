@@ -1,0 +1,28 @@
+{
+  "any_positive_by_edge": {
+    "10": 0.02,
+    "30": 0.04,
+    "50": 0.0,
+    "70": 0.03,
+    "90": 0.01
+  },
+  "baseline_gap_percent": 0.1127816113618646,
+  "baseline_mean": 7.7853590106964115,
+  "candidate_topk": 4,
+  "improved_instance_rate": 0.09,
+  "instances": 100,
+  "instances_improved": 9,
+  "max_gain": 0.020202159881591797,
+  "mean_gain": 0.00038885504007339476,
+  "oracle_refined_gap_percent": 0.10782352720493305,
+  "oracle_refined_mean": 7.784970155656338,
+  "route_replay_max_abs_diff": 0.0,
+  "route_replay_mean": 7.7853590106964115,
+  "targets": [
+    10,
+    30,
+    50,
+    70,
+    90
+  ]
+}

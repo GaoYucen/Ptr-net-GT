@@ -1,0 +1,139 @@
+[
+  {
+    "stage": "joint",
+    "host": "am",
+    "mode": "learned",
+    "seed": 4321,
+    "step": 0,
+    "validation": {
+      "mean": 23.618541449308395,
+      "seconds": 3.476305313874036,
+      "source_deviation": 0.7527343481779099
+    },
+    "training_seconds": 0.0,
+    "warmup_seconds": 105.37445896863937,
+    "recent_sample_cost": 0.0,
+    "recent_loss": 0.0,
+    "gradient_norm": {}
+  },
+  {
+    "stage": "joint",
+    "host": "am",
+    "mode": "learned",
+    "seed": 4321,
+    "step": 50,
+    "validation": {
+      "mean": 16.73550695180893,
+      "seconds": 3.9634602847509086,
+      "source_deviation": 0.653437502682209
+    },
+    "training_seconds": 134.2808010368608,
+    "warmup_seconds": 105.37445896863937,
+    "recent_sample_cost": 21.546644172668458,
+    "recent_loss": -13.961119174957275,
+    "gradient_norm": {
+      "host": 632.6045927274519,
+      "selector": 115.78102197933524
+    }
+  },
+  {
+    "stage": "joint",
+    "host": "am",
+    "mode": "learned",
+    "seed": 4321,
+    "step": 100,
+    "validation": {
+      "mean": 15.624211072921753,
+      "seconds": 4.16550750285387,
+      "source_deviation": 0.5578906312584877
+    },
+    "training_seconds": 267.76566621428356,
+    "warmup_seconds": 105.37445896863937,
+    "recent_sample_cost": 19.661681289672853,
+    "recent_loss": -9.401264400482178,
+    "gradient_norm": {
+      "host": 429.77464646102476,
+      "selector": 62.949255165671886
+    }
+  },
+  {
+    "stage": "joint",
+    "host": "am",
+    "mode": "learned",
+    "seed": 4321,
+    "step": 150,
+    "validation": {
+      "mean": 14.8464694917202,
+      "seconds": 4.66861053975299,
+      "source_deviation": 0.5088281072676182
+    },
+    "training_seconds": 404.9225744297728,
+    "warmup_seconds": 105.37445896863937,
+    "recent_sample_cost": 18.525013732910157,
+    "recent_loss": -13.780627479553223,
+    "gradient_norm": {
+      "host": 367.0683080972276,
+      "selector": 71.32154758184998
+    }
+  },
+  {
+    "stage": "joint",
+    "host": "am",
+    "mode": "learned",
+    "seed": 4321,
+    "step": 200,
+    "validation": {
+      "mean": 14.128754198551178,
+      "seconds": 3.683291108813137,
+      "source_deviation": 0.40812499076128006
+    },
+    "training_seconds": 551.9279913371429,
+    "warmup_seconds": 105.37445896863937,
+    "recent_sample_cost": 17.441250495910644,
+    "recent_loss": -21.660020751953127,
+    "gradient_norm": {
+      "host": 454.89771142115364,
+      "selector": 127.95776071383331
+    }
+  },
+  {
+    "stage": "joint",
+    "host": "am",
+    "mode": "learned",
+    "seed": 4321,
+    "step": 250,
+    "validation": {
+      "mean": 13.956118881702423,
+      "seconds": 4.186967868357897,
+      "source_deviation": 0.3864062428474426
+    },
+    "training_seconds": 697.685883723665,
+    "warmup_seconds": 105.37445896863937,
+    "recent_sample_cost": 16.710962200164794,
+    "recent_loss": -26.55134183883667,
+    "gradient_norm": {
+      "host": 501.3091996093595,
+      "selector": 64.18327676243699
+    }
+  },
+  {
+    "stage": "joint",
+    "host": "am",
+    "mode": "learned",
+    "seed": 4321,
+    "step": 300,
+    "validation": {
+      "mean": 13.551816329360008,
+      "seconds": 4.687211778014898,
+      "source_deviation": 0.30296873673796654
+    },
+    "training_seconds": 839.2876221858896,
+    "warmup_seconds": 105.37445896863937,
+    "recent_sample_cost": 16.435367584228516,
+    "recent_loss": -36.150165519714356,
+    "gradient_norm": {
+      "host": 464.56864623990845,
+      "selector": 76.15509440396843
+    }
+  }
+]

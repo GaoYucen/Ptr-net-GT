@@ -1,0 +1,11 @@
+{
+  "tails_exact": true,
+  "heads_exact": true,
+  "cost_max_abs": 0.0,
+  "ll_max_abs": 7.62939453125e-06,
+  "loss_abs": 1.7881393432617188e-07,
+  "worst_param_relative_l2": 1.123638705299048,
+  "worst_param": "encoder.layers.0.feed_forward.2.bias",
+  "gradient_global_relative_l2": 7.791732406936686e-07,
+  "gradient_max_abs": 1.2367963790893555e-06
+}
