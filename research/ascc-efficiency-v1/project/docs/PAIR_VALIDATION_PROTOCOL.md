@@ -25,9 +25,11 @@ On the current 4090 host the kernel module is 535 while the container's default
 the matching 535 user-space driver.  The queue script applies this automatically;
 the path can be overridden with `PAIR_VALIDATION_CUDA_DRIVER_PATH`.
 
-The ten-seed screen is queued with `run_pair_validation_queue.sh`.  After all
-runs finish, aggregate only seed-level repeats for the primary non-inferiority
-claim:
+The idea screen uses one seed and both GPUs: Single-ASCC is evaluated first,
+then Pair-Add and Pair-Interaction run concurrently on GPU 0 and GPU 1.  This is
+a fast go/no-go experiment, not a paper-level uncertainty estimate.  Launch it
+with `run_pair_validation_queue.sh OUTPUT_ROOT [SEED] [GPU_A] [GPU_B]`.  After all
+runs finish, aggregate the available seed-level records:
 
 ```bash
 PYTHONPATH=src python experiments/summarize_pair_validation.py \
